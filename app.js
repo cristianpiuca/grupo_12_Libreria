@@ -10,8 +10,8 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 // view engine setup
-//app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'ejs');
+/* app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs'); */
 
 app.get('/',(req,res) => res.sendFile(path.resolve(__dirname,'views','index.html')))
 app.get('/product-detail',(req,res) => res.sendFile(path.resolve(__dirname,'views','productDetail.html')))
