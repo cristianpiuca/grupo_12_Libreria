@@ -1,0 +1,54 @@
+.h1_login {
+  width: 393px;
+  height: 75px;
+  font-family: 'Bree Serif';
+  font-size: 75px;
+  line-height: 109px;
+  text-align: center;
+  color: #0F0F0F;
+  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.h2_login {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Segoe UI Symbol';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  mix-blend-mode: normal;
+  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.contenedor-login {
+    padding-top: 70px;
+    width: 100%;
+}
+
+.formulario-login {
+    background: var(--colorRosaBuscador);
+    margin-top: 100px;
+    height: 550px;
+    margin-left: -8px;
+    width: 390px;
+    
+}
+
+.button-login {
+
+    font-size: 40px;
+    border: none;
+    background: var(--colorVerde);
+    border-radius: 30px;
+    box-shadow: 0 0 7px;
+    margin-left: 20px;
+    width: 348.53px;
+    height: 62px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 99px;
+    margin-top: -30px;
+     /*palabra ingresar*/
+     line-height: 42px;
+     text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+
+}

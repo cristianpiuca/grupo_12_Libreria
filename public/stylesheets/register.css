@@ -2,26 +2,40 @@
     box-sizing: border-box;
 }
 
-.contenedor {
-    padding: 15px;
+.contenedor-register {
+    padding-top: 70px;
     width: 100%;
 }
 
-.formulario {
+.formulario-register {
     background: var(--colorRosaBuscador);
-    margin-top: 150px;
-    padding: 3px;
+    margin-top: 70px;
+    margin-left: -9px;
+    width: 390px;
+    
 }
 
-h1 {
+.h1_register {
+    height: 70px;
+    font-family: 'Bree Serif';
+    font-size: 75px;
+    line-height: 109px;
     text-align: center;
-    font-size: 50px;
+    color: #0F0F0F;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+  
 
 }
 
-h2 {
+.h2_register {
     text-align: center;
-    font-size: 30px;
+  font-size: 30px;
+  font-family: 'Segoe UI Symbol';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  mix-blend-mode: normal;
+  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
 input[type="text"],
@@ -30,24 +44,114 @@ input[type="password"]{
     font-size: 20px;
     width: 300px;
     padding: 10px;
-    margin-left: 40px
-}
-
-i.fa-solid.fa-user{
-    margin-bottom: -42px;
-    display: block;
-}
-
-.top {
     margin-left: 40px;
+    margin-bottom: 70px;
+    background: white;
+    border: 3px solid white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 99px;
+}
+
+
+.label_nombre {
+    margin-left: 55px;
+    font-size: 130%;
+    font-weight: 700;
+    width: 53px;
+    height: 28px;
+    left: 36px;
+    top: 311px;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    line-height: 28px;
+    color: #0C0B0B;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.label_email {
+    margin-left: 55px;
+    font-size: 130%;
+    font-weight: 700;
+    width: 53px;
+    height: 28px;
+    left: 36px;
+    top: 311px;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    line-height: 28px;
+    color: #0C0B0B;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 
-.cosa{
-  
+.label_password {
+    margin-left: 55px;
+    font-size: 130%;
+    font-weight: 700;
+    width: 53px;
+    height: 28px;
+    left: 36px;
+    top: 311px;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    line-height: 28px;
+    color: #0C0B0B;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 }
 
-.contenedor-input{
-
+.terminosYCondiciones{
+    font-size: 120%;
+    font-weight: 700;
+    text-align: center;
 }
 
+.redireccionLogin{
+    font-size: 110%;
+    font-weight: 700;
+    text-align: center;
+    margin: auto;
+}
+
+.caja {
+    margin: 10px;
+}
+
+.button-register {
+    font-size: 40px;
+    border: none;
+    background: var(--colorVerde);
+    border-radius: 30px;
+    box-shadow: 0 0 7px;
+    margin-left: 20px;
+    width: 348.53px;
+    height: 62px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 99px;
+    margin-top: -30px;
+    /*palabra regristar*/
+    line-height: 42px;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+/* Icons */
+
+/* User*/
+i.fa-solid.fa-user{
+    margin-bottom: -70px;
+    display: block;
+    padding-left: 15px;
+}
+ /*email*/
+ i.fa-solid.fa-envelope{
+    margin-bottom: -70px;
+    display: block;
+    padding-left: 15px
+}
+
+/*password*/
+i.fa-solid.fa-lock{
+    margin-bottom: -70px;
+    display: block;
+    padding-left: 15px
+}

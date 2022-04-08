@@ -4,36 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><title>Register | Librebria</title>
+    <title>Register | Librebria</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://kit.fontawesome.com/4174c231cf.js" crossorigin="anonymous"></script>
 </head>
 <body>
     
-    <form class="formulario">
-        <h1>Bienvenido</h1>
-    <h2>Crea tu cuenta</h2>
-        <div class="contenedor">
+    <form class="formulario-register">
+        <h1 class="h1_register">Bienvenido</h1>
+    <h2 class="h2_register">Crea tu cuenta</h2>
+        <div class="contenedor-register">
             <div class="contenedor-input">
-               <div class="cosa"><i class="fa-solid fa-user"></i></div> 
-                <label class="top" for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo">
+                <i class="fa-solid fa-user"></i>
+                <label class="label_nombre" for="nombre">Nombre</label>
+                <input class="caja" type="text" id="nombre" name="nombre" placeholder="Nombre Completo">
             </div>
     
             <div class="contenedor-input">
                 <i class="fa-solid fa-envelope"></i>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Ingresa un email">
+                <label class="label_email" for="email">Email</label>
+                <input class="caja" type="email" id="email" name="email" placeholder="Ingresa un email">
             </div>
 
             <div class="contenedor-input">
                 <i class="fa-solid fa-lock"></i>
-                <label for="contraseña">Contraseña</label>
-                <input type="password" id="password" name="password" placeholder="Ingresa una contraseña">
+                <label class="label_password" for="contraseña">Contraseña</label>
+                <input class="caja" type="password" id="password" name="password" placeholder="Ingresa una contraseña">
             </div>
-            <input type="submit" value="Registrate" class="button">
-            <p>Al registrarte, aceptas nuestras Condiciones de uso y Politica de privacidad</p>
-            <p>¿Ya tienes una cuenta?<a class="link" href="login">Inicia Sesion</a></p>
+            <input type="submit" value="Registrar" class="button-register">
+            <p class="terminosYCondiciones">Al registrarte, aceptas nuestras Condiciones de uso y Politica de privacidad</p>
+            <p class="redireccionLogin" >¿Ya tienes una cuenta?<a class="link" href="login">Iniciar Sesión</a></p>
 
         </div>
 
