@@ -10,8 +10,7 @@
 .formulario-register {
     background: var(--colorRosaBuscador);
     margin-top: 70px;
-    margin-left: -9px;
-    width: 390px;
+    
     
 }
 
@@ -28,19 +27,17 @@
 }
 
 .h2_register {
-    text-align: center;
-  font-size: 30px;
+  text-align: center;
   font-family: 'Segoe UI Symbol';
-  font-style: normal;
   font-weight: 400;
   font-size: 35px;
-  mix-blend-mode: normal;
   text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
 input[type="text"],
 input[type="email"],
-input[type="password"]{
+input[type="password"]
+{
     font-size: 20px;
     width: 300px;
     padding: 10px;
@@ -51,6 +48,19 @@ input[type="password"]{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 99px;
 }
+
+input[type="date"]{
+    font-size: 20px;
+    width: 300px;
+    padding: 10px;
+    margin-left: 40px;
+    margin-bottom: 70px;
+    background: white;
+    border: 3px solid white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 99px;
+}
+
 
 
 .label_nombre {
@@ -100,6 +110,36 @@ input[type="password"]{
 
 }
 
+.label_password2{
+    margin-left: 55px;
+    font-size: 130%;
+    font-weight: 700;
+    width: 53px;
+    height: 28px;
+    left: 36px;
+    top: 311px;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    line-height: 28px;
+    color: #0C0B0B;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.label_date{
+    margin-left: 58px;
+    font-size: 130%;
+    font-weight: 700;
+    width: 53px;
+    height: 28px;
+    left: 36px;
+    top: 311px;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    line-height: 28px;
+    color: #0C0B0B;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
 .terminosYCondiciones{
     font-size: 120%;
     font-weight: 700;
@@ -121,9 +161,7 @@ input[type="password"]{
     font-size: 40px;
     border: none;
     background: var(--colorVerde);
-    border-radius: 30px;
-    box-shadow: 0 0 7px;
-    margin-left: 20px;
+    margin-left: 12px;
     width: 348.53px;
     height: 62px;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
@@ -133,6 +171,8 @@ input[type="password"]{
     line-height: 42px;
     text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
+
+
 
 /* Icons */
 
@@ -154,4 +194,107 @@ i.fa-solid.fa-lock{
     margin-bottom: -70px;
     display: block;
     padding-left: 15px
+}
+
+i.fa-solid.fa-calendar-week{
+    margin-bottom: -70px;
+    display: block;
+    padding-left: 15px
+}
+
+@media (min-width: 768px) {
+
+
+    .contenedor-register{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .contenedor_date{
+        top: -38px;
+        left: -15px;
+    }
+.label_nombre{
+    position: relative;
+    left: 90px;
+    top: 0px;
+}
+
+.label_email{
+    position: relative;
+    left: 90px;
+    top: 0px;
+}
+
+.label_password{
+    position: relative;
+    left: 80px;
+    top: 0px;
+}
+
+.label_password2{
+    position: relative;
+    top: 0;
+}
+
+.label_date{
+    position: relative;
+    top: -29px;
+    left: 220px;
+}
+
+.button-register{
+    position: relative;
+    right: -165px;
+}
+.terminosYCondiciones{
+    position: relative;
+    left: 76px;
+
+}
+
+input[type="date"]{
+    position: relative;
+    right: 70px;
+    top: 16px;
+}
+
+i.fa-solid.fa-calendar-week{
+    position: relative;
+    left: 173px;
+    top: -12px;
+}
+
+}
+
+
+
+@media (min-width: 1024px){
+
+    .contenedor-register{
+        flex-flow: column;
+        display: flex;
+        align-items: center;   
+     }
+
+     .button-register{
+        right: auto;
+     }
+
+     input[type="date"]{
+        right: 122px;
+        top: 20px;
+     }
+
+     .label_date{
+        left: 163px;
+        top: -26px;
+     }
+
+     i.fa-solid.fa-calendar-week{
+        left: 122px;
+     }
+     .terminosYCondiciones{
+        left: auto;
+     }
 }
