@@ -77,6 +77,27 @@
   input[type="email"],
   input[type="password"]{
   display: flex;
-
 }
+.passwordOlvidada{
+  right: 65px;
+    top: -37px;
+}
+
+.check-recordame{
+  left: 412px;
+}
+}
+
+@media (min-width: 1024px) {
+  .check-recordame{
+    position: relative;
+    left: 88px;
+    top: -32px;
+  }
+
+  .passwordOlvidada{
+    position: relative;
+    top: -10px;
+    left: -61px;
+  }
 }
