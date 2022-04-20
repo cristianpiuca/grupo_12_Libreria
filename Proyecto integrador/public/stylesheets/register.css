@@ -69,26 +69,6 @@
     margin-left: 25px;
 }
 
-.fa-solid {
-    position: absolute;
-    left: 308px;
-    padding: 54px 0 0 0;
-}
-
-/* input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="date"]
-{
-    font-size: 20px;
-    width: 300px;
-    padding: 10px;
-    background: white;
-    border: 3px solid white;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
-    border-radius: 99px;
-} */
-
 .register button {
     font-size: 40px;
     border: none;
@@ -108,23 +88,16 @@ input[type="date"]
         flex-wrap: wrap;
         justify-content: space-around;
     }
+
     .register article .register-menu{
         width: 48%;
     }
 
-    .fa-solid{
-        margin-left: 268px;
-        left: unset;
-    }
+   
 
  
 }
 
 @media (min-width:1024px){
- 
-    .register article{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
+    
 }
