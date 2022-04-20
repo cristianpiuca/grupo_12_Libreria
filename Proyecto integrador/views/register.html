@@ -8,48 +8,64 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://kit.fontawesome.com/4174c231cf.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="register">
+    <header></header>
+    <main>
+        <section>
+            <h1>Bienvenido</h1>
+            <h2>Registrate</h2>
+            <form>
+                <article>
+                    <div class="register-menu">
+                        <i class="fa-solid fa-user"></i>
+                        <label class="label_nombre" for="nombre">Nombre</label>
+                        <input class="register-input" type="text" id="nombre" name="nombre" placeholder="Escribí tu nombre"> 
+                    </div>
     
-    <form class="formulario-register">
-        <h1 class="h1_register">Bienvenido</h1>
-    <h2 class="h2_register">Crea tu cuenta</h2>
-        <div class="contenedor-register">
-            <div class="contenedor-input">
-                <i class="fa-solid fa-user"></i>
-                <label class="label_nombre" for="nombre">Nombre</label>
-                <input class="caja" type="text" id="nombre" name="nombre" placeholder="Nombre Completo">
-            </div>
-                <div class="contenedor-input">
-                    <i class="fa-solid fa-envelope"></i>
-                    <label class="label_email" for="email">Email</label>
-                    <input class="caja" type="email" id="email" name="email" placeholder="Ingresa un email">
-                </div>
+                    <div class="register-menu">
+                        <i class="fa-solid fa-envelope"></i>
+                        <label class="label_nombre" for="email">Email</label>
+                        <input class="register-input" type="email" id="email" name="email" placeholder="Escribí tu email"> 
+                    </div>
     
-                <div class="contenedor-input">
-                    <i class="fa-solid fa-lock"></i>
-                    <label class="label_password" for="contraseña">Contraseña</label>
-                    <input class="caja" type="password" id="password" name="password" placeholder="Ingresa una contraseña">
-                </div>
-                
-                <div class="contenedor-input">
-                    <i class="fa-solid fa-lock"></i>
-                    <label class="label_password2" for="contraseña">Confirmar contraseña</label>
-                    <input class="caja" type="password" id="password" name="password" placeholder="Repita su contraseña">
-                </div>
+                    <div class="register-menu">
+                        <i class="fa-solid fa-lock"></i>
+                        <label class="label_nombre" for="password">Contraseña</label>
+                        <input class="register-input" type="password" id="password" name="password" placeholder="Escribí tu contraseña">
+                    </div>
     
-                <div class="contenedor-input">
-                    <i class="fa-solid fa-calendar-week"></i>
-                    <label class="label_date" for="date">Fecha de nacimiento</label>
-                    <input class="caja" type="date" id="fechaNacimiento" name="fechaNacimiento" placeholder="dd/mm/aaaa" >
-                </div>
+                    <div class="register-menu">
+                        <i class="fa-solid fa-lock"></i>
+                        <label class="label_nombre" for="password2">Repeti tu contraseña</label>
+                        <input class="register-input" type="password" id="password" name="password" placeholder="Escribí tu contraseña">
+                    </div>
     
-                
-                <input type="submit" value="Registrar" class="button-register">
-                <p class="terminosYCondiciones">Al registrarte, aceptas nuestras Condiciones de uso y Politica de privacidad</p>
+                    <div class="register-menu">
+                        <label class="label_nombre" for="date">Fecha de nacimiento</label>
+                        <input class="register-input" type="date" id="fechaNacimiento" name="fechaNacimiento" placeholder="dd/mm/aaaa" >
+                    </div>
+                </article>
+
+
+               
+                <div class="register-menu register-center">
+                    <p class="terminosYCondiciones">Al registrarte, aceptas nuestras Condiciones de uso y Politica de privacidad</p>
+                    <input class="" type="checkbox" name="terminos" id="terminos">
+                <label for="terminos">Términos y condiciones</label>
                 <p class="redireccionLogin" >¿Ya tienes una cuenta?<a class="link" href="login">Iniciar Sesión</a></p>
+                </div>
 
-        </div>
+                <div class="register-menu register-center">
+                <button type="submit">Registrarme</button>
+    
+                </div>
+                
+            </form>
+            
+        </section>
+    </main>
+  
 
-    </form>
+    
 </body>
 </html>

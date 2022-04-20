@@ -1,32 +1,24 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.contenedor-register {
-    padding-top: 70px;
-    width: 100%;
+.register main {
+    padding: 0 20px;
 }
 
-.formulario-register {
-    background: var(--colorRosaBuscador);
-    margin-top: 70px;
-    
-    
-}
-
-.h1_register {
+.register h1 {
     height: 70px;
     font-family: 'Bree Serif';
-    font-size: 75px;
-    line-height: 109px;
+    font-size: 64px;
+    line-height: 60px;
     text-align: center;
     color: #0F0F0F;
     text-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
-  
-
 }
 
-.h2_register {
+.register h2 {
   text-align: center;
   font-family: 'Segoe UI Symbol';
   font-weight: 400;
@@ -34,267 +26,105 @@
   text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
-input[type="text"],
+.register section{
+    width: 100%;
+    background: var(--colorRosaBuscador);
+    margin: 30px auto;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.register form {
+    margin-top: 30px;
+}
+
+.register-menu {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.register-input {
+    width: 100%;
+    margin: 10px 0 0;
+    padding: 10px 5px;
+    font-size: 20px;
+    background: white;
+    border: 3px solid white;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 99px;
+}
+
+.register-center{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.label_nombre {
+    font-size: 130%;
+    font-weight: bold;
+    font-family: 'Roboto Condensed';
+    line-height: 28px;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+    margin-left: 25px;
+}
+
+.fa-solid {
+    position: absolute;
+    left: 308px;
+    padding: 54px 0 0 0;
+}
+
+/* input[type="text"],
 input[type="email"],
-input[type="password"]
+input[type="password"],
+input[type="date"]
 {
     font-size: 20px;
     width: 300px;
     padding: 10px;
-    margin-left: 40px;
-    margin-bottom: 70px;
     background: white;
     border: 3px solid white;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
     border-radius: 99px;
-}
+} */
 
-input[type="date"]{
-    font-size: 20px;
-    width: 300px;
-    padding: 10px;
-    margin-left: 40px;
-    margin-bottom: 70px;
-    background: white;
-    border: 3px solid white;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 99px;
-}
-
-
-
-.label_nombre {
-    margin-left: 55px;
-    font-size: 130%;
-    font-weight: 700;
-    width: 53px;
-    height: 28px;
-    left: 36px;
-    top: 311px;
-    font-family: 'Roboto Condensed';
-    font-style: normal;
-    line-height: 28px;
-    color: #0C0B0B;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.label_email {
-    margin-left: 55px;
-    font-size: 130%;
-    font-weight: 700;
-    width: 53px;
-    height: 28px;
-    left: 36px;
-    top: 311px;
-    font-family: 'Roboto Condensed';
-    font-style: normal;
-    line-height: 28px;
-    color: #0C0B0B;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-}
-
-.label_password {
-    margin-left: 55px;
-    font-size: 130%;
-    font-weight: 700;
-    width: 53px;
-    height: 28px;
-    left: 36px;
-    top: 311px;
-    font-family: 'Roboto Condensed';
-    font-style: normal;
-    line-height: 28px;
-    color: #0C0B0B;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-}
-
-.label_password2{
-    margin-left: 55px;
-    font-size: 130%;
-    font-weight: 700;
-    width: 53px;
-    height: 28px;
-    left: 36px;
-    top: 311px;
-    font-family: 'Roboto Condensed';
-    font-style: normal;
-    line-height: 28px;
-    color: #0C0B0B;
-    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
-}
-
-.label_date{
-    margin-left: 58px;
-    font-size: 130%;
-    font-weight: 700;
-    width: 53px;
-    height: 28px;
-    left: 36px;
-    top: 311px;
-    font-family: 'Roboto Condensed';
-    font-style: normal;
-    line-height: 28px;
-    color: #0C0B0B;
-    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
-}
-
-.terminosYCondiciones{
-    font-size: 120%;
-    font-weight: 700;
-    text-align: center;
-}
-
-.redireccionLogin{
-    font-size: 110%;
-    font-weight: 700;
-    text-align: center;
-    margin: auto;
-}
-
-.caja {
-    margin: 10px;
-}
-
-.button-register {
+.register button {
     font-size: 40px;
     border: none;
     background: var(--colorVerde);
-    margin-left: 12px;
-    width: 348.53px;
+    width: 280px;
     height: 62px;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
     border-radius: 99px;
-    margin-top: -30px;
     /*palabra regristar*/
     line-height: 42px;
     text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
-
-
-/* Icons */
-
-/* User*/
-i.fa-solid.fa-user{
-    margin-bottom: -70px;
-    display: block;
-    padding-left: 15px;
-}
- /*email*/
- i.fa-solid.fa-envelope{
-    margin-bottom: -70px;
-    display: block;
-    padding-left: 15px
-}
-
-/*password*/
-i.fa-solid.fa-lock{
-    margin-bottom: -70px;
-    display: block;
-    padding-left: 15px
-}
-
-i.fa-solid.fa-calendar-week{
-    margin-bottom: -70px;
-    display: block;
-    padding-left: 15px
-}
-
-@media (min-width: 768px) {
-
-
-    .contenedor-register{
+@media (min-width:768px){
+    .register article{
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
     }
-    
-    .contenedor_date{
-        top: -38px;
-        left: -15px;
+    .register article .register-menu{
+        width: 48%;
     }
-.label_nombre{
-    position: relative;
-    left: 90px;
-    top: 0px;
+
+    .fa-solid{
+        margin-left: 268px;
+        left: unset;
+    }
+
+ 
 }
 
-.label_email{
-    position: relative;
-    left: 90px;
-    top: 0px;
-}
-
-.label_password{
-    position: relative;
-    left: 80px;
-    top: 0px;
-}
-
-.label_password2{
-    position: relative;
-    top: 0;
-}
-
-.label_date{
-    position: relative;
-    top: -29px;
-    left: 220px;
-}
-
-.button-register{
-    position: relative;
-    right: -165px;
-}
-.terminosYCondiciones{
-    position: relative;
-    left: 76px;
-
-}
-
-input[type="date"]{
-    position: relative;
-    right: 70px;
-    top: 16px;
-}
-
-i.fa-solid.fa-calendar-week{
-    position: relative;
-    left: 173px;
-    top: -12px;
-}
-
-}
-
-
-
-@media (min-width: 1024px){
-
-    .contenedor-register{
-        flex-flow: column;
+@media (min-width:1024px){
+ 
+    .register article{
         display: flex;
-        align-items: center;   
-     }
-
-     .button-register{
-        right: auto;
-     }
-
-     input[type="date"]{
-        right: 122px;
-        top: 20px;
-     }
-
-     .label_date{
-        left: 163px;
-        top: -26px;
-     }
-
-     i.fa-solid.fa-calendar-week{
-        left: 122px;
-     }
-     .terminosYCondiciones{
-        left: auto;
-     }
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 }
