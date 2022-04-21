@@ -1,15 +1,18 @@
-.h1_login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 75px;
+.login main {
+  padding: 0 20px;
+}
+
+.login h1 {
+  height: 70px;
   font-family: 'Bree Serif';
-  font-size: 75px;
-  line-height: 109px;
+  font-size: 64px;
+  line-height: 60px;
+  text-align: center;
+  color: #0F0F0F;
   text-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
-.h2_login {
+.login h2 {
   text-align: center;
   font-family: 'Segoe UI Symbol';
   font-weight: 400;
@@ -17,87 +20,49 @@
   text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
-.contenedor-login {
-  padding-top: 70px;
+.login section{
   width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.formulario-login {
   background: var(--colorRosaBuscador);
-  margin-top: 100px;
-  height: 620px;
+  margin: 30px auto;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.login form {
+  margin-top: 30px;
+}
+
+.login-menu {
+  margin-bottom: 20px;
   width: 100%;
-    
 }
 
-.check-recordame{
-  position: absolute;
-  top: 539px;
-  left: 220px;
+.login-input {
+  width: 100%;
+  margin: 10px 0 0;
+  padding: 10px 5px;
   font-size: 20px;
-  font-weight: 700;
+  background: white;
+  border: 3px solid white;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 99px;
 }
 
-.button-login {
-
-    font-size: 40px;
-    border: none;
-    background: var(--colorVerde);
-    border-radius: 30px;
-    box-shadow: 0 0 7px;
-    margin-left: 13px;
-    width: 348.53px;
-    height: 62px;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
-    border-radius: 99px;
-    margin-top: -30px;
-     /*palabra ingresar*/
-     line-height: 42px;
-     text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-
+.login-center{
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.passwordOlvidada{
-  position: relative;
-  top: -38px;
-  right: -20px;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-@media (min-width: 768px) {
-
-  .contenedor-login{
-      align-items: center;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"]{
-  display: flex;
-}
-.passwordOlvidada{
-  right: 65px;
-    top: -37px;
-}
-
-.check-recordame{
-  left: 412px;
-}
-}
-
-@media (min-width: 1024px) {
-  .check-recordame{
-    position: relative;
-    left: 88px;
-    top: -32px;
-  }
-
-  .passwordOlvidada{
-    position: relative;
-    top: -10px;
-    left: -61px;
-  }
+.login button {
+  font-size: 40px;
+  border: none;
+  background: var(--colorVerde);
+  width: 280px;
+  height: 62px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 99px;
+  /*palabra regristar*/
+  line-height: 42px;
+  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }

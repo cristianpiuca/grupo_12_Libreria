@@ -9,35 +9,37 @@
     <script src="https://kit.fontawesome.com/4174c231cf.js" crossorigin="anonymous"></script>
 </head>
 </head>
-<body>
-    <form class="formulario-login">
-        <h1 class="h1_login">Bienvenido</h1>
-    <h2 class="h2_login">Ingresa tu cuenta</h2>
-        <div class="contenedor-login">
-            <div class="contenedor-input">
-                <i class="fa-solid fa-envelope"></i>
-                <label class="label_email" for="email">Email</label>
-                <input class="caja" type="email" id="email" name="email" placeholder="Ingresa un email">
-            </div>
+<body class="login">
+    <main>
+        <section>
+            <h1>Bienvenido</h1>
+            <h2>Ingresa</h2>
+            <form>
+                <article>
+                    <div class="login-menu">
+                        <label class="label_nombre" for="nombre">Nombre</label>
+                      <input class="login-input" type="text" id="nombre" name="nombre" placeholder="Escribí tu nombre"> 
+                    </div>
 
-            <div class="contenedor-input">
-                <i class="fa-solid fa-lock"></i>
-                <label class="label_password" for="contraseña">Contraseña</label>
-                <input class="caja" type="password" id="password" name="password" placeholder="Ingresa una contraseña">
-            </div>
+                    <div class="login-menu">
+                        <label class="label_nombre" for="password">Contraseña</label>
+                        <input class="login-input" type="password" id="password" name="password" placeholder="Escribí tu contraseña">
+                    </div>
 
-            <div>
-                <a class="passwordOlvidada" href="olvidepw">Olvide mi contraseña</a>
-            </div>
+                </article>
 
-            <div class="check-recordame">
-                <input class="" type="checkbox" name="recordame" id="recordame">
-            <label for="recordame">Recordame</label>
-            </div>
-            <input type="submit" value="Ingresar" class="button-login">
-           
-        </div>
+                <div class="login-menu login-center">
+                    <input type="checkbox" name="recordame" id="recordame">
+                <label for="recordame">Recordame</label>
+                <p class="redireccionLogin" >¿Olvidaste tu contraseña?<a class="link" href="login">Click aca</a></p>
+                </div>
 
-    </form>
+                <div class="login-menu login-center">
+                    <button type="submit">Ingresa</button>
+                    </div>
+            </form>
+        </section>
+    </main>
+  
 </body>
 </html>
