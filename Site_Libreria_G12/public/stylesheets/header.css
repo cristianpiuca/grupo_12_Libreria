@@ -1,0 +1,154 @@
+.header{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0;
+    position: relative;
+}
+.header-logo{
+    width: 100%;
+    
+}
+.header-logo img{
+    height: 76px;
+    align-content: center;
+    display: block;
+    justify-content: center;
+    margin: 2px auto;
+}
+
+.register-login{
+    position: absolute;
+    top: 2px;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 8px;
+    font-weight: bold;
+    margin-right: 0;
+}
+.register-login li{
+    font-size: 11px;
+    margin-right: 1px;
+    margin-left: 5px;
+    padding: 1px;
+    text-decoration: none;
+    color: var(--colorVerdeOscuro);
+}
+.buscador-menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px 0;
+    padding: 1px;
+
+}
+ #search{
+     width: 80%;
+     height: 26px;
+     margin: 0 0 0 1%;
+     padding: 0;
+
+ }
+ .input-search{
+     width: 100%;
+     height: 20px;
+     border-radius: 50px;
+     background-color: var(--colorCrema);
+     border: none;
+
+ }
+
+ .header-search{
+     position: absolute;
+     left: 74%;
+     
+     bottom: 7px;
+     background: none;
+     color: rgba(0, 0, 0, 0.5);
+     border: none;
+     width: 26px;
+     right: 26px;
+     font-size: 16px;
+     padding: 0;
+ }
+
+ .header-cart, .header-menu{
+     width: 26px;
+     height: 26px;
+     margin: 0;
+     background: none;
+     border: none;
+     font-size: 20px;
+     color: var(--colorVerdeOscuro);
+     text-align: center;
+     margin-bottom: 1px;
+ }
+
+
+                                    /******Tablet******/
+ @media(min-width:767px){
+
+    .header{
+        height: 80px;
+    }
+
+    .header-logo{
+        position: absolute;
+        left: 1px;
+    }
+    .header-logo img{
+        width: 200px;
+        align-content: flex-start;
+        display: block;
+        justify-content: left;
+        margin: 2px 15px;
+    }
+    .register-login li{
+        font-size: 14px;
+        margin-right: 1px;
+        margin-left: 15px;
+    }
+    .buscador-menu{
+        position: absolute;
+        right: 1px;
+        bottom: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 69%;
+        margin: 10px 0;
+        padding: 1px;
+    }
+    .header-search{
+        right: 15%;
+        
+        bottom: 7px;
+        background: none;
+        color: rgba(0, 0, 0, 0.5);
+        border: none;
+        width: 26px;
+        right: 26px;
+        font-size: 16px;
+        padding: 0;
+    }
+ }
+
+
+                                   /******Desktop******/
+ @media(min-width:1024px){
+    .buscador-menu{
+        width: 80%;
+    }
+    .input-search{
+        height: 26px;
+    }
+    .header-search{
+        left: 80%;
+        bottom: 2px;
+        font-size: 20px;
+    }
+    .header-cart, .header-menu{
+        font-size: 26px;
+    }
+ }

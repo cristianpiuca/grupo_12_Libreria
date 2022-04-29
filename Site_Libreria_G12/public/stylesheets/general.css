@@ -1,3 +1,10 @@
 body {
     background-color: var(--colorRosaOscuro);
+    font-family: "Roboto";
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
 }

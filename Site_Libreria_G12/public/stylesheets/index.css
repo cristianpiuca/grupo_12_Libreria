@@ -1,0 +1,490 @@
+#semana{
+    display: none;
+}
+.home-main{
+    background-color: var(--colorNaranja);
+    width: 98%;
+    margin-left: 1%;
+    border-radius: 10px;
+}
+
+.box-banner{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.box-banner img{
+    border-radius: 10px;
+}
+
+#banner-top{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#banner-bottom{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+
+.product-section{
+    background-color: var(--colorCrema);
+    height: 360px;
+    margin-bottom: 5px;
+    margin-top: 0;
+    border-radius: 10px;
+}
+.product-gender{
+    width: 96%;
+    height: 40px;
+    position: relative;
+    border-bottom: solid 1px var(--colorVerde);
+    margin-left: 2%;
+}
+.product-gender h2{
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--colorVerdeOscuro);
+    margin: 0 2px;
+    position: absolute;
+    left: 5px;
+    bottom: 2px;
+}
+.product-gender a{
+    margin: 0 2;
+    position: absolute;
+    right: 5px;
+    bottom: 2px;
+    font-size: 15px;
+}
+.product-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.art-product{
+    margin:2px;
+    width: 30%;
+    margin-top: 20px;
+}
+
+.art-product:nth-last-child(-n+2){
+    display: none;
+}
+
+.product{
+    
+    height: 280px;
+    background-color: var(--colorVerdeClaro);
+    border: solid 0.2px var(--colorVerdeOscuro);
+    border-radius: 10px;
+    position: relative;
+    
+}
+.product img{
+    height: 100px;
+    display: block;
+    padding: 1;
+    margin: 0 auto;
+    margin-top: 9px;
+    margin-bottom: 10px;
+    border: solid 1px var(--colorRosaOscuro);
+}
+.product h4{
+    text-align: center;
+    font-size: 14px;
+    color: var(--colorVerdeOscuro);
+    font-weight: bold;
+    margin: 1px;
+    margin-bottom: 10px;
+}
+.product h5{
+    position: absolute;
+    top: 180px;
+    color: var(--colorVerdeOscuro);
+    width: 100%;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 1px;
+    margin: 0 auto;
+    text-align: center;
+}
+.product-price{
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 1px;
+    margin: 0 auto;
+    text-align: center;
+}
+.product button{
+    position: absolute;
+    bottom: 10px;
+    right: 10%;
+    display: block;
+    width: 80%;
+    height: 23px;
+    border-radius: 50px;
+    font-size: 11px;
+    padding: 1;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: var(--colorVerde);
+    color: white;
+    border: none;
+}
+
+.box-novedades{
+    background-color: var(--colorCrema);
+    height: 80px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    border-radius: 10px;
+
+}
+.box-novedades h4{
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--colorVerdeOscuro);
+    padding-top: 10px;
+    margin-bottom: 8px;
+}
+#input-novedades{
+    width: 67%;
+    background-color: var(--colorRosaBuscador);
+    border: solid 1px var(--colorVerdeOscuro);
+    margin-left: 2%;
+    margin-right: 1%;
+}
+.novedades button{
+    width: 25%;
+    background-color: var(--colorVerde);
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    height: 21px;
+}
+
+#contacto, #lanzamiento{
+    display: none;
+}
+.publicidad{
+    display: none;
+}
+
+
+
+
+
+                                /* *********Tablet*********/
+
+@media (min-width:767px){
+    .home-main{
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 20px;
+    }
+    #cuerpo{
+        width: 68%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    
+    .art-product:nth-last-child(n+2){
+        display: block;
+    }
+    .art-product{
+        margin:2px;
+        width: 23%;
+        margin-top: 20px;
+    }
+    #product-section1{
+     margin-bottom: 0;
+     border-top-left-radius: 20px;
+     border-top-right-radius: 20px;
+     border-bottom-left-radius: 0;
+     border-bottom-right-radius: 0;
+    }
+    #product-section2{
+     margin-top: 0;
+     border-top-left-radius: 0;
+     border-top-right-radius: 0;
+     border-bottom-left-radius: 20px;
+     border-bottom-right-radius: 20px;
+    }
+    .product{
+        border-radius: 20px;
+    }
+    #banner2{
+     display: none;
+    }
+    #lateral{
+        width: 29%;
+        margin-right: 1%;
+        padding: 0%;
+    }
+    .box-banner img{
+        border-radius: 20px;
+    }
+                /*NOVEDADES*/
+
+    .box-novedades{
+        height: 100px;
+        border-radius: 15px;
+        margin-bottom: 10px;
+    
+    }
+    
+    #input-novedades{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .novedades h4{
+        font-size: 15px;
+        margin: 0;
+    }
+    .novedades button{
+        width: 30%;
+        height: 25px;
+        display: block;
+        justify-content: center;
+        margin: 2px auto;
+        margin-top: 10px;
+    }
+
+                /*PUBLICIDAD*/
+
+    .publicidad{
+        display: block;
+        background-color: var(--colorCrema);
+        height: 213.5px;
+        margin-top: 23px;
+        margin-bottom: 10px;
+    }
+    .publicidad img{
+        display: block;
+        width: 213.5px;
+        height: 213.5px;
+        object-position: center;
+        margin: 0 auto;
+    }
+    
+
+
+                /*CONTACTO*/
+    
+    #contacto{
+        display: block;
+        width: 100%;
+        height: 360px;
+        background-color: var(--colorVerde);
+        border-radius: 20px;
+        margin: 1px;
+        margin-top: 20px;
+        position: relative;
+    }
+    .contacto{
+        position: absolute;
+        top: 5px;
+        width: 90%;
+        margin-left: 2%;
+    }
+    .contacto h3{
+        text-align: center;
+        font-size: 15px;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 5px;
+    }
+    
+    .contacto li input{
+        width: 100%;
+        height: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+    }
+    .contacto textarea{
+        width: 101%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .contacto button{
+        display: block;
+        background-color: var(--colorNaranja);
+        border-radius: 20px;
+        margin: 2px auto;
+        width: 45%;
+        height: 25px;
+        text-transform: uppercase;
+        border: none;
+    }
+}
+
+                                /* *********Desktop*********/
+
+@media (min-width:1024px){
+    #semana{
+        display: block;
+    }
+    #semana h2{
+        text-align: center;
+        color: var(--colorVerdeOscuro);
+        font-weight: bold;
+        margin-top: 7px;
+
+    }
+    .box-semana{
+        display: flex;
+        width: 100%;
+        height: 280px;
+        margin-bottom: 20px;
+    }
+    .semana{
+        width: 14%;
+        margin-bottom: 5px;
+    }
+    .semana img{
+        display: block;
+        width: 90%;
+        margin: 4px auto;
+        justify-content: center;
+        
+    }
+    .semana li{
+        width: 96%;
+        height: 50px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        overflow: hidden;
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+
+    .product-section{
+        height: 400px;
+    }
+
+    .art-product{
+        margin:2px;
+        width: 19%;
+        margin-top: 20px;
+    }
+    
+    .art-product:nth-last-child(n+1){
+        display: block;
+    }
+    
+    .product{
+        
+        height: 320px;
+        border-radius: 20px;
+        
+    }
+    .product img{
+        height: 130px;
+        margin-top: 9px;
+        margin-bottom: 10px;
+    }
+    .product h4{
+        font-size: 17px;
+        margin: 1px;
+        margin-bottom: 10px;
+        padding: 2px;
+    }
+    .product h5{
+        top:210px;
+        font-size: 14px;
+    }
+    .product-price{
+        bottom: 50px;
+        width: 100%;
+        font-size: 18px;
+    }
+    .product button{
+        bottom: 10px;
+        height: 23px;
+        font-size: 13px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+                    /*PUBLICIDAD*/
+    .publicidad{
+        display: block;
+        background-color: var(--colorCrema);
+        height: 286px;
+        width: 100%;
+        border-radius: 20px;
+    }
+    .publicidad img{
+        display: block;
+        width: 286px;
+        height: 286px;
+        object-position: center;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+                
+
+                    /*LANZAMIENTO*/
+    #lanzamiento{
+        width: 100%;
+        height: 345px;
+        background-color: var(--colorCrema);
+        border-radius: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        margin-top: 22px;
+    }
+    .box-lanzamiento h3{
+        width: 100%;
+        color: var(--colorVerdeOscuro);
+        text-transform: uppercase;
+        font-size: 25px;
+        text-align: center;
+        margin: 5px auto;
+    
+    }
+    
+    .lanzamiento-image{
+    width: 49%;
+    }
+    
+    .lanzamiento-image img{
+        display: block;
+        width: 110px;
+        padding: 0;
+        margin: 0 auto;
+        justify-content: center;
+        border: solid 1px var(--colorRosaOscuro);
+    }
+    
+    .lanzamiento-info{
+        width: 48%;
+    
+    }
+    .lanzamiento-info h4{
+        width: 95%;
+        margin: 5px auto 10px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .lanzamiento-info p{
+        width: 95%;
+        height: 200px;
+        overflow: hidden;
+    }
+    
+
+}
