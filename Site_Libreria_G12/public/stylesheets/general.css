@@ -1,6 +1,6 @@
 body {
     background-color: var(--colorRosaOscuro);
-    font-family: "Roboto";
+    font-family: 'Open Sans', sans-serif;
 }
 li{
     list-style: none;
