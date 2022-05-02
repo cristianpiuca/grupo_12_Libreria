@@ -16,7 +16,7 @@ footer li{
     font-weight: bold;
 }
 
-@media(min-width:767px){
+@media(min-width:768px){
 
     footer{
         display: flex;
@@ -45,12 +45,6 @@ footer li{
 @media (min-width: 1024px){
     footer {
         margin-top: 219px;
-    }
-}
-
-@media(min-width:2023px){
-    footer{
-        margin-top: 40px;
     }
     footer li{
         font-size: 20px;
