@@ -4,22 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-<<<<<<< HEAD
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-
-=======
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products')
->>>>>>> 30d7efa7045a707582b8c15cfc09f1eca4bd2579
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-<<<<<<< HEAD
-=======
 
 /*app.get('/',(req,res) => res.sendFile(path.resolve(__dirname,'views','index.html')))
 app.get('/product-detail',(req,res) => res.sendFile(path.resolve(__dirname,'views','productDetail.html')))
@@ -27,7 +19,6 @@ app.get('/product-cart',(req,res) => res.sendFile(path.resolve(__dirname,'views'
 app.get('/register',(req,res) => res.sendFile(path.resolve(__dirname,'views','register.html')))
 app.get('/login',(req,res) => res.sendFile(path.resolve(__dirname,'views','login.html')))*/
 
->>>>>>> 30d7efa7045a707582b8c15cfc09f1eca4bd2579
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
