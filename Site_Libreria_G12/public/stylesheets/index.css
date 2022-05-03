@@ -353,10 +353,13 @@
     }
     .semana img{
         display: block;
-        width: 90%;
+        width: 80%;
         margin: 4px auto;
         justify-content: center;
-        
+        transition: width 400ms;
+    }
+    .semana img:hover{
+        width: 100%;
     }
     .semana li{
         width: 96%;

@@ -1,38 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito | Librebria</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="https://kit.fontawesome.com/4174c231cf.js" crossorigin="anonymous"></script>
-</head>
+    <%- include('./partials/head', {title : 'Carrito|Librería'}) %>
 
 <body class="carrito">
 
-    <header class="header">
-        <div class="header-logo">
-            <a href="#"><img src="/images/logo1.png" alt=""></a>
-        </div>
-        <div class="register-login">
-            <li class="register"><a href="/register">Registrarse</a></li>
-            <li class="login"><a href="/login">Iniciar Sesión</a></li>
-        </div>
-        <div class="buscador-menu">
-            <nav id="search">
-                <input class="input-search" type="text" placeholder="    Buscar">
-                <button class="header-search"><i class="fas fa-search"></i></button>
-            </nav>
-            
-            <a href="/product-cart"><button class="header-cart"><i class="fa fa-shopping-cart"></i></button></a>
-            <a href=""><button class="header-menu"><i class="fas fa-bars"></i></button></a>
-            
-            
-            
-        </div>
-        
-    </header>
+    <%- include('./partials/header') %>
+    
    <div class="contenedor-principalCarrito">
        <h1>Carrito</h1>
        <div class="contenedor-cajas">
@@ -86,21 +59,8 @@
        </div>
    </div>
 
+   <%- include('./partials/footer') %>
   
 </body>
-<footer>
-    <div id="footer-div1">
-        <h3>Contacto</h3>
-        <li><a href=""><i class="fas fa-map-marker-alt"></i> Gumersindo Parajón 1280</a></li>
-        <li><a href=""><i class="fab fa-whatsapp"></i>1234-9876</a></li>
-    </div>
-    <div id="footer-div2">
-        <li><a href=""></a>Atención al cliente</li>
-        <li><a href=""></a>Devoluciones</li>
-        <li><a href=""></a>Cancelaciones</li>
-        <li><a href=""></a>Preguntas frecuentes</li>
-    </div>
-    
-    
-</footer>
+
 </html>
