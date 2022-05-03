@@ -6,5 +6,14 @@
     --colorVerdeClaro: #e6efec;
     --colorVerdeOscuro: #24534e;
     --colorNaranja: #f3dbc3;
-    
+     /*font sizes*/
+  --fs-title-extrabig:60px;
+  --fs-title-big:40px;
+  --fs-title:35px;
+  --fs-subtitle1:28px;
+  --fs-form: 25px;
+  --fs-icons: 22px;
+  --fs-bodytext:18px;
+  --fs-subtitle:14px;
+  --fs-subtitle-sub: 12px; 
 }

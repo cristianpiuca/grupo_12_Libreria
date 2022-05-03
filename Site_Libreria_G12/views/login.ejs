@@ -1,40 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head', {title : 'Login|Librería'}) %>
-</head>
-<body class="login">
 
-    <%- include('./partials/header') %>
-    <main>
-        <section>
-            <h1>Bienvenido</h1>
-            <h2>Ingresa</h2>
-            <form>
-                <article>
-                    <div class="login-menu">
-                        <label class="label_nombre" for="nombre">Nombre</label>
-                      <input class="login-input" type="text" id="nombre" name="nombre" placeholder="Escribí tu nombre"> 
-                    </div>
+    <%- include('./partials/head', {
+        title : 'login'
+    }) %> 
+<body class="body-login">
+   
+    <%- include('./partials/header') %> 
 
-                    <div class="login-menu">
-                        <label class="label_nombre" for="password">Contraseña</label>
-                        <input class="login-input" type="password" id="password" name="password" placeholder="Escribí tu contraseña">
-                    </div>
 
-                </article>
+    <!-- formulario -->
+    <main class="login-design">
+        
+        
+        <div class="login__container">
+            <div class="login-info-container">
 
-                <div class="login-menu login-center">
-                    <input type="checkbox" name="recordame" id="recordame">
-                <label for="recordame">Recordame</label>
-                <p class="redireccionLogin" >¿Olvidaste tu contraseña?<a class="link" href="login">Click aca</a></p>
+                <h2>Iniciar Sesión</h2>
+                <form action="" class="inputs-container">
+                    <p class="p-input">Tu email</p>
+                    <input type="text" class="input" name="email-log" id="email-log">
+                    <p class="p-input">Tu contraseña</p>
+                    <input type="password" class="input" name="password-log" id="password-log">
+                    <div class="terminoss">
+                        <input type="checkbox" name="terminos-log" id="terminos-log">
+                     <label for="terminos">Mantener mi sesión abierta</label> 
+                     </div>
+                     <div class="buttons">
+                    <button><a href="/">Iniciar Sesión</a></button>
+                    <button><a href="/register">Registrate</a></button>
+                     </div>
+                    
+               
+
+                <div class="footer-login">
+                   
+
+                    <a href="/password"><p>¿Olvidaste tu contraseña?</p></a>
                 </div>
-
-                <div class="login-menu login-center">
-                    <button type="submit">Ingresar</button>
-                    </div>
-            </form>
-        </section>
+ </form>
+            </div>
+        </div>
+        
+        <div class="background">
+            <img src="/images/login-noe.jpg" alt="biblioteca" class="toy1">
+        </div>
     </main>
+   
+
+    <%- include('./partials/footer') %> 
   
 </body>
+
 </html>
