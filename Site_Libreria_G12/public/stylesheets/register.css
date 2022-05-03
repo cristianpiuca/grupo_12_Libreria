@@ -1,102 +1,239 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.toy1 {
+    display: none;
 }
 
-.register main {
-    padding: 0 20px;
-}
-
-.register h1 {
-    height: 70px;
-    font-family: 'Bree Serif';
-    font-size: 64px;
-    line-height: 60px;
+.body-register {
+    height: 100vw;
+    background-color: white;
     text-align: center;
-    color: #0F0F0F;
-    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+
 }
 
-.register h2 {
-  text-align: center;
-  font-family: 'Segoe UI Symbol';
-  font-weight: 400;
-  font-size: 35px;
-  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-}
-
-.register section{
+.body-register .terminoss {
+    padding: 10px 0;
     width: 100%;
-    background: var(--colorRosaBuscador);
-    margin: 30px auto;
-    border-radius: 10px;
-    padding: 20px;
+    color: gray;
+    font-size: var(--fs-subtitle-sub);
 }
 
-.register form {
-    margin-top: 30px;
+.body-register .footer-register .button-reg a {
+    color: var(--colorVerdeOscuro);
+}
+.body-register .footer-register a{
+    color: var(--colorVerde);
+}
+.body-register .register-info-container {
+    color: var(--colorVerdeOscuro);
+    /* background-color: rebeccapurple; */
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
 }
 
-.register-menu {
-    margin-bottom: 20px;
-    width: 100%;
+.body-register .image-container {
+    display: none;
 }
 
-.register-input {
-    width: 100%;
-    margin: 10px 0 0;
-    padding: 10px 5px;
-    font-size: 20px;
-    background: white;
-    border: 3px solid white;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
-    border-radius: 10px;
+.body-register .inputs-container {
+    margin: 10px 0;
+    width: 90%;
+    padding: 10px;
+    align-self: center;
 }
 
-.register-center{
+.body-register .inputs-container .p-input {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: var(--colorRosaOscuro);
+    font-weight: 600;
+}
+
+.body-register .input {
+
     text-align: center;
-    font-size: 16px;
+    margin: 15px 0;
+    width: 70%;
+    padding: 10px;
+    border-radius: 15px 15px;
+    border-style: none;
+    border-color: gray;
+    box-shadow: -1px 0px 1px 1px rgb(0 0 0 / 39%);
+
+
+
+
 }
 
-.label_nombre {
-    font-size: 130%;
-    font-weight: bold;
-    font-family: 'Roboto Condensed';
-    line-height: 28px;
-    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
-    margin-left: 25px;
-}
-
-.register-menu button {
-    font-size: 40px;
+.body-register .footer-register .button-reg {
+    border-radius: 15px 15px;
     border: none;
-    background: var(--colorVerde);
-    width: 280px;
-    height: 62px;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
-    border-radius: 10px;
-    /*palabra regristar*/
-    line-height: 42px;
-    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    background-color: var(--colorVerde);
+    width: 60%;
+    margin: 20px 6px auto;
+    padding: 10px;
+    font-size: 18px;
+    box-shadow: inset -1px 0px 1px 1px rgb(0 0 0 / 39%);
 }
 
-@media (min-width:768px){
-    .register article{
+.body-register .footer-register p {
+    font-size: 14px;
+    color: gray;
+    margin: 15px auto;
+}
+
+@media (min-width: 468px) {
+
+    .body-register .inputs-container .p-input {
+        font-size: var(--fs-bodytext);
+        text-align: center;
+        color: var(--colorRosaOscuro);
+        font-weight: 600;
+        padding: 25px;
+    }
+
+    .body-register .footer-register .button-reg {
+        border-radius: 15px 15px;
+        border: none;
+     
+        width: 60%;
+        color: white;
+        margin: 30px 6px auto;
+        padding: 10px;
+        font-size: 22px;
+        box-shadow: 1px 2px 1px 1px rgb(0 0 0 / 39%);
+    }
+
+  
+    .body-register .input {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        margin: auto;
+        max-width: 60%;
+        padding: 12px 0;
+        border-style: none;
+        border-radius: 15px 15px;
+        border-color: var(--colorRosaOscuro);
+        box-shadow:  -1px 0px 1px 1px rgba(50, 50, 50, 0.41);
     }
 
-    .register article .register-menu{
-        width: 48%;
+    .body-register .footer-register p {
+        font-size: var(--fs-bodytext);
+     
     }
-
-   
-
- 
 }
 
-@media (min-width:1024px){
+@media(min-width:900px) {
+    .body-register .input {
+        display: flex;
+        margin: auto;
+        max-width: 60%;
+        padding: 10px 0;
+        border-radius: 15px 15px;
+        border-color: var(--colorRosaOscuro);
+        box-shadow:  2px 1px 5px 0px rgba(50, 50, 50, 0.41);
+
+
+    }
+
+    .body-register .terminoss {
+        font-size: var(--fs-bodytext);
+    }
+
+    .body-register .inputs-container {
+        width: 70%;
+        padding: 15px 0;
+    }
+
+    .body-register .inputs-container input {
+        padding: 15px 0;
+    }
+}
+
+@media(min-width:1200px) {
+    .register-design {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        height: 100%;
+        align-items: stretch;
+        justify-content: center;
+        align-content: space-around;
+    }
+
+    .background_register {
     
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    .body-register {
+        width: 100%;
+        height: 100%;
+    }
+
+    .body-register .inputs-container p {
+        font-size: var(--fs-icons);
+        color: var(--colorRosaOscuro);
+        font-weight: 600;
+        padding: 30px;
+    }
+
+    
+
+    .body-register .register-info-container h2 {
+        font-size: 40px;
+    }
+
+    .body-register .inputs-container {
+        width: 100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    .body-register .inputs-container .p-input {
+        color: var(--colorVerde);
+    }
+
+
+
+    .background .toy1 {
+        display: block;
+        margin: 0;
+        width: 100%;
+
+
+    }
+
+    .body-register .input {
+        display: flex;
+        margin: 20px 0;
+        width: 70%;
+        padding: 15px 0;
+        border-radius: 15px 15px;
+        border-style: none;
+        border-color: gray;
+        box-shadow: 2px 1px 5px 0px rgba(50, 50, 50, 0.41);
+
+    }
+
+    .body-register .footer-register {
+        font-size: 20px;
+        color: var(--color-gray);
+        margin-top: 15px;
+    }
+
+    .body-register .footer-register p {
+        font-size: 20px;
+        color: var(--color-gray);
+
+        text-align: center;
+
+    }
+    .body-register .footer-register .button-reg {
+        background-color: var(--colorVerde);
+        color: var(--colorVerdeOscuro);
+    }
 }

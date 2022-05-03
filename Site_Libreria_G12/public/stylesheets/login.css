@@ -1,67 +1,260 @@
-.login main {
-  padding: 0 20px;
+.toy1 {
+  display: none;
 }
 
-.login h1 {
-  height: 70px;
-  font-family: 'Bree Serif';
-  font-size: 64px;
-  line-height: 60px;
+.body-login {
+  height: 100vh;
   text-align: center;
-  color: #0F0F0F;
-  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+  background-color: white;
+}
+.body-login .terminoss{
+  width: 100%;
+  color: var(--color-gray);
+  font-size: var( --fs-subtitle-sub);
+}
+.body-login .login__container {
+  display: flex;
+  flex-direction: column;
 }
 
-.login h2 {
+.body-login .login-info-container {
+  color: var(--colorVerdeOscuro);
+  margin-top: 130px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.body-login .image-container {
+  display: none;
+}
+
+.body-login .inputs-container {
+  width: 80%;
+  padding: 10px;
+  align-self: center;
+}
+
+
+.body-login .inputs-container .p-input {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  margin-left: 25px;
+  color: var(--colorVerde);
+  font-weight: 600;
+}
+
+.body-login .input {
   text-align: center;
-  font-family: 'Segoe UI Symbol';
-  font-weight: 400;
-  font-size: 35px;
-  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-}
+  margin: 15px 0;
+  width: 70%;
+  padding: 10px 0;
+  border-radius: 15px 15px;
+  border-style: none;
+  border-color: var(--color-gray);
+  box-shadow: 1px 2px 3px 2px rgb(0 0 0 / 39%);
 
-.login section{
-  width: 100%;
-  background: var(--colorRosaBuscador);
-  margin: 30px auto;
-  border-radius: 10px;
-  padding: 20px;
-}
 
-.login form {
-  margin-top: 30px;
 }
-
-.login-menu {
-  margin-bottom: 20px;
-  width: 100%;
+.body-login .buttons{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
+.body-login .buttons button {
 
-.login-input {
-  width: 100%;
-  margin: 10px 0 0;
-  padding: 10px 5px;
-  font-size: 20px;
-  background: white;
-  border: 3px solid white;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
-  border-radius: 10px;
-}
-
-.login-center{
-  text-align: center;
-  font-size: 16px;
-}
-
-.login-menu button {
-  font-size: 40px;
+  display: block;
+  border-radius: 15px 15px;
   border: none;
-  background: var(--colorVerde);
-  width: 280px;
-  height: 62px;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
-  border-radius: 10px;
-  /*palabra regristar*/
-  line-height: 42px;
-  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  background-color: var(--colorVerde);
+  width: 50%;
+  color: white;
+  margin: 20px 6px auto;
+  padding: 6px;
+  font-size: 18px;
+  box-shadow: 2px 1px 9px 1px rgba(0,0,0,0.39);
+}
+.body-login .buttons button a{
+  color: white;
+}
+
+
+.body-login .footer-login p {
+  font-size: 16px;
+  color: gray;
+  margin: 15px 0;
+}
+
+.body-login .login-design .footer-login{
+  font-size: 14px;
+}
+
+@media (min-width: 460px) {
+  .body-login .inputs-container .p-input {
+      font-size: var(--fs-bodytext);
+      text-align: center;
+      color: var(--colorVerde);
+      font-weight: 600;
+      padding: 30px;
+      
+  }
+
+  .body-login .buttons button {
+      align-items: center;
+      display: inline;
+      padding: 10px;
+      font-size: 18px;
+      box-shadow: 2px 1px 9px 1px rgba(0,0,0,0.39); 
+  }
+
+  .body-login .input {
+      display: flex;
+      margin: auto;
+      width: 80%;
+      padding: 10px;
+      border-radius: 15px 15px;
+      border-style: dotted;
+      border-color: var(--color-gray);
+      margin-bottom: 15px;
+
+  }
+
+  .body-login .footer-login p {
+      font-size: 20px;
+      color: var(--color-gray);
+      margin: 15px 0;
+  }
+  .body-login .footer-login a{
+      color: black;
+  }
+  .body-login .inputs-container .input{
+      width: 70%;
+      padding: 12px 0;
+      border-style: none;
+      border-color: var(--color-gray);
+      box-shadow: 1px 2px 3px 2px rgb(0 0 0 / 39%);
+  }
+}
+@media (min-width: 768px){
+  .body-login {
+      height: 80vw;
+      background-color: white;
+  }
+  .body-login .buttons{
+     flex-direction: row;
+     align-items: center;
+     margin: 30px 0;
+  }
+  .body-login .buttons button {
+      display: block;
+      width: 150px;
+  }
+  .body-login .inputs-container .p-input{
+      font-size: var(--fs-icons);
+  }
+  .body-login .inputs-container .input{
+      padding: 12px 0;
+      max-width: 70%;
+  }
+  
+}
+@media (min-width: 1200px) {
+
+  .body-login {
+      width: 100%;
+      height: 100vw;
+  }
+
+  .login-design {
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+      padding: 15px 0;
+      border-top: 2px solid var(--colorRosaBuscador);
+      border-bottom: 2px solid var(--colorRosaBuscador);
+  
+  }
+
+  .body-login .login__container {
+      height: 100%;
+  }
+
+  .background .toy1 {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+
+  }
+
+  .body-login {
+      height: 80vw;
+     
+      background-color: white;
+    
+  }
+
+
+
+  .body-login .login-info-container h2 {
+      font-size: 40px;
+  }
+
+  .body-login .inputs-container .p-input {
+      font-size: var(--fs-form);
+      color: var(--colorVerdeOscuro);
+      font-weight: 600;
+      padding: 30px;
+      
+  }
+
+  .body-login .inputs-container {
+      width: 100%;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin-top: 100px;
+  }
+  .body-login .inputs-container .input{
+      padding: 15px 0;
+  }
+  .body-login .buttons button {
+      border-radius: 15px 15px;
+      border: none;
+      background-color: var(--colorVerde);
+      width: 70%;
+      color: white;
+      padding: 10px;
+      font-size: var(--fs-form);
+      box-shadow: 3px 3px 2px rgb(187, 187, 187);
+      margin: 20px 6px 6px 6px;
+  }
+  .body-login .buttons button a{
+      text-decoration: none;
+  }
+
+.body-login .input {
+      display: flex;
+      margin: 20px 0;
+      width: 80%;
+      padding: 20px;
+      border-radius: 15px 15px;
+      border-style: none;
+      border-color: var(--color-gray);
+      box-shadow: 1px 2px 3px 2px rgb(0 0 0 / 39%);
+
+
+  }
+.body-login .terminoss{
+
+  font-size: var (--fs-subtitle);
+}
+  .body-login .footer-login p {
+      font-size: var(--fs-bodytext);
+      color: var(--color-gray);
+      text-align: center;
+      margin: 15px 0;
+
+  }
 }
