@@ -142,11 +142,16 @@
 @media (min-width: 1024px) {
 
     .contenedor-principalProduct{
-        height: 100vh;
+        height: 134vh;
     }
 
     .product-descripcion{
         padding-top: 0;
+    }
+
+    .product-img img {
+        width: 83%;
+        display: block;
     }
 
 }
