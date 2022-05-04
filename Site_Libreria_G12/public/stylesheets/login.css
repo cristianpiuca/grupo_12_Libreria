@@ -38,11 +38,12 @@
 
 .body-login .inputs-container .p-input {
   display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  margin-left: 25px;
-  color: var(--colorVerde);
-  font-weight: 600;
+    font-size: 14px;
+    /* margin-left: 11px; */
+    color: var(--colorVerde);
+    font-weight: 600;
+    /* text-align: center; */
+    justify-content: center;
 }
 
 .body-login .input {
