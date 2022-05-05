@@ -1,0 +1,78 @@
+.productAdmin main{
+    padding: 0 20px;
+}
+.productAdmin section{
+    width: 100%;
+    background-color: white;
+    margin: 30px auto;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 6px 5px 6px 2px grey;
+}
+.productAdmin h1{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.productAdmin label{
+    font-size: var(--fs-bodytext);
+    font-weight: 500;
+}
+.productAdmin form{
+    margin-top: 30px;
+}
+
+.productAdmin__form-box{
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.productAdmin h4{
+    margin-bottom: 10px;
+}
+
+.productAdmin__form-input,  .productAdmin__form-select{
+
+    border-radius: 15px;
+    border: 2px solid var(--colorRosaOscuro);
+    height: 45px;
+    width: 100%;
+    margin: 10px 0 0;
+    padding: 5px 5px;
+}
+.productAdmin__form-input input:invalid {
+    background-color: red;
+
+}
+
+
+.productAdmin .btnAdmin{
+    border: 1px solid var(--colorVerdeOscuro);
+    padding: 10px;
+    background-color: var(--color-verde);
+    color: var(--colorVerdeOscuro);
+    text-align: center;
+    border-radius: 10px;
+}
+.productAdmin .btnAdmin:hover{
+    background-color: var(--colorVerdeOscuro);
+    color: white;
+ 
+}
+
+@media (min-width:768px){
+    .productAdmin article{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .productAdmin article .register__form-box{
+        width: 48%;
+    }
+}
+
+@media (min-width:1024px){
+    .productAdmin section{
+        width: 60%;
+    }
+}

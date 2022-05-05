@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head', {
+        title : 'product add'
+    }) %> 
+<body class="productAdmin">
+    <%- include('./partials/header') %> 
+
+    <main>
+        <section>
+            <h1>Agregar Producto</h1>
+            <hr>
+            <form method="POST" action="">
+                <article>
+                <div class="productAdmin__form-box">
+                    <label for="name">Nombre del producto</label>
+                    <input class="productAdmin__form-input" type="text" id="name" name="name">
+                </div>
+                <div class="productAdmin__form-box">
+                    <label for="name">Descripción del producto</label>
+                    <input class="productAdmin__form-input" type="text" id="name" name="name">
+                </div>
+                 <div class="productAdmin__form-box">
+                    <label for="name">Imagen del producto</label>
+                    <input class="productAdmin__form-input" type="file" id="name" name="name">
+                </div>
+                <div class="productAdmin__form-box">
+                    <label for="price">Precio</label>
+                    <input class="productAdmin__form-input" type="text" id="price" name="price">
+                </div>
+                <div class="productAdmin__form-box">
+                    <label for="name">Estilo del producto</label>
+                    <select class="productAdmin__form-select" name="category" id="category">
+                        <option value="" hidden selected>Selecciona el formato</option>
+                        <option value="category">tapa blanda</option>
+                        <option value="category">tapa dura</option>
+                        <option value="category">audiolibro</option>
+                         <option value="category">braile</option>
+                        
+                    </select>
+                </div>
+                <div class="productAdmin__form-box">
+                        <label for="category">Categorias</label>
+                        <select class="productAdmin__form-select" name="category" id="category">
+                            <option value="" hidden selected>Selecciona la categoría...</option>
+                            <option value="category">Juvenil</option>
+                            <option value="category">Adulto</option>
+                            <option value="category">New Adult</option>
+                            <option value="category">Infantil</option>
+                            <option value="category">Divulgación</option>
+                            <option value="category">Autoayuda</option>
+                              <option value="category">Cocina</option>
+                        </select>
+                       
+                </div>
+              
+            </article>
+               
+              <a href="#"><button class="btnAdmin" type="submit">Guardar</button></a> 
+                    <button class="btnAdmin" type="reset">Cancelar</button>
+               
+            </form>
+        </section>
+
+    </main>
+
+
+    <%- include('./partials/footer') %> 
+</body>
+</html>
