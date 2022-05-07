@@ -8,14 +8,13 @@ Estamos orientados al publico minorista con más de 12.000 libros, 6 locales, ve
 
 Nuestra Historia:
 
-Librerías Boulevard comenzó a funcionar en 2012 en un pequeño local ubicado en Av. Callao al 600, atendido por sus dueños. Hoy cuenta con 5 locales ubicados en puntos estratégicos de la ciudad, de grandes superficies, sito en:
-
+Librerías Boulevard comenzó a funcionar en 2012 en un pequeño local ubicado en Av. Callao al 600, atendido por sus dueños. Hoy cuenta con 5 locales ubicados en puntos estratégicos de la ciudad, de grandes superficies:
 Florida esquina Corrientes,
 Av. Santa Fe 2140 y Junin,
 Av. Córdoba 1873 y Callao,
 Av. Cabildo 2860 y Congreso,
 Av. Corrientes 1780 y Callao.
-A su vez dispone de 1000m2 de depósito, 250m2 para recepción y expedición de mercadería, y 200m2 de oficinas.
+A su vez disponemos de 1000m2 de depósito, 250m2 para recepción y expedición de mercadería, y 200m2 de oficinas.
 
  
 
