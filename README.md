@@ -40,5 +40,7 @@ Integrantes:
 
 Noelia Romina Acosta, 24 años. Licenciatura en Letras, UBA. Programación Fullstack Digital House
 
+Juana Virginia Alvarado, 28 años. Licenciatura en Artes Visuales, UNT. Programaión Fullstack Digital House.
+
 
 
