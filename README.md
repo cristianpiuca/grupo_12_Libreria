@@ -42,5 +42,7 @@ Noelia Romina Acosta, 24 años. Licenciatura en Letras, UBA. Programación Fulls
 
 Juana Virginia Alvarado, 28 años. Licenciatura en Artes Visuales, UNT. Programaión Fullstack Digital House.
 
+Cristian Piuca, 26 años. Programación Fullstack Digital House.
+
 
 
