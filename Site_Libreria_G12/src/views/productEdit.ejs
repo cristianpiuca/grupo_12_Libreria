@@ -13,34 +13,19 @@
             <hr>
             <form method="POST" action="">
                 <article>
-                <div class="productAdmin__form-box">
-                    <label for="name">Nombre del producto</label>
-                    <input class="productAdmin__form-input" type="text" id="name" name="name">
-                </div>
-                <div class="productAdmin__form-box">
-                    <label for="name">Descripción del producto</label>
-                    <input class="productAdmin__form-input" type="text" id="name" name="name">
-                </div>
-                 <div class="productAdmin__form-box">
-                    <label for="name">Imagen del producto</label>
-                    <input class="productAdmin__form-input" type="file" id="name" name="name">
-                </div>
-                <div class="productAdmin__form-box">
-                    <label for="price">Precio</label>
-                    <input class="productAdmin__form-input" type="text" id="price" name="price">
-                </div>
-                <div class="productAdmin__form-box">
-                    <label for="name">Estilo del producto</label>
-                    <select class="productAdmin__form-select" name="category" id="category">
-                        <option value="" hidden selected>Selecciona el formato</option>
-                        <option value="category">tapa blanda</option>
-                        <option value="category">tapa dura</option>
-                        <option value="category">audiolibro</option>
-                         <option value="category">braile</option>
-                        
-                    </select>
-                </div>
-                <div class="productAdmin__form-box">
+                    <div class="productAdmin__form-box">
+                        <label for="name">Nombre del producto</label>
+                        <input class="productAdmin__form-input" type="text" id="name" name="name" value="">
+                    </div>
+                    <div class="productAdmin__form-box">
+                        <label for="author">Autor</label>
+                        <input class="productAdmin__form-input" type="text" id="author" name="author" value="">
+                    </div>
+                    <div class="productAdmin__form-box">
+                        <label for="price">Precio</label>
+                        <input class="productAdmin__form-input" type="text" id="price" name="price" value="">
+                    </div>
+                    <div class="productAdmin__form-box">
                         <label for="category">Categorias</label>
                         <select class="productAdmin__form-select" name="category" id="category">
                             <option value="" hidden selected>Selecciona la categoría...</option>
@@ -54,8 +39,46 @@
                         </select>
                        
                 </div>
-              
-            </article>
+                    <div class="productAdmin__form-box">
+                        <label for="year">Año</label>
+                        <input class="productAdmin__form-input" type="text" id="year" name="year" value="">
+                    </div>
+                    <div class="productAdmin__form-box">
+                        <label for="idioma">Idioma</label>
+                        <input class="productAdmin__form-input" type="text" id="language" name="language" value="">
+                    </div>
+                    <div class="productAdmin__form-box">
+                        <label for="pages">Paginas</label>
+                        <input class="productAdmin__form-input" type="text" id="pages" name="pages" value="">
+                    </div>
+                    <div class="productAdmin__form-box">
+                        <label for="type">Formato</label>
+                        <select class="productAdmin__form-select" name="format" id="format">
+                            <option value="" hidden selected>Selecciona el formato</option>
+                            <option value="category">Rústica</option>
+                            <option value="category">Blanda</option>
+                            <option value="category">Audiolibro</option>
+                             <option value="category">Otro</option>
+                            
+                        </select>
+                    </div>
+                    <div class="productAdmin__form-box">
+                        <label for="year">Editorial</label>
+                        <input class="productAdmin__form-input" type="text" id="editorial" name="editorial" value="">
+                    </div>
+                    <div class="productAdmin__form-box">
+                        <label for="description">Descripción del producto</label>
+                        <textarea class="productAdmin__form-input" name="description" id="description" ></textarea>
+                    </div>
+                     <div class="productAdmin__form-box">
+                        <label for="image">Imagen del producto</label>
+                        <input class="productAdmin__form-input" type="file" id="img" name="img" value="">
+                    </div>
+                   
+         
+                    
+                  
+                </article>
                
             <a href="#"><button class="btnAdmin" type="submit">Guardar</button></a> 
               

@@ -8,3 +8,7 @@ li{
 a{
     text-decoration: none;
 }
+textarea {
+    overflow: scroll;
+    resize: none;
+}

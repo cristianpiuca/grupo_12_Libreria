@@ -18,42 +18,65 @@
                     <input class="productAdmin__form-input" type="text" id="name" name="name">
                 </div>
                 <div class="productAdmin__form-box">
-                    <label for="name">Descripción del producto</label>
-                    <input class="productAdmin__form-input" type="text" id="name" name="name">
-                </div>
-                 <div class="productAdmin__form-box">
-                    <label for="name">Imagen del producto</label>
-                    <input class="productAdmin__form-input" type="file" id="name" name="name">
+                    <label for="autor">Autor</label>
+                    <input class="productAdmin__form-input" type="text" id="author" name="author">
                 </div>
                 <div class="productAdmin__form-box">
                     <label for="price">Precio</label>
                     <input class="productAdmin__form-input" type="text" id="price" name="price">
                 </div>
                 <div class="productAdmin__form-box">
-                    <label for="name">Estilo del producto</label>
+                    <label for="category">Categorias</label>
                     <select class="productAdmin__form-select" name="category" id="category">
+                        <option value="" hidden selected>Selecciona la categoría...</option>
+                        <option value="category">Juvenil</option>
+                        <option value="category">Adulto</option>
+                        <option value="category">New Adult</option>
+                        <option value="category">Infantil</option>
+                        <option value="category">Divulgación</option>
+                        <option value="category">Autoayuda</option>
+                          <option value="category">Cocina</option>
+                    </select>
+                   
+            </div>
+                <div class="productAdmin__form-box">
+                    <label for="year">Año</label>
+                    <input class="productAdmin__form-input" type="text" id="year" name="year">
+                </div>
+                <div class="productAdmin__form-box">
+                    <label for="idioma">Idioma</label>
+                    <input class="productAdmin__form-input" type="text" id="language" name="language">
+                </div>
+                <div class="productAdmin__form-box">
+                    <label for="pages">Paginas</label>
+                    <input class="productAdmin__form-input" type="text" id="pages" name="pages">
+                </div>
+                <div class="productAdmin__form-box">
+                    <label for="type">Formato</label>
+                    <select class="productAdmin__form-select" name="format" id="format">
                         <option value="" hidden selected>Selecciona el formato</option>
-                        <option value="category">tapa blanda</option>
-                        <option value="category">tapa dura</option>
-                        <option value="category">audiolibro</option>
-                         <option value="category">braile</option>
+                        <option value="category">Rústica</option>
+                        <option value="category">Blanda</option>
+                        <option value="category">Audiolibro</option>
+                         <option value="category">Otro</option>
                         
                     </select>
                 </div>
                 <div class="productAdmin__form-box">
-                        <label for="category">Categorias</label>
-                        <select class="productAdmin__form-select" name="category" id="category">
-                            <option value="" hidden selected>Selecciona la categoría...</option>
-                            <option value="category">Juvenil</option>
-                            <option value="category">Adulto</option>
-                            <option value="category">New Adult</option>
-                            <option value="category">Infantil</option>
-                            <option value="category">Divulgación</option>
-                            <option value="category">Autoayuda</option>
-                              <option value="category">Cocina</option>
-                        </select>
-                       
+                    <label for="year">Editorial</label>
+                    <input class="productAdmin__form-input" type="text" id="editorial" name="editorial">
                 </div>
+                <div class="productAdmin__form-box">
+                    <label for="description">Descripción del producto</label>
+                    <textarea class="productAdmin__form-input" name="description" id="description" ></textarea>
+                </div>
+                 <div class="productAdmin__form-box">
+                    <label for="image">Imagen del producto</label>
+                    <input class="productAdmin__form-input" type="file" id="img" name="img">
+                </div>
+               
+     
+                
               
             </article>
                
