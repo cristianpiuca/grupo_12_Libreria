@@ -98,56 +98,32 @@
             <a href="">ver todo</a>
            </div>
             <div class="product-box">
-                <article class="art-product">
-                    <div class="product">
-                        <a href="/products/product-detail"><img src="/images/ficcion1.png" alt=""></a>
-                        <h4>El día que dejó de nevar en Alaska</h4>
-                         <h5>Alice Kellen</h5>
-                         <h3 class="product-price">$2790</h3>
-                         <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
+                
+                <% products.forEach(({id,name,autor,price}) => { %>
+                    <article class="art-product">
+                    
+                    
+                        <div class="product">
+                            <a href="/products/product-detail/<%= id %> "><img src="/images/ficcion1.png" alt=""></a>
+                            <h4><%= name %> </h4>
+                             <h5><%= autor %> </h5>
+                             <h3 class="product-price">$<%= price %> </h3>
+                             <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
+                            
+                        </div>
                         
-                    </div>
-                   
-                </article>
-                <article class="art-product">
-                    <div class="product">
-                        <a href="/products/product-detail"><img src="/images/ficcion2.png" alt=""></a>
-                        <h4>Sed</h4>
-                         <h5>Amelie Nothomb</h5>
-                         <h3 class="product-price">$1750</h3>
-                        <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
-                    </div>
-                   
-                </article>
-                <article class="art-product">
-                    <div class="product">
-                        <a href="/products/product-detail"><img src="/images/ficcion3.png" alt=""></a>
-                        <h4>El peligro de estar cuerda</h4>
-                         <h5>Rosa Montero</h5>
-                         <h3 class="product-price">$2500</h3>
-                        <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
-                    </div>
-                   
-                </article>
-                <article class="art-product">
-                    <div class="product">
-                        <a href="/products/product-detail"><img src="/images/ficcion4.png" alt=""></a>
-                        <h4>El libro más lindo del mundo</h4>
-                         <h5>Rosario Oyharte</h5>
-                         <h3 class="product-price">$2150</h3>
-                        <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
-                    </div>
-                   
-                </article>
-                <article class="art-product">
-                    <div class="product">
-                        <a href="/products/product-detail"><img src="/images/ficcion5.png" alt=""></a>
-                       <h4>El mentalista</h4>
-                        <h5>Camilla Läckberg</h5>
-                        <h3 class="product-price">$3600</h3>
-                       <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
-                   </div>
-                </article>
+                    </article>
+                 
+                <% }) %>
+                <div class="product-gender2">
+                    <h2>Juvenil</h2>
+                 <a href="">ver todo</a>
+                </div>
+               
+
+
+               
+              
             </div>
          </section>
 
@@ -157,62 +133,7 @@
          </section>
 
                                             <!--**SECCION 2**-->
-         <section id="product-section2" class="product-section">
-            <div class="product-gender">
-                <h2>Juvenil</h2>
-             <a href="">ver todo</a>
-            </div>
-             <div class="product-box">
-                 <article class="art-product">
-                     <div class="product">
-                         <a href="/products/product-detail"><img src="/images/juvenil1.png" alt=""></a>
-                         <h4>Perdidos en Nunca Jamás</h4>
-                          <h5>Aiden Thomas</h5>
-                         <h3 class="product-price">$2200</h3>
-                         <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
-                     </div>
-                    
-                 </article>
-                 <article class="art-product">
-                     <div class="product">
-                         <a href="/products/product-detail"><img src="/images/juvenil2.png" alt=""></a>
-                         <h4>Anhelo</h4>
-                          <h5>Tracy Wollf</h5>
-                          <h3 class="product-price">$3100</h3>
-                         <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
-                     </div>
-                    
-                 </article>
-                 <article class="art-product">
-                     <div class="product">
-                         <a href="/products/product-detail"><img src="/images/juvenil3.png" alt=""></a>
-                         <h4>Un reino de Carne y fuego</h4>
-                          <h5>Jennier Armentrout</h5>
-                          <h3 class="product-price">$2900</h3>
-                         <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
-                     </div>
-                 </article>
-                 <article class="art-product">
-                    <div class="product">
-                        <a href="/products/product-detail"><img src="/images/juvenil4.png" alt=""></a>
-                        <h4>Casa de cielo y aliento</h4>
-                         <h5>Sarah Maas</h5>
-                         <h3 class="product-price">$3200</h3>
-                        <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
-                    </div>
-                </article>
-                <article class="art-product">
-                    <div class="product">
-                        <a href="/products/product-detail"><img src="/images/juvenil5.png" alt=""></a>
-                        <h4>Loveless</h4>
-                         <h5>Alice Oseman</h5>
-                         <h3 class="product-price">$2300</h3>
-                        <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
-                    </div>
-                </article>
-             </div>
-         </section>
-
+        
      </div>
 
                                       <!--******LATERAL******-->

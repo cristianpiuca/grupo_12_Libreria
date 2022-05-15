@@ -4,7 +4,7 @@ const {cart, detail, add, edit} = require('../controllers/productController')
 
 /* /products */
 router.get('/product-cart', cart);
-router.get('/product-detail', detail);
+router.get('/product-detail/:id', detail);
 router.get('/productAdd', add);
 router.get('/productEdit', edit);
 module.exports = router;
