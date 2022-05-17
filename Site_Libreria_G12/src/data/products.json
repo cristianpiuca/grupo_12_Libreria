@@ -138,19 +138,5 @@
       "editorial": " V&R Editoras SA",
       "description": "",
       "img": "juvenil5.png"
-   },
-   {
-      "id": 11,
-      "name": "producto de prueba",
-      "author": "prueba",
-      "price": 1000,
-      "category": "5",
-      "year": 2000,
-      "language": "Español",
-      "pages": 351,
-      "format": "Box-set",
-      "editorial": "prueba",
-      "description": "esto es un producto de prueba",
-      "img": "noimage.jpeg"
    }
 ]
