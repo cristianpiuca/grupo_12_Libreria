@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head', {
+        title : 'Resultado de la busqueda'
+    }) %> 
+<body>
+   
+    <%- include('./partials/header') %> 
+
+
+    <main>
+        <h1>Resultado de búsqueda: "<%= keyword %>" </h1>
+
+       
+
+
+        <section class="result-produts">
+            <% if (products.length > 0) { %>
+                    <div class="d-flex">
+                         <% products.forEach(({id,name,author,price}) => { %>
+                        
+                           <article class="art-product">
+                               <div class="product">
+                                   <a href="/products/product-detail/<%= id %> "><img src="/images/ficcion1.png" alt=""></a>
+                                   <h4><%= name %> </h4>
+                                    <h5><%= author %> </h5>
+                                    <h3 class="product-price">$<%= price %> </h3>
+                                    <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a> 
+                               </div>
+                           </article>
+                           <% }) %>
+                    </div>
+
+               <% }else{ %>
+                
+                   <div class="alert alert-warning">
+                       No se encontraron resultados
+                   </div>
+       
+               <% } %>
+        </section>
+
+    </main>
+   
+
+    <%- include('./partials/footer') %> 
+  
+</body>
+
+</html>
