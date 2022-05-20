@@ -138,20 +138,5 @@
       "editorial": "V&R Editoras SA",
       "description": "Georgia nunca ha besado a nadie. Ni se ha enamorado. Y no entiende por qué. Como la romantica empedernida fanática de los fanfiction que es, esta segura de que muy pronto la situación va a cambiar La universidad esta a la vuelta de la esquina y allí tiene que encontrar el amor. Sin embargo, algo no cuaja. Cuanto más lo intenta, más lo fuerza. Y más confundida se siente. Sera que el romance no fue hecho para ella? Acaso esta destinada a vivir sin amar? Georgia tendrá que aprender y aceptar que el verdadero amor no es necesariamente romantico en este nuevo libro de la aclamada autora de Heartstopper.",
       "img": "juvenil5.png"
-   },
-   {
-      "id": 11,
-      "name": "Quimica",
-      "author": "cristian",
-      "price": 10000,
-      "category": "2",
-      "year": 2020,
-      "language": "Español",
-      "pages": 850,
-      "format": "Blanda",
-      "editorial": "Facts",
-      "description": "Ayuda para entender quimica",
-      "img": "noimage.jpeg"
    }
-  
 ]
