@@ -99,12 +99,12 @@
            </div>
             <div class="product-box">
                 
-                <% products.forEach(({id,name,autor,price}) => { %>
+                <% products.forEach(({id,name,autor,price,img}) => { %>
                     <article class="art-product">
                     
                     
                         <div class="product">
-                            <a href="/products/product-detail/<%= id %> "><img src="/images/ficcion1.png" alt=""></a>
+                            <a href="/products/product-detail/<%= id %> "><img src="/images/<%= img %> " alt=""></a>
                             <h4><%= name %> </h4>
                              <h5><%= autor %> </h5>
                              <h3 class="product-price">$<%= price %> </h3>

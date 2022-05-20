@@ -9,62 +9,60 @@
 
     <main>
         <section>
-            <h1>Editar Producto</h1>
+            <h2>Estás editando: "<%= product.name %>"</h2>
             <hr>
-            <form method="POST" action="">
+            <form method="POST" action="/products/update/<%= product.id %>?_method=PUT" enctype="multipart/form-data">
                 <article>
+                    <div><img src="/images/<%= product.img %>" alt=""></div>
                     <div class="productAdmin__form-box">
                         <label for="name">Nombre del producto</label>
-                        <input class="productAdmin__form-input" type="text" id="name" name="name" value="">
+                        <input class="productAdmin__form-input" type="text" id="name" name="name" value=" <%= product.name %>">
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="author">Autor</label>
-                        <input class="productAdmin__form-input" type="text" id="author" name="author" value="">
+                        <input class="productAdmin__form-input" type="text" id="author" name="author" value=" <%= product.author %>">
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="price">Precio</label>
-                        <input class="productAdmin__form-input" type="text" id="price" name="price" value="">
+                        <input class="productAdmin__form-input" type="text" id="price" name="price" value=" <%= product.price%>">
                     </div>
                     <div class="productAdmin__form-box">
+                      
                         <label for="category">Categorias</label>
                         <select class="productAdmin__form-select" name="category" id="category">
-                            <option value="" hidden selected>Selecciona la categoría...</option>
-                            <option value="category">Juvenil</option>
-                            <option value="category">Adulto</option>
-                            <option value="category">New Adult</option>
-                            <option value="category">Infantil</option>
-                            <option value="category">Divulgación</option>
-                            <option value="category">Autoayuda</option>
-                              <option value="category">Cocina</option>
-                        </select>
-                       
+                            <% categories.forEach(category => { %>
+                              <option value="<%= category.id %>" <%= category.id === product.category ? 'selected' : null %>><%= category.name %></option>
+                            <% }) %>
+                          </select>
                 </div>
                     <div class="productAdmin__form-box">
                         <label for="year">Año</label>
-                        <input class="productAdmin__form-input" type="text" id="year" name="year" value="">
+                        <input class="productAdmin__form-input" type="text" id="year" name="year" value=" <%= product.year %>">
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="idioma">Idioma</label>
-                        <input class="productAdmin__form-input" type="text" id="language" name="language" value="">
+                        <input class="productAdmin__form-input" type="text" id="language" name="language" value=" <%= product.language %>">
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="pages">Paginas</label>
-                        <input class="productAdmin__form-input" type="text" id="pages" name="pages" value="">
+                        <input class="productAdmin__form-input" type="text" id="pages" name="pages" value=" <%= product.pages %>">
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="type">Formato</label>
                         <select class="productAdmin__form-select" name="format" id="format">
                             <option value="" hidden selected>Selecciona el formato</option>
-                            <option value="category">Rústica</option>
-                            <option value="category">Blanda</option>
-                            <option value="category">Audiolibro</option>
-                             <option value="category">Otro</option>
+                           
+                            <option value="Rustica">Rústica</option>
+                            <option value="Blanda">Blanda</option>
+                            <option value="Audiolibro">Audiolibro</option>
+                            <option value="Dura">Tapa Dura</option>
+                            <option value="Box-set">Box set</option>
                             
                         </select>
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="year">Editorial</label>
-                        <input class="productAdmin__form-input" type="text" id="editorial" name="editorial" value="">
+                        <input class="productAdmin__form-input" type="text" id="editorial" name="editorial" value=" <%= product.editorial %>">
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="description">Descripción del producto</label>
@@ -80,9 +78,9 @@
                   
                 </article>
                
-            <a href="#"><button class="btnAdmin" type="submit">Guardar</button></a> 
+            <button class="btnAdmin" type="submit">Guardar</button>
               
-                    <button class="btnAdmin" type="reset">Cancelar</button>
+             <button class="btnAdmin" type="reset">Cancelar</button>
                
             </form>
         </section>

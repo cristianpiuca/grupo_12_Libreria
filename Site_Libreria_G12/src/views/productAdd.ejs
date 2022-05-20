@@ -8,7 +8,7 @@
     <%- include('./partials/header') %> 
 
     <main>
-        <section>
+        <section  class="formProducts">
             <h1>Agregar Producto</h1>
             <hr>
             <form method="POST" action="">
@@ -26,18 +26,15 @@
                     <input class="productAdmin__form-input" type="text" id="price" name="price">
                 </div>
                 <div class="productAdmin__form-box">
+                   
                     <label for="category">Categorias</label>
                     <select class="productAdmin__form-select" name="category" id="category">
                         <option value="" hidden selected>Selecciona la categoría...</option>
-                        <option value="category">Juvenil</option>
-                        <option value="category">Adulto</option>
-                        <option value="category">New Adult</option>
-                        <option value="category">Infantil</option>
-                        <option value="category">Divulgación</option>
-                        <option value="category">Autoayuda</option>
-                          <option value="category">Cocina</option>
+                      <% categories.forEach(category => { %>
+                        <option value="<%= category.id %>"><%= category.name %></option>
+                      <% }) %>
                     </select>
-                   
+                    
             </div>
                 <div class="productAdmin__form-box">
                     <label for="year">Año</label>
@@ -53,14 +50,14 @@
                 </div>
                 <div class="productAdmin__form-box">
                     <label for="type">Formato</label>
-                    <select class="productAdmin__form-select" name="format" id="format">
-                        <option value="" hidden selected>Selecciona el formato</option>
-                        <option value="category">Rústica</option>
-                        <option value="category">Blanda</option>
-                        <option value="category">Audiolibro</option>
-                         <option value="category">Otro</option>
-                        
-                    </select>
+                        <select class="productAdmin__form-select" name="format" id="format">
+                            <option value="" hidden selected>Selecciona el formato</option>
+                            <option value="Rustica">Rústica</option>
+                            <option value="Blanda">Blanda</option>
+                            <option value="Audiolibro">Audiolibro</option>
+                            <option value="Dura">Dura</option>
+                            <option value="Box-set">Box set</option>
+                        </select>
                 </div>
                 <div class="productAdmin__form-box">
                     <label for="year">Editorial</label>

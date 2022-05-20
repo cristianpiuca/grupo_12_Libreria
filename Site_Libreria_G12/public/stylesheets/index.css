@@ -97,7 +97,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: -19px
+    
 }
 
 .art-product {
@@ -121,7 +121,7 @@
 }
 
 .product img {
-    height: 100px;
+    height: 130px;
     display: block;
     padding: 1;
     margin: 0 auto;
@@ -181,7 +181,9 @@
     color: white;
     border: none;
 }
-
+.product button:hover{
+    background-color: var(--colorVerdeOscuro);
+}
 .box-novedades {
     background-color: var(--colorCrema);
     height: 80px;
@@ -275,6 +277,11 @@
 
     .product {
         border-radius: 20px;
+    }
+    .product img {
+        height: 140px;
+        margin-top: 9px;
+        margin-bottom: 10px;
     }
 
     #banner2 {
@@ -480,7 +487,7 @@
     }
 
     .product img {
-        height: 130px;
+        height: 180px;
         margin-top: 9px;
         margin-bottom: 10px;
     }

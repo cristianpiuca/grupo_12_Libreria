@@ -10,7 +10,7 @@
     <div class="contenedor-principalProduct">
         <div class="contenedor-products">
             <div class="product-img">
-                <img src="/images/product-1-big.jpg" alt="">
+                <img src="/images/<%= product.img %> " alt="">
             </div>
 
             <div class="product-descripcion">
@@ -29,7 +29,11 @@
                         <li>Año: <span><%= product.year %> </span></li>
                         <li>Idioma: <span><%= product.language %> </span></li>
                         <li>N° de paginas: <span><%= product.pages %> </span></li>
+<<<<<<< HEAD
                         <li>Encuadernación: <span><%= product.format %> </span></li>
+=======
+                        <li>Formato: <span><%= product.format %> </span></li>
+>>>>>>> 1bf700b625c5aa9605e7215ddff545c04e98531e
                         <li>Autor: <span><%= product.author %></span></li>
                         <li>Editorial: <span><%= product.editorial %></span></li>
                     </ul>
@@ -40,8 +44,14 @@
                     <button type="button" class="boton">
                         Agregar al carrito <i class="fas fa-shopping-cart"></i>
                     </button>
+                    <a href="/products/productEdit/<%= product.id %>" class="boton">Editar</a>
+                    <form action="/products/remove/<%= product.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-outline-danger m-1">Eliminar</button>
+                    </form>
                 </div>
-
+               
+                   
+               
                 <div class="redes-links">
                     <p>Compartir en: </p>
                     <a href="#">

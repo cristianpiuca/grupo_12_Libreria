@@ -61,4 +61,23 @@ module.exports = [
             }
         ]
     },
+    {
+        id : 3,
+        name : 'Audiolibro',
+        products : [
+        ]
+    },
+    {
+        id : 4,
+        name : 'Divulgación',
+        products : [
+        ]
+    },
+    {
+        id : 5,
+        name : 'Autoayuda',
+        products : [
+        ]
+    }
+    
 ]
