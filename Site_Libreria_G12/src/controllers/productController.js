@@ -41,6 +41,7 @@ module.exports = {
             description : description.trim(),
             img: req.file ? req.file.filename : "noimage.jpeg"
         }
+       
         products.push(addProduct)
         fs.writeFileSync(path.resolve(__dirname,'..','data','products.json'),JSON.stringify(products,null,3),'utf-8')
         

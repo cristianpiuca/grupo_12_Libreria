@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer')
+const path = require('path')
 const {cart, detail, add, edit, store, update, remove, list, products, index} = require('../controllers/productController')
 
 //multer config
