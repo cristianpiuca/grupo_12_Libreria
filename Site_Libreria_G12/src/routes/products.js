@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer')
-const {cart, detail, add, edit, store, update, remove} = require('../controllers/productController')
+const {cart, detail, add, edit, store, update, remove, list, products, index} = require('../controllers/productController')
 
 //multer config
 const storage = multer.diskStorage({
@@ -19,6 +19,7 @@ const upload = multer({
 
 /* /products */
 router
+    .get('/', index)
     .get('/product-cart', cart)
     .get('/product-detail/:id', detail)
     .get('/productAdd', add)
@@ -26,5 +27,6 @@ router
     .get('/productEdit/:id', edit)
     .put('/update/:id',upload.single('image'),update)
     .delete('/remove/:id',remove)
+    .get('/list', list)
 
 module.exports = router;

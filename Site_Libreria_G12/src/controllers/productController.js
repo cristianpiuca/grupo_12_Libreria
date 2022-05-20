@@ -99,6 +99,14 @@ module.exports = {
         fs.writeFileSync(path.resolve(__dirname,'..','data','products.json'),JSON.stringify(productDelete,null,3),'utf-8')
 
         return res.redirect('/')
+    },
+    list : (req,res) => {
+        return res.render('products', {
+            products
+        })
+    },
+    index : (req,res) => {
+        return res.render('products')
     }
     
 }
