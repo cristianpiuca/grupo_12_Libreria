@@ -152,19 +152,6 @@
       "editorial": "Facts",
       "description": "Ayuda para entender quimica",
       "img": "noimage.jpeg"
-   },
-   {
-      "id": 12,
-      "name": "Quimica",
-      "author": "cristian",
-      "price": 2345,
-      "category": "4",
-      "year": 2020,
-      "language": "Español",
-      "pages": 2345,
-      "format": "Dura",
-      "editorial": "Fad",
-      "description": "dasdasdadsdadasd",
-      "img": "noimage.jpeg"
    }
+  
 ]
