@@ -93,13 +93,13 @@
                                        <!--**SECCION 1**-->
 
          <section id="product-section1" class="product-section">
-           <div class="product-gender">
+         <!--   <div class="product-gender">
                <h2>Ficción</h2>
             <a href="">ver todo</a>
-           </div>
+           </div> -->
             <div class="product-box">
                 
-                <% products.forEach(({id,name,autor,price,img}) => { %>
+                <% products.forEach(({id,name,autor,price,category,img}) => { %>
                     <article class="art-product">
                     
                     
@@ -107,6 +107,7 @@
                             <a href="/products/product-detail/<%= id %> "><img src="/images/<%= img %> " alt=""></a>
                             <h4><%= name %> </h4>
                              <h5><%= autor %> </h5>
+                             <h6><%= category %> </h6>
                              <h3 class="product-price">$<%= price %> </h3>
                              <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
                             
@@ -115,10 +116,10 @@
                     </article>
                  
                 <% }) %>
-                <div class="product-gender2">
+               <!--  <div class="product-gender2">
                     <h2>Juvenil</h2>
                  <a href="">ver todo</a>
-                </div>
+                </div> -->
                
 
 
