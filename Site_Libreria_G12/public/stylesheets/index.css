@@ -436,10 +436,13 @@
 
     .semana img {
         display: block;
-        width: 90%;
+        width: 85%;
         margin: 4px auto;
         justify-content: center;
-
+        transition: width 450ms;
+    }
+    .semana img:hover {
+        width: 100%;
     }
 
     .semana li {
@@ -447,6 +450,7 @@
         height: 50px;
         text-align: center;
         font-size: 14px;
+        line-height: 16px;
         font-weight: bold;
         overflow: hidden;
         margin-top: 0;

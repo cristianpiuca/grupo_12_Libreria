@@ -1,0 +1,29 @@
+.result-products{
+    background-color: var(--colorCrema);
+    border-radius: 20px;
+    width: 100%;
+}
+.box-result{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:first baseline
+}
+.product-result {
+    margin: 1%;
+    width: 31%;
+    margin-top: 5px;
+}
+
+@media (min-width:768px) {
+    .product-result {
+        margin: 1%;
+        width: 18%;
+        margin-top: 36px;
+    }
+}
+
+@media (min-width:1024px) {
+    .product-result {
+        width: 12%;
+    }
+}
