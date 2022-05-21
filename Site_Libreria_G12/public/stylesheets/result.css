@@ -1,12 +1,19 @@
+.h2-result{
+    margin-left: 15px;
+    color: var(--colorVerdeOscuro);
+    font-size: 20px;
+}
 .result-products{
     background-color: var(--colorCrema);
     border-radius: 20px;
-    width: 100%;
+    
 }
 .box-result{
     display: flex;
     flex-wrap: wrap;
-    justify-content:first baseline
+    justify-content:first baseline;
+    width: 96%;
+    margin-left: 2%;
 }
 .product-result {
     margin: 1%;
@@ -15,6 +22,11 @@
 }
 
 @media (min-width:768px) {
+    .h2-result{
+        margin-left: 20px;
+        margin-top: 10px;
+        font-size: 25px;
+    }
     .product-result {
         margin: 1%;
         width: 18%;
@@ -23,6 +35,11 @@
 }
 
 @media (min-width:1024px) {
+    .h2-result{
+        margin-left: 35px;
+        margin-top: 15px;
+        font-size: 30px;
+    }
     .product-result {
         width: 12%;
     }
