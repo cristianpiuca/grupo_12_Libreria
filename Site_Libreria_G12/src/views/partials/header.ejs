@@ -10,10 +10,13 @@
         <li class="login"><a href="/users/login">Iniciar Sesión</a></li>
     </div>
     <div class="buscador-menu">
-        <nav id="search">
-            <input class="input-search" type="text" placeholder="Buscar">
-            <a class="header-search"><i class="fas fa-search"></i></a>
-        </nav>
+        <form id="search-form" action="/result" method="GET">
+            <div id="search" class="d-flex">
+                <input class="input-search" name="keyword" placeholder="Buscar" >
+                <button class="header-search"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+        
         
         <a href="/products/product-cart"><button class="header-cart"><i class="fa fa-shopping-cart"></i></button></a>
         <a href=""><button class="header-menu"><i class="fas fa-bars"></i></button></a>

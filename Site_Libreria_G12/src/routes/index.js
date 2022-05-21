@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
-const {index,login,register} = require('../controllers/indexController');
+const {index,login,register, search} = require('../controllers/indexController');
 
 /* / */
-router.get('/', index);
-router.get('/login', login);
-router.get('/register', register);
+router
+    .get('/', index)
+    .get('/login', login)
+    .get('/register', register)
+    .get('/result', search)
+
 module.exports = router;
 
