@@ -139,7 +139,7 @@
 
 .product h5 {
     position: absolute;
-    top: 180px;
+    top: 204px;
     color: var(--colorVerdeOscuro);
     width: 100%;
     font-weight: bold;
@@ -488,7 +488,7 @@
 
     .product {
 
-        height: 350px;
+        height: 365px;
         border-radius: 20px;
 
     }
@@ -507,8 +507,8 @@
     }
 
     .product h5 {
-        top: 210px;
-        font-size: 14px;
+        top: 259px;
+        font-size: 13px;
     }
 
     .product h6 {
