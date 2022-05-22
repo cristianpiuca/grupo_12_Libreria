@@ -96,12 +96,12 @@
 .product-box {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     
 }
 
 .art-product {
-    margin: 2px;
+    margin: 6px;
     width: 30%;
     margin-top: 36px;
 }
@@ -235,7 +235,10 @@
     display: none;
 }
 
-
+/* .art-product:nth-last-child(-n+4) {
+    display: none;
+}
+ */
 
 
 
@@ -249,6 +252,7 @@
         border-radius: 20px;
     }
 
+
     #cuerpo {
         width: 68%;
         margin-left: 1%;
@@ -258,7 +262,7 @@
 
 
     .art-product {
-        margin: 2px;
+        margin: 5px;
         width: 23%;
         margin-top: 38px;
     }
@@ -313,6 +317,12 @@
     .product-gender2 {
         top : -327px
     }
+
+  /*   .art-product:nth-last-child(-n+1) {
+        display: initial;
+     */
+
+
 
     /*NOVEDADES*/
 
