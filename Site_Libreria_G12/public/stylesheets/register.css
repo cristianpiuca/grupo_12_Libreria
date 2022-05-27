@@ -64,7 +64,10 @@
 
 
 }
-
+.body-register .inputs-container span{
+    background: var(--colorRosaOscuro);
+    color: red;
+}
 .body-register .footer-register .button-reg {
     border-radius: 15px 15px;
     border: none;
