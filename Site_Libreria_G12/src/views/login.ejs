@@ -17,17 +17,21 @@
             <div class="login-info-container">
 
                 <h2>Iniciar Sesión</h2>
-                <form action="" class="inputs-container">
+                <form action="" class="inputs-container" method="POST">
                     <p class="p-input">Tu email</p>
-                    <input type="text" class="input" name="email-log" id="email-log">
+                    <input type="text" class="input" name="email" id="email-log">
+                    <span><%= locals.errors && errors.email ? errors.email.msg : null %></span>
+
                     <p class="p-input">Tu contraseña</p>
-                    <input type="password" class="input" name="password-log" id="password-log">
+                    <input type="password" class="input" name="password" id="password-log">
+                    <span><%= locals.errors && errors.password ? errors.password.msg : null %></span>
+
                     <div class="terminoss">
                         <input type="checkbox" name="terminos-log" id="terminos-log">
                      <label for="terminos">Mantener mi sesión abierta</label> 
                      </div>
                      <div class="buttons">
-                    <button><a href="/">Iniciar Sesión</a></button>
+                    <button type="submit">Iniciar Sesión</button>
                     <button><a href="/register">Registrate</a></button>
                      </div>
             

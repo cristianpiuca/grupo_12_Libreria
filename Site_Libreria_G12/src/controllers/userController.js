@@ -1,7 +1,7 @@
 const { validationResult } = require("express-validator");
 const fs = require("fs");
 const path = require("path");
-const usuarios = require('../data/users.json');
+const users = require('../data/users.json');
 
 module.exports = {
     register : (req, res) => res.render('register'),
@@ -10,17 +10,17 @@ module.exports = {
 
         if(errors.isEmpty()){
             let {name, email, password} = req.body
-            let lastID = usuarios.length !== 0 ? usuarios[usuarios.length - 1].id : 0;
+            let lastID = users.length !== 0 ? users[users.length - 1].id : 0;
             let newUser = {
               id: +lastID + 1,
               name: name.trim(),
               email,
               password,
             };
-            usuarios.push(newUser)
+            users.push(newUser)
             fs.writeFileSync(
                 path.resolve(__dirname, "..", "data", "users.json"),
-                JSON.stringify(usuarios, null, 3),
+                JSON.stringify(users, null, 3),
                 "utf-8"
               );
               return res.redirect("/");
@@ -32,5 +32,27 @@ module.exports = {
         }
     },
     login : (req, res) => res.render('login'),
-    password: (req, res) => res.render('password')
+    loginUser : (req,res) =>{
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()) {
+    
+          const {id, name} = users.find(user => user.email === req.body.email);
+    
+          req.session.userLogin = {
+              id,
+              name
+          }
+    
+        
+    
+          return res.redirect("/");
+    
+        }else {
+          return res.render("login",{
+            errors : errors.mapped()
+          });
+    
+        }
+      }
 }
