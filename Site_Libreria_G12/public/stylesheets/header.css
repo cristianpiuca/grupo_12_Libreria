@@ -87,6 +87,15 @@ position: relative;
      margin-bottom: 1px;
  }
 
+ .icono-cuenta{
+    background-image: url("/images/icono-perfil.PNG");
+    width: 26px;
+    height: 26px;
+    margin-left: 5px;
+    border: solid var(--colorVerdeOscuro);
+    border-radius: 50%;
+}
+
 
                                     /******Tablet******/
  @media(min-width:767px){

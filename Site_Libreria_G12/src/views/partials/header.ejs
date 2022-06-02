@@ -3,11 +3,16 @@
         <a href="/"><img src="/images/logo1.png" alt=""></a>
     </div>
     <div class="register-login">
-        <li><a href="/products/productAdd">Añadir productos</a></li>
-        <li><a href="/products/list">productos</a></li>
-        <!-- <li><a href="/products/productEdit">Editar productos</a></li> -->
-        <li class="register"><a href="/users/register">Registrarse</a></li>
-        <li class="login"><a href="/users/login">Iniciar Sesión</a></li>
+        <% if (locals.userLogin) { %>
+            <li><a href="/products/productAdd">Añadir productos</a></li>
+           <li><a href="/products/list">productos</a></li>
+        <% } %>
+           
+           <!-- <li><a href="/products/productEdit">Editar productos</a></li> -->
+           <% if (!locals.userLogin) { %>
+            <li class="register"><a href="/users/register">Registrarse</a></li>
+           <li class="login"><a href="/users/login">Iniciar Sesión</a></li>
+           <% } %>
     </div>
     <div class="buscador-menu">
         <form id="search-form" action="/result" method="GET">
@@ -18,7 +23,17 @@
         </form>
         
         
-        <a href="/products/product-cart"><button class="header-cart"><i class="fa fa-shopping-cart"></i></button></a>
+        <% if (locals.userLogin) { %>
+            <div class="icono-cuenta"></div>
+            <!--Menu desplegable
+            <ul>
+                <li><a href="">Perfil</a></li>
+            <li><a href="">Configuración</a></li>
+            <li><a href="">Cerrar sesión</a></li>
+            </ul>-->
+         <a href="/products/product-cart"><button class="header-cart"><i class="fa fa-shopping-cart"></i></button></a>
+                  
+        <% } %>
         <a href=""><button class="header-menu"><i class="fas fa-bars"></i></button></a>
         
         

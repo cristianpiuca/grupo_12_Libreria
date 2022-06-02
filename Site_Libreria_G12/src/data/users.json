@@ -9,7 +9,7 @@
         "address" : "Jujuy 4524",
         "province" : "Formosa",
         "tel" : 3703457545,
-        "category" : "user",
+        "rol" : "user",
         "image" : "image"
     },
     {
@@ -22,7 +22,7 @@
         "address" : "Siria 1640",
         "provine" : "Tucumán",
         "tel" : 3814863522,
-        "category" : "admin",
+        "rol" : "admin",
         "image" : "image"
     },
     {
@@ -35,7 +35,7 @@
         "address" : "Amadeo Jaques 328",
         "province" : "Santiago del Estero",
         "tel" : 3854987234,
-        "category" : "admin",
+        "rol" : "admin",
         "image" : "image"
     },
     {
@@ -48,7 +48,7 @@
         "address" : "Juan José Paso 890",
         "province" : "Rio Negro",
         "tel" : 29205789521,
-        "category" : "user",
+        "rol" : "user",
         "image" : "image"
     }
 ]

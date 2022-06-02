@@ -4,6 +4,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override')
+const session = require('express-session');
+const localCheck = require('./middlewares/localsCheck');
 
 
 const indexRouter = require('./routes/index');
@@ -31,6 +33,13 @@ app.use(express.static(path.join(__dirname, ".." ,'public')));
 
 //method override put path delete
 app.use(methodOverride('_method'));
+app.use(session({
+  secret: 'Boulevard',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {}
+}));
+app.use(localCheck);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
