@@ -31,6 +31,7 @@ module.exports = {
             });
         }
     },
+    password: (req, res) => res.render('password'),
     login : (req, res) => res.render('login'),
     loginUser : (req,res) =>{
         let errors = validationResult(req);
