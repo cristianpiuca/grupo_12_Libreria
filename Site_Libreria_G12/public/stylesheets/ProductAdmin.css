@@ -27,7 +27,10 @@
     margin-bottom: 20px;
     width: 100%;
 }
-
+.productAdmin__form-box span{
+    color: red;
+    font-size: 14px;
+}
 .productAdmin h4{
     margin-bottom: 10px;
 }
