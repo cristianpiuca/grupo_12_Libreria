@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head', {title : 'User|Librería' }) %>
+
+    <body class="profile">
+        <main>
+
+
+            <%- include('./partials/header') %>
+                <h2>Perfil</h2>
+                <div class="userAvatar">
+                    <img class="userPhoto" src="/images/userdefault.jpg" alt="">
+                    <h5>Opciones de Perfil</h5>
+                    <label class="label">
+                        <input type="file" required />
+                        <span>Cambiar Foto</span>
+                    </label>
+                    <label class="label">
+                        <li><a href="/users/profileEdit">Editar Perfil</a></li>
+                    </label>
+                    
+
+                </div>
+
+                <form class="userForm">
+                    <div class="userInfo">
+                        <h2>Info Personal</h2>
+                        <hr>
+                        <h3>Nombre : Franco</h3>
+                        <hr>
+                        <h3>Apellido : Martinez</h3> 
+                        <hr>
+                        <h3>Email : mandaloriano440@gmail.com</h3>
+                        <hr>
+                        <h3>Fecha de nacimiento : 23/03/76</h3>
+                        <hr>
+                        <h3>Dirección : Juan José Paso 890</h3>
+                        <hr>
+                        <h3>Provincia : Rio Negro</h3>
+                        <hr>
+                        <h3>Telefono : 29205789521</h3>
+                        <hr>
+                        <h3>Categoria : User</h3>
+                    </div>
+                </form>
+        </main>
+        <%- include('./partials/footer') %>
+    </body>
+
+</html>
