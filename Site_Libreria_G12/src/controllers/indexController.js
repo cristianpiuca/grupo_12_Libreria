@@ -23,6 +23,9 @@ module.exports = {
             products : result,
             keyword
         })
+    },
+    profile : (req,res) => {
+        return res.render('profile')
     }
    
 }

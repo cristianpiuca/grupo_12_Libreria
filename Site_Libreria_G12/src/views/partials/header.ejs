@@ -3,16 +3,19 @@
         <a href="/"><img src="/images/logo1.png" alt=""></a>
     </div>
     <div class="register-login">
-        <% if (locals.userLogin) { %>
+        <% if (locals.userLogin?.rol==="admin") { %>
             <li><a href="/products/productAdd">Añadir productos</a></li>
-           <li><a href="/products/list">productos</a></li>
-        <% } %>
            
+        <% } %>
+        <li><a href="/products/list">productos</a></li>
            <!-- <li><a href="/products/productEdit">Editar productos</a></li> -->
            <% if (!locals.userLogin) { %>
             <li class="register"><a href="/users/register">Registrarse</a></li>
            <li class="login"><a href="/users/login">Iniciar Sesión</a></li>
-           <% } %>
+           <% }else{ %>
+            <li><a href="/users/profile">MI PERFIL</a></li>
+            <li><a href="#">SALIR</a></li>
+        <% } %>
     </div>
     <div class="buscador-menu">
         <form id="search-form" action="/result" method="GET">

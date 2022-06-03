@@ -1,3 +1,4 @@
+const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const fs = require("fs");
 const path = require("path");
@@ -15,7 +16,8 @@ module.exports = {
               id: +lastID + 1,
               name: name.trim(),
               email,
-              password,
+              password : bcryptjs.hashSync(password, 10),
+              rol : "user"
             };
             users.push(newUser)
             fs.writeFileSync(
@@ -23,6 +25,13 @@ module.exports = {
                 JSON.stringify(users, null, 3),
                 "utf-8"
               );
+              //levanta sesion
+              const {id, rol} = newUser
+              req.session.userLogin = {
+                id,
+                name : name.trim(),
+                rol
+            }
               return res.redirect("/");
         }else{
             return res.render("register",{
@@ -36,22 +45,22 @@ module.exports = {
     loginUser : (req,res) =>{
         let errors = validationResult(req);
 
-        if (errors.isEmpty()) {
+        if(errors.isEmpty()) {
     
-          const {id, name} = users.find(user => user.email === req.body.email);
+          const {id, name, rol} = users.find(user => user.email === req.body.email);
     
           req.session.userLogin = {
-              id,
-              name
-          }
-    
+            id,
+            name,
+            rol
+        }
         
-    
           return res.redirect("/");
     
         }else {
           return res.render("login",{
-            errors : errors.mapped()
+            errors : errors.mapped(),
+            old : req.body
           });
     
         }
