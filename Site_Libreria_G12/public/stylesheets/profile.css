@@ -1,3 +1,6 @@
+.profile {
+    background-color: var(--colorNaranja);
+}
 .profile main h2 {
     text-align: center;
 }
@@ -17,7 +20,7 @@
 }
 
 .profile .userInfo {
-    width: 80%;
+    width: 88%;
     background-color: white;
     margin: 30px auto;
     border-radius: 10px;

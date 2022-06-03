@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', { title : 'register' }) %>
+
+    <body class="profile">
+
+        <%- include('./partials/header') %>
+            <main>
+                <form class="UserEditForm">
+                    <h3 class="UserTitleEdit">Editar Perfil</h3>
+                    <div>
+                        <label class="labelTags">Nombre</label>
+                        <input class="userEdit-input" type="text" id="name" name="name">
+                    </div>
+                    <div>
+                        <label class="labelTags">Apellido</label>
+                        <input class="userEdit-input" type="text" id="name" name="name">
+                    </div>
+                    <div>
+                        <label class="labelTags">Email</label>
+                        <input class="userEdit-input" type="email" id="email" name="email">
+                    </div>
+                    <div>
+                        <label class="labelTags">Contraseña nueva</label>
+                        <input class="userEdit-input" type="password" id="password" name="password">
+                    </div>
+                    <div>
+                        <label class="labelTags">Confirmar contraseña</label>
+                        <input class="userEdit-input" type="password" id="password" name="password">
+                    </div>
+                    <div>
+                        <label class="labelTags">Fecha de nacimiento</label>
+                        <input class="userEdit-input" type="date" id="date" name="date">
+                    </div>
+                    <div>
+                        <label class="labelTags">Domicilio</label>
+                        <input class="userEdit-input" type="text" id="domicilio" name="domicilio">
+                    </div>
+                    <div>
+                        <label class="labelTags">Provincia</label>
+                        <select class="userEdit-input" name="format" id="format">
+                            <option value="" hidden selected>Selecciona la Provincia</option>
+
+                            <option value="Buenos Aires">Buenos Aires</option>
+                            <option value="Ciudad Autónoma de Buenos Aires">Ciudad Autónoma de Buenos Aires</option>
+                            <option value="Catamarca">Catamarca</option>
+                            <option value="Chaco">Chaco</option>
+                            <option value="Chubut">Chubut</option>
+                            <option value="Córdoba">Córdoba</option>
+                            <option value="Corrientes">Corrientes</option>
+                            <option value="Entre Ríos">Entre Ríos</option>
+                            <option value="Formosa">Formosa</option>
+                            <option value="Jujuy">Jujuy</option>
+                            <option value="La Pampa">La Pampa</option>
+                            <option value="La Rioja">La Rioja</option>
+                            <option value="Mendoza">Mendoza</option>
+                            <option value="Misiones">Misiones</option>
+                            <option value="Neuquén">Neuquén</option>
+                            <option value="Río Negro">Río Negro</option>
+                            <option value="Salta">Salta</option>
+                            <option value="San Juan">San Juan</option>
+                            <option value="San Luis">San Luis</option>
+                            <option value="Santa Cruz">Santa Cruz</option>
+                            <option value="Santa Fe">Santa Fe</option>
+                            <option value="Santiago del Estero">Santiago del Estero</option>
+                            <option value="Tierra del Fuego">Tierra del Fuego</option>
+                            <option value="Tucumán">Tucumán</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="labelTags">Telefono</label>
+                        <input class="userEdit-input" type="number" id="number" name="number">
+                    </div>
+                    <button class="btnUser" type="submit">Guardar</button>
+                    <button class="btnUser" type="reset">Cancelar</button>
+                </form>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
+
+</html>
