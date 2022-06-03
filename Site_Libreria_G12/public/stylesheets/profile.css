@@ -1,0 +1,128 @@
+.profile main h2 {
+    text-align: center;
+}
+
+.profile .userAvatar{
+    text-align: center;
+}
+
+.profile .userPhoto{
+    width: 80%;
+}
+
+.profile .userForm {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.profile .userInfo {
+    width: 80%;
+    background-color: white;
+    margin: 30px auto;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 6px 5px 6px 2px grey;
+}
+
+.profile .UserEditForm {
+    width: 80%;
+    background-color: white;
+    margin: 30px auto;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 6px 5px 6px 2px grey;
+}
+
+.profile h4 {
+    font-size: small;
+}
+
+.profile .UserTitleEdit {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.profile .userEdit-input {
+    border-radius: 15px;
+    border: 2px solid var(--colorVerdeOscuro);
+    height: 45px;
+    width: 100%;
+    margin: 10px 0 0;
+    padding: 5px 5px;
+}
+
+.profile .btnUser {
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin: 5px;
+    background: #dddddd;
+    display: inline-block;
+}
+
+label.label input[type="file"] {
+        position: absolute;
+        top: -1000px;
+      }
+      .label {
+        cursor: pointer;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        padding: 5px 15px;
+        margin: 5px;
+        background: #dddddd;
+        display: inline-block;
+      }
+      .label:hover {
+        background: #5cbd95;
+      }
+      .label:active {
+        background: #9fa1a0;
+      }
+      .label:invalid + span {
+        color: #000000;
+      }
+      .label:valid + span {
+        color: #ffffff;
+      }
+
+.profile .labelTags {
+    position: relative;
+    top: 13px;
+}
+
+
+@media (min-width:768px) {
+    
+
+.profile .userPhoto {
+    width: 55%;
+}
+
+    .profile .userInfo {
+        width: 55%;
+    }
+
+    .profile .UserEditForm {
+        width: 55%;
+    }
+
+}
+
+@media (min-width:1024px){
+    .profile .userPhoto {
+        width: 40%;
+    }
+    
+        .profile .userInfo {
+            width: 40%;
+        }
+    
+        .profile .UserEditForm {
+            width: 40%;
+        }
+    
+    }
+
