@@ -1,9 +1,12 @@
-const { query } = require('express')
+const path = require('path')
+const fs = require('fs')
 const products = require('../data/products')
 
 
 module.exports = {
     index :(req,res) => {
+        const products = JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','data','products.json')));
+
         return res.render('index', {
             products  
         })

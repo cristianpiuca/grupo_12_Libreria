@@ -1,54 +1,8 @@
 [
-    {
-        "id" : 1,
-        "firstName" : "Julieta",
-        "lastName" : "Campos",
-        "email" : "julietacampos@gmail.com",
-        "password" : "funko887",
-        "birth" : "15/08/96", 
-        "address" : "Jujuy 4524",
-        "province" : "Formosa",
-        "tel" : 3703457545,
-        "category" : "user",
-        "image" : "image"
-    },
-    {
-        "id" : 2,
-        "firstName" : "laura",
-        "lastName" : "Galvan",
-        "email" : "laugal@gmail.com",
-        "password" : "LunaMaya",
-        "birth" : "26/04/82",
-        "address" : "Siria 1640",
-        "provine" : "Tucumán",
-        "tel" : 3814863522,
-        "category" : "admin",
-        "image" : "image"
-    },
-    {
-        "id" : 3,
-        "firstName" : "Gabriel",
-        "lastName" : "Medina",
-        "email" : "medinag94@gmail.com",
-        "password" : "27654400",
-        "birth" : "04/12/01",
-        "address" : "Amadeo Jaques 328",
-        "province" : "Santiago del Estero",
-        "tel" : 3854987234,
-        "category" : "admin",
-        "image" : "image"
-    },
-    {
-        "id" : 4,
-        "firstName" : "Franco",
-        "lastName" : "Martinez",
-        "email" : "mandaloriano440@gmail.com",
-        "password" : "fran3030",
-        "birth" : "23/03/76",
-        "address" : "Juan José Paso 890",
-        "province" : "Rio Negro",
-        "tel" : 29205789521,
-        "category" : "user",
-        "image" : "image"
-    }
+   {
+      "id": 1,
+      "name": "prueba",
+      "email": "prueba@gmail.com",
+      "password": "123456"
+   }
 ]

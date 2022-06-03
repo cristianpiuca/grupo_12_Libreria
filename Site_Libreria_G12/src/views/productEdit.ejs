@@ -17,14 +17,20 @@
                     <div class="productAdmin__form-box">
                         <label for="name">Nombre del producto</label>
                         <input class="productAdmin__form-input" type="text" id="name" name="name" value=" <%= product.name %>">
+                        <span><%= locals.errors && errors.name ? errors.name.msg : null %></span>
+
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="author">Autor</label>
                         <input class="productAdmin__form-input" type="text" id="author" name="author" value=" <%= product.author %>">
+                        <span><%= locals.errors && errors.author ? errors.author.msg : null %></span>
+
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="price">Precio</label>
                         <input class="productAdmin__form-input" type="text" id="price" name="price" value=" <%= product.price%>">
+                        <span><%= locals.errors && errors.price ? errors.price.msg : null %></span>
+
                     </div>
                     <div class="productAdmin__form-box">
                       
@@ -34,18 +40,26 @@
                               <option value="<%= category.id %>" <%= category.id === product.category ? 'selected' : null %>><%= category.name %></option>
                             <% }) %>
                           </select>
+                          <span><%= locals.errors && errors.category ? errors.category.msg : null %></span>
+
                 </div>
                     <div class="productAdmin__form-box">
                         <label for="year">Año</label>
                         <input class="productAdmin__form-input" type="text" id="year" name="year" value=" <%= product.year %>">
+                        <span><%= locals.errors && errors.year ? errors.year.msg : null %></span>
+
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="idioma">Idioma</label>
                         <input class="productAdmin__form-input" type="text" id="language" name="language" value=" <%= product.language %>">
+                        <span><%= locals.errors && errors.language ? errors.language.msg : null %></span>
+
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="pages">Paginas</label>
                         <input class="productAdmin__form-input" type="text" id="pages" name="pages" value=" <%= product.pages %>">
+                        <span><%= locals.errors && errors.pages ? errors.pages.msg : null %></span>
+
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="type">Formato</label>
@@ -59,18 +73,25 @@
                             <option value="Box-set">Box set</option>
                             
                         </select>
+                        <span><%= locals.errors && errors.format ? errors.format.msg : null %></span>
+
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="year">Editorial</label>
                         <input class="productAdmin__form-input" type="text" id="editorial" name="editorial" value=" <%= product.editorial %>">
+                        <span><%= locals.errors && errors.editorial ? errors.editorial.msg : null %></span>
+
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="description">Descripción del producto</label>
-                        <textarea class="productAdmin__form-input" name="description" id="description" ></textarea>
+                        <textarea class="productAdmin__form-input" name="description" id="description"  value="<%= locals.old && old.description ? old.description : null%>"></textarea>
+                        <span><%= locals.errors && errors.description ? errors.description.msg : null %></span>
+
                     </div>
                      <div class="productAdmin__form-box">
                         <label for="image">Imagen del producto</label>
                         <input class="productAdmin__form-input" type="file" id="img"  name="image" accept="image/*">
+                        <p>Recorda subir imagen</p>
                     </div>
                    
          

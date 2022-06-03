@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head', {
+<%- include('./partials/head', {
         title : 'register'
-    }) %> 
+    }) %>
+
 <body class="body-register">
-  
-    <%- include('./partials/header') %> 
+
+    <%- include('./partials/header') %>
     <!-- formulario -->
     <main class="register-design">
 
@@ -15,24 +16,31 @@
             <div class="register-info-container">
 
                 <h2>Registrate</h2>
-                <form action="" class="inputs-container">
-                    <p class="p-input">Tu nombre</p>
-                    <input type="text" class="input" name="name-reg" id="name-reg">
-                    <p class="p-input">Tu email</p>
-                    <input type="text" class="input" name="email-reg" id="email-reg">
-                    <p class="p-input">Tu contraseña</p>
-                    <input type="password" class="input" name="password-reg" id="password-reg">
-                    <p class="p-input">Repetir contraseña</p>
-                    <input type="password" class="input" name="password-reg" id="password-reg">
+                <form method="POST" class="inputs-container">
                    
+                        <p class="p-input">Tu nombre</p>
+                        <input type="text" class="input" name="name" id="name-reg" value="<%= locals.old && old.name ? old.name : null %>">
+                        <span><%= locals.errors && errors.name ? errors.name.msg : null %></span>
+
+                        <p class="p-input">Tu email</p>
+                        <input type="text" class="input" name="email" id="email-reg" value="<%= locals.old && old.email ? old.email : null%>">
+                        <span><%= locals.errors && errors.email ? errors.email.msg : null %></span>
+                
+                        <p class="p-input">Tu contraseña</p>
+                        <input type="password" class="input" name="password" id="password-reg" value="<%= locals.old && old.password ? old.password : null %>">
+                        <span><%= locals.errors && errors.password ? errors.password.msg : null %></span>
+                        <p class="p-input">Repetir contraseña</p>
+                        <input type="password" class="input" name="password2" id="password-reg" value="<%= locals.old && old.password2 ? old.password2 : null %>">
+                        <span><%= locals.errors && errors.password2 ? errors.password2.msg : null %></span>
                     <div class="terminoss">
-                        <input type="checkbox" name="terminos-reg" id="terminos-reg">
-                     <label for="terminos-reg">Acepto términos y condiciones</label> 
-                     </div>
-                    
-                    
+                        <input type="checkbox" name="terminos" id="terminos-reg" >
+                        <label for="terminos-reg">Acepto términos y condiciones</label>
+                        <span><%= locals.errors && errors.terminos ? errors.terminos.msg : null %></span>
+                    </div>
+
+
                     <div class="footer-register">
-                        <button class="button-reg"><a href="/">Registrate</a></button>
+                        <button type="submit" class="button-reg">Registrate</button>
                         <a href="/login">
                             <p>¿Ya tenés cuenta?</p>
                         </a>
@@ -46,12 +54,12 @@
 
 
 
-  
+
     </main>
-  
-    
-   
-    <%- include('./partials/footer') %> 
+
+
+
+    <%- include('./partials/footer') %>
 </body>
 
 </html>
