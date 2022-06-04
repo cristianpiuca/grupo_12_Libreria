@@ -11,19 +11,27 @@ module.exports = {
 
         const product = products.find(product => product.id === +id)
 
+        
+
 
         return res.render('productDetail', {
             product,
-            categories
+            categories,
+            user: req.session.userLogin
         })
     },
-    cart: (req, res) => res.render('productCart'),
-
+    cart: (req, res) => {
+        res.render('productCart',{
+            user: req.session.userLogin
+        })
+    },
+     
     add: (req, res) => {
         return res.render('productAdd', {
             categories
         })
     },
+
     store: (req, res) => {
         let errors = validationResult(req)
         if (errors.isEmpty()) {
@@ -58,8 +66,6 @@ module.exports = {
 
             products.push(addProduct)
             fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'products.json'), JSON.stringify(products, null, 3), 'utf-8')
-
-
 
             return res.redirect('/')
         }else {

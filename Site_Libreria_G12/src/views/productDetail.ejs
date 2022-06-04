@@ -5,8 +5,8 @@
 
 <body>
 
-    <%- include('./partials/header') %>
-
+    <%- include('./partials/header', {user: user})%> 
+    <main>
     <div class="contenedor-principalProduct">
         <div class="contenedor-products">
             <div class="product-img">
@@ -66,8 +66,9 @@
             </div>
         </div>
     </div>
-    
+</main>
     <%- include('./partials/footer') %>
+
 </body>
 
 </html>
