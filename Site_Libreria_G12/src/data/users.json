@@ -12,5 +12,12 @@
       "email": "prueba@gmail.com",
       "password": "$2a$10$EHLAuz/q6oS9lwrQ7eaPOO/erGTylBSdSt2thk80LplVucyGs5/eC",
       "rol": "user"
+   },
+   {
+      "id": 3,
+      "name": "Cristian",
+      "email": "pepe@hotmail.com",
+      "password": "$2a$10$6e2mgIxFPrHYLZRfSdbPM.vwwTjOihtAzipPlkTLrGMrKepYoFe.u",
+      "rol": "user"
    }
 ]

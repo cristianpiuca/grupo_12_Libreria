@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {login, register, processRegister, loginUser} = require('../controllers/userController')
+const {login, register, processRegister, loginUser, logout} = require('../controllers/userController')
 const validations = require('../validations/registerValidations')
 const loginCheck = require('../validations/loginValidations')
 
@@ -11,6 +11,7 @@ router
     .post('/register',validations, processRegister)
     .get('/login', login)
     .post('/login',loginCheck, loginUser)
+    .get('/logout', logout)
 
 
 

@@ -32,6 +32,16 @@ module.exports = {
                 name : name.trim(),
                 rol
             }
+            if(req.body.checkbox){
+              const expireSession = 60000;
+              res.cookie('boulevardCookie', req.session.userLogin, {
+                expires: new Date(Date.now() + expireSession),
+                httpOnly: true,
+                secure: true
+              })
+            }
+            res.locals.userLogin = req.session.userLogin
+
               return res.redirect("/");
         }else{
             return res.render("register",{
@@ -66,5 +76,13 @@ module.exports = {
         }
       },
       profile: (req, res) => res.render('profile'),
-      profileEdit: (req,res) => res.render('profileEdit')
-}
+      profileEdit: (req,res) => res.render('profileEdit'),
+
+      logout: (req,res) => {
+        req.session.destroy();
+        if(req.cookies.boulevardCookie){
+          res.cookie('boulevardCookie', "", {maxAge: -1})
+        }
+        res.redirect('/')
+      }
+ }
