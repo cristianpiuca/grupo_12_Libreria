@@ -104,21 +104,21 @@ module.exports = {
             if (product.id === +id) {
                 let productUpdate = {
                     ...product,
-                    name: name,
-                    author: author,
+                    name,
+                    author,
                     price: +price,
-                    category: +category,
+                    category,
                     year: +year,
-                    language: language,
+                    language,
                     pages: +pages,
-                    format: format,
-                    editorial: editorial,
-                    description: description,
+                    format,
+                    editorial,
+                    description,
                     img: req.file ? req.file.filename : product.img,
                 }
                 if (req.file) {
-                    if (fs.existsSync(path.resolve(__dirname, '..', 'public', 'images', product.img)) && product.img !== "noimage.jpeg") {
-                        fs.unlinkSync(path.resolve(__dirname, '..', 'public', 'images', product.img))
+                    if (fs.existsSync(path.resolve(__dirname, "..", "public", "images", product.img)) && product.img !== "noimage.jpeg") {
+                        fs.unlinkSync(path.resolve(__dirname, "..", "public", "images", product.img))
                     }
                 }
                 return productUpdate
@@ -126,7 +126,7 @@ module.exports = {
             return product
         })
 
-        fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'products.json'), JSON.stringify(productsUpdate, null, 3), 'utf-8')
+        fs.writeFileSync(path.resolve(__dirname, "..", "data", "products.json"), JSON.stringify(productsUpdate, null, 3), "utf-8")
 
         return res.redirect('/')
         }else{
