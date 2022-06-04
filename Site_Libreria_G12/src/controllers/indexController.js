@@ -23,7 +23,8 @@ module.exports = {
         //return res.send(result)
         return res.render('result', {
             products : result,
-            keyword
+            keyword,
+            user: req.session.userLogin
         })
     },
     profile: (req, res) => {

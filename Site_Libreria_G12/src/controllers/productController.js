@@ -28,7 +28,8 @@ module.exports = {
      
     add: (req, res) => {
         return res.render('productAdd', {
-            categories
+            categories,
+            user: req.session.userLogin
         })
     },
 
@@ -86,7 +87,8 @@ module.exports = {
 
         return res.render('productEdit', {
             product,
-            categories
+            categories,
+            user: req.session.userLogin
         })
     },
     update: (req, res) => {
@@ -155,11 +157,14 @@ module.exports = {
     },
     list: (req, res) => {
         return res.render('products', {
-            products
+            products,
+            user: req.session.userLogin
+            
         })
     },
     index: (req, res) => {
         return res.render('products')
+        
     },
 
 
