@@ -132,7 +132,10 @@ module.exports = {
         }else{
             return res.render("productEdit", {
                 categories,
-                product : req.body,
+                product : {
+                    id :req.params.id,
+                    ...req.body
+                },
                 errors : errors.mapped()
               });
         }
