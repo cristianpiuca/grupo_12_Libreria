@@ -140,9 +140,11 @@ module.exports = {
         }else{
             return res.render("productEdit", {
                 categories,
-                product : req.body,
-                errors : errors.mapped(),
-                user: req.session.userLogin
+                product : {
+                    id :req.params.id,
+                    ...req.body
+                },
+                errors : errors.mapped()
               });
         }
        
