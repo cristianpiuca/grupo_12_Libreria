@@ -5,13 +5,13 @@
 
     <body class="profile">
 
-        <%- include('./partials/header', {user: user})%> 
+        <%- include('./partials/header', {user: user})%>
             <main>
-                <form class="UserEditForm">
-                    <h3 class="UserTitleEdit">Editar Perfil</h3>
+                <form method="POST" action="/users/update/<%= user.id %>?_method=PUT" class="UserEditForm">
+                    <h3 class="UserTitleEdit">Editar Perfil: <%= user.name %> </h3>
                     <div>
                         <label class="labelTags">Nombre</label>
-                        <input class="userEdit-input" type="text" id="name" name="name">
+                        <input class="userEdit-input" type="text" id="name" name="name" value="<%= user.name %> ">
                     </div>
                     <div>
                         <label class="labelTags">Apellido</label>
@@ -19,7 +19,7 @@
                     </div>
                     <div>
                         <label class="labelTags">Email</label>
-                        <input class="userEdit-input" type="email" id="email" name="email">
+                        <input class="userEdit-input" type="email" id="email" name="email" value="<%= user.email %> ">
                     </div>
                     <div>
                         <label class="labelTags">Contraseña nueva</label>

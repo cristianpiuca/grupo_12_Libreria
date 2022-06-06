@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const users = require('../data/users.json');
 
+
 module.exports = {
   register: (req, res) => res.render('register'),
   processRegister: (req, res) => {
@@ -85,18 +86,58 @@ module.exports = {
     const { id } = req.params;
 
     const user = users.find(user => user.id === +id)
-    console.log(user)
+   
 
     return res.render('profile', {
-      user: req.session.userLogin
+      user
     })
 
   },
-  profileEdit: (req, res) => {
+  edit: (req, res) => {
+    const { id } = req.params;
 
-    res.render('profileEdit', {
-      user: req.session.userLogin
+    const user = users.find(user => user.id === +id)
+    return res.render('profileEdit',{
+      user: req.session.userLogin,
+      user
+
     })
+
+  },
+  update: (req,res) => {
+    console.log("TEST")
+
+    const {id} = req.params;
+    const {name, email} = req.body;
+
+    const usersEdit = users.map(user =>{
+      if(user.id === +id){
+        let userEdit = {
+          ...user,
+          name,
+          email   
+        }
+        return userEdit
+      }
+      return user
+    })
+    
+    fs.writeFileSync(path.resolve(__dirname, "..",'data','users.json'), JSON.stringify(usersEdit, null, 3), "utf-8")
+    const userUpdate = users.find(user => user.email === req.body.email);
+
+    req.session.userLogin = {
+      id : userUpdate.id,
+      name : userUpdate.name,
+      email : userUpdate.email,
+      birth : userUpdate.birth,
+      lastname : userUpdate.lastname,
+      direction : userUpdate.direction,
+      province : userUpdate.province,
+      tel : userUpdate.tel,
+      rol : userUpdate.rol
+    }
+    return res.redirect('/users/profile/'+id)
+    
   },
 
   logout: (req, res) => {

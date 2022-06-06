@@ -141,7 +141,8 @@ module.exports = {
             return res.render("productEdit", {
                 categories,
                 product : req.body,
-                errors : errors.mapped()
+                errors : errors.mapped(),
+                user: req.session.userLogin
               });
         }
        
