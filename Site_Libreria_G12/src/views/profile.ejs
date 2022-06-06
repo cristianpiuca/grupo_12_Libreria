@@ -10,12 +10,9 @@
             
                 <h2>Perfil</h2>
                 <div class="userAvatar">
-                    <img class="userPhoto" src="/images/userdefault.jpg" alt="">
+                    <img class="userPhoto" src="/images/<%= user.img %> " alt="">
                     <h5>Opciones de Perfil</h5>
-                    <label class="label">
-                        <input type="file" id="img" name="img" accept="img" required />
-                        <span>Cambiar Foto</span>
-                    </label>
+
                     <label class="label">
                         <li><a href="/users/profileEdit/<%= user.id %> ">Editar Perfil</a></li>
                     </label>

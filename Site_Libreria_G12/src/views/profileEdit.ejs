@@ -7,7 +7,7 @@
 
         <%- include('./partials/header', {user: user})%>
             <main>
-                <form method="POST" action="/users/update/<%= user.id %>?_method=PUT" class="UserEditForm">
+                <form method="POST" action="/users/update/<%= user.id %>?_method=PUT" class="UserEditForm" enctype="multipart/form-data">
                     <h3 class="UserTitleEdit">Editar Perfil: <%= user.name %> </h3>
                     <div>
                         <label class="labelTags">Nombre</label>
@@ -71,6 +71,10 @@
                     <div>
                         <label class="labelTags">Telefono</label>
                         <input class="userEdit-input" type="number" id="tel" name="tel" value="<%= user.tel %> ">
+                    </div>
+                    <div>
+                        <label class="labelTags">Cambiar foto de Perfil</label>
+                        <input class="userEdit-input" type="file" id="img" name="image" accept="image/*"/>
                     </div>
                     <button class="btnUser" type="submit">Guardar</button>
                     <button class="btnUser" type="reset">Cancelar</button>

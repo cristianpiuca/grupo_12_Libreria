@@ -18,7 +18,8 @@ module.exports = {
         name: name.trim(),
         email,
         password: bcryptjs.hashSync(password, 10),
-        rol: "user"
+        rol: "user",
+      
       };
       users.push(newUser)
       fs.writeFileSync(
@@ -106,10 +107,9 @@ module.exports = {
   },
   update: (req,res) => {
 
-
     const {id} = req.params;
     const {name, lastname, birth, email, direction, province, tel } = req.body;
-    console.log(name, "test")
+   
     const usersEdit = users.map(user =>{
       if(user.id === +id){
         let userEdit = {
@@ -120,9 +120,14 @@ module.exports = {
           email,
           direction,
           province,
-          tel
-          
+          tel,
+          img: req.file ? req.file.filename : user.img
         }
+        if (req.file) {
+          if (fs.existsSync(path.resolve(__dirname, "..", "public", "images", user.img)) && user.img !== "noimage.jpeg") {
+              fs.unlinkSync(path.resolve(__dirname, "..", "public", "images", user.img))
+          }
+      }
         
         return userEdit
       }

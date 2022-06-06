@@ -15,21 +15,60 @@
    },
    {
       "id": 3,
-      "name": "Cristian ",
-      "email": "pepe@hotmail.com",
       "password": "$2a$10$6e2mgIxFPrHYLZRfSdbPM.vwwTjOihtAzipPlkTLrGMrKepYoFe.u",
+      "email": "pepe@hotmail.com",
       "rol": "admin",
-      "lastname": "Piuca ",
-      "direction": "Font ",
-      "birth": "2055-09-01",
-      "province": "Ciudad Autónoma de Buenos Aires",
-      "tel": "1125484622"
+      "name": "Cristian  ",
+      "lastname": " Piuca  ",
+      "birth": "",
+      "direction": " puan 255  ",
+      "province": "",
+      "tel": "",
+      "img": "image-1654555042408.jpg"
    },
    {
       "id": 4,
-      "name": "Lucas",
+      "name": "Lucas ",
       "email": "loco@hotmail.com",
       "password": "$2a$10$j3pmtMEI5Vy626i9saduW.5Es0/7d8w6N3O8BYWjC1OlLwfs/6YFG",
+      "rol": "user",
+      "lastname": " Piuca",
+      "birth": "",
+      "direction": " puan 255",
+      "province": "San Luis",
+      "tel": "4444444444444444444"
+   },
+   {
+      "id": 5,
+      "password": "$2a$10$BgAcOJNI2oYLku1/ValTpuiHUAlQGa8KOc55M7./nbDP4hCS1ULe.",
+      "rol": "user"
+   },
+   {
+      "id": 6,
+      "password": "$2a$10$1iR/XY1pRkjLMgF.T/vaN.OdCw0XkTW/Gs/VXrTJk4PRHUxvCbqLi",
+      "rol": "user"
+   },
+   {
+      "id": 7,
+      "name": "Juan",
+      "email": "juancito@gmail.com",
+      "password": "$2a$10$0.og9Dfk041NhvRtPdmUIemfVehnSJ/Gr3y/eNvxy9ZHhzPIlXI1O",
+      "rol": "user",
+      "image": "noimage.jpeg"
+   },
+   {
+      "id": 8,
+      "name": "Pablo",
+      "email": "pablo@gmai.com",
+      "password": "$2a$10$srAB0ikcNGz6YN10xeUbEOg0Q5Jb50m.HcHV.XaAg8wQV7Hm8yg7q",
+      "rol": "user",
+      "image": "noimage.jpeg"
+   },
+   {
+      "id": 9,
+      "name": "Probando",
+      "email": "test@gmail.com",
+      "password": "$2a$10$opd7vFDneBXjH5oVaV9MKOgu8UJE1uSKJfMnnUNF4zTlbtzNA0VWC",
       "rol": "user"
    }
 ]

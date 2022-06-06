@@ -144,7 +144,8 @@ module.exports = {
                     id :req.params.id,
                     ...req.body
                 },
-                errors : errors.mapped()
+                errors : errors.mapped(),
+                user: req.session.userLogin
               });
         }
        
