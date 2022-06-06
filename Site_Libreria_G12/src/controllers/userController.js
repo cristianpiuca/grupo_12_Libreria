@@ -84,8 +84,8 @@ module.exports = {
   },
   profile: (req, res) => {
     const { id } = req.params;
-
-    const user = users.find(user => user.id === +id)
+    let usuariosNuevos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','data','users.json')));
+    const user = usuariosNuevos.find(user => user.id === +id)
    
 
     return res.render('profile', {
@@ -105,11 +105,11 @@ module.exports = {
 
   },
   update: (req,res) => {
-    console.log("TEST")
+
 
     const {id} = req.params;
     const {name, email} = req.body;
-
+    console.log(name, "test")
     const usersEdit = users.map(user =>{
       if(user.id === +id){
         let userEdit = {
@@ -117,13 +117,17 @@ module.exports = {
           name,
           email   
         }
+        
         return userEdit
       }
       return user
     })
+    let usuariosViejos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','data','users.json')));
+    
     
     fs.writeFileSync(path.resolve(__dirname, "..",'data','users.json'), JSON.stringify(usersEdit, null, 3), "utf-8")
     const userUpdate = users.find(user => user.email === req.body.email);
+   
 
     req.session.userLogin = {
       id : userUpdate.id,

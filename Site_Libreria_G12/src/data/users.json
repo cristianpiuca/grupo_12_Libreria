@@ -1,33 +1,30 @@
 [
-    {
-        "id": 1,
-        "name": "normal",
-        "email": "noeliaromina20@gmail.com",
-        "password": "$2a$10$69a8vpZqtX7qhVE7GOmc9.e2AtBx2CDSwwb6QmZZANePZastLis1C",
-        "rol": "admin"
-    },
-    {
-        "id": 2,
-        "name": "prueba",
-        "email": "prueba@gmail.com",
-        "password": "$2a$10$EHLAuz/q6oS9lwrQ7eaPOO/erGTylBSdSt2thk80LplVucyGs5/eC",
-        "rol": "user"
-    },
-    {
-        "id": 3,
-        "name": [
-            "Julian",
-            ""
-        ],
-        "email": "pepe@hotmail.com",
-        "password": "$2a$10$6e2mgIxFPrHYLZRfSdbPM.vwwTjOihtAzipPlkTLrGMrKepYoFe.u",
-        "rol": "admin"
-    },
-    {
-        "id": 4,
-        "name": "Lucas",
-        "email": "loco@hotmail.com",
-        "password": "$2a$10$j3pmtMEI5Vy626i9saduW.5Es0/7d8w6N3O8BYWjC1OlLwfs/6YFG",
-        "rol": "user"
-    }
+   {
+      "id": 1,
+      "name": "normal",
+      "email": "noeliaromina20@gmail.com",
+      "password": "$2a$10$69a8vpZqtX7qhVE7GOmc9.e2AtBx2CDSwwb6QmZZANePZastLis1C",
+      "rol": "admin"
+   },
+   {
+      "id": 2,
+      "name": "prueba",
+      "email": "prueba@gmail.com",
+      "password": "$2a$10$EHLAuz/q6oS9lwrQ7eaPOO/erGTylBSdSt2thk80LplVucyGs5/eC",
+      "rol": "user"
+   },
+   {
+      "id": 3,
+      "name": "Cristian",
+      "email": "pepe@hotmail.com",
+      "password": "$2a$10$6e2mgIxFPrHYLZRfSdbPM.vwwTjOihtAzipPlkTLrGMrKepYoFe.u",
+      "rol": "admin"
+   },
+   {
+      "id": 4,
+      "name": "Lucas",
+      "email": "loco@hotmail.com",
+      "password": "$2a$10$j3pmtMEI5Vy626i9saduW.5Es0/7d8w6N3O8BYWjC1OlLwfs/6YFG",
+      "rol": "user"
+   }
 ]
