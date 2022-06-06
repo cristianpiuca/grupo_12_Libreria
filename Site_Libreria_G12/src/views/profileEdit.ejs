@@ -15,7 +15,7 @@
                     </div>
                     <div>
                         <label class="labelTags">Apellido</label>
-                        <input class="userEdit-input" type="text" id="apellido" name="apellido">
+                        <input class="userEdit-input" type="text" id="lastname" name="lastname" value="<%= user.lastname %> ">
                     </div>
                     <div>
                         <label class="labelTags">Email</label>
@@ -23,23 +23,23 @@
                     </div>
                     <div>
                         <label class="labelTags">Contraseña nueva</label>
-                        <input class="userEdit-input" type="password" id="password" name="password">
+                        <input class="userEdit-input" type="password" id="password" name="password" value="<%= user.password %> ">
                     </div>
                     <div>
                         <label class="labelTags">Confirmar contraseña</label>
-                        <input class="userEdit-input" type="password" id="password2" name="password2">
+                        <input class="userEdit-input" type="password" id="password2" name="password2" value="<%= user.password %> ">
                     </div>
                     <div>
                         <label class="labelTags">Fecha de nacimiento</label>
-                        <input class="userEdit-input" type="date" id="date" name="date">
+                        <input class="userEdit-input" type="date" id="birth" name="birth" value="<%= user.birth %> ">
                     </div>
                     <div>
                         <label class="labelTags">Domicilio</label>
-                        <input class="userEdit-input" type="text" id="domicilio" name="domicilio">
+                        <input class="userEdit-input" type="text" id="direction" name="direction" value="<%= user.direction %> ">
                     </div>
                     <div>
                         <label class="labelTags">Provincia</label>
-                        <select class="userEdit-input" name="format" id="format">
+                        <select class="userEdit-input" name="province" id="province">
                             <option value="" hidden selected>Selecciona la Provincia</option>
 
                             <option value="Buenos Aires">Buenos Aires</option>
@@ -70,7 +70,7 @@
                     </div>
                     <div>
                         <label class="labelTags">Telefono</label>
-                        <input class="userEdit-input" type="number" id="number" name="number">
+                        <input class="userEdit-input" type="number" id="tel" name="tel" value="<%= user.tel %> ">
                     </div>
                     <button class="btnUser" type="submit">Guardar</button>
                     <button class="btnUser" type="reset">Cancelar</button>

@@ -108,14 +108,20 @@ module.exports = {
 
 
     const {id} = req.params;
-    const {name, email} = req.body;
+    const {name, lastname, birth, email, direction, province, tel } = req.body;
     console.log(name, "test")
     const usersEdit = users.map(user =>{
       if(user.id === +id){
         let userEdit = {
           ...user,
           name,
-          email   
+          lastname, 
+          birth,
+          email,
+          direction,
+          province,
+          tel
+          
         }
         
         return userEdit

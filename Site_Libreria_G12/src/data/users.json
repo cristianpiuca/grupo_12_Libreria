@@ -15,10 +15,15 @@
    },
    {
       "id": 3,
-      "name": "Cristian",
+      "name": "Cristian ",
       "email": "pepe@hotmail.com",
       "password": "$2a$10$6e2mgIxFPrHYLZRfSdbPM.vwwTjOihtAzipPlkTLrGMrKepYoFe.u",
-      "rol": "admin"
+      "rol": "admin",
+      "lastname": "Piuca ",
+      "direction": "Font ",
+      "birth": "2055-09-01",
+      "province": "Ciudad Autónoma de Buenos Aires",
+      "tel": "1125484622"
    },
    {
       "id": 4,
