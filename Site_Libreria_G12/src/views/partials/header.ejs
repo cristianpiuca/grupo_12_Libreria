@@ -1,46 +1,44 @@
-<header class="header">
+
+
+<header id="header">
+    <!-- logo -->
     <div class="header-logo">
         <a href="/"><img src="/images/logo1.png" alt=""></a>
-    </div>
-    <div class="register-login">
-        <% if (locals.userLogin?.rol==="admin") { %>
-            <li><a href="/products/productAdd">Añadir productos</a></li>
-           
-        <% } %>
-        <li><a href="/products/list">productos</a></li>
-           <!-- <li><a href="/products/productEdit">Editar productos</a></li> -->
-           <% if (!locals.userLogin) { %>
-            <li class="register"><a href="/users/register">Registrarse</a></li>
-           <li class="login"><a href="/users/login">Iniciar Sesión</a></li>
-           <% }else{ %>
-            <li><a href="/users/profile/<%= user.id %> ">MI PERFIL</a></li>
-            <li><a href="/users/logout">SALIR</a></li>
-        <% } %>
     </div>
     <div class="buscador-menu">
         <form id="search-form" action="/result" method="GET">
             <div id="search" class="d-flex">
-                <input class="input-search" name="keyword" placeholder="Buscar" >
-                <button class="header-search"><i class="fas fa-search"></i></button>
+                <input class="input-search" name="keyword" placeholder="Buscar">
+                <i class="fas fa-search"></i>
             </div>
         </form>
-        
-        
-        <% if (locals.userLogin) { %>
-            <div class="icono-cuenta"></div>
-            <!--Menu desplegable
-            <ul>
-                <li><a href="">Perfil</a></li>
-            <li><a href="">Configuración</a></li>
-            <li><a href="">Cerrar sesión</a></li>
-            </ul>-->
-         <a href="/products/product-cart"><button class="header-cart"><i class="fa fa-shopping-cart"></i></button></a>
-                  
-        <% } %>
-        <a href=""><button class="header-menu"><i class="fas fa-bars"></i></button></a>
-        
-        
-        
     </div>
-    
+
+    <div>
+        <ul id="navbar">
+
+
+            <% if (locals.userLogin?.rol==="admin") { %>
+                <li><a href="/products/productAdd">Añadir productos</a></li>
+
+            <% } %>
+                <li><a href="/products/list">Catálogo</a></li>
+            <% if (!locals.userLogin) { %>
+                <li class="register"><a href="/users/register">Registrarse</a></li>
+                <li class="login"><a href="/users/login">Iniciar Sesión</a></li>
+            <% }else{ %>
+                <li><a href="/users/profile/<%= user.id %> ">MI PERFIL</a></li>
+                <li><a href="/users/logout">SALIR</a></li>
+                <a href="/products/product-cart"><i class="fa fa-shopping-cart"></i></a>
+
+            <% } %>
+
+
+
+
+        </ul>
+    </div>
+
+
+
 </header>
