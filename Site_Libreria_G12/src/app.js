@@ -6,6 +6,7 @@ const logger = require('morgan');
 const methodOverride = require('method-override')
 const session = require('express-session');
 const localCheck = require('./middlewares/localsCheck');
+const cookieSession = require('./middlewares/cookieSession');
 
 
 const indexRouter = require('./routes/index');
@@ -19,16 +20,11 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-/*app.get('/',(req,res) => res.sendFile(path.resolve(__dirname,'views','index.html')))
-app.get('/product-detail',(req,res) => res.sendFile(path.resolve(__dirname,'views','productDetail.html')))
-app.get('/product-cart',(req,res) => res.sendFile(path.resolve(__dirname,'views','productCart.html')))
-app.get('/register',(req,res) => res.sendFile(path.resolve(__dirname,'views','register.html')))
-app.get('/login',(req,res) => res.sendFile(path.resolve(__dirname,'views','login.html')))*/
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cookieSession);
 app.use(express.static(path.join(__dirname, ".." ,'public')));
 
 //method override put path delete

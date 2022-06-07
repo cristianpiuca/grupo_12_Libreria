@@ -24,7 +24,7 @@
       "direction": " puan 255   ",
       "province": "",
       "tel": "1565486321",
-      "img": "image-1654616794570.jpg"
+      "img": "img-1654631115366.png"
    },
    {
       "id": 4,
@@ -97,5 +97,17 @@
       "province": "",
       "tel": "",
       "img": "img-1654617782303.jpg"
+   },
+   {
+      "id": 12,
+      "name": "Juan",
+      "email": "juanpepe2@gmail.com",
+      "password": "$2a$10$wZU43gkBBeLnZq2fN/g5oeTCxWyE..AXR8prESj91H2nL9zB9q1W2",
+      "rol": "user",
+      "lastname": "",
+      "birth": "",
+      "direction": "",
+      "province": "",
+      "tel": ""
    }
 ]
