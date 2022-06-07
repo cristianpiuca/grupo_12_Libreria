@@ -17,7 +17,7 @@ router
     .get('/logout', logout)
     .get('/profile/:id', profile)
     .get('/profileEdit/:id', edit)
-    .put('/update/:id',upload.single('image'),update)
+    .put('/update/:id',upload.single('img'),update)
 
 
 

@@ -108,7 +108,7 @@ module.exports = {
   update: (req,res) => {
 
     const {id} = req.params;
-    const {name, lastname, birth, email, direction, province, tel } = req.body;
+    const {name, lastname, birth, email, direction, province, tel, } = req.body;
    
     const usersEdit = users.map(user =>{
       if(user.id === +id){
@@ -124,8 +124,10 @@ module.exports = {
           img: req.file ? req.file.filename : user.img
         }
         if (req.file) {
-          if (fs.existsSync(path.resolve(__dirname, "..", "public", "images", user.img)) && user.img !== "noimage.jpeg") {
-              fs.unlinkSync(path.resolve(__dirname, "..", "public", "images", user.img))
+          console.log(user);
+          console.log(req.file)
+          if (fs.existsSync(path.resolve(__dirname, "..", "public", "images",req.file.filename)) && req.file !== "noimage.jpeg") {
+              fs.unlinkSync(path.resolve(__dirname, "..", "public", "images", req.file.filename))
           }
       }
         

@@ -18,13 +18,13 @@
       "password": "$2a$10$6e2mgIxFPrHYLZRfSdbPM.vwwTjOihtAzipPlkTLrGMrKepYoFe.u",
       "email": "pepe@hotmail.com",
       "rol": "admin",
-      "name": "Cristian  ",
-      "lastname": " Piuca  ",
-      "birth": "",
-      "direction": " puan 255  ",
+      "name": "Cristian   ",
+      "lastname": " Piuca   ",
+      "birth": "1995-07-09",
+      "direction": " puan 255   ",
       "province": "",
-      "tel": "",
-      "img": "image-1654555042408.jpg"
+      "tel": "1565486321",
+      "img": "image-1654616794570.jpg"
    },
    {
       "id": 4,
@@ -70,5 +70,32 @@
       "email": "test@gmail.com",
       "password": "$2a$10$opd7vFDneBXjH5oVaV9MKOgu8UJE1uSKJfMnnUNF4zTlbtzNA0VWC",
       "rol": "user"
+   },
+   {
+      "id": 10,
+      "name": "macota",
+      "email": "macota@gmail.com",
+      "password": "$2a$10$x73b7QPgqyPk5064mf6bOOYkC.5G/BPltSZYA73M8N.zOqH9GYIt2",
+      "rol": "user",
+      "lastname": "",
+      "birth": "",
+      "direction": "",
+      "province": "",
+      "tel": "",
+      "image": "img-1654617704890.jpg",
+      "img": "img-1654617744286.jpg"
+   },
+   {
+      "id": 11,
+      "name": "lucho",
+      "email": "macota2@gmail.com",
+      "password": "$2a$10$MckxZRuyJye.Jtt.5LkEq.s2S29Ru1s3aoTHcgk5dME.OejUQJ0by",
+      "rol": "user",
+      "lastname": "",
+      "birth": "",
+      "direction": "",
+      "province": "",
+      "tel": "",
+      "img": "img-1654617782303.jpg"
    }
 ]
