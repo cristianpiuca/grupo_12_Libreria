@@ -1,7 +1,4 @@
-body{position: relative;
-    padding-bottom: 174px;
-    min-height: 100vh;
-}
+body{position: relative;}
 #semana {
     display: none;
 }
