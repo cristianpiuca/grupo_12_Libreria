@@ -13,5 +13,10 @@ textarea {
     resize: none;
     overflow: hidden;
 }
+h1{
+
+font-family: 'Satisfy', cursive;
+}
 h2{
-    font-family: 'Lobster', cursive;}
+    font-family: 'Lobster', cursive;
+}

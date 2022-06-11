@@ -1,5 +1,5 @@
 .contenedor-principalProduct{
-    max-width: 1100px;
+    max-width: 100%;
     margin: 0 auto;
 }
 .product-img img {
@@ -17,7 +17,7 @@
     margin: 5px 0;
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5;
-    content: "";
+  
 
 }
 
@@ -69,11 +69,11 @@
     width: 60px;
 }
 
-.carrito-compra .boton {
+/* .carrito-compra .boton {
     cursor: pointer;
     color: #fff;
-}
-
+} */
+/* 
 .carrito-compra .boton:last-of-type {
     background: var(--colorVerdeOscuro)
 }
@@ -81,9 +81,12 @@
 .carrito-compra .boton:hover {
     opacity: 0.9;
 }
-
+.carrito-compra button{
+    display: flex;
+ 
+} */
 .carrito-compra input,
-.carrito-compra .boton {
+.carrito-compra .boton,button {
     border: 1.5px solid #ddd;
     text-align: center;
     padding: 0.45rem 0.8rem;

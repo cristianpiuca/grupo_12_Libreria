@@ -8,12 +8,15 @@
     <%- include('./partials/header', {admin: user})%> 
 
     <main>
-        <section>
-            <h2>Estás editando: "<%= product.name %>"</h2>
-            <hr>
-            <form method="POST" action="/products/update/<%= product.id %>?_method=PUT" enctype="multipart/form-data">
+        <h1>Estás editando: "<%= product.name %>"</h1>
+        <section class="sectionEdit">
+           
+          
+            <form class="formProducts2" method="POST" action="/products/update/<%= product.id %>?_method=PUT" enctype="multipart/form-data">
                 <article>
-                    <div><img src="/images/<%= product.img %>" alt=""></div>
+                    <div class="images-container">
+                        <img src="/images/<%= product.img %>" alt="">
+                    </div>
                     <div class="productAdmin__form-box">
                         <label for="name">Nombre del producto</label>
                         <input class="productAdmin__form-input" type="text" id="name" name="name" value=" <%= product.name %>">
@@ -90,18 +93,21 @@
                     </div>
                      <div class="productAdmin__form-box">
                         <label for="image">Imagen del producto</label>
-                        <input class="productAdmin__form-input" type="file" id="img"  name="image" accept="image/*">
                         <p>Recorda subir imagen</p>
+                        <input class="productAdmin__form-input" type="file" id="img"  name="image" accept="image/*">
+                       
                     </div>
                    
          
                     
                   
                 </article>
-               
-            <button class="btnAdmin" type="submit">Guardar</button>
+               <div class="buttons">
+                <button class="btnAdmin" type="submit">Guardar</button>
               
              <button class="btnAdmin" type="reset">Cancelar</button>
+               </div>
+            
                
             </form>
         </section>

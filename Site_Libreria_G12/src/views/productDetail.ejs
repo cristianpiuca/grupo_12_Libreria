@@ -14,15 +14,15 @@
             </div>
 
             <div class="product-descripcion">
-                <h2 class="product-titulo"><%= product.name %> </h2>
+                <h2 class="product-titulo"><%= product.name %></h2>
 
                 <div class="product-precio">
-                    <p class="precio">Precio:<span> $<%= product.price  %> </span></p>
+                    <p class="precio">Precio:<span> $<%= product.price  %></span></p>
                 </div>
 
                 <div class="product-detalle">
                     <h2>Reseña del libro:</h2>
-                    <p><%= product.description %> </p>
+                    <p><%= product.description %></p>
 
                     <ul>
                         <li>Categoria: <span><%= product.category %> </span></li>
@@ -42,10 +42,10 @@
                     </button>
             <% if (locals.userLogin?.rol==="admin") { %>
               
-                    <div>
-                        <a href="/products/productEdit/<%= product.id %>" class="boton">Editar</a>
+                    <div class="">
+                        <a href="/products/productEdit/<%= product.id %>" class="btnAdmin">Editar</a>
                         <form action="/products/remove/<%= product.id %>?_method=DELETE" method="POST">
-                            <button type="submit" class="btn btn-outline-danger m-1">Eliminar</button>
+                            <button type="submit">Eliminar</button>
                         </form>
                     </div>
                    <% } %> 

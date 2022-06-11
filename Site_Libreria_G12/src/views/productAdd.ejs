@@ -8,10 +8,10 @@
     <%- include('./partials/header', {admin: user})%> 
 
     <main>
-        <section  class="formProducts">
-            <h1>Agregar Producto</h1>
-            <hr>
-            <form method="POST" action="" enctype="multipart/form-data">
+        <h1>Agregar Producto</h1>
+        <section>
+          
+            <form method="POST" action="" enctype="multipart/form-data"  class="formProducts">
                 <article>
                 <div class="productAdmin__form-box">
                     <label for="name">Nombre del producto</label>
@@ -91,8 +91,11 @@
               
             </article>
                
-                    <button class="btnAdmin" type="submit">Guardar</button>
-                    <button class="btnAdmin" type="reset">Cancelar</button>
+            <div class="buttons">
+                <button class="btnAdmin" type="submit">Guardar</button>
+              
+             <button class="btnAdmin" type="reset">Cancelar</button>
+               </div>
                
             </form>
         </section>

@@ -1,11 +1,11 @@
 :root {
-    --colorRosaOscuro: #f5c4bd;
-    --colorCrema: #fcf5ee;
-    --colorRosaBuscador: #fceeed;
-    --colorVerde: #8eb0a2;
-    --colorVerdeClaro: #e6efec;
-    --colorVerdeOscuro: #24534e;
-    --colorNaranja: #f3dbc3;
+    --colorRosaOscuro: #af8f89;
+    --colorCrema: #ddc9bc;
+    --colorRosaBuscador: #d7c1c3;
+    --colorVerde: #548662;
+    --colorVerdeClaro: #8cbea3;
+    --colorVerdeOscuro: #4c6f58;
+    --colorNaranja: #ffddbd;
      /*font sizes*/
   --fs-title-extrabig:60px;
   --fs-title-big:40px;

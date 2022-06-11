@@ -1,15 +1,18 @@
+
 .productAdmin main{
-    padding: 0 20px;
+    padding: 20px 0;
+}
+.productAdmin main h1{
+    padding: 10px 0;
+
+}
+.productAdmin section{
+    width: 70%;
+    margin: 20px auto;
+    padding: 10px;
+
 }
 
-.productAdmin section{
-    width: 100%;
-    background-color: white;
-    margin: 30px auto;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 6px 5px 6px 2px grey;
-}
 .productAdmin h1{
     text-transform: uppercase;
     text-align: center;
@@ -22,23 +25,31 @@
 .productAdmin form{
     margin-top: 30px;
 }
-
+.productAdmin article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
 .productAdmin__form-box{
-    margin-bottom: 20px;
-    width: 100%;
+    text-align: center;
+    margin: 15px 0;
+    width: 80%;
 }
 .productAdmin__form-box span{
     color: red;
     font-size: 14px;
+    text-align: center;
 }
 .productAdmin h4{
     margin-bottom: 10px;
 }
 
 .productAdmin__form-input,  .productAdmin__form-select{
-
+text-align: center;
     border-radius: 15px;
-    border: 2px solid var(--colorRosaOscuro);
+    border: 2px solid var(--colorNaranja);
     height: 45px;
     width: 100%;
     margin: 10px 0 0;
@@ -49,21 +60,49 @@
 
 }
 
-
+.productAdmin .buttons{
+display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .productAdmin .btnAdmin{
     border: 1px solid var(--colorVerdeOscuro);
     padding: 10px;
+    margin: 0 8px;
     background-color: var(--color-verde);
     color: var(--colorVerdeOscuro);
     text-align: center;
     border-radius: 10px;
+}
+.productAdmin .btnAdmin:nth-last-child(1):hover{
+    background-color: red;
+    border: none;
 }
 .productAdmin .btnAdmin:hover{
     background-color: var(--colorVerdeOscuro);
     color: white;
  
 }
+.formProducts, .formProducts2{
+    padding: 15px;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, .15);
+  
+  backdrop-filter: blur(5px);
+}
+.images-container img{
+    width: 50%;
+    border: 4px dotted var(--colorRosaOscuro);
+    margin: 10px 0;
+    box-shadow: 5px 3px 15px 0px rgba(0,0,0,0.31);
+}
+.productAdmin .sectionEdit{
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
 
+}
 @media (min-width:768px){
     .productAdmin article{
         display: flex;
@@ -73,10 +112,26 @@
     .productAdmin article .register__form-box{
         width: 48%;
     }
+    .productAdmin .sectionEdit{
+        width: 60%;
+      
+    
+    }
 }
 
 @media (min-width:1024px){
-    .productAdmin section{
-        width: 60%;
-    }
+  .images-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .productAdmin .sectionEdit{
+    width: 50%;
+ }
+ .productAdmin section{
+    width: 50%;
+ }
 }

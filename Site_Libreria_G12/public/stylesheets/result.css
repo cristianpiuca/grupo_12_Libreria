@@ -1,3 +1,4 @@
+
 .h2-result{
     margin-left: 15px;
     color: var(--colorVerdeOscuro);
@@ -6,7 +7,7 @@
 .result-products{
     background-color: var(--colorCrema);
     border-radius: 20px;
-    
+   
 }
 .box-result{
     display: flex;
@@ -14,10 +15,13 @@
     justify-content:first baseline;
     width: 96%;
     margin-left: 2%;
+   
+
 }
 .product-result {
     width: 200px;
     margin: 20px 0;
+    
 }
 
 @media (min-width:768px) {
@@ -35,5 +39,6 @@
         margin-top: 15px;
         font-size: 30px;
     }
+    
   
 }

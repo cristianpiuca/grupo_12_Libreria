@@ -1,51 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <%- include('./partials/head', {
         title : 'Resultado de la busqueda'
     }) %> 
-<body>
+<body class="result">
+    <%- include('./partials/header') %>
+    <section class="result-produts">
+        <% if (products.length > 0) { %>
+                <div class="box-result">
+                     <% products.forEach(({id,name,author,price,img}) => { %>
+                    
+                       <article class="product-result">
+                           <div class="product">
+                               <a href="/products/product-detail/<%= id %> "><img src="/images/<%=img %> " alt=""></a>
+                               <h4><%= name %> </h4>
+                                <h5><%= author %> </h5>
+                                <h3 class="product-price">$<%= price %> </h3>
+                                <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a> 
+                           </div>
+                       </article>
+                       <% }) %>
+                </div>
+
+           <% }else{ %>
+
+               <div class="box-result">
+                  <h2> No se encontraron resultados, prueba con otra palabra clave</h2>
+               </div>
    
-    <%- include('./partials/header') %> 
-
-
-    <main>
-        <h2 class="h2-result" >Resultado de búsqueda: "<%= keyword %>" </h2>
-
-       
-
-
-        <section class="result-produts">
-            <% if (products.length > 0) { %>
-                    <div class="box-result">
-                         <% products.forEach(({id,name,author,price,img}) => { %>
-                        
-                           <article class="product-result">
-                               <div class="product">
-                                   <a href="/products/product-detail/<%= id %> "><img src="/images/<%=img %> " alt=""></a>
-                                   <h4><%= name %> </h4>
-                                    <h5><%= author %> </h5>
-                                    <h3 class="product-price">$<%= price %> </h3>
-                                    <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a> 
-                               </div>
-                           </article>
-                           <% }) %>
-                    </div>
-
-               <% }else{ %>
-
-                   <div class="alert alert-warning">
-                       No se encontraron resultados, prueba con otra palabra clave
-                   </div>
-       
-               <% } %>
-        </section>
-
-    </main>
-   
-
-    <%- include('./partials/footer') %> 
-  
+           <% } %>
+    </section>
+    <%- include('./partials/footer') %>
 </body>
-
 </html>

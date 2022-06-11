@@ -28,15 +28,20 @@
     background-color: var(--colorCrema);
     border: none;
     padding: 18px 13px;
+    color: white;
+}
 
+.input-search::placeholder{
+    color: white;
 }
 #search i{
+    color: var(--colorRosaOscuro);
     position: absolute;
     right: 10px;
     bottom: 10px;
 }
 .fa-shopping-cart{
-    color: var(--colorVerdeOscuro);
+    color: var(--colorRosaOscuro);
 }
 .header-search {
     position: absolute;
@@ -61,7 +66,7 @@
     top: 0;
     left: 0;
     padding: 10px 80px;
-    background: var( --colorNaranja);
+    background: var( --colorRosaBuscador);
 }
 
 #header img {
@@ -77,7 +82,7 @@
            padding: 10px;
         border-radius: 12px;
         font-size: 30px;
-        color: var(--colorVerdeOscuro);
+        color: var(--colorRosaOscuro);
   
    }
 #navbar {
@@ -97,7 +102,7 @@
 #navbar li a {
     font-size: var(--fs-subtitle);
     font-weight: 600;
-    color:var(--colorVerdeOscuro);
+    color:var(--colorRosaOscuro);
     transition: 0.3s ease-in-out;
     text-transform: uppercase;
   
@@ -107,7 +112,7 @@
 }
 #navbar li a:hover {
    
-    color: var(--colorCrema);
+    color: var(--colorRosaOscuro);
 }
 
 @media(min-width:768px){
@@ -122,6 +127,7 @@
    }
    .input-search {
     height: 25px;
+    color: white;
    }
 }
 @media(min-width:900px){
@@ -129,5 +135,26 @@
         flex-direction: row;
         justify-content: space-between;
     }
-
+   input{
+        width: 90%;
+      
+        border: solid 1px transparent;
+        padding: 10px 20px;
+        border-radius: 10px;
+        outline: none;
+        font-size: 14pt;
+        transition: background-color 0.2s, border 0.2s, box-shadow 0.2s;
+        color: white;
+    }
+     input:hover{
+        background-color: var(--colorRosaOscuro);
+        color: white;
+    border: solid 1px #806f8b;
+    box-shadow: 0 0 4px #a363ac4f;
+    }
+    input:focus{
+        background-color:var(--colorCrema);
+        border: solid 1px #a98d9f;
+        box-shadow: 0 0 4px #b76cc14f;
+    }
 }
