@@ -1,6 +1,7 @@
 body{position: relative;}
 #semana {
     display: none;
+    margin: 20px 0;
 }
 
 .home-main {
@@ -82,7 +83,19 @@ body{position: relative;}
     justify-content: center;
     
 }
-
+.product-box h2{
+    margin: 15px 5px;
+    text-align: center;
+    
+    text-align: center;
+    display: block;
+margin: 11px 0 17px 0;
+font-size: 75px;
+line-height: 80px;
+color: #f1ebe5;
+text-shadow: 0 10.36px 8.89px #bcaf9b,0 -2px 1px #fff;
+letter-spacing: -4px;
+}
 .art-product {
     margin: 6px;
     width: 30%;
@@ -111,6 +124,9 @@ transition: 0.5s ease-in-out;
     justify-content: center;
     padding: 5px;
 
+    }
+    .product a{
+        text-decoration: none
     }
  .product .data a{
     text-decoration: none;
@@ -339,7 +355,7 @@ transition: 0.5s ease-in-out;
 
     .publicidad {
         display: block;
-        background-color: var(--colorCrema);
+      
         height: 213.5px;
         margin: 8px 0 0 3px;
         padding: 5px 0;
@@ -431,9 +447,13 @@ transition: 0.5s ease-in-out;
 
     #semana h2 {
         text-align: center;
-        color: var(--colorVerdeOscuro);
-        font-weight: bold;
-        margin-top: 7px;
+        display: block;
+  margin: 11px 0 17px 0;
+  font-size: 75px;
+  line-height: 80px;
+  color: #f1ebe5;
+  text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+  letter-spacing: -4px;
 
     }
 
@@ -479,8 +499,15 @@ transition: 0.5s ease-in-out;
         text-align: center;
     }
     #product-section1 h2{
-        color: var(--colorVerdeOscuro);
-        margin: 10px 0;
+
+        text-align: center;
+        display: block;
+  margin: 11px 0 17px 0;
+  font-size: 75px;
+  line-height: 80px;
+  color: #f1ebe5;
+  text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+  letter-spacing: -4px;
     }
 
     .art-product { 
@@ -543,7 +570,7 @@ transition: 0.5s ease-in-out;
         background-color: var(--colorCrema);
         height: 286px;
         width: 100%;
-       
+       border-radius: 5px;
         align-content: center;
         justify-content: center;
         align-items: center;

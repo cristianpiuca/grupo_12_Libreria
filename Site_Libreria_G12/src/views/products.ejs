@@ -7,7 +7,7 @@
         <div class="product-box">
            
                 <div class="col-12">
-                    <h1>Todos los productos</h1>
+                    <h2>Nuestros libros en stock</h2>
                 </div>
             
                 <% products.forEach(({id,name,author,price,img}) => { %>
@@ -16,9 +16,9 @@
                     
                         <div class="product">
                             <div class="image-container">
-                              <a href="/products/product-detail/<%= id %> "><img src="/images/<%= img %> " alt=""></a>
+                            <img src="/images/<%= img %> " alt="">
                             </div>
-                            <h4><%= name %> </h4>
+                            <a href="/products/product-detail/<%= id %> "><h4><%= name %> </h4></a>
                              <h4><%= author %> </h4>
                              <h4 class="product-price">$<%= price %> </h4>
                              <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>

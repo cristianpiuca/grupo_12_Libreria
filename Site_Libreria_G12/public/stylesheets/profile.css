@@ -6,13 +6,34 @@
     margin: 20px 0;
     text-align: center;
 }
+
 .profile {
     background-color: white;
   
 }
 .profile h1{
-    color: var(--colorNaranja);
-    text-shadow: 3px -1px 2px rgba(196,196,196,0.62);
+    font-size: calc( 1em + 8vmin );
+    font-weight: 900;
+    color: var(--colorRosaOscuro);
+    
+    --x-offset: -0.0625em;
+    --y-offset: 0.0625em;
+    --stroke: 0.025em;
+    --background-color: white;
+    --stroke-color: rgb(202, 218, 191);
+    
+    text-shadow: 
+      
+      var(--x-offset)
+      var(--y-offset)
+      0px
+      var(--background-color), 
+      
+      calc( var(--x-offset) - var(--stroke) )
+      calc( var(--y-offset) + var(--stroke) )
+      0px
+      var(--stroke-color);
+    
 }
 .profile .label a{
     text-decoration: none;
@@ -47,8 +68,8 @@
 .profile .userInfo {
     display: flex;
     width: 100%;
-    background-image: linear-gradient(-225deg, #d1e0fb 0%, #ffe6e6 100%);
-    background-image: linear-gradient(to top, #a8edc8 0%, #fed6e3 100%);
+    background-image: linear-gradient(-55deg, #c8feff 0%, #eecfcf 100%);
+    background-image: linear-gradient(to top, #a9dec1 0%, #f5f5b8 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     margin: 30px auto;
@@ -63,10 +84,13 @@
 .profile .userInfo div{
     margin: 10px 0;
 }
+.profile .userInfo h2{
+    color: var(--colorRosaOscuro);
+}
 .profile .userInfo h3{
     text-align: center;
    
-    color: var(--colorVerdeOscuro);
+    color: var(--colorRosaOscuro);
     font-size: var(--fs-bodytext);
     text-shadow: 3px -1px 2px rgba(196,196,196,0.62);
 }
@@ -84,7 +108,7 @@
 
 .profile .btnUser {
     cursor: pointer;
-    border: 1px solid #cccccc;
+    border: 1px solid #f3f3f3;
     border-radius: 5px;
     padding: 5px 15px;
     margin: 5px;
@@ -102,15 +126,15 @@ background: var(--colorVerdeClaro);
       .label {
         background-color: var(--colorVerdeOscuro);
         cursor: pointer;
-        border: 1px solid #cccccc;
+        border: none;
         border-radius: 5px;
         padding: 5px 15px;
         margin: 5px;
-        
-        display: inline-block;
+        transition: 0.5s ease-in-out;
+        display: block;
       }
       .label:hover {
-        background: #5cbd95;
+        background: #94e4c3;
       }
      
       .label:active {
@@ -156,7 +180,7 @@ background: var(--colorVerdeClaro);
         }
         .profile .userInfo h3{
             margin: 18px;
-           
+           color: white;
             font-size: var(--fs-icons);
         }
     }

@@ -1,4 +1,11 @@
-
+.landscape{
+      
+    height: 650px;
+    background: url('../images/landscape.webp');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
 .h2-result{
     margin-left: 15px;
     color: var(--colorVerdeOscuro);
@@ -12,11 +19,11 @@
 .box-result{
     display: flex;
     flex-wrap: wrap;
-    justify-content:first baseline;
-    width: 96%;
-    margin-left: 2%;
-   
-
+    justify-content:center;
+    width: 100%;
+}
+.box-result h2{
+    margin: 25px 10px;
 }
 .product-result {
     width: 200px;
@@ -39,6 +46,6 @@
         margin-top: 15px;
         font-size: 30px;
     }
-    
+   
   
 }
