@@ -27,19 +27,8 @@ body{position: relative;}
 }
 
 
-.product-section {
-    background-color:rgba(252, 245, 238, .5);
 
- }
 
-.product-gender {
-    width: 96%;
-    height: 40px;
-    position: relative;
-    border-bottom: solid 1px var(--colorVerde);
-    margin-left: 2%;
-    
-}
 
 .product-gender h2 {
     font-size: 20px;
