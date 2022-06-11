@@ -68,23 +68,39 @@
 .carrito-compra input {
     width: 60px;
 }
-
-/* .carrito-compra .boton {
-    cursor: pointer;
-    color: #fff;
-} */
-/* 
-.carrito-compra .boton:last-of-type {
-    background: var(--colorVerdeOscuro)
-}
-
-.carrito-compra .boton:hover {
-    opacity: 0.9;
-}
-.carrito-compra button{
+.carrito-compra .buttons{
     display: flex;
- 
-} */
+}
+.carrito-compra .buttonDetail{
+    border: 1px solid var(--colorVerdeOscuro);
+    padding: 10px;
+    margin: 0 8px;
+    background-color: var(--color-verde);
+    color: var(--colorVerdeOscuro);
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.3s ease-in;
+}
+
+.carrito-compra .buttonDetail:hover{
+    background-color: var(--colorVerdeOscuro);
+    color: white;
+}
+.carrito-compra .buttonDetail-delete:hover{
+    background-color: red;
+    border: 1px solid red;
+}
+.carrito-compra .buttonDetail-delete{
+    background-color: var(--color-verde);
+    padding: 10px;
+    margin: 0 8px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid var(--colorVerdeOscuro);
+    transition: 0.3s ease-in;
+
+}
+
 .carrito-compra input,
 .carrito-compra .boton,button {
     border: 1.5px solid #ddd;

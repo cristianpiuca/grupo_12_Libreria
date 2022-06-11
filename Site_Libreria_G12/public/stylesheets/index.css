@@ -1,4 +1,7 @@
-body{position: relative;}
+body{position: relative;
+    padding-bottom: 174px;
+    min-height: 100vh;
+}
 #semana {
     display: none;
 }
@@ -27,19 +30,8 @@ body{position: relative;}
 }
 
 
-.product-section {
-    background-color:rgba(252, 245, 238, .5);
 
- }
 
-.product-gender {
-    width: 96%;
-    height: 40px;
-    position: relative;
-    border-bottom: solid 1px var(--colorVerde);
-    margin-left: 2%;
-    
-}
 
 .product-gender h2 {
     font-size: 20px;
@@ -118,12 +110,14 @@ transition: 0.5s ease-in-out;
 .product .data{
     display: flex;
     flex-direction: column;
-
+    
     justify-content: center;
     padding: 5px;
 
     }
- 
+ .product .data a{
+    text-decoration: none;
+ }
 .product img {
     height: 130px;
     display: block;
@@ -142,7 +136,9 @@ transition: 0.5s ease-in-out;
     margin: 1px;
     margin-bottom: 10px;
 }
-
+.product h4:hover{
+    color: var(--colorRosaOscuro);
+}
 .product h5 {
     position: absolute;
     top: 204px;
@@ -206,7 +202,6 @@ transition: 0.5s ease-in-out;
     margin-bottom: 10px;
     margin-top: 0px;
     border-radius: 10px;
-
 }
 
 .box-novedades h4 {
@@ -227,15 +222,25 @@ transition: 0.5s ease-in-out;
     margin-right: 1%;
 }
 
-.novedades button {
+.novedades .btn-home{
     width: 25%;
     background-color: var(--colorVerde);
     color: white;
     text-transform: uppercase;
     border: none;
-    height: 21px;
+    height: 35px;
+    transition: 0.3s ease-in;
 }
+.contacto .btn-home{
+    transition: 0.3s ease-in;
+}
+.contacto .btn-home:hover{
+    background-color: var(--colorVerdeOscuro);
+}
+.novedades .btn-home:hover{
+    background-color: var(--colorVerdeOscuro);
 
+}
 #contacto,
 #lanzamiento {
     display: none;
@@ -245,14 +250,6 @@ transition: 0.5s ease-in-out;
     display: none;
 }
 
-/* .art-product:nth-last-child(-n+4) {
-    display: none;
-}
- */
-
-
-
-
 /* *********Tablet*********/
 
 @media (min-width:767px) {
@@ -261,41 +258,28 @@ transition: 0.5s ease-in-out;
         flex-wrap: wrap;
        
     }
-
-
     #cuerpo {
         width: 68%;
        text-align: center;
         margin-right: 1%;
     }
-
-
-
     .art-product {
         margin: 5px;
         width: 23%;
         margin-top: 38px;
     }
-
     #product-section1 {
         margin-bottom: 0;
-    
     }
-
     #product-section2 {
         margin-top: 0;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-       
     }
-
     .product {
         border-radius: 20px;
         height: 350px;
     }
-
-
-
     .product img {
         height: 140px;
         margin-top: 9px;
@@ -313,31 +297,16 @@ transition: 0.5s ease-in-out;
 
     #lateral {
         width: 29%;
-        margin: 20px 10px;
-       
+       margin: 20px 10px;
     }
-
-   
-
-    .product-gender2 {
+       .product-gender2 {
         top : -327px
     }
-
-  /*   .art-product:nth-last-child(-n+1) {
-        display: initial;
-     */
-
-
-
     /*NOVEDADES*/
-
     .box-novedades {
         height: 100px;
-       
-        margin-bottom: 10px;
-
+       margin-bottom: 10px;
     }
-
     .novedades {
         display: flex;
         flex-direction: column;
@@ -366,6 +335,7 @@ transition: 0.5s ease-in-out;
         justify-content: center;
         margin: 2px auto;
         margin-top: 3px;
+  
     }
 
     /*PUBLICIDAD*/
