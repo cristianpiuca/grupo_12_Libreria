@@ -45,11 +45,10 @@
                     
                     
                         <div class="product">
-                            <a href="/products/product-detail/<%= id %> "><img src="/images/<%= img %> " alt=""></a>
+                            <img src="/images/<%= img %> " alt="">
                             <div class="data">
-                                <h4><%= name %></h4>
+                                <a href="/products/product-detail/<%= id %> "><h4><%= name %></h4></a
                                 <h4><%= author %></h4>
-
                                 <h3 class="product-price">$<%= price %></h3>
                             </div>
                            
@@ -81,7 +80,7 @@
              <div class="novedades">
                  <h4>Recibí las novedades</h4>
             <input id="input-novedades" type="email" name="e-mail" placeholder="Ingresa tu e-mail">
-            <button>enviar</button>
+            <button class="btn-home">enviar</button>
              </div>
          </section>
 
@@ -106,7 +105,7 @@
                     <li>
                         <textarea name="mensaje" placeholder= "Dejanos tu mensaje" id="" cols="10" rows="8"></textarea>
                     </li>
-                    <button>enviar</button>
+                    <button class="btn-home">enviar</button>
                 </form>
          
             </div>

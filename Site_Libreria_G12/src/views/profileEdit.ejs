@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head', { title : 'register' }) %>
+<%- include('./partials/head', { title : 'Editar perfil' }) %>
 
     <body class="profile">
 
         <%- include('./partials/header', {user: user})%>
             <main>
-                <form method="POST" action="/users/update/<%= user.id %>?_method=PUT" class="UserEditForm" enctype="multipart/form-data">
-                    <h3 class="UserTitleEdit">Editar Perfil: <%= user.name %> </h3>
-                    <div>
+                <form method="POST" action="/users/update/<%= user.id %>?_method=PUT" class="userInfo" enctype="multipart/form-data">
+                    <h3 class="UserTitleEdit">Hola, <%= user.name %> </h3>
+                   
+                      <div>
                         <label class="labelTags">Nombre</label>
                         <input class="userEdit-input" type="text" id="name" name="name" value="<%= user.name%>">
                     </div>
@@ -21,14 +22,7 @@
                         <label class="labelTags">Email</label>
                         <input class="userEdit-input" type="email" id="email" name="email" value="<%= user.email%>">
                     </div>
-                   <!--  <div>
-                        <label class="labelTags">Contraseña nueva</label>
-                        <input class="userEdit-input" type="password" id="password" name="password" value="<%= user.password%>">
-                    </div>
-                    <div>
-                        <label class="labelTags">Confirmar contraseña</label>
-                        <input class="userEdit-input" type="password" id="password2" name="password2" value="<%= user.password%>">
-                    </div> -->
+                
                     <div>
                         <label class="labelTags">Fecha de nacimiento</label>
                         <input class="userEdit-input" type="date" id="birth" name="birth" value="<%= user.birth%>">
@@ -76,8 +70,10 @@
                         <label class="labelTags">Cambiar foto de Perfil</label>
                         <input class="userEdit-input" type="file" id="img" name="img" accept="image/*"/>
                     </div>
+                    
                     <button class="btnUser" type="submit">Guardar</button>
                     <button class="btnUser" type="reset">Cancelar</button>
+                  
                 </form>
             </main>
             <%- include('./partials/footer') %>

@@ -16,9 +16,7 @@
             <div class="product-descripcion">
                 <h2 class="product-titulo"><%= product.name %></h2>
 
-                <div class="product-precio">
-                    <p class="precio">Precio:<span> $<%= product.price  %></span></p>
-                </div>
+               
 
                 <div class="product-detalle">
                     <h2>Reseña del libro:</h2>
@@ -34,18 +32,20 @@
                         <li>Editorial: <span><%= product.editorial %></span></li>
                     </ul>
                 </div>
-
+                <div class="product-precio">
+                    <p class="precio">Precio:<span> $<%= product.price  %></span></p>
+                </div>
                 <div class="carrito-compra">
                     <input type="number" min="0" value="1">
-                    <button type="button" class="boton">
+                    <button type="button" class="buttonDetail">
                         Agregar al carrito <i class="fas fa-shopping-cart"></i>
                     </button>
             <% if (locals.userLogin?.rol==="admin") { %>
               
-                    <div class="">
-                        <a href="/products/productEdit/<%= product.id %>" class="btnAdmin">Editar</a>
+                    <div class="buttons">
+                        <a href="/products/productEdit/<%= product.id %>"><button class="buttonDetail">EDITAR</button></a>
                         <form action="/products/remove/<%= product.id %>?_method=DELETE" method="POST">
-                            <button type="submit">Eliminar</button>
+                            <button class="buttonDetail-delete" type="submit">ELIMINAR</button>
                         </form>
                     </div>
                    <% } %> 
