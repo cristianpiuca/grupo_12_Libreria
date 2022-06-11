@@ -1,14 +1,15 @@
 
 
-<header id="header">
-    <!-- logo -->
+<header>
+    <nav  id="header">
+        <!-- logo -->
     <div class="header-logo">
         <a href="/"><img src="/images/logo1.png" alt=""></a>
     </div>
     <div class="buscador-menu">
         <form id="search-form" action="/result" method="GET">
             <div id="search" class="d-flex">
-                <input class="input-search" name="keyword" placeholder="Buscar">
+                <input class="input-search" name="keyword" placeholder="Buscar libros">
                 <i class="fas fa-search"></i>
             </div>
         </form>
@@ -25,11 +26,11 @@
                 <li><a href="/products/list">Catálogo</a></li>
             <% if (!locals.userLogin) { %>
                 <li class="register"><a href="/users/register">Registrarse</a></li>
-                <li class="login"><a href="/users/login">Iniciar Sesión</a></li>
+                <li class="login"><a href="/users/login">Entrar</a></li>
             <% }else{ %>
-                <li><a href="/users/profile/<%= user.id %> ">MI PERFIL</a></li>
-                <li><a href="/users/logout">SALIR</a></li>
-                <a href="/products/product-cart"><i class="fa fa-shopping-cart"></i></a>
+                <li><a href="/users/profile/<%= user.id %> "><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="/users/logout"><i class="fa-solid fa-door-open"></i></a></li>
+                <li><a href="/products/product-cart"><i class="fa-solid fa-shop"></i></a></li>
 
             <% } %>
 
@@ -38,7 +39,12 @@
 
         </ul>
     </div>
+    <div class="burger-menu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+   
 
-
+    </nav>
+    
 
 </header>

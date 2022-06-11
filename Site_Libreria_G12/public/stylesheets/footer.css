@@ -1,4 +1,16 @@
+.products .footer{
+    position: absolute;
+  bottom: 0;
+width: 100%;
 
+}
+.footer a,i{
+    text-decoration: none;
+    
+}
+.footer a:hover{
+    color: var(--colorRosaOscuro);
+}
 .footer .footer-div{
   color:var(--colorCrema);
   text-shadow: 2px 1px 1px rgb(150 150 150 0.9);
@@ -18,7 +30,7 @@
     width: 150px;
     display: flex;
     justify-content: space-around;
-    align-items: flex-end;
+    align-items: center;
     margin: 5px auto 2.5px;
 }
 
@@ -65,7 +77,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        align-content: center;
         flex-wrap: wrap;
     }
 
@@ -77,8 +88,7 @@
     .menu-footer-list-items a,
     .rss-container-items,
     .copyright {
-        
-        color: var(--color-bg);
+        color: var(--colorCrema);
     }
 
     .menu-footer-title {
@@ -112,9 +122,12 @@
     }
 }
 @media(min-width:1200px){
+    .footer{
+        height: 160px;
+    }
     .footer .footer-div {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
         width: 100%;
         margin: 0 auto;

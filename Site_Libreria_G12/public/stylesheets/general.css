@@ -9,6 +9,9 @@ a{
     text-decoration: none;
 }
 textarea {
-    overflow: scroll;
+   height: 150px;
     resize: none;
+    overflow: hidden;
 }
+h2{
+    font-family: 'Lobster', cursive;}

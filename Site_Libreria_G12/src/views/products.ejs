@@ -10,7 +10,7 @@
                     <h1>Todos los productos</h1>
                 </div>
             
-                <% products.forEach(({id,name,autor,price,img}) => { %>
+                <% products.forEach(({id,name,author,price,img}) => { %>
                     <article class="art-product">
                     
                     
@@ -19,8 +19,8 @@
                               <a href="/products/product-detail/<%= id %> "><img src="/images/<%= img %> " alt=""></a>
                             </div>
                             <h4><%= name %> </h4>
-                             <h5><%= autor %> </h5>
-                             <h3 class="product-price">$<%= price %> </h3>
+                             <h4><%= author %> </h4>
+                             <h4 class="product-price">$<%= price %> </h4>
                              <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
                             
                         </div>

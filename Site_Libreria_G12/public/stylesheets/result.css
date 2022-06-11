@@ -16,9 +16,8 @@
     margin-left: 2%;
 }
 .product-result {
-    margin: 1%;
-    width: 31%;
-    margin-top: 5px;
+    width: 200px;
+    margin: 20px 0;
 }
 
 @media (min-width:768px) {
@@ -27,11 +26,7 @@
         margin-top: 10px;
         font-size: 25px;
     }
-    .product-result {
-        margin: 1%;
-        width: 18%;
-        margin-top: 36px;
-    }
+ 
 }
 
 @media (min-width:1024px) {
@@ -40,7 +35,5 @@
         margin-top: 15px;
         font-size: 30px;
     }
-    .product-result {
-        width: 12%;
-    }
+  
 }

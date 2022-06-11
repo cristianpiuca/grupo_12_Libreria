@@ -17,98 +17,43 @@
          <section id="semana">
             <h2>Destacados de la semana</h2>
              <div class="box-semana">
+                <% products.forEach(({id,name,author,price,category,img}) => { %>
                 <article class="semana">
-                    <a href="/products/product-detail"><img src="/images/popular1.png" alt=""></a>
-                    
-                       <li>
-                           <p>Diario de una temporada en el quinto piso</p>
-                       </li>
-                       <li>
-                           <p>Juan Carlos Torre</p>
-                       </li>
+                    <div class="producto">
+                          <a href="/products/product-detail/<%= id %> "><img src="/images/<%= img %> " alt=""></a>
+                   
+                    </div>
+                   
+               
                </article>
-               <article class="semana">
-                   <a href="/products/product-detail"><img src="/images/popular2.png" alt=""></a>
-                
-                   <li>
-                       <p>La batalla cultural</p>
-                   </li>
-                   <li>
-                       <p>Agustin Laje</p>
-                   </li>
-               </article>
-               <article class="semana">
-                   <a href="/products/product-detail"><img src="/images/popular3.png" alt=""></a>
-                
-                   <li>
-                       <p>Violeta</p>
-                   </li>
-                   <li>
-                       <p>Isabel Allende</p>
-                   </li>
-               </article>
-               <article class="semana">
-                   <a href="/products/product-detail"><img src="/images/popular4.png" alt=""></a>
-                
-                   <li>
-                       <p>El mapa de los anhelos</p>
-                   </li>
-                   <li>
-                       <p>Alice Hellen</p>
-                   </li>
-               </article>
-               <article class="semana">
-                   <a href="/products/product-detail"><img src="/images/popular5.png" alt=""></a>
-                
-                   <li>
-                       <p>Soy una tonta por quererte</p>
-                   </li>
-                   <li>
-                       <p>Camila Sosa Villada</p>
-                   </li>
-               </article>
-               <article class="semana">
-                   <a href="/products/product-detail"><img src="/images/popular6.png" alt=""></a>
-                
-                   <li>
-                       <p>Fleur</p>
-                   </li>
-                   <li>
-                       <p>Ariana Godoy</p>
-                   </li>
-               </article>
-               <article class="semana">
-                   <a href="/products/product-detail"><img src="/images/popular7.png" alt=""></a>
-                
-                   <li>
-                       <p>Roma soy yo</p>
-                   </li>
-                   <li>
-                       <p>Santiago Posteguillo</p>
-                   </li>
-               </article>
+                <% }) %> 
               </div>
             
          </section>
-                                       <!--**SECCION 1**-->
+          <!--**SECCION 1**-->
 
          <section id="product-section1" class="product-section">
+            <h2>Nuestro Catálogo</h2>
          <!--   <div class="product-gender">
                <h2>Ficción</h2>
             <a href="">ver todo</a>
            </div> -->
             <div class="product-box">
                 
-                <% products.forEach(({id,name,autor,price,category,img}) => { %>
+                <% products.forEach(({id,name,author,price,category,img}) => { %>
                     <article class="art-product">
                     
                     
                         <div class="product">
                             <a href="/products/product-detail/<%= id %> "><img src="/images/<%= img %> " alt=""></a>
-                            <h4><%= name %> </h4>
-                             <h5><%= autor %> </h5>
-                             <h6><%= category %> </h6>
-                             <h3 class="product-price">$<%= price %> </h3>
+                            <div class="data">
+                                <h4><%= name %></h4>
+                                <h4><%= author %></h4>
+
+                                <h3 class="product-price">$<%= price %></h3>
+                            </div>
+                           
+                            
                              <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
                             
                         </div>
@@ -116,14 +61,7 @@
                     </article>
                  
                 <% }) %>
-               <!--  <div class="product-gender2">
-                    <h2>Juvenil</h2>
-                 <a href="">ver todo</a>
-                </div> -->
-               
 
-
-               
               
             </div>
          </section>
@@ -156,25 +94,26 @@
 
         <section id="contacto" class="box-contacto">
             <div class="contacto">
-            <h3>Contáctanos</h3>
-            <li>
-                <input type="text" placeholder="Nombre y Apellido">
-            </li>
-            <li>
-                <input type="email" name="E-mail" id="" placeholder="Email">
-            </li>
-            <li>
-                <input type="tel" name="Teléfono" id="" placeholder="Teléono">
-            </li>
-            <li>
-                <input type="text" name="Localidad" id="" placeholder="Localidad">
-            </li>
-            <li>
-                <textarea name="Dejanos tu mensaje" placeholder= "Dejanos tu mensaje" id="" cols="10" rows="8"></textarea>
-            </li>
-            
-                <button>Enviar</button>
-           
+                <form action="/">
+                    <h3>Contáctanos</h3>
+                    <li>
+                        <input type="text" placeholder="Nombre y Apellido">
+                    </li>
+                    <li>
+                        <input type="email" name="email" id="" placeholder="Email">
+                    </li>
+                    <li>
+                        <input type="tel" name="phone" id="" placeholder="Teléono">
+                    </li>
+                    <li>
+                        <input type="text" name="city" id="" placeholder="Localidad">
+                    </li>
+                    <li>
+                        <textarea name="mensaje" placeholder= "Dejanos tu mensaje" id="" cols="10" rows="8"></textarea>
+                    </li>
+                    <button type="submit">Enviar</button>
+                </form>
+         
             </div>
         </section>
 
@@ -183,7 +122,7 @@
         <section id="lanzamiento" class="box-lanzamiento">
             <h3>lanzamiento</h3>
             <div class="lanzamiento-image">
-                <a href="/products/product-detail"><img width="80%" src="/images/lanzamiento.png" alt=""></a>
+                <a href="#"><img width="80%" src="/images/lanzamiento.png" alt=""></a>
             </div>
             <div class="lanzamiento-info">
                 <h4 class="titulo">
@@ -193,7 +132,7 @@
                     Florencia Bonelli
                 </h4>
                 <p class="descripcion">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, beatae. Tempora corporis, voluptatum facilis beatae iste eligendi. Minus autem libero vitae totam, ad sunt doloribus.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, beatae. Tempora corporis, voluptatum facilis beatae iste eligendi. 
                 </p>
             </div>
         </section>

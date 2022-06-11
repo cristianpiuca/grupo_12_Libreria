@@ -7,39 +7,38 @@
 
 
             <%- include('./partials/header', {user: user})%> 
-            
-                <h2>Perfil</h2>
+            <div class="container1"> 
+                 <h1>Hola, <%= user.name %> </h1>
+
                 <div class="userAvatar">
                     <img class="userPhoto" src="/images/<%= user.img %> " alt="">
-                    <h5>Opciones de Perfil</h5>
-
-                    <label class="label">
-                        <li><a href="/users/profileEdit/<%= user.id %> ">Editar Perfil</a></li>
-                    </label>
-                    
-
+                   
                 </div>
-                
+            
+
+                <div class="label">
+                    <a href="/users/profileEdit/<%= user.id %> "><i class="fa-solid fa-user"></i> Editar perfil</a>
+                </div>
                     <form class="userForm">
                      
                         <div class="userInfo">
                             
                                 <h2>Info Personal</h2>
-                                <hr>
+                                
                                 <h3>Nombre : <%= user.name %>   </h3>
-                                <hr>
+                                
                                 <h3>Apellido : <%= user.lastname %></h3> 
-                                <hr>
+                                
                                 <h3>Email : <%= user.email %>  </h3>
-                                <hr>
+                                
                                 <h3>Fecha de nacimiento : <%= user.birth %></h3>
-                                <hr>
+                                
                                 <h3>Dirección : <%= user.direction %></h3>
-                                <hr>
+                                
                                 <h3>Provincia :<%= user.province %></h3>
-                                <hr>
+                                
                                 <h3>Telefono : <%= user.tel %></h3>
-                                <hr>
+                                
                                 <h3>Categoria : <%= user.rol %></h3>
                            
                            
@@ -48,6 +47,8 @@
                     
                     </form>
                 
+            </div>
+               
 
                 
         </main>

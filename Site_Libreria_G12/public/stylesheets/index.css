@@ -1,10 +1,10 @@
+body{position: relative;}
 #semana {
     display: none;
 }
 
 .home-main {
     background-color: var(--colorNaranja);
-    width: 98%;
     margin-left: 1%;
     border-radius: 10px;
 }
@@ -96,7 +96,7 @@
 .product-box {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     
 }
 
@@ -104,20 +104,32 @@
     margin: 6px;
     width: 30%;
     margin-top: 36px;
+    
 }
 
 
 
 .product {
 
-    height: 300px;
-    background-color: var(--colorVerdeClaro);
-    border: solid 0.2px var(--colorVerdeOscuro);
+    height: 320px;
+    border: solid 1px var(--colorVerdeOscuro);
     border-radius: 10px;
     position: relative;
-
+transition: 0.5s ease-in-out;
 }
+.product:hover{
+    border: 3px solid var(--colorRosaOscuro);
+    transform: scale(1.06);
+}
+.product .data{
+    display: flex;
+    flex-direction: column;
 
+    justify-content: center;
+    padding: 5px;
+
+    }
+ 
 .product img {
     height: 130px;
     display: block;
@@ -188,7 +200,11 @@
     border: none;
 }
 .product button:hover{
-    background-color: var(--colorVerdeOscuro);
+    background-color: var(--colorRosaOscuro);
+
+}
+.product button i{
+    color: var(--colorCrema);
 }
 .box-novedades {
     background-color: var(--colorCrema);
@@ -285,9 +301,10 @@
 
     .product {
         border-radius: 20px;
+        height: 350px;
     }
 
- 
+
 
     .product img {
         height: 140px;
@@ -441,6 +458,7 @@
 @media (min-width:1024px) {
     #semana {
         display: block;
+      
     }
 
     #semana h2 {
@@ -451,13 +469,15 @@
 
     }
 
+ 
     .box-semana {
         display: flex;
-        width: 100%;
-        height: 280px;
-        margin-bottom: 68px;
+        margin: 10px 0;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
     }
-
     .semana {
         width: 14%;
         margin-bottom: 5px;
@@ -488,23 +508,28 @@
 
     #product-section1 {
         margin-top: 65px;
+        text-align: center;
+    }
+    #product-section1 h2{
+        color: var(--colorVerdeOscuro);
+        margin: 10px 0;
     }
 
-    .art-product {
-        margin: 2px;
-        width: 19%;
+    .art-product { 
+        width: 200px;
         margin-top: 42px;
     }
 
     .product {
-
-        height: 365px;
+        margin: 5px;
+        height: 350px;
         border-radius: 20px;
-
+      
     }
 
     .product img {
-        height: 180px;
+       max-width: 100%;
+      
         margin-top: 9px;
         margin-bottom: 10px;
     }

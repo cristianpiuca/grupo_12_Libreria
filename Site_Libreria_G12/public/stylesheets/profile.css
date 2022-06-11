@@ -1,36 +1,74 @@
-.profile {
-    background-color: var(--colorNaranja);
-}
-.profile main h2 {
+.container1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
     text-align: center;
+}
+.profile {
+    background-color: white;
+  
+}
+.profile h1{
+    color: var(--colorNaranja);
+    text-shadow: 3px -1px 2px rgba(196,196,196,0.62);
+}
+.profile .label a{
+    text-decoration: none;
+    color: var(--colorVerdeOscuro);
+}
+.profile main  {
+    text-align: center;
+   
+  
 }
 
 .profile .userAvatar{
-    text-align: center;
+
+    padding: 15px;
+    margin: 15px 0;
 }
 
 .profile .userPhoto{
-    width: 80%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
 
 .profile .userForm {
     display: flex;
     flex-direction: column;
     text-align: center;
+    width: 80%;
+
 }
 
 .profile .userInfo {
-    width: 88%;
-    background-color: white;
+    display: flex;
+    width: 100%;
+    background-color: var(--colorVerdeClaro);
     margin: 30px auto;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 6px 5px 6px 2px grey;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.profile .userInfo h3{
+    text-align: center;
+    margin: 16px;
+    color: var(--colorVerdeOscuro);
+    font-size: var(--fs-bodytext);
+    text-shadow: 3px -1px 2px rgba(196,196,196,0.62);
 }
 
 .profile .UserEditForm {
     width: 80%;
-    background-color: white;
+  
     margin: 30px auto;
     border-radius: 10px;
     padding: 20px;
@@ -61,71 +99,73 @@
     border-radius: 5px;
     padding: 5px 15px;
     margin: 5px;
-    background: #dddddd;
+
     display: inline-block;
 }
 
-label.label input[type="file"] {
+.label input[type="file"] {
         position: absolute;
         top: -1000px;
       }
       .label {
+        background-color: var(--colorVerdeClaro);
         cursor: pointer;
         border: 1px solid #cccccc;
         border-radius: 5px;
         padding: 5px 15px;
         margin: 5px;
-        background: #dddddd;
+     
         display: inline-block;
       }
       .label:hover {
         background: #5cbd95;
       }
+     
       .label:active {
-        background: #9fa1a0;
+    background: #9fa1a0; 
       }
       .label:invalid + span {
-        color: #000000;
+        color: red;
       }
       .label:valid + span {
         color: #ffffff;
       }
 
-.profile .labelTags {
-    position: relative;
-    top: 13px;
-}
 
-
+      .UserEditForm .labelTags{
+        text-align: center;
+        margin: 20px;
+    }
+   
 @media (min-width:768px) {
     
 
-.profile .userPhoto {
-    width: 55%;
-}
+
 
     .profile .userInfo {
-        width: 55%;
+        width: 70%;
     }
 
     .profile .UserEditForm {
-        width: 55%;
+        width: 80%;
     }
 
 }
 
 @media (min-width:1024px){
-    .profile .userPhoto {
-        width: 40%;
-    }
-    
+
         .profile .userInfo {
-            width: 40%;
+            width: 50%;
         }
     
         .profile .UserEditForm {
-            width: 40%;
+            width: 30%;
+             background-color: var(--colorVerdeClaro);
         }
-    
+        .profile .userInfo h3{
+            margin: 18px;
+           
+            font-size: var(--fs-icons);
+        }
     }
 

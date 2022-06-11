@@ -40,10 +40,15 @@
                     <button type="button" class="boton">
                         Agregar al carrito <i class="fas fa-shopping-cart"></i>
                     </button>
-                    <a href="/products/productEdit/<%= product.id %>" class="boton">Editar</a>
-                    <form action="/products/remove/<%= product.id %>?_method=DELETE" method="POST">
-                        <button type="submit" class="btn btn-outline-danger m-1">Eliminar</button>
-                    </form>
+            <% if (locals.userLogin?.rol==="admin") { %>
+              
+                    <div>
+                        <a href="/products/productEdit/<%= product.id %>" class="boton">Editar</a>
+                        <form action="/products/remove/<%= product.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="btn btn-outline-danger m-1">Eliminar</button>
+                        </form>
+                    </div>
+                   <% } %> 
                 </div>
                
                    

@@ -18,11 +18,11 @@
         <section class="result-produts">
             <% if (products.length > 0) { %>
                     <div class="box-result">
-                         <% products.forEach(({id,name,author,price}) => { %>
+                         <% products.forEach(({id,name,author,price,img}) => { %>
                         
                            <article class="product-result">
                                <div class="product">
-                                   <a href="/products/product-detail/<%= id %> "><img src="/images/ficcion1.png" alt=""></a>
+                                   <a href="/products/product-detail/<%= id %> "><img src="/images/<%=img %> " alt=""></a>
                                    <h4><%= name %> </h4>
                                     <h5><%= author %> </h5>
                                     <h3 class="product-price">$<%= price %> </h3>
@@ -35,7 +35,7 @@
                <% }else{ %>
 
                    <div class="alert alert-warning">
-                       No se encontraron resultados
+                       No se encontraron resultados, prueba con otra palabra clave
                    </div>
        
                <% } %>
