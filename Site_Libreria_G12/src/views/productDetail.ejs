@@ -14,13 +14,14 @@
             </div>
 
             <div class="product-descripcion">
-                <h2 class="product-titulo"><%= product.name %></h2>
+               
+                <h1 class="product-titulo"><%= product.name %></h1>
 
                
 
                 <div class="product-detalle">
                     <h2>Reseña del libro:</h2>
-                    <p><%= product.description %></p>
+                <b><p><%= product.description %></p></b>
 
                     <ul>
                         <li>Categoria: <span><%= product.category %> </span></li>
@@ -49,10 +50,7 @@
                         </form>
                     </div>
                    <% } %> 
-                </div>
-               
-                   
-               
+                </div>                
                 <div class="redes-links">
                     <p>Compartir en: </p>
                     <a href="#">
