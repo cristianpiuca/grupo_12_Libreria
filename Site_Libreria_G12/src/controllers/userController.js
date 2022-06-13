@@ -107,6 +107,8 @@ module.exports = {
   },
   update: (req,res) => {
 
+    let errors = validationResult(req);
+    if (errors.isEmpty()){
     const {id} = req.params;
     const {name, lastname, birth, email, direction, province, tel, } = req.body;
    
@@ -153,7 +155,16 @@ module.exports = {
       tel : userUpdate.tel,
       rol : userUpdate.rol
     }
+  
     return res.redirect('/users/profile/'+id)
+  
+  }else{
+    return res.render('profileEdit',{
+      user: req.session.userLogin,
+      errors : errors.mapped()
+    })
+  }
+
     
   },
 

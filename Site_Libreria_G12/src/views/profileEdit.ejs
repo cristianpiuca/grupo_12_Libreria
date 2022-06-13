@@ -13,10 +13,12 @@
                       <div>
                         <label class="labelTags">Nombre</label>
                         <input class="userEdit-input" type="text" id="name" name="name" value="<%= user.name%>">
+                        <span><%= locals.errors && errors.name ? errors.name.msg : null %></span>
                     </div>
                     <div>
                         <label class="labelTags">Apellido</label>
                         <input class="userEdit-input" type="text" id="lastname" name="lastname" value="<%= user.lastname%>">
+                        <span><%= locals.errors && errors.lastname ? errors.lastname.msg : null %></span>
                     </div>
                     <div>
                         <label class="labelTags">Email</label>
@@ -26,15 +28,20 @@
                     <div>
                         <label class="labelTags">Fecha de nacimiento</label>
                         <input class="userEdit-input" type="date" id="birth" name="birth" value="<%= user.birth%>">
+                        <span><%= locals.errors && errors.birth ? errors.birth.msg : null %></span>
                     </div>
                     <div>
                         <label class="labelTags">Domicilio</label>
                         <input class="userEdit-input" type="text" id="direction" name="direction" value="<%= user.direction%>">
+                        <span><%= locals.errors && errors.direction ? errors.direction.msg : null %></span>
                     </div>
                     <div>
                         <label class="labelTags">Provincia</label>
-                        <select class="userEdit-input" name="province" id="province">
+                       <select class="userEdit-input" name="province" id="province"> 
+                        
+                        
                             <option value="" hidden selected>Selecciona</option>
+                            
 
                             <option value="Buenos Aires">Buenos Aires</option>
                             <option value="Ciudad Autónoma de Buenos Aires">Ciudad Autónoma de Buenos Aires</option>
@@ -61,10 +68,12 @@
                             <option value="Tierra del Fuego">Tierra del Fuego</option>
                             <option value="Tucumán">Tucumán</option>
                         </select>
+                        <span><%= locals.errors && errors.province ? errors.province.msg : null %></span>
                     </div>
                     <div>
                         <label class="labelTags">Telefono</label>
-                        <input class="userEdit-input" type="number" id="tel" name="tel" value="<%= user.tel%>">
+                        <input class="userEdit-input" type="text" id="tel" name="tel" value="<%= user.tel%>">
+                        <span><%= locals.errors && errors.tel ? errors.tel.msg : null %></span>
                     </div>
                     <div>
                         <label class="labelTags">Cambiar foto de Perfil</label>

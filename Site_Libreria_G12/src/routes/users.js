@@ -4,6 +4,7 @@ const {login, register, processRegister, loginUser, logout, profile, edit, updat
 const validations = require('../validations/registerValidations') 
 const loginCheck = require('../validations/loginValidations')
 const upload = require('../middlewares/multer')
+const userValidator = require('../validations/usersValidations')
 
 
 
@@ -17,7 +18,7 @@ router
     .get('/logout', logout)
     .get('/profile/:id', profile)
     .get('/profileEdit/:id', edit)
-    .put('/update/:id',upload.single('img'),update)
+    .put('/update/:id',upload.single('img'),userValidator,update)
 
 
 

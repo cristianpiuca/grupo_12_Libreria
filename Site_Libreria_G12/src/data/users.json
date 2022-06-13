@@ -22,98 +22,14 @@
    {
       "id": 3,
       "password": "$2a$10$6e2mgIxFPrHYLZRfSdbPM.vwwTjOihtAzipPlkTLrGMrKepYoFe.u",
-      "email": "pepe@hotmail.com",
       "rol": "admin",
-      "name": "Cristian   ",
-      "lastname": " Piuca   ",
+      "name": "Cristian",
+      "email": "pepe@gmail.com",
+      "lastname": "Piuca",
       "birth": "1995-07-09",
-      "direction": " puan 255   ",
-      "province": "",
+      "direction": "Argerich 2222",
+      "province": "San Juan",
       "tel": "1565486321",
       "img": "img-1654631115366.png"
-   },
-   {
-      "id": 4,
-      "name": "Lucas ",
-      "email": "loco@hotmail.com",
-      "password": "$2a$10$j3pmtMEI5Vy626i9saduW.5Es0/7d8w6N3O8BYWjC1OlLwfs/6YFG",
-      "rol": "user",
-      "lastname": " Piuca",
-      "birth": "",
-      "direction": " puan 255",
-      "province": "San Luis",
-      "tel": "4444444444444444444"
-   },
-   {
-      "id": 5,
-      "password": "$2a$10$BgAcOJNI2oYLku1/ValTpuiHUAlQGa8KOc55M7./nbDP4hCS1ULe.",
-      "rol": "user"
-   },
-   {
-      "id": 6,
-      "password": "$2a$10$1iR/XY1pRkjLMgF.T/vaN.OdCw0XkTW/Gs/VXrTJk4PRHUxvCbqLi",
-      "rol": "user"
-   },
-   {
-      "id": 7,
-      "name": "Juan",
-      "email": "juancito@gmail.com",
-      "password": "$2a$10$0.og9Dfk041NhvRtPdmUIemfVehnSJ/Gr3y/eNvxy9ZHhzPIlXI1O",
-      "rol": "user",
-      "image": "noimage.jpeg"
-   },
-   {
-      "id": 8,
-      "name": "Pablo",
-      "email": "pablo@gmai.com",
-      "password": "$2a$10$srAB0ikcNGz6YN10xeUbEOg0Q5Jb50m.HcHV.XaAg8wQV7Hm8yg7q",
-      "rol": "user",
-      "image": "noimage.jpeg"
-   },
-   {
-      "id": 9,
-      "name": "Probando",
-      "email": "test@gmail.com",
-      "password": "$2a$10$opd7vFDneBXjH5oVaV9MKOgu8UJE1uSKJfMnnUNF4zTlbtzNA0VWC",
-      "rol": "user"
-   },
-   {
-      "id": 10,
-      "name": "macota",
-      "email": "macota@gmail.com",
-      "password": "$2a$10$x73b7QPgqyPk5064mf6bOOYkC.5G/BPltSZYA73M8N.zOqH9GYIt2",
-      "rol": "user",
-      "lastname": "",
-      "birth": "",
-      "direction": "",
-      "province": "",
-      "tel": "",
-      "image": "img-1654617704890.jpg",
-      "img": "img-1654617744286.jpg"
-   },
-   {
-      "id": 11,
-      "name": "lucho",
-      "email": "macota2@gmail.com",
-      "password": "$2a$10$MckxZRuyJye.Jtt.5LkEq.s2S29Ru1s3aoTHcgk5dME.OejUQJ0by",
-      "rol": "user",
-      "lastname": "",
-      "birth": "",
-      "direction": "",
-      "province": "",
-      "tel": "",
-      "img": "img-1654617782303.jpg"
-   },
-   {
-      "id": 12,
-      "name": "Juan",
-      "email": "juanpepe2@gmail.com",
-      "password": "$2a$10$wZU43gkBBeLnZq2fN/g5oeTCxWyE..AXR8prESj91H2nL9zB9q1W2",
-      "rol": "user",
-      "lastname": "",
-      "birth": "",
-      "direction": "",
-      "province": "",
-      "tel": ""
    }
 ]
