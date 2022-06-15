@@ -28,8 +28,20 @@
       "lastname": "Piuca",
       "birth": "1995-07-09",
       "direction": "Argerich 2222",
-      "province": "San Juan",
+      "province": "Buenos Aires",
       "tel": "1565486321",
       "img": "img-1654631115366.png"
+   },
+   {
+      "id": 4,
+      "name": "mati",
+      "email": "mati@gmail.com",
+      "password": "$2a$10$j7nBvG.r5zRaw02GHDXNPeOszV5JpEUpKMk2rpLubHd93o3.HTLz.",
+      "rol": "user",
+      "lastname": "Marce",
+      "birth": "1995-01-07",
+      "direction": "mati 2000",
+      "province": "Santa Cruz",
+      "tel": "123456111"
    }
 ]

@@ -6,7 +6,10 @@ const users = require('../data/users.json');
 
 
 module.exports = {
-  register: (req, res) => res.render('register'),
+  register: (req,res) => {
+    res.render('register')
+},
+
   processRegister: (req, res) => {
     let errors = validationResult(req)
 
@@ -53,7 +56,9 @@ module.exports = {
     }
   },
   password: (req, res) => res.render('password'),
-  login: (req, res) => res.render('login'),
+  login: (req, res) => {
+    res.render('login')
+},
   loginUser: (req, res) => {
     let errors = validationResult(req);
 
