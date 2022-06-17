@@ -74,6 +74,7 @@ module.exports = {
                 categories,
                 errors: errors.mapped(),
                 old: req.body,
+                user: req.session.userLogin
             });
         }
 

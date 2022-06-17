@@ -4,7 +4,7 @@ const usuarios = require('../data/users.json')
 module.exports = [
     body('name')
         .isLength({min: 4}).withMessage('Como mínimo cuatro letras').bail()
-        .isAlpha().withMessage('Solo letras porfa!'),
+        .isAlpha().withMessage('Solo letras están permitidas'),
     body('email')    
         .notEmpty().withMessage('Debes ingresar tu email').bail()
         .isEmail().withMessage('Email no válido')
@@ -15,7 +15,7 @@ module.exports = [
             }else{
                 return true
             }
-        }).withMessage('El email ya está registrado!'),
+        }).withMessage('El email ya está registrado, prueba otro'),
     body('password')
         /* .isAlphanumeric().withMessage('Debe contener letras y números') */
         .isLength({min : 6, max : 12}).withMessage('Debe contener entre 6 y 12 caracteres'),

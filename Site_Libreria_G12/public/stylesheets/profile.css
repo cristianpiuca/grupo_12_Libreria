@@ -33,7 +33,10 @@
       calc( var(--y-offset) + var(--stroke) )
       0px
       var(--stroke-color);
-    
+    transition: 1.5s ease;
+}
+.profile :hover h1{
+    color: var(--colorVerdeClaro);
 }
 .profile .label a{
     text-decoration: none;
@@ -52,11 +55,17 @@
 }
 
 .profile .userPhoto{
+    padding: 10px;
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  transition: .4s ease-in;
 }
-
+.profile .userPhoto:hover{
+    transform: scale(1.2);
+    padding: 5px;
+    border: 4px dotted #9de9eb;
+}
 .profile .userForm {
     display: flex;
     flex-direction: column;
@@ -80,6 +89,10 @@
     
     justify-content: center;
     align-items: center;
+    transition:  color 1s ease-in;
+}
+.profile .userInfo h3:hover{
+    color: #ffa97d;
 }
 .profile .userInfo div{
     margin: 10px 0;
@@ -107,14 +120,18 @@
 
 
 .profile .btnUser {
+    
     cursor: pointer;
     border: 1px solid #f3f3f3;
     border-radius: 5px;
     padding: 5px 15px;
     margin: 5px;
 background: var(--colorVerdeClaro);
-    display: inline-block;
+  
     transition: 0.5s ease-in-out;
+}
+.profile .buttons{
+    display:flex;
 }
 .profile .btnUser:hover{
     background: var(--colorRosaOscuro);
@@ -132,9 +149,11 @@ background: var(--colorVerdeClaro);
         margin: 5px;
         transition: 0.5s ease-in-out;
         display: block;
+        transition:1s ease-in;
       }
       .label:hover {
         background: #94e4c3;
+        transform: scale(1.2);
       }
      
       .label:active {
