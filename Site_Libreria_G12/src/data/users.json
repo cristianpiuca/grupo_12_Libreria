@@ -1,47 +1,35 @@
 [
    {
       "id": 1,
-      "name": "zorra",
+      "name": "noelia",
       "email": "noeliaromina20@gmail.com",
       "password": "$2a$10$69a8vpZqtX7qhVE7GOmc9.e2AtBx2CDSwwb6QmZZANePZastLis1C",
-      "rol": "admin",
+      "rolId": "admin",
       "lastname": "acosta",
       "birth": "1998-03-24",
       "direction": "sdfsdfds",
-      "province": "Ciudad Autónoma de Buenos Aires",
-      "tel": "4458880000",
-      "img": "img-1654902891838.jpg"
+      "state": "Ciudad Autónoma de Buenos Aires",
+      "phone": "4458880000",
+      "image": "img-1654902891838.jpg"
    },
    {
       "id": 2,
       "name": "prueba",
       "email": "prueba@gmail.com",
       "password": "$2a$10$EHLAuz/q6oS9lwrQ7eaPOO/erGTylBSdSt2thk80LplVucyGs5/eC",
-      "rol": "user"
+      "rolId": "user"
    },
    {
       "id": 3,
       "password": "$2a$10$6e2mgIxFPrHYLZRfSdbPM.vwwTjOihtAzipPlkTLrGMrKepYoFe.u",
-      "rol": "admin",
+      "rolId": "admin",
       "name": "Cristian",
       "email": "pepe@gmail.com",
       "lastname": "Piuca",
       "birth": "1995-07-09",
       "direction": "Argerich 2222",
-      "province": "Buenos Aires",
-      "tel": "1565486321",
-      "img": "img-1654631115366.png"
-   },
-   {
-      "id": 4,
-      "name": "mati",
-      "email": "mati@gmail.com",
-      "password": "$2a$10$j7nBvG.r5zRaw02GHDXNPeOszV5JpEUpKMk2rpLubHd93o3.HTLz.",
-      "rol": "user",
-      "lastname": "Marce",
-      "birth": "1995-01-07",
-      "direction": "mati 2000",
-      "province": "Santa Cruz",
-      "tel": "123456111"
+      "state": "Buenos Aires",
+      "phone": "1565486321",
+      "image": "img-1654631115366.png"
    }
 ]
