@@ -17,10 +17,10 @@
          <section id="semana">
             <h2>Destacados de la semana</h2>
              <div class="box-semana">
-                <% products.forEach(({id,name,author,price,category,img}) => { %>
+                <% products.forEach(({id,image}) => { %>
                 <article class="semana">
                     <div class="producto">
-                          <a href="/products/product-detail/<%= id %> "><img src="/images/<%= img %> " alt=""></a>
+                          <a href="/products/product-detail/<%= id %> "><img src="/images/<%= image %> " alt=""></a>
                    
                     </div>
                    
@@ -40,14 +40,14 @@
            </div> -->
             <div class="product-box">
                 
-                <% products.forEach(({id,name,author,price,category,img}) => { %>
+                <% products.forEach(({id,title,author,price,image}) => { %>
                     <article class="art-product">
                     
                     
                         <div class="product">
-                            <img src="/images/<%= img %> " alt="">
+                            <img src="/images/<%= image %> " alt="">
                             <div class="data">
-                                <a href="/products/product-detail/<%= id %> "><h4><%= name %></h4></a
+                                <a href="/products/product-detail/<%= id %> "><h4><%= title %></h4></a
                                 <h4><%= author %></h4>
                                 <h3 class="product-price">$<%= price %></h3>
                             </div>

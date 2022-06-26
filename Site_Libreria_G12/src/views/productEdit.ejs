@@ -8,19 +8,19 @@
     <%- include('./partials/header', {admin: user})%> 
 
     <main>
-        <h1>Estás editando: "<%= product.name %>"</h1>
+        <h1>Estás editando: "<%= product.title %>"</h1>
         <section class="sectionEdit">
            
           
             <form class="formProducts2" method="POST" action="/products/update/<%= product.id %>?_method=PUT" enctype="multipart/form-data">
                 <article>
                     <div class="images-container">
-                        <img src="/images/<%= product.img %>" alt="">
+                        <img src="/images/<%= product.image %>" alt="">
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="name">Nombre del producto</label>
-                        <input class="productAdmin__form-input" type="text" id="name" name="name" value=" <%= product.name %>">
-                        <span><%= locals.errors && errors.name ? errors.name.msg : null %></span>
+                        <input class="productAdmin__form-input" type="text" id="title" name="title" value=" <%= product.title %>">
+                        <span><%= locals.errors && errors.title ? errors.title.msg : null %></span>
 
                     </div>
                     <div class="productAdmin__form-box">
@@ -38,7 +38,7 @@
                     <div class="productAdmin__form-box">
                       
                         <label for="category">Categorias</label>
-                        <select class="productAdmin__form-select" name="category" id="category">
+                        <select class="productAdmin__form-select" name="categoryId" id="category">
                             <% categories.forEach(category => { %>
                               <option value="<%= category.id %>" <%= category.id === product.category ? 'selected' : null %>><%= category.name %></option>
                             <% }) %>

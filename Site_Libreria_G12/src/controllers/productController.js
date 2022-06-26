@@ -11,9 +11,6 @@ module.exports = {
 
         const product = products.find(product => product.id === +id)
 
-        
-
-
         return res.render('productDetail', {
             product,
             categories,
@@ -37,10 +34,10 @@ module.exports = {
         let errors = validationResult(req)
         if (errors.isEmpty()) {
             let {
-                name,
+                title,
                 author,
                 price,
-                category,
+                categoryId,
                 year,
                 language,
                 pages,
@@ -52,17 +49,17 @@ module.exports = {
 
             let addProduct = {
                 id: +lastID + 1,
-                name: name.trim(),
+                title: title.trim(),
                 author: author.trim(),
                 price: +price,
-                category: category.trim(),
+                categoryId: categoryId.trim(),
                 year: +year,
                 language: language.trim(),
                 pages: +pages,
                 format: format.trim(),
                 editorial: editorial.trim(),
                 description: description.trim(),
-                img: req.file ? req.file.filename : "noimage.jpeg"
+                image: req.file ? req.file.filename : "noimage.jpeg"
             }
 
             products.push(addProduct)
@@ -97,10 +94,10 @@ module.exports = {
         if(errors.isEmpty()){
              const {id} = req.params;
         let {
-            name,
+            title,
             author,
             price,
-            category,
+            categoryId,
             year,
             language,
             pages,
@@ -113,21 +110,21 @@ module.exports = {
             if (product.id === +id) {
                 let productUpdate = {
                     ...product,
-                    name,
+                    title,
                     author,
                     price: +price,
-                    category,
+                    categoryId,
                     year: +year,
                     language,
                     pages: +pages,
                     format,
                     editorial,
                     description,
-                    img: req.file ? req.file.filename : product.img,
+                    image: req.file ? req.file.filename : product.img,
                 }
                 if (req.file) {
-                    if (fs.existsSync(path.resolve(__dirname, "..", "public", "images", product.img)) && product.img !== "noimage.jpeg") {
-                        fs.unlinkSync(path.resolve(__dirname, "..", "public", "images", product.img))
+                    if (fs.existsSync(path.resolve(__dirname, "..", "public", "images", product.image)) && product.image !== "noimage.jpeg") {
+                        fs.unlinkSync(path.resolve(__dirname, "..", "public", "images", product.image))
                     }
                 }
                 return productUpdate
@@ -169,8 +166,5 @@ module.exports = {
     },
     index: (req, res) => {
         return res.render('products')
-        
-    },
-
-
+    }
 }

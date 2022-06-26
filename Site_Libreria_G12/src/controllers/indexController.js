@@ -19,7 +19,7 @@ module.exports = {
     
     search : (req,res) => {
         const {keyword} = req.query;
-        const result = products.filter(product => (product.name.toLowerCase().includes(keyword.toLowerCase()))||(product.author.toLowerCase().includes(keyword.toLowerCase())))
+        const result = products.filter(product => (product.title.toLowerCase().includes(keyword.toLowerCase()))||(product.author.toLowerCase().includes(keyword.toLowerCase())))
         //return res.send(result)
         return res.render('result', {
             products : result,

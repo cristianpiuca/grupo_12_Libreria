@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head', {title : `${product.name} | Boulevard` }) %>
+    <%- include('./partials/head', {title : `${product.title} | Boulevard` }) %>
 
 <body>
 
@@ -10,12 +10,12 @@
     <div class="contenedor-principalProduct">
         <div class="contenedor-products">
             <div class="product-img">
-                <img src="/images/<%= product.img %> " alt="">
+                <img src="/images/<%= product.image %> " alt="">
             </div>
 
             <div class="product-descripcion">
                
-                <h1 class="product-titulo"><%= product.name %></h1>
+                <h1 class="product-titulo"><%= product.title %></h1>
 
                
 
@@ -24,7 +24,7 @@
                 <b><p><%= product.description %></p></b>
 
                     <ul>
-                        <li>Categoria: <span><%= product.category %> </span></li>
+                        <li>Categoria: <span><%= product.categoryId %> </span></li>
                         <li>Año: <span><%= product.year %> </span></li>
                         <li>Idioma: <span><%= product.language %> </span></li>
                         <li>N° de paginas: <span><%= product.pages %> </span></li>

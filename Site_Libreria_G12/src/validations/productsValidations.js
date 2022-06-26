@@ -1,7 +1,7 @@
 const {body} = require('express-validator');
 
 module.exports = [
-    body('name')
+    body('title')
         .notEmpty().withMessage('Debes completar este campo').bail()
         .isLength({min : 4}).withMessage('Mínimo 4 caracteres'),
     body('author')
@@ -11,7 +11,7 @@ module.exports = [
     body('price')
         .notEmpty().withMessage('Debes completar este campo').bail()
         .isNumeric().withMessage('Deben ser solo numeros'),
-    body('category')
+    body('categoryId')
         .notEmpty().withMessage('Debes completar este campo').bail()
         ,
     body('year')
