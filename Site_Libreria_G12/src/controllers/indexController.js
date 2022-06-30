@@ -1,17 +1,26 @@
 const path = require('path')
 const fs = require('fs')
-const products = require('../data/products')
+/* const products = require('../data/products') */
 
-
+//database
+const db = require('../database/models')
 
 module.exports = {
     index :(req,res) => {
-        const products = JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','data','products.json')));
-
-        return res.render('index', {
+     db.Product.findAll(
+       { include : ['images']}
+      )
+        .then(products => {
+            return res.render('index', {
+               products,
+                user: req.session.userLogin
+            })
+        })
+        .catch(error => console.log(error))
+        /* return res.render('index', {
             products, 
             user: req.session.userLogin
-        })
+        }) */
     },
    
     login :(req, res) => res.render('login'),
