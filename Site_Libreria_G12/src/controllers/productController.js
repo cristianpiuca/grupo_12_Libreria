@@ -4,6 +4,7 @@ const products = require('../data/products.json')
 const categories = require('../data/categories')
 const {validationResult} = require('express-validator')
 
+const db = require("../database/models");
 module.exports = {
     detail: (req, res) => {
 
@@ -166,5 +167,37 @@ module.exports = {
     },
     index: (req, res) => {
         return res.render('products')
-    }
+    },
+    getByCategory: (req, res) => {
+   
+        const category = db.Category.findAll({
+          where : {
+            id : req.params.id
+          },
+         
+        })
+        const products = db.Product.findAll({
+          where : {
+            categoryId : req.params.id
+          },
+          include : ['images']
+        })
+        Promise.all([category,products])
+        .then(([category,products]) => {
+          return res.render("categories", {
+            category,
+             products,
+             user: req.session.userLogin,
+             
+           });
+        })
+        .catch((error) => console.log(error));
+       
+      },
+      categorySearch : (req,res) => {
+       
+        return res.render('categorySearch', {
+            user: req.session.userLogin,
+        })
+      }
 }

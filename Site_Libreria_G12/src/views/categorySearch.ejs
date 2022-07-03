@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head', { title : 'Categorias | Boulevard' }) %>
+  <body>
+    <%- include('./partials/header', {user: user})%>
+    <main class="landscape2">
+      <div class="categories">
+        <section class="categories-box">
+          <div class = "category-item">
+            <figure>
+                <a href="/products/category/1"><img src="../../images/categories/adulto.jpg" alt=""></a>
+            </figure>
+           <span>Adulta</span>
+          </div>
+
+          <div class = "category-item">
+            <figure>
+                <a href="/products/category/2"><img src="../../images/categories/juvenil.jpg" alt=""></a>
+            </figure>
+            <span>Juvenil</span>
+          </div>
+
+          <div class = "category-item">
+            <figure>
+                <a href="/products/category/3"><img src="../../images/categories/autoayuda.jpg" alt=""></a> 
+            </figure>
+            <span>Autoayuda</span>
+          </div>
+
+          <div class = "category-item">
+            <figure>
+                <a href="/products/category/4"><img src="../../images/categories/divulgacion.jpg" alt=""></a>
+            </figure>
+            <span>Divulgación</span>
+          </div>
+
+          <div class = "category-item">
+            <figure>
+                <a href="/products/category/5"><img src="../../images/categories/fantasy.jpg" alt=""></a>
+            </figure>
+            <span>Fantasia</span>
+          </div>
+
+          <div class = "category-item">
+            <figure>
+                <a href="/products/category/6"><img src="../../images/categories/historica.jpg" alt=""></a>
+            </figure>
+            <span>Histórica</span>
+          </div>
+
+          <div class = "category-item">
+            <figure>
+                <a href="/products/category/7"><img src="../../images/categories/no-ficcion.jpg" alt=""></a>
+            </figure>
+            <span>No ficción</span>
+          </div>
+
+          <div class = "category-item">
+            <figure>
+                <a href="/products/category/8"><img src="../../images/categories/suspenso.jpg" alt=""></a>
+            </figure>
+            <span>Crimen y Suspenso</span>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>

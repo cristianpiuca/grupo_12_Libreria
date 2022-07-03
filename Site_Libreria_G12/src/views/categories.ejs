@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head', {title : 'Categorías | Boulevard'}) %>
+<body>
+    <%- include('./partials/header', {user: user})%> 
+    <main class="landscape2">
+        <div class="product-box">
+            
+                <% products.forEach(({id,title,author,price,images,categoryId}) => { %>
+                    <article class="art-product">
+                       
+                        <div class="product">
+                            <div class="image-container">
+                            <img src="/images/<%= images[0].file %> " alt="">
+                            </div>
+                            <a href="/products/product-detail/<%= id %> "><h4><%= title %> </h4></a>
+                             <h4><%= author %> </h4>
+                             <h4 class="product-price">$<%= price %> </h4>
+                             <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
+                            
+                        </div>
+                        
+                    </article>
+                 
+                <% }) %>
+            
+            
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>
