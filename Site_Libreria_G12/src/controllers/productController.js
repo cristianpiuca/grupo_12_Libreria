@@ -3,19 +3,21 @@ const path = require('path');
 const products = require('../data/products.json')
 const categories = require('../data/categories')
 const {validationResult} = require('express-validator')
+const db = require('../database/models')
 
 module.exports = {
     detail: (req, res) => {
 
-        const { id} = req.params;
-
-        const product = products.find(product => product.id === +id)
-
-        return res.render('productDetail', {
-            product,
-            categories,
-            user: req.session.userLogin
+        db.Product.findBypk(req.params.id, {
+            include : ['images']
         })
+          .then(product => {
+            return res.render('productDetail', {
+                product,
+                user: req.session.userLogin
+            })
+          })
+          .catch(error => console.log(error))
     },
     cart: (req, res) => {
         res.render('productCart',{
@@ -165,6 +167,16 @@ module.exports = {
         })
     },
     index: (req, res) => {
-        return res.render('products')
+
+        db.Product.findAll({
+            include : ['images']
+        })
+        .then(products => {
+            return res.render('products', {
+                products
+            })
+        })
+        .catch(error => console.log(error))
+
     }
 }
