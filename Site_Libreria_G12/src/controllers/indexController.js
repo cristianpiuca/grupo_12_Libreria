@@ -4,7 +4,7 @@ const fs = require('fs')
 
 //database
 const db = require('../database/models')
-
+const {Op} = require('sequelize')
 module.exports = {
     index :(req,res) => {
      db.Product.findAll(
@@ -26,16 +26,34 @@ module.exports = {
     login :(req, res) => res.render('login'),
     register :(req, res) => res.render('register'),
     
-    search : (req,res) => {
-        const {keyword} = req.query;
-        const result = products.filter(product => (product.title.toLowerCase().includes(keyword.toLowerCase()))||(product.author.toLowerCase().includes(keyword.toLowerCase())))
-        //return res.send(result)
-        return res.render('result', {
-            products : result,
-            keyword,
-            user: req.session.userLogin
-        })
-    },
+    search: (req, res) => {
+
+		const {keyword} = req.query;
+
+		db.Product.findAll({
+			where : {
+				[Op.or] : [
+					{
+						title : {
+							[Op.substring] : keyword
+						}
+					},
+					{
+						description : {
+							[Op.substring] : keyword
+						}
+					}
+				]
+			},
+			include : ['images']
+		}).then(products => {
+			return res.render('result',{
+				products,
+				keyword,
+				
+			})
+		}).catch(error => console.log(error))
+	},
     profile: (req, res) => {
         const { id} = req.params;
 

@@ -8,11 +8,11 @@
     <section class="result-produts">
         <% if (products.length > 0) { %>
                 <div class="box-result">
-                     <% products.forEach(({id,title,author,price,image}) => { %>
+                     <% products.forEach(({id,title,author,price,images}) => { %>
                     
                        <article class="product-result">
                            <div class="product">
-                               <a href="/products/product-detail/<%= id %> "><img src="/images/<%=image %>" alt=""></a>
+                               <a href="/products/product-detail/<%= id %> "><img src="/images/<%=images[0].file %>" alt=""></a>
                                <h4><%= title %> </h4>
                                 <h5><%= author %> </h5>
                                 <h3 class="product-price">$<%= price %> </h3>
