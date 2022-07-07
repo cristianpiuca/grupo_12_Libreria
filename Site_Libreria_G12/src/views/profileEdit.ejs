@@ -32,12 +32,12 @@
                     </div>
                     <div>
                         <label class="labelTags">Domicilio</label>
-                        <input class="userEdit-input" type="text" id="direction" name="direction" value="<%= user.direction%>">
+                        <input class="userEdit-input" type="text" id="address" name="address" value="<%= user.address%>">
                         <span><%= locals.errors && errors.address ? errors.address.msg : null %></span>
                     </div>
                     <div>
                         <label class="labelTags">Provincia</label>
-                       <select class="userEdit-input" name="province" id="province"> 
+                       <select class="userEdit-input" name="state" id="state"> 
                         
                         
                             <option value="" hidden selected>Selecciona</option>
@@ -72,12 +72,12 @@
                     </div>
                     <div>
                         <label class="labelTags">Telefono</label>
-                        <input class="userEdit-input" type="text" id="tel" name="tel" value="<%= user.tel%>">
+                        <input class="userEdit-input" type="text" id="phone" name="phone" value="<%= user.phone%>">
                         <span><%= locals.errors && errors.phone ? errors.phone.msg : null %></span>
                     </div>
                     <div>
                         <label class="labelTags">Cambiar foto de Perfil</label>
-                        <input class="userEdit-input" type="file" id="image" name="imag" accept="image/*"/>
+                        <input class="userEdit-input" type="file" id="image" name="image" accept="image/*"/>
                     </div>
                     <div class="buttons">
                         <button class="btnUser" type="submit">Guardar</button>

@@ -77,48 +77,56 @@ module.exports = {
   },
   profile: (req, res) => {
       db.User.findByPk(req.session.userLogin.id) 
+      
       .then((user) => res.render("profile", {
           user : user,
         }))
         .catch (error => console.log(error)) 
 
   },
-  update: (req, res) => {
-   
-     const errors = validationResult(req);
-
-      if (errors.isEmpty()) {
-          
-          let {
-              name,
-              lastname,
-            
-          
-          } = req.body;
-          
-          db.User.update ({
-                   
-                      name: name.trim(),
-                      lastname: lastname.trim(),
-                     
-                      image: req.file && req.file.filename                    
-                  
-          },
-          {
-               where:{
-                  id:req.session.userLogin.id
-               }
-          } )
-          .then( () => res.redirect('/'))
-           .catch(error => console.log(error))
-    } else {
-          return res.render('profile', {
-              user: req.body,
-              errors: errors.mapped(),
-
-          });
-
+  edit : (req, res) => {
+    res.render('profileEdit',{
+        user : req.session.userLogin.id,
       }
+    )
+},
+  update: (req, res) => {
+    const errors = validationResult(req);
+
+    if (errors.isEmpty()) {
+      let { name, lastname,birth,address,state,phone } = req.body;
+      db.User.findByPk(req.session.userLogin.id, {
+        attributes: ["password"],
+      })
+        .then((user) => {
+          db.User.update(
+            {
+              name: name.trim(),
+              lastname: lastname.trim(),
+              password: password
+                ? bcryptjs.hashSync(password, 10)
+                : user.password,
+                birth,
+                address : address.trim(),
+                state: state.trim(),
+                phone: +phone,
+              image: req.file && req.file.filename,
+            },
+            {
+              where: {
+                id: req.session.userLogin.id,
+              },
+            }
+          )
+        
+        })
+        .catch((error) => console.log(error));
+    } else {
+      return res.render("profile", {
+        user: req.body,
+        errors: errors.mapped(),
+      });
+    }
   },
   logout: (req, res) => {
       req.session.destroy();

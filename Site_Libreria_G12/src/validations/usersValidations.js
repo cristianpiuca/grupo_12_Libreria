@@ -11,9 +11,9 @@ module.exports = [
         .notEmpty().withMessage('Elije una fecha').bail(),
     body('address')
         .notEmpty().withMessage('Debes poner un domicilio').bail(),
-    body('province')
+    body('state')
         .notEmpty().withMessage('Seleccione una provincia').bail(),
-        body('phone')
+    body('phone')
         .notEmpty().withMessage('Debes poner un numero de teléfono').bail() 
         .isNumeric().withMessage('Solo se permiten números')
 ]

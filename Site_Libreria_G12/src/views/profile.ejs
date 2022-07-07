@@ -11,13 +11,13 @@
                  <h1>Hola, <%= user.name %> </h1>
 
                 <div class="userAvatar">
-                    <img class="userPhoto" src="/images/<%= user.image %> " alt="">
+                    <img class="userPhoto" src="/images/<%= user.image ? user.image : 'default.jpeg' %>" alt="">
                    
                 </div>
             
 
                 <div class="label">
-                    <a href="/users/profileEdit/<%= user.id %> "><i class="fa-solid fa-user"></i> Editar perfil</a>
+                    <a href="/users/profileEdit/<%= user.id %> "><i class="fa-solid fa-user"></i>Editar perfil</a>
                 </div>
                     <form class="userForm">
                      
