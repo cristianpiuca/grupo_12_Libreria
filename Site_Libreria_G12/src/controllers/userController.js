@@ -74,7 +74,6 @@ module.exports = {
               old: req.body,
               errors: errors.mapped()
           })
-
       }
     }
   },

@@ -15,7 +15,11 @@
    {
       "id": 3,
       "password": "$2a$10$6e2mgIxFPrHYLZRfSdbPM.vwwTjOihtAzipPlkTLrGMrKepYoFe.u",
+<<<<<<< HEAD
       "rolId": 2,
+=======
+      "rol": "admin",
+>>>>>>> crudCristian
       "name": "Cristian",
       "email": "pepe@gmail.com",
       "lastname": "Piuca",
