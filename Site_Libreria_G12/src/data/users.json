@@ -22,7 +22,7 @@
    {
       "id": 3,
       "password": "$2a$10$6e2mgIxFPrHYLZRfSdbPM.vwwTjOihtAzipPlkTLrGMrKepYoFe.u",
-      "rolId": "admin",
+      "rol": "admin",
       "name": "Cristian",
       "email": "pepe@gmail.com",
       "lastname": "Piuca",

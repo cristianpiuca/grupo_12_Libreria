@@ -14,8 +14,8 @@
             <form method="POST" action="" enctype="multipart/form-data"  class="formProducts">
                 <article>
                 <div class="productAdmin__form-box">
-                    <label for="name">Nombre del producto</label>
-                    <input class="productAdmin__form-input" type="text" id="name" name="name" value="<%= locals.old && old.name ? old.name : null%>">
+                    <label for="name">Titulo del producto</label>
+                    <input class="productAdmin__form-input" type="text" id="title" name="title" value="<%= locals.old && old.name ? old.name : null%>">
                     <span><%= locals.errors && errors.name ? errors.name.msg : null %></span>
 
                 </div>
@@ -34,7 +34,7 @@
                 <div class="productAdmin__form-box">
                    
                     <label for="category">Categorias</label>
-                    <select class="productAdmin__form-select" name="category" id="category">
+                    <select class="productAdmin__form-select" name="categoryId" id="categoryId">
                         <option value="" hidden selected>Selecciona la categoría...</option>
                       <% categories.forEach(category => { %>
                         <option <%= locals.old && old.category && +old.category === +category.id ? 'selected' : null %> value="<%= category.id %>"><%= category.name %></option>

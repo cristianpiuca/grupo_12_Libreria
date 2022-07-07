@@ -1,4 +1,4 @@
-.contenedor-principalProduct{
+.contenedor-principalProduct {
     max-width: 100%;
     margin: 0 auto;
     background: #f1ebe5;
@@ -6,24 +6,25 @@
 
 .contenedor-principalProduct h2 {
     color: var(--colorRosaOscuro);
-   margin: 20px 0;
+    margin: 20px 0;
 }
 
 .contenedor-principalProduct h1 {
-    
+
     color: var(--colorVerdeClaro);
-   
+
     text-align: center;
     display: block;
-margin: 11px 0 17px 0;
-font-size: var( --fs-title-extrabig);
-line-height: 80px;
-color: #f1ebe5;
-text-shadow: 0 10.36px 8.89px #bcaf9b,0 -2px 1px #fff;
-letter-spacing: -4px;
-   margin: 5px 0;
+    margin: 11px 0 17px 0;
+    font-size: var(--fs-title-extrabig);
+    line-height: 80px;
+    color: cornflowerblue;
+    text-shadow: 0 10.36px 8.89px #bcaf9b, 0 -2px 1px #fff;
+    letter-spacing: -4px;
+    margin: 5px 0;
 }
-.contenedor-products{
+
+.contenedor-products {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -31,20 +32,22 @@ letter-spacing: -4px;
     justify-content: center;
     align-items: center;
 }
-.product-img{
+
+.product-img {
     padding: 20px 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
+
 .product-img img {
     width: 50%;
 }
 
 .product-descripcion {
-   margin: 20px auto;
-   width: 350px;
+    margin: 20px auto;
+    width: 350px;
 }
 
 .product-titulo {
@@ -53,7 +56,7 @@ letter-spacing: -4px;
     margin: 5px 0;
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5;
-  
+
 
 }
 
@@ -67,14 +70,15 @@ letter-spacing: -4px;
 .precio span {
     color: var(--colorRosaOscuro);
 }
-.product-detalle{
+
+.product-detalle {
     margin: 15px 0;
     padding: 15px;
 }
 
 .product-detalle p {
 
-    font-size:var( --fs-bodytext);
+    font-size: var(--fs-bodytext);
     padding: 0.3rem;
     opacity: 0.8;
     line-height: 1.5;
@@ -106,10 +110,12 @@ letter-spacing: -4px;
 .carrito-compra input {
     width: 60px;
 }
-.carrito-compra .buttons{
+
+.carrito-compra .buttons {
     display: flex;
 }
-.carrito-compra .buttonDetail{
+
+.carrito-compra .buttonDetail {
     border: 1px solid var(--colorVerdeOscuro);
     padding: 10px;
     margin: 0 8px;
@@ -120,15 +126,17 @@ letter-spacing: -4px;
     transition: 0.3s ease-in;
 }
 
-.carrito-compra .buttonDetail:hover{
+.carrito-compra .buttonDetail:hover {
     background-color: var(--colorVerdeOscuro);
     color: white;
 }
-.carrito-compra .buttonDetail-delete:hover{
+
+.carrito-compra .buttonDetail-delete:hover {
     background-color: red;
     border: 1px solid red;
 }
-.carrito-compra .buttonDetail-delete{
+
+.carrito-compra .buttonDetail-delete {
     background-color: var(--color-verde);
     padding: 10px;
     margin: 0 8px;
@@ -140,7 +148,8 @@ letter-spacing: -4px;
 }
 
 .carrito-compra input,
-.carrito-compra .boton,button {
+.carrito-compra .boton,
+button {
     border: 1.5px solid #ddd;
     text-align: center;
     padding: 0.45rem 0.8rem;
@@ -175,45 +184,55 @@ letter-spacing: -4px;
     color: #fff;
 }
 
+.redes-links p {
+    margin-top: 14px;
+    margin-bottom: 1rem;
+}
+
 @media (min-width: 769px) {
 
-    .contenedor-products{
+    .contenedor-products {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1rem;
     }
-    .contenedor-principalProduct{
-       width: 100%;
+
+    .contenedor-principalProduct {
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .product-img{
+
+    .product-img {
         padding: 0 20px;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    .product-img img{
+
+    .product-img img {
         padding: 15px 0;
         margin: 0 auto;
         width: 100%;
     }
-  
+
 }
 
 @media (min-width: 1024px) {
 
-  
-    .product-descripcion{
+
+    .product-descripcion {
         padding: 20px;
         width: 90%;
     }
-    .product-img{
+
+    .product-img {
         width: 90%;
     }
+
     .product-img img {
         padding: 0;
         width: 80%;

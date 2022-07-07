@@ -1,182 +1,175 @@
-const fs = require('fs');
-const path = require('path');
-const products = require('../data/products.json')
-const categories = require('../data/categories')
-const {validationResult} = require('express-validator')
-const db = require('../database/models')
-
+const db = require('../database/models/')
+const { validationResult } = require('express-validator')
 module.exports = {
     detail: (req, res) => {
-
-        db.Product.findBypk(req.params.id, {
-            include : ['images']
+        db.Product.findByPk(req.params.id, {
+            include: ['images']
         })
-          .then(product => {
-            return res.render('productDetail', {
-                product,
-                user: req.session.userLogin
+            .then(product => {
+                return res.render('productDetail', {
+                    product,
+                    user: req.session.userLogin
+                })
             })
-          })
-          .catch(error => console.log(error))
+            .catch(error => console.log(error))
+
     },
     cart: (req, res) => {
-        res.render('productCart',{
+        res.render('productCart', {
             user: req.session.userLogin
         })
     },
-     
+
     add: (req, res) => {
-        return res.render('productAdd', {
-            categories,
-            user: req.session.userLogin
-        })
+        db.Category.findAll()
+            .then(categories => {
+                return res.render('productAdd', {
+                    categories,
+                    user: req.session.userLogin
+                })
+            })
+            .catch(error => console.log(error))
     },
 
     store: (req, res) => {
-        let errors = validationResult(req)
-        if (errors.isEmpty()) {
-            let {
-                title,
-                author,
-                price,
-                categoryId,
-                year,
-                language,
-                pages,
-                format,
-                editorial,
-                description
-            } = req.body
-            let lastID = products[products.length - 1].id
 
-            let addProduct = {
-                id: +lastID + 1,
-                title: title.trim(),
-                author: author.trim(),
-                price: +price,
-                categoryId: categoryId.trim(),
-                year: +year,
-                language: language.trim(),
-                pages: +pages,
-                format: format.trim(),
-                editorial: editorial.trim(),
-                description: description.trim(),
-                image: req.file ? req.file.filename : "noimage.jpeg"
-            }
+        let { title, author, price, categoryId, year, language, pages, format, editorial, description } = req.body
 
-            products.push(addProduct)
-            fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'products.json'), JSON.stringify(products, null, 3), 'utf-8')
-
-            return res.redirect('/')
-        }else {
-            return res.render("productAdd", {
-                categories,
-                errors: errors.mapped(),
-                old: req.body,
-                user: req.session.userLogin
-            });
-        }
-
-    },
-    edit: (req, res) => {
-
-        const {
-            id
-        } = req.params;
-        const product = products.find(product => product.id === +id);
-
-        return res.render('productEdit', {
-            product,
-            categories,
-            user: req.session.userLogin
-        })
-    },
-    update: (req, res) => {
-        let errors = validationResult(req)
-        if(errors.isEmpty()){
-             const {id} = req.params;
-        let {
-            title,
-            author,
-            price,
+        db.Product.create({
+            title : title.trim(),
+            author : author.trim(),
+            price : +price,
             categoryId,
-            year,
-            language,
-            pages,
-            format,
-            editorial,
-            description
-        } = req.body
+            year : +year,
+            language : language.trim(),
+            pages : +pages,
+            format : format.trim(),
+            editorial : editorial.trim(),
+            description : description.trim()
+        })
+        .then(product => {
+            if(req.files.length > 0){
+                let images = req.files.map(({filename},i) => {
+                    let image = {
+                        file : filename,
+                        productId : product.id,
+                        primary : i === 0 ? 1 : 0
+                    }
+                    return image
+                })
+                db.Image.bulkCreate(images,{validate :true})
+                    .then( (result) => console.log(result))		
+            }else{
+                db.Image.create({
+                    file : "default-image.png",
+                    productId : product.id
 
-        const productsUpdate = products.map(product => {
-            if (product.id === +id) {
-                let productUpdate = {
-                    ...product,
-                    title,
-                    author,
-                    price: +price,
+                })
+            }
+            return res.redirect('/')
+        })
+        .catch(error => console.log(error))
+    },
+
+        edit: (req, res) => {
+
+            let product = db.Product.findByPk(req.params.id,{
+                include : ['images']
+            })
+            let categories = db.Category.findAll()
+    
+            Promise.all([product,categories])
+                .then(([product,categories]) => {
+                    return res.render('productEdit',{
+                        product,
+                        categories,
+                        user: req.session.userLogin
+                    })
+                })
+                .catch(error => console.log(error))
+
+      
+        },
+        update: (req, res) => {
+
+            let { title, author, price, categoryId, year, language, pages, format, editorial, description } = req.body
+
+            db.Product.update(
+                {
+                    title : title.trim(),
+                    author : author.trim(),
+                    price : +price,
                     categoryId,
-                    year: +year,
-                    language,
-                    pages: +pages,
-                    format,
-                    editorial,
-                    description,
-                    image: req.file ? req.file.filename : product.img,
-                }
-                if (req.file) {
-                    if (fs.existsSync(path.resolve(__dirname, "..", "public", "images", product.image)) && product.image !== "noimage.jpeg") {
-                        fs.unlinkSync(path.resolve(__dirname, "..", "public", "images", product.image))
+                    year : +year,
+                    language : language.trim(),
+                    pages : +pages,
+                    format : format.trim(),
+                    editorial : editorial.trim(),
+                    description : description.trim()
+                },
+                {
+                    where : {
+                        id : req.params.id
                     }
                 }
-                return productUpdate
-            }
-            return product
-        })
-
-        fs.writeFileSync(path.resolve(__dirname, "..", "data", "products.json"), JSON.stringify(productsUpdate, null, 3), "utf-8")
-
-        return res.redirect('/')
-        }else{
-            return res.render("productEdit", {
-                categories,
-                product : {
-                    id :req.params.id,
-                    ...req.body
-                },
-                errors : errors.mapped(),
-                user: req.session.userLogin
-              });
-        }
-       
-    },
+                ).then(async () => {
+                    if(req.file){
+                        try {
+                            await db.Image.update(
+                                {
+                                    file : req.file.filename
+                                },
+                                {
+                                    where : {
+                                        productId : req.params.id,
+                                        primary : true
+                                    }
+                                }
+                            )
+                        } catch (error) {
+                            console.log(error);
+                        }
+                    }
+                    return res.redirect('/');
+        
+                }).catch(error => console.log(error))
+           
+        },
     remove: (req, res) => {
-        const {
-            id
-        } = req.params
-        const productDelete = products.filter(product => product.id !== +id)
-        fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'products.json'), JSON.stringify(productDelete, null, 3), 'utf-8')
+        db.Product.destroy({
+            where : {
+                id : req.params.id
+            }
+        })
+        .then((info) => {
+            return res.redirect('/')
+        })
+        .catch(error => console.log(error))
 
-        return res.redirect('/')
     },
     list: (req, res) => {
-        return res.render('products', {
-            products,
-            user: req.session.userLogin
-            
+        db.Product.findAll({
+            include: ['images']
         })
+            .then(products => {
+                return res.render('products', {
+                    products,
+                    user: req.session.userLogin
+                })
+            })
+            .catch(error => console.log(error))
     },
     index: (req, res) => {
 
         db.Product.findAll({
-            include : ['images']
+            include: ['images']
         })
-        .then(products => {
-            return res.render('products', {
-                products
+            .then(products => {
+                return res.render('products', {
+                    products,
+                    user: req.session.userLogin
+                })
             })
-        })
-        .catch(error => console.log(error))
-
+            .catch(error => console.log(error))
     }
 }
