@@ -7,20 +7,40 @@ const db = require('../database/models')
 const {Op} = require('sequelize')
 module.exports = {
     index :(req,res) => {
-     db.Product.findAll(
-       { include : ['images']}
+    let destacados = db.Product.findAll(
+       { 
+		where : {
+			stars: {
+				[db.Sequelize.Op.gte] : 5
+			}
+		},
+        include : ['images'],
+        order : [['id','DESC']],
+    }
       )
-        .then(products => {
-            return res.render('index', {
-               products,
-                user: req.session.userLogin
-            })
-        })
-        .catch(error => console.log(error))
-        /* return res.render('index', {
-            products, 
-            user: req.session.userLogin
-        }) */
+    let oferta = db.Product.findAll(
+        { 
+			where : {
+				discount : {
+					[Op.gte] : 10
+				}
+			},
+         include : ['images'],
+         limit : 12,
+         order : [['id','DESC']],
+     }
+       )
+       Promise.all([destacados,oferta])
+			.then(([destacados,oferta]) => {
+				return res.render('index',{
+					destacados,
+					oferta,
+                    user: req.session.userLogin
+				})
+			})
+			.catch(error => console.log(error))
+       
+       
     },
    
     login :(req, res    ) => res.render('login'),
@@ -55,14 +75,12 @@ module.exports = {
 		}).catch(error => console.log(error))
 	},
     profile: (req, res) => {
-        const { id} = req.params;
-
-        const user = users.find(user => user.id === +id)
-        console.log(user)
-
-        return res.render('profile', {
-            user
-        })
+        db.User.findByPk(req.session.userLogin.id) 
         
-      }
+        .then((user) => res.render("profile", {
+            user : user,
+          }))
+          .catch (error => console.log(error)) 
+  
+    },
 }

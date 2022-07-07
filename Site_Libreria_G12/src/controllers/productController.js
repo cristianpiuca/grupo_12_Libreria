@@ -6,6 +6,19 @@ const {validationResult} = require('express-validator')
 
 const db = require("../database/models");
 module.exports = {
+     index: (req, res) => {
+        db.Product.findAll({
+            include : ['images']
+        })
+        .then(products => {
+            return res.render('products', {
+                products,
+                user : req.session.userLogin
+            })
+           
+        })
+        .catch(error => console.log(error))
+    },
     detail: (req, res) => {
         db.Product.findByPk(req.params.id, {
             include: ['images']
@@ -151,31 +164,8 @@ module.exports = {
         .catch(error => console.log(error))
 
     },
-    list: (req, res) => {
-        db.Product.findAll({
-            include: ['images']
-        })
-            .then(products => {
-                return res.render('products', {
-                    products,
-                    user: req.session.userLogin
-                })
-            })
-            .catch(error => console.log(error))
-    },
-    index: (req, res) => {
-
-        db.Product.findAll({
-            include: ['images']
-        })
-            .then(products => {
-                return res.render('products', {
-                    products,
-                    user: req.session.userLogin
-                })
-            })
-            .catch(error => console.log(error))
-    },
+   
+   
     getByCategory : (req,res) => {
         const category = db.Category.findAll({
             where : {
@@ -201,7 +191,7 @@ module.exports = {
           .catch((error) => console.log(error));
     },
     categorySearch : (req,res) => {
-        return res.render('categorySearch', {
+        return  res.render('categorySearch', {
             user : req.session.userLogin
         })
     }

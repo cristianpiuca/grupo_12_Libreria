@@ -25,6 +25,8 @@ module.exports = (sequelize, DataTypes) => {
     format: DataTypes.STRING,
     editorial: DataTypes.STRING,
     description: DataTypes.TEXT,
+    stars : DataTypes.INTEGER,
+    discount : DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Product',

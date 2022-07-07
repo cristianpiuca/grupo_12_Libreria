@@ -5,23 +5,24 @@
 }
 
 .contenedor-principalProduct h2 {
-    color: var(--colorRosaOscuro);
+    color:  var(--colorVerdeOscuro);
     margin: 20px 0;
+    text-shadow: 0 10.36px 8.89px #dfd0bb, 0 -2px 1px rgb(228, 228, 228);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
 }
 
 .contenedor-principalProduct h1 {
-
     color: var(--colorVerdeClaro);
-
     text-align: center;
     display: block;
     margin: 11px 0 17px 0;
     font-size: var(--fs-title-extrabig);
     line-height: 80px;
-    color: cornflowerblue;
     text-shadow: 0 10.36px 8.89px #bcaf9b, 0 -2px 1px #fff;
     letter-spacing: -4px;
     margin: 5px 0;
+    font-size: 100px;
 }
 
 .contenedor-products {
@@ -51,10 +52,10 @@
 }
 
 .product-titulo {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 700;
     margin: 5px 0;
-    font-family: 'Open Sans', sans-serif;
+   
     line-height: 1.5;
 
 

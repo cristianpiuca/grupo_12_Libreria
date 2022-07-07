@@ -24,7 +24,7 @@ module.exports = {
               email: email.trim(),
               password: bcryptjs.hashSync(password, 10),
               image: 'noimage.jpeg',
-              rol: 2,
+              rolId: 2,
           })
           .then( () => {
               return res.redirect("/")})
@@ -95,9 +95,7 @@ module.exports = {
 
     if (errors.isEmpty()) {
       let { name, lastname,birth,address,state,phone } = req.body;
-      db.User.findByPk(req.session.userLogin.id, {
-        attributes: ["password"],
-      })
+      db.User.findByPk(req.session.userLogin.id)
         .then((user) => {
           db.User.update(
             {
@@ -123,7 +121,7 @@ module.exports = {
         .catch((error) => console.log(error));
     } else {
       return res.render("profile", {
-        user: req.body,
+        old: req.body,
         errors: errors.mapped(),
       });
     }

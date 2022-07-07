@@ -17,7 +17,7 @@
          <section id="semana">
             <h2>Destacados de la semana</h2>
              <div class="box-semana">
-                <% products.forEach(({id,images}) => { %>
+                <% destacados.forEach(({id,images}) => { %>
                 <article class="semana">
                     <div class="producto">
                           <a href="/products/product-detail/<%= id %> "><img src="/images/<%= images[0].file %> " alt=""></a>
@@ -33,14 +33,14 @@
           <!--**SECCION 1**-->
        
          <section id="product-section1" class="product-section">
-            <h2>Explora nuestro catálogo</h2>
+            <h2>Ofertas del mes</h2>
          <!--   <div class="product-gender">
                <h2>Ficción</h2>
             <a href="">ver todo</a>
            </div> -->
             <div class="product-box">
                 
-                <% products.forEach(({id,title,author,price,images}) => { %>
+                <% oferta.forEach(({id,title,author,price,images}) => { %>
                     <article class="art-product">
                     
                     
