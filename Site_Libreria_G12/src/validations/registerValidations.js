@@ -5,6 +5,9 @@ module.exports = [
     body('name')
         .isLength({min: 4}).withMessage('Como mínimo cuatro letras').bail()
         .isAlpha().withMessage('Solo letras están permitidas'),
+    body('lastname')
+        .isLength({min: 4}).withMessage('Como mínimo cuatro letras').bail()
+        .isAlpha().withMessage('Solo letras están permitidas'),
     body('email')    
         .notEmpty().withMessage('Debes ingresar tu email').bail()
         .isEmail().withMessage('Email no válido')

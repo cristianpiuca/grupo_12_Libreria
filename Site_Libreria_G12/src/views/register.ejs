@@ -22,6 +22,10 @@
                         <input type="text" class="input" name="name" id="name-reg" value="<%= locals.old && old.name ? old.name : null %>">
                         <span><%= locals.errors && errors.name ? errors.name.msg : null %></span>
 
+                        <p class="p-input">Tu apellido</p>
+                        <input type="text" class="input" name="lastname" id="name-reg" value="<%= locals.old && old.lastname ? old.lastname : null %>">
+                        <span><%= locals.errors && errors.lastname ? errors.lastname.msg : null %></span>
+
                         <p class="p-input">Tu email</p>
                         <input type="text" class="input" name="email" id="email-reg" value="<%= locals.old && old.email ? old.email : null%>">
                         <span><%= locals.errors && errors.email ? errors.email.msg : null %></span>

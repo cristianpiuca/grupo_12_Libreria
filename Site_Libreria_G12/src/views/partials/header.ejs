@@ -19,8 +19,8 @@
         <ul id="navbar">
 
 
-            <% if (locals.userLogin?.rol==="admin") { %>
-                <li><a href="/products/productAdd">Añadir productos</a></li>
+            <% if (locals.userLogin?.rolId === 1) { %>
+                <li><a href="/products/productAdd">Añadir</a></li>
 
             <% } %>
                 <li><a href="/products/list">Catálogo</a></li>

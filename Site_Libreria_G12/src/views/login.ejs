@@ -19,11 +19,11 @@
                 <h2>Iniciar Sesión</h2>
                 <form action="" class="inputs-container" method="POST">
                     <p class="p-input">Tu email</p>
-                    <input type="text" class="input" name="email" id="email-log">
+                    <input type="text" class="input" name="email" id="email-log" value="<%= locals.old && old.email ? old.email : null %>">
                     <span><%= locals.errors && errors.email ? errors.email.msg : null %></span>
 
                     <p class="p-input">Tu contraseña</p>
-                    <input type="password" class="input" name="password" id="password-log">
+                    <input type="password" class="input" name="password" id="password-log" value="<%= locals.old && old.password ? old.password : null %>">
                     <span><%= locals.errors && errors.password ? errors.password.msg : null %></span>
 
                     <div class="terminoss">

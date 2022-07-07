@@ -3,7 +3,7 @@ const { validationResult } = require("express-validator");
 const fs = require("fs");
 const path = require("path");
 const users = require('../data/users.json');
-
+const db = require ('../database/models');
 
 module.exports = {
   register: (req,res) => {
@@ -14,29 +14,16 @@ module.exports = {
     let errors = validationResult(req)
 
     if (errors.isEmpty()) {
-      let { name, email, password } = req.body
-      let lastID = users.length !== 0 ? users[users.length - 1].id : 0;
-      let newUser = {
-        id: +lastID + 1,
+      let { name, email, password,lastname } = req.body
+      db.User.create ({
         name: name.trim(),
-        email,
+        lastname : lastname.trim(),
+        email: email.trim(),
         password: bcryptjs.hashSync(password, 10),
-        rol: "user",
+        rolId: 2,
       
-      };
-      users.push(newUser)
-      fs.writeFileSync(
-        path.resolve(__dirname, "..", "data", "users.json"),
-        JSON.stringify(users, null, 3),
-        "utf-8"
-      );
-      //levanta sesion
-      const { id, rol } = newUser
-      req.session.userLogin = {
-        id,
-        name: name.trim(),
-        rol
-      }
+    })
+    .then( () => {
       if (req.body.checkbox) {
         const expireSession = 60000;
         res.cookie('boulevardCookie', req.session.userLogin, {
@@ -46,14 +33,15 @@ module.exports = {
         })
       }
       res.locals.userLogin = req.session.userLogin
+        return res.redirect("/")})
 
-      return res.redirect("/");
-    } else {
-      return res.render("register", {
+} else {
+
+    return res.render('register', {
         old: req.body,
         errors: errors.mapped()
-      });
-    }
+    });
+}
   },
   password: (req, res) => res.render('password'),
   login: (req, res) => {
@@ -63,29 +51,31 @@ module.exports = {
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
+      const errors = validationResult(req);
+      if (errors.isEmpty()) {
+    db.User.findOne({
+          where: {
+              email: req.body.email
+          }
+      })
+      .then((user)=> {
+        req.session.userLogin = {
+            id : +user.id,
+            name: user.name,
+            image: user.image,
+            rolId : user.rolId
+        }
+       
+  
+      res.redirect('/')
+      })
+      } else {
+          res.render('login', {
+              old: req.body,
+              errors: errors.mapped()
+          })
 
-      const { id, name, rol, email, birth, lastname, direction, province, tel } = users.find(user => user.email === req.body.email);
-
-      req.session.userLogin = {
-        id,
-        name,
-        email,
-        birth,
-        lastname,
-        direction,
-        province,
-        tel,
-        rol
       }
-
-      return res.redirect("/");
-
-    } else {
-      return res.render("login", {
-        errors: errors.mapped(),
-        old: req.body
-      });
-
     }
   },
   profile: (req, res) => {

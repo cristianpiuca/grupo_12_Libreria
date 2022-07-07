@@ -159,11 +159,17 @@ module.exports = {
         return res.redirect('/')
     },
     list: (req, res) => {
-        return res.render('products', {
-            products,
-            user: req.session.userLogin
-            
-        })
+        db.Product.findAll(
+            { include : ['images']}
+           )
+             .then(products => {
+                 return res.render('products', {
+                    products,
+                     user: req.session.userLogin
+                 })
+             })
+             .catch(error => console.log(error)) 
+      
     },
     index: (req, res) => {
         return res.render('products')
