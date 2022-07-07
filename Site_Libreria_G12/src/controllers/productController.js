@@ -176,36 +176,34 @@ module.exports = {
             })
             .catch(error => console.log(error))
     },
-    getByCategory: (req, res) => {
-   
+    getByCategory : (req,res) => {
         const category = db.Category.findAll({
-          where : {
-            id : req.params.id
-          },
-         
-        })
-        const products = db.Product.findAll({
-          where : {
-            categoryId : req.params.id
-          },
-          include : ['images']
-        })
-        Promise.all([category,products])
-        .then(([category,products]) => {
-          return res.render("categories", {
-            category,
-             products,
-             user: req.session.userLogin,
-             
-           });
-        })
-        .catch((error) => console.log(error));
-       
-      },
-      categorySearch : (req,res) => {
-       
+            where : {
+              id : req.params.id
+            },
+           
+          })
+          const products = db.Product.findAll({
+            where : {
+              categoryId : req.params.id
+            },
+            include : ['images']
+          })
+          Promise.all([category,products])
+          .then(([category,products]) => {
+            return res.render("categories", {
+              category,
+               products,
+               user: req.session.userLogin,
+               
+             });
+          })
+          .catch((error) => console.log(error));
+    },
+    categorySearch : (req,res) => {
         return res.render('categorySearch', {
-            user: req.session.userLogin,
+            user : req.session.userLogin
         })
-      }
+    }
+  
 }

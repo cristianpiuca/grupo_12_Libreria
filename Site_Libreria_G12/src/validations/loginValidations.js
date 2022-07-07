@@ -1,26 +1,42 @@
-const bcryptjs = require('bcryptjs');
-const {body} = require('express-validator');
-const users = require('../data/users.json')
-
+const bcryptjs = require("bcryptjs");
+const { check } = require("express-validator");
+const db = require("../database/models");
 
 module.exports = [
+  check("email")
+    .notEmpty()
+    .withMessage("Debes ingresar un email.")
+    .bail()
+    .isEmail()
+    .withMessage("Debes ingresar un email valido")
+    .custom((value, { req }) => {
+      return db.User.findOne({
+        where: {
+          email: req.body.email,
+        },
+      })
+        .then((user) => {
+          if (!user) {
+            return Promise.reject();
+          }
+        })
+        .catch(() => Promise.reject("Credenciales inválidas"));
+    }),
 
-    body('email')
-        .notEmpty().withMessage('Debes ingresar tu email').bail()
-        .isEmail().withMessage('Email no válido'),
-
-    body('password')
-        .notEmpty().withMessage('Debes ingresar tu contraseña').bail()
-        .custom((value, {req}) => {
-            const user = users.find(user => user.email === req.body.email);
-            if(!user){
-                return false
-            }else {
-                if(!bcryptjs.compareSync(value,user.password)){
-                    return false
-                }
-            }
-            return true
-        }).withMessage('El mail o la contraseña es incorrecto'),
-
-]
+  check("password")
+    .notEmpty()
+    .withMessage("Debes ingresar una contraseña.")
+    .custom((value, { req }) => {
+      return db.User.findOne({
+        where: {
+          email: req.body.email,
+        },
+      })
+        .then((user) => {
+          if (!user || !bcryptjs.compareSync(value, user.password)) {
+            return Promise.reject();
+          }
+        })
+        .catch(() => Promise.reject("Credenciales inválidas"));
+    }),
+];

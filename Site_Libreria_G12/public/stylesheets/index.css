@@ -496,7 +496,7 @@ body {
         margin: 11px 0 17px 0;
         font-size: 75px;
         line-height: 80px;
-        color: black;
+        color: var(--colorCrema);
         text-shadow: 0 13.36px 8.896px #c4b59d, 0 -2px 1px #fff;
         letter-spacing: -4px;
 
@@ -553,7 +553,7 @@ body {
         margin: 11px 0 17px 0;
         font-size: 75px;
         line-height: 80px;
-        color: black;
+        color: var(--colorCrema);
         text-shadow: 0 13.36px 8.896px #c4b59d, 0 -2px 1px #fff;
         letter-spacing: -4px;
     }

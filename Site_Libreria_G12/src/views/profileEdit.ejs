@@ -33,7 +33,7 @@
                     <div>
                         <label class="labelTags">Domicilio</label>
                         <input class="userEdit-input" type="text" id="direction" name="direction" value="<%= user.direction%>">
-                        <span><%= locals.errors && errors.direction ? errors.direction.msg : null %></span>
+                        <span><%= locals.errors && errors.address ? errors.address.msg : null %></span>
                     </div>
                     <div>
                         <label class="labelTags">Provincia</label>
@@ -68,16 +68,16 @@
                             <option value="Tierra del Fuego">Tierra del Fuego</option>
                             <option value="Tucumán">Tucumán</option>
                         </select>
-                        <span><%= locals.errors && errors.province ? errors.province.msg : null %></span>
+                        <span><%= locals.errors && errors.state ? errors.state.msg : null %></span>
                     </div>
                     <div>
                         <label class="labelTags">Telefono</label>
                         <input class="userEdit-input" type="text" id="tel" name="tel" value="<%= user.tel%>">
-                        <span><%= locals.errors && errors.tel ? errors.tel.msg : null %></span>
+                        <span><%= locals.errors && errors.phone ? errors.phone.msg : null %></span>
                     </div>
                     <div>
                         <label class="labelTags">Cambiar foto de Perfil</label>
-                        <input class="userEdit-input" type="file" id="img" name="img" accept="image/*"/>
+                        <input class="userEdit-input" type="file" id="image" name="imag" accept="image/*"/>
                     </div>
                     <div class="buttons">
                         <button class="btnUser" type="submit">Guardar</button>

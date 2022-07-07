@@ -9,11 +9,11 @@ module.exports = [
         .isAlpha().withMessage('Solo se permiten letras'),
     body('birth')
         .notEmpty().withMessage('Elije una fecha').bail(),
-    body('direction')
+    body('address')
         .notEmpty().withMessage('Debes poner un domicilio').bail(),
     body('province')
         .notEmpty().withMessage('Seleccione una provincia').bail(),
-        body('tel')
+        body('phone')
         .notEmpty().withMessage('Debes poner un numero de teléfono').bail() 
         .isNumeric().withMessage('Solo se permiten números')
 ]
