@@ -1,15 +1,5 @@
-<<<<<<< HEAD
-const fs = require('fs');
-const path = require('path');
-const products = require('../data/products.json')
-const categories = require('../data/categories')
-const {validationResult} = require('express-validator')
-
-const db = require("../database/models");
-=======
 const db = require('../database/models/')
 const { validationResult } = require('express-validator')
->>>>>>> crudCristian
 module.exports = {
     detail: (req, res) => {
         db.Product.findByPk(req.params.id, {
@@ -158,55 +148,6 @@ module.exports = {
 
     },
     list: (req, res) => {
-<<<<<<< HEAD
-        db.Product.findAll(
-            { include : ['images']}
-           )
-             .then(products => {
-                 return res.render('products', {
-                    products,
-                     user: req.session.userLogin
-                 })
-             })
-             .catch(error => console.log(error)) 
-      
-    },
-    index: (req, res) => {
-        return res.render('products')
-    },
-    getByCategory: (req, res) => {
-   
-        const category = db.Category.findAll({
-          where : {
-            id : req.params.id
-          },
-         
-        })
-        const products = db.Product.findAll({
-          where : {
-            categoryId : req.params.id
-          },
-          include : ['images']
-        })
-        Promise.all([category,products])
-        .then(([category,products]) => {
-          return res.render("categories", {
-            category,
-             products,
-             user: req.session.userLogin,
-             
-           });
-        })
-        .catch((error) => console.log(error));
-       
-      },
-      categorySearch : (req,res) => {
-       
-        return res.render('categorySearch', {
-            user: req.session.userLogin,
-        })
-      }
-=======
         db.Product.findAll({
             include: ['images']
         })
@@ -231,5 +172,4 @@ module.exports = {
             })
             .catch(error => console.log(error))
     }
->>>>>>> crudCristian
 }
