@@ -1,5 +1,10 @@
-const db = require('../database/models/')
-const { validationResult } = require('express-validator')
+const fs = require('fs');
+const path = require('path');
+const products = require('../data/products.json')
+const categories = require('../data/categories')
+const {validationResult} = require('express-validator')
+
+const db = require("../database/models");
 module.exports = {
     detail: (req, res) => {
         db.Product.findByPk(req.params.id, {
@@ -19,7 +24,7 @@ module.exports = {
             user: req.session.userLogin
         })
     },
-
+     
     add: (req, res) => {
         db.Category.findAll()
             .then(categories => {
@@ -70,71 +75,70 @@ module.exports = {
         })
         .catch(error => console.log(error))
     },
+    edit: (req, res) => {
 
-        edit: (req, res) => {
+        let product = db.Product.findByPk(req.params.id,{
+            include : ['images']
+        })
+        let categories = db.Category.findAll()
 
-            let product = db.Product.findByPk(req.params.id,{
-                include : ['images']
-            })
-            let categories = db.Category.findAll()
-    
-            Promise.all([product,categories])
-                .then(([product,categories]) => {
-                    return res.render('productEdit',{
-                        product,
-                        categories,
-                        user: req.session.userLogin
-                    })
+        Promise.all([product,categories])
+            .then(([product,categories]) => {
+                return res.render('productEdit',{
+                    product,
+                    categories,
+                    user: req.session.userLogin
                 })
-                .catch(error => console.log(error))
+            })
+            .catch(error => console.log(error))
 
-      
-        },
-        update: (req, res) => {
+  
+    },
+    update: (req, res) => {
 
-            let { title, author, price, categoryId, year, language, pages, format, editorial, description } = req.body
+        let { title, author, price, categoryId, year, language, pages, format, editorial, description } = req.body
 
-            db.Product.update(
-                {
-                    title : title.trim(),
-                    author : author.trim(),
-                    price : +price,
-                    categoryId,
-                    year : +year,
-                    language : language.trim(),
-                    pages : +pages,
-                    format : format.trim(),
-                    editorial : editorial.trim(),
-                    description : description.trim()
-                },
-                {
-                    where : {
-                        id : req.params.id
+        db.Product.update(
+            {
+                title : title.trim(),
+                author : author.trim(),
+                price : +price,
+                categoryId,
+                year : +year,
+                language : language.trim(),
+                pages : +pages,
+                format : format.trim(),
+                editorial : editorial.trim(),
+                description : description.trim()
+            },
+            {
+                where : {
+                    id : req.params.id
+                }
+            }
+            ).then(async () => {
+                if(req.file){
+                    try {
+                        await db.Image.update(
+                            {
+                                file : req.file.filename
+                            },
+                            {
+                                where : {
+                                    productId : req.params.id,
+                                    primary : true
+                                }
+                            }
+                        )
+                    } catch (error) {
+                        console.log(error);
                     }
                 }
-                ).then(async () => {
-                    if(req.file){
-                        try {
-                            await db.Image.update(
-                                {
-                                    file : req.file.filename
-                                },
-                                {
-                                    where : {
-                                        productId : req.params.id,
-                                        primary : true
-                                    }
-                                }
-                            )
-                        } catch (error) {
-                            console.log(error);
-                        }
-                    }
-                    return res.redirect('/');
-        
-                }).catch(error => console.log(error))
-           
-        },
+                return res.redirect('/');
+    
+            }).catch(error => console.log(error))
+       
+    },
     remove: (req, res) => {
         db.Product.destroy({
             where : {
@@ -171,5 +175,37 @@ module.exports = {
                 })
             })
             .catch(error => console.log(error))
-    }
+    },
+    getByCategory: (req, res) => {
+   
+        const category = db.Category.findAll({
+          where : {
+            id : req.params.id
+          },
+         
+        })
+        const products = db.Product.findAll({
+          where : {
+            categoryId : req.params.id
+          },
+          include : ['images']
+        })
+        Promise.all([category,products])
+        .then(([category,products]) => {
+          return res.render("categories", {
+            category,
+             products,
+             user: req.session.userLogin,
+             
+           });
+        })
+        .catch((error) => console.log(error));
+       
+      },
+      categorySearch : (req,res) => {
+       
+        return res.render('categorySearch', {
+            user: req.session.userLogin,
+        })
+      }
 }
