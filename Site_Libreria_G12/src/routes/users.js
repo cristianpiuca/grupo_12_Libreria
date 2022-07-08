@@ -7,8 +7,6 @@ const upload = require('../middlewares/multer')
 const userValidator = require('../validations/usersValidations')
 const {inSession, offSession} = require('../middlewares/sessionCheck')
 
-
-
 /* /users*/
 
 router

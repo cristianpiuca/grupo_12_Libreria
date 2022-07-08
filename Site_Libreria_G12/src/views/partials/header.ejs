@@ -9,7 +9,7 @@
     <div class="buscador-menu">
         <form id="search-form" action="/result" method="GET">
             <div id="search" class="d-flex">
-                <input class="input-search" name="keyword" placeholder="Buscar libros">
+                <input class="input-search" name="keyword" placeholder="Buscar libro o autor">
                 <i class="fas fa-search"></i>
             </div>
         </form>
@@ -18,7 +18,7 @@
     <div>
         <ul id="navbar">
 
-
+            <!-- if session exist and rolId is 1 = admin -->
             <% if (locals.userLogin?.rolId === 1) { %>
                 <li><a href="/products/productAdd">Añadir</a></li>
 
@@ -30,6 +30,7 @@
                 <li class="register"><a href="/users/register">Registrarse</a></li>
                 <li class="login"><a href="/users/login">Entrar</a></li>
             <% }else{ %>
+                <!-- if user session exist, show profile, exit and cart -->
                 <li><a href="/users/profile/<%= user.id %> "><i class="fa-solid fa-user"></i></a></li>
                 <li><a href="/users/logout"><i class="fa-solid fa-door-open"></i></a></li>
                 <li><a href="/products/product-cart"><i class="fa-solid fa-shop"></i></a></li>

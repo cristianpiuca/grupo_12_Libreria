@@ -3,8 +3,10 @@ const {
 } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const db = require ('../database/models');
+// for images
 const fs = require('fs')
 const path = require('path')
+
 module.exports = {
   register: (req, res) => {
       res.render('register')
@@ -26,7 +28,7 @@ module.exports = {
               email: email.trim(),
               password: bcryptjs.hashSync(password, 10),
               image: 'noimage.jpeg',
-              rolId: 2,
+              rolId: 2, //default
           })
           .then( () => {
               return res.redirect("/")})
@@ -86,6 +88,7 @@ module.exports = {
       }
 
   },
+  //into user data
   profile: (req, res) => {
       db.User.findByPk(req.session.userLogin.id) 
       
@@ -95,6 +98,7 @@ module.exports = {
         .catch (error => console.log(error)) 
 
   },
+  //into edit form
   edit : (req, res) => {
     db.User.findByPk(req.session.userLogin.id) 
       
@@ -113,7 +117,9 @@ module.exports = {
 
       pero si en la misma sesión quiero editar nuevamente el usuario, al mandar el formulario me devuelve un 404
 
-      Llevo dos dias tratando de solucionarlo pero no pude. La única manera de que funcione es bajar la sesión y volver a levantarla
+      Llevo dos dias tratando de solucionarlo pero no pude. 
+      
+      La única manera de que funcione es bajar la sesión y volver a levantarla
       
       No me puedo guiar con proyectos ajenos ya que mi compañero armó la vista de edicion separada de la de perfil, entonces traté
 
@@ -122,6 +128,8 @@ module.exports = {
 
 
 */
+
+//update profile for user
   update: (req, res) => {
     const errors = validationResult(req);
 
@@ -159,12 +167,13 @@ module.exports = {
      
     } else {
       return res.render("profileEdit", {
-        user: req.body,
+        user: req.body, //user using locals.user because didn´t show errors 
         errors: errors.mapped(),
       });
     }
   },
   logout: (req, res) => {
+    //this is working
       req.session.destroy();
       res.cookie('boulevardCookie', null, {
           maxAge: -1

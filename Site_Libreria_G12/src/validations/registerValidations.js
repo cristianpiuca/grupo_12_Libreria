@@ -1,5 +1,5 @@
 const { body} = require('express-validator');
-const usuarios = require('../data/users.json')
+const db = require("../database/models");
 
 module.exports = [
     body('name')
@@ -8,18 +8,25 @@ module.exports = [
     body('lastname')
         .isLength({min: 4}).withMessage('Como mínimo cuatro letras').bail()
         .isAlpha().withMessage('Solo letras están permitidas'),
-    body('email')    
-        .notEmpty().withMessage('Debes ingresar tu email').bail()
-        .isEmail().withMessage('Email no válido')
-        .custom((value) => {
-            const usuario = usuarios.find(usuario => usuario.email === value);
-            if(usuario){
-                return false
-            }else{
-                return true
+    body("email")
+        .notEmpty()
+        .withMessage("Debes usar  un email")
+        .bail()
+        .isEmail()
+        .withMessage("Debe ser un email real")
+        .custom(value => {
+            //compare if email exists, reject register
+          return db.User.findOne({
+            where : {
+              email : value
             }
-        }).withMessage('El email ya está registrado, prueba otro'),
-    body('password')
+          }).then(user => {
+            if(user){
+              return Promise.reject()
+            }
+          }).catch(() => Promise.reject('Este email ya se encuentra registrado, inica sesión'))
+      }),
+        body('password')
         /* .isAlphanumeric().withMessage('Debe contener letras y números') */
         .isLength({min : 6, max : 12}).withMessage('Debe contener entre 6 y 12 caracteres'),
     body('password2')
@@ -28,7 +35,7 @@ module.exports = [
                 return false
             }
             return true
-        }).withMessage('Las contraseñas no coinciden!!'),
+        }).withMessage('Las contraseñas no coinciden'),
     body('terminos')
         .isString('on')
         .withMessage('Debes aceptar términos y condiciones')

@@ -9,12 +9,14 @@ module.exports = {
     index :(req,res) => {
     let destacados = db.Product.findAll(
        { 
+		//parameters
 		where : {
 			stars: {
 				[db.Sequelize.Op.gte] : 5
 			}
 		},
         include : ['images'],
+		//images has a table on database
         order : [['id','DESC']],
     }
       )
@@ -43,15 +45,13 @@ module.exports = {
        
     },
    
-    login :(req, res    ) => res.render('login'),
-    register :(req, res) => res.render('register'),
-    
     search: (req, res) => {
 
 		const {keyword} = req.query;
 
 		db.Product.findAll({
 			where : {
+				//parameters
 				[Op.or] : [
 					{
 						title : {
@@ -59,7 +59,7 @@ module.exports = {
 						}
 					},
 					{
-						description : {
+						author : {
 							[Op.substring] : keyword
 						}
 					}
@@ -73,14 +73,5 @@ module.exports = {
 				
 			})
 		}).catch(error => console.log(error))
-	},
-    profile: (req, res) => {
-        db.User.findByPk(req.session.userLogin.id) 
-        
-        .then((user) => res.render("profile", {
-            user : user,
-          }))
-          .catch (error => console.log(error)) 
-  
-    },
+	}
 }

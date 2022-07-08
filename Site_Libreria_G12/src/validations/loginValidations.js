@@ -10,6 +10,7 @@ module.exports = [
     .isEmail()
     .withMessage("Debes ingresar un email valido")
     .custom((value, { req }) => {
+      //searching if email exists
       return db.User.findOne({
         where: {
           email: req.body.email,
@@ -33,6 +34,7 @@ module.exports = [
         },
       })
         .then((user) => {
+          /* if email exist, check the password */
           if (!user || !bcryptjs.compareSync(value, user.password)) {
             return Promise.reject();
           }
