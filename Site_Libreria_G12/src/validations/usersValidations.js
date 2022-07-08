@@ -16,4 +16,5 @@ module.exports = [
     body('phone')
         .notEmpty().withMessage('Debes poner un numero de teléfono').bail() 
         .isNumeric().withMessage('Solo se permiten números')
+        .isLength({min : 10}).withMessage('Mínimo 10 numeros')
 ]

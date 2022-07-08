@@ -12,32 +12,28 @@
                    
                       <div>
                         <label class="labelTags">Nombre</label>
-                        <input class="userEdit-input" type="text" id="name" name="name" value="<%= user.name%>">
+                        <input class="userEdit-input" type="text" id="name" name="name" value="<%= locals.user && locals.user.name%>">
                         <span><%= locals.errors && errors.name ? errors.name.msg : null %></span>
                     </div>
                     <div>
                         <label class="labelTags">Apellido</label>
-                        <input class="userEdit-input" type="text" id="lastname" name="lastname" value="<%= user.lastname%>">
+                        <input class="userEdit-input" type="text" id="lastname" name="lastname" value="<%= locals.user && locals.user.lastname %>">
                         <span><%= locals.errors && errors.lastname ? errors.lastname.msg : null %></span>
                     </div>
-                    <div>
-                        <label class="labelTags">Email</label>
-                        <input class="userEdit-input" type="email" id="email" name="email" value="<%= user.email%>">
-                    </div>
-                
+                   
                     <div>
                         <label class="labelTags">Fecha de nacimiento</label>
-                        <input class="userEdit-input" type="date" id="birth" name="birth" value="<%= user.birth%>">
+                        <input class="userEdit-input" type="date" id="birth" name="birth" value="<%= locals.user && locals.user.birth %>">
                         <span><%= locals.errors && errors.birth ? errors.birth.msg : null %></span>
                     </div>
                     <div>
                         <label class="labelTags">Domicilio</label>
-                        <input class="userEdit-input" type="text" id="address" name="address" value="<%= user.address%>">
+                        <input class="userEdit-input" type="text" id="address" name="address" value="<%= locals.user && locals.user.address %>">
                         <span><%= locals.errors && errors.address ? errors.address.msg : null %></span>
                     </div>
                     <div>
                         <label class="labelTags">Provincia</label>
-                       <select class="userEdit-input" name="state" id="state"> 
+                       <select class="userEdit-input" name="state" id="state" value="<%= user.state%>"> 
                         
                         
                             <option value="" hidden selected>Selecciona</option>
@@ -72,7 +68,7 @@
                     </div>
                     <div>
                         <label class="labelTags">Telefono</label>
-                        <input class="userEdit-input" type="text" id="phone" name="phone" value="<%= user.phone%>">
+                        <input class="userEdit-input" type="text" id="phone" name="phone" value="<%= locals.user && locals.user.phone %>">
                         <span><%= locals.errors && errors.phone ? errors.phone.msg : null %></span>
                     </div>
                     <div>

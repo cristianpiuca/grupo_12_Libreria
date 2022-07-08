@@ -85,50 +85,58 @@ module.exports = {
 
   },
   edit : (req, res) => {
-    res.render('profileEdit',{
-        user : req.session.userLogin.id,
-      }
-    )
+    db.User.findByPk(req.session.userLogin.id) 
+      
+      .then(() => res.render("profileEdit", {
+          user :req.session.userLogin,
+        }))
+        .catch (error => console.log(error)) 
 },
   update: (req, res) => {
     const errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      let { name, lastname,birth,address,state,phone } = req.body;
-      db.User.findByPk(req.session.userLogin.id)
-        .then((user) => {
-          db.User.update(
-            {
-              name: name.trim(),
-              lastname: lastname.trim(),
-              password: password
-                ? bcryptjs.hashSync(password, 10)
-                : user.password,
-                birth,
-                address : address.trim(),
-                state: state.trim(),
-                phone: +phone,
-              image: req.file && req.file.filename,
-            },
-            {
-              where: {
-                id: req.session.userLogin.id,
-              },
+     /*  if(req.session.userLogin.image&&req.file&&req.session.userLogin.image!="noimage.jpeg"){
+        fs.unlinkSync(
+            path.resolve(__dirname,"..", "..", "public", "images",req.session.userLogin.image)
+         )
+    } */
+    let { name, lastname,birth,address,state,phone } = req.body;
+    db.User.findByPk(req.session.userLogin.id)
+      .then(() => {
+        db.User.update(
+          {
+            name: name.trim(),
+            lastname: lastname.trim(),
+              birth,
+              address : address.trim(),
+              state,
+              phone,
+            image: req.file && req.file.filename || "noimage.jpeg",
+          },
+          {
+            where : {
+              id : req.session.userLogin.id
             }
-          )
-        
-        })
-        .catch((error) => console.log(error));
+          }
+          
+        )
+       return res.redirect('/')
+       
+      }
+      )
+      .catch(error => console.log(error))
+     
     } else {
       return res.render("profile", {
-        old: req.body,
+        user: req.body,
         errors: errors.mapped(),
       });
     }
   },
   logout: (req, res) => {
       req.session.destroy();
-      res.cookie('userAprhodite', null, {
+      res.cookie('boulevardCookie', null, {
           maxAge: -1
       });
       res.redirect('/')

@@ -1,58 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('./partials/head', {title : `${user.name} | Boulevard` }) %>
+  <%- include('./partials/head', {title : `${user.name} | Boulevard` }) %>
 
-    <body class="profile">
-        <main>
+  <body class="profile">
+    <main>
+      <%- include('./partials/header', {user: user})%>
+      <div class="container1">
+        <h1>Hola, <%= user.name %></h1>
 
+        <div class="userAvatar">
+          <img class="userPhoto" src="/images/<%= user.image %>" alt="" />
+        </div>
 
-            <%- include('./partials/header', {user: user})%> 
-            <div class="container1"> 
-                 <h1>Hola, <%= user.name %> </h1>
+        <div class="label">
+          <a href="/users/profileEdit/<%= user.id %> "
+            ><i class="fa-solid fa-user"></i>Editar perfil</a
+          >
+        </div>
+        <form class="userForm">
+          <div class="userInfo">
+            <h2>Info Personal</h2>
 
-                <div class="userAvatar">
-                    <img class="userPhoto" src="/images/<%= user.image %>" alt="">
-                   
-                </div>
-            
+            <h3>Nombre : <%= user.name %></h3>
 
-                <div class="label">
-                    <a href="/users/profileEdit/<%= user.id %> "><i class="fa-solid fa-user"></i>Editar perfil</a>
-                </div>
-                    <form class="userForm">
-                     
-                        <div class="userInfo">
-                            
-                                <h2>Info Personal</h2>
-                                
-                                <h3>Nombre : <%= user.name %>   </h3>
-                                
-                                <h3>Apellido : <%= user.lastname %></h3> 
-                                
-                                <h3>Email : <%= user.email %>  </h3>
-                                
-                                <h3>Fecha de nacimiento : <%= user.birth %></h3>
-                                
-                                <h3>Dirección : <%= user.address %></h3>
-                                
-                                <h3>Provincia :<%= user.state %></h3>
-                                
-                                <h3>Telefono : <%= user.phone %></h3>
-                                
-                                <h3>Categoria : <%= user.rolId %></h3>
-                           
-                           
-                           
-                        </div>
-                    
-                    </form>
-                
-            </div>
-               
+            <h3>Apellido : <%= user.lastname %></h3>
 
-                
-        </main>
-        <%- include('./partials/footer') %>
-    </body>
+            <h3>Email : <%= user.email %></h3>
 
+            <h3>Fecha de nacimiento : <%= user.birth %></h3>
+
+            <h3>Domicilio : <%= user.address %></h3>
+
+            <h3>Provincia :<%= user.state %></h3>
+
+            <h3>Celular : <%= user.phone %></h3>
+          </div>
+        </form>
+      </div>
+    </main>
+    <%- include('./partials/footer') %>
+  </body>
 </html>
