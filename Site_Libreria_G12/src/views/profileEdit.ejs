@@ -33,7 +33,7 @@
                     </div>
                     <div>
                         <label class="labelTags">Provincia</label>
-                       <select class="userEdit-input" name="state" id="state" value="<%= user.state%>"> 
+                       <select class="userEdit-input" name="state" id="state" value="<%= locals.user && locals.user.state%>"> 
                         
                         
                             <option value="" hidden selected>Selecciona</option>

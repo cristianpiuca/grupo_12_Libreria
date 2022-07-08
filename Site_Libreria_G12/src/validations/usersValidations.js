@@ -2,11 +2,9 @@ const { body } = require('express-validator');
 
 module.exports = [
     body('name')
-        .notEmpty().withMessage('Debes poner tu nombre').bail()
-        .isAlpha().withMessage('Solo se permiten letras'),
+        .notEmpty().withMessage('Debes poner tu nombre').bail(),
     body('lastname')
-        .notEmpty().withMessage('Debes poner tu apellido').bail()
-        .isAlpha().withMessage('Solo se permiten letras'),
+        .notEmpty().withMessage('Debes poner tu apellido').bail(),
     body('birth')
         .notEmpty().withMessage('Elije una fecha').bail(),
     body('address')
