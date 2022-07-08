@@ -1,0 +1,31 @@
+Retrospectiva Sprint 6 Base de Datos
+
+Fue un sprint sencillo pero que requería iniciar las tareas a tiempo para atajar los errores de Sequelize
+
+Seguir haciendo:
+1. Consultar a compañeros por ayuda
+2. Daily por whatsapp para informar avances
+3.Actualizar tarjetas de trello
+4. Darle importancia a los detalles estéticos del proyecto
+
+Hacer mas: 
+1.Reuniones semanales
+2.Consultar la documentación en busca de innovaciones
+3. Ver proyectos ajenos con nuevas maneras de realizar lo propuesto
+4.Pedir feedback de funcionamiento después de un merge
+
+Hacer menos: 
+1. Demorar en informar problemas
+2.Demorar en iniciar el trabajo pesado
+3. 
+
+Empezar a hacer:
+1. Documentar código
+2. Guardar recursos de front para proximos sprints
+3. Consultar por dudas al tutor
+
+Dejar de hacer: 
+1. Ausentarse sin avisar el motivo
+2. Comprometerse con tareas que no puede cumplir
+3. Sobreescribir código 
+4. Copiar y pegar sin entender
