@@ -43,15 +43,7 @@
                     <button type="button" class="buttonDetail">
                         Agregar al carrito <i class="fas fa-shopping-cart"></i>
                     </button>
-            <% if (locals.userLogin?.rol==="admin") { %>
-              
-                    <div class="buttons">
-                        <a href="/products/productEdit/<%= product.id %>"><button class="buttonDetail">EDITAR</button></a>
-                        <form action="/products/remove/<%= product.id %>?_method=DELETE" method="POST">
-                            <button class="buttonDetail-delete" type="submit">ELIMINAR</button>
-                        </form>
-                    </div>
-                   <% } %> 
+          
                 </div>                
                 <div class="redes-links">
                     <p>Compartir en: </p>

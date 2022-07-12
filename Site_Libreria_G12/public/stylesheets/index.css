@@ -130,6 +130,11 @@ body {
     border-radius: 10px;
     position: relative;
     transition: 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .product:hover {

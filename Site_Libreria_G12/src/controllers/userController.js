@@ -164,7 +164,20 @@ module.exports = {
       res.redirect('/')
   },
   admin : (req,res) => {
-    return res.render('admin')
+    db.Product.findAll(
+      { 
+          order : [['id','DESC']],
+           include : ['images']
+          }
+     )
+       .then(products => {
+           return res.render('admin', {
+              products,
+               user: req.session.userLogin
+           })
+       })
+       .catch(error => console.log(error)) 
+   
   }
 
 }
