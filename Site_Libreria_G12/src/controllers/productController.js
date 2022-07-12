@@ -1,9 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const products = require('../data/products.json')
-const categories = require('../data/categories')
 const {validationResult} = require('express-validator')
-
+const {Op} = require('sequelize')
 const db = require("../database/models");
 module.exports = {
      index: (req, res) => {
@@ -11,10 +9,11 @@ module.exports = {
             include : ['images']
         })
         .then(products => {
-            return res.render('products', {
+           /*  return res.render('products', {
                 products,
                 user : req.session.userLogin
-            })
+            }) */
+            return res.send(products)
            
         })
         .catch(error => console.log(error))

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head', {
+        title : 'Admin | Boulevard'
+    }) %> 
+<body class="admin">
+   
+    <%- include('./partials/header') %> 
+  
+    <main>
+    
+    
+        <article class="container article">
+      <h1 class="h2 article-title">Hola</h1>
+         
+    
+          <p class="article-subtitle">Tus productos</p>
+    
+          <!-- 
+            - #HOME
+          -->
+    
+          <section class="home">
+    
+            <div class="card profile-card">
+    
+              <div class="dropdown">
+                <button class="btn btn-outline-success" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                  ...
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <li><button class="dropdown-item" type="button">Ver</button></li>
+                  <li><button class="dropdown-item" type="button">Editar</button></li>
+                  <li><button class="dropdown-item" type="button">Eliminar</button></li>
+                </ul>
+              </div>
+    
+                <li class="divider"></li>
+    
+    
+              </ul>
+    
+              <div class="profile-card-wrapper">
+    
+                <figure class="card-avatar">
+                  <img src="../../images/noimage.jpeg" alt="user" width="48" height="48">
+                </figure>
+    
+                <div>
+                  <p class="card-title">Tu nombre</p>
+    
+                  <p class="card-subtitle">Digital House & Fundación Formar</p>
+                </div>
+    
+              </div>
+    
+              <ul class="contact-list">
+    
+                <li>
+                  <a href="mailto:xyz@mail.com" class="contact-link icon-box">
+                    <span class="material-symbols-rounded  icon">mail</span>
+    
+                    <p class="text">tu email</p>
+                  </a>
+                </li>
+    
+                <li>
+                  <a href="tel:00123456789" class="contact-link icon-box">
+                    <span class="material-symbols-rounded  icon">call</span>
+    
+                    <p class="text">tu telefono</p>
+                  </a>
+                </li>
+    
+              </ul>
+    
+              <div class="divider card-divider"></div>
+    
+              <ul class="progress-list">
+    
+                <li class="progress-item">
+    
+                  <div class="progress-label">
+                    <p class="progress-title">Web Design</p>
+    
+                    <data class="progress-data" value="85">85%</data>
+                  </div>
+    
+                  <div class="progress-bar">
+                    <div class="progress" style="--width: 85%; --bg: var(--blue-ryb);"></div>
+                  </div>
+    
+                </li>
+    
+                <li class="progress-item">
+    
+                  <div class="progress-label">
+                    <p class="progress-title">Backend Developer</p>
+    
+                    <data class="progress-data" value="8.5">8.5</data>
+                  </div>
+    
+                  <div class="progress-bar">
+                    <div class="progress" style="--width: 75%; --bg: var(--coral);"></div>
+                  </div>
+    
+                </li>
+    
+              </ul>
+    
+            </div>
+    
+            <div class="card-wrapper">
+    
+              <div class="card task-card">
+    
+                <div class="card-icon icon-box green">
+                  <span class="material-symbols-rounded  icon">task_alt</span>
+                </div>
+    
+                <div>
+                  <data class="card-data" value="80">80</data>
+    
+                  <p class="card-text">Productos agregados</p>
+                </div>
+    
+              </div>
+    
+              <div class="card task-card">
+    
+                <div class="card-icon icon-box blue">
+                  <span class="material-symbols-rounded  icon">drive_file_rename_outline</span>
+                </div>
+    
+                <div>
+                  <data class="card-data" value="21">21</data>
+    
+                  <p class="card-text">Productos editados</p>
+                </div>
+    
+              </div>
+    
+            </div>
+    
+            <div class="card revenue-card">
+    
+              <div class="dropdown">
+                <button class="btn btn-outline-success" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                  ...
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <li><button class="dropdown-item" type="button">Ver</button></li>
+                  <li><button class="dropdown-item" type="button">Editar</button></li>
+                  <li><button class="dropdown-item" type="button">Eliminar</button></li>
+                </ul>
+              </div>
+    
+              <p class="card-title">Commits</p>
+    
+              <data class="card-price" value="17">17</data>
+    
+              <p class="card-text">Última semana</p>
+    
+              <div class="divider card-divider"></div>
+    
+              <ul class="revenue-list">
+    
+                <li class="revenue-item icon-box">
+    
+                  <span class="material-symbols-rounded  icon  green">trending_up</span>
+    
+                  <div>
+                    <data class="revenue-item-data" value="15">15%</data>
+    
+                    <p class="revenue-item-text">Mes pasado</p>
+                  </div>
+    
+                </li>
+    
+                <li class="revenue-item icon-box">
+    
+                  <span class="material-symbols-rounded  icon  red">trending_down</span>
+    
+                  <div>
+                    <data class="revenue-item-data" value="10">10%</data>
+    
+                    <p class="revenue-item-text">Este mes</p>
+                  </div>
+    
+                </li>
+    
+              </ul>
+    
+            </div>
+    
+          </section>
+    
+    
+    
+    
+          <!-- 
+            - #PROJECTS
+          -->
+    
+          <section class="projects">
+    
+            <div class="section-title-wrapper">
+              <h2 class="section-title">Productos</h2>
+    
+            
+            </div>
+    
+            <ul class="project-list">
+    
+              <!-- tarjetas de producto -->
+              <li class="project-item">
+                <div class="card project-card">
+                     <!-- bootstrap button -->
+                  <div class="dropdown">
+                    <button class="btn btn-outline-success" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                      ...
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <li><button class="dropdown-item" type="button">Ver</button></li>
+                      <li><button class="dropdown-item" type="button">Editar</button></li>
+                      <li><button class="dropdown-item" type="button">Eliminar</button></li>
+                    </ul>
+                  </div>
+                 <!-- acá va el producto -->
+                 <article class="art-product">
+                    
+                    
+                  <div class="product">
+                      <div class="image-container">
+                      <img src="/images/aliceoseman.jpg" alt="">
+                      </div>
+                  
+                      <h4>autor</h4>
+                      <h4>precio</h4>
+                       <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
+                      
+                  </div>
+                  
+              </article>
+           
+                </div>
+            
+    
+          </section>
+    
+    
+    
+    
+    
+        </article>
+      </main>
+    
+       
+
+    <%- include('./partials/footer') %> 
+     
+</body>
+
+</html>

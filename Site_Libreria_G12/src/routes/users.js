@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {login, register, processRegister, loginUser, logout, profile, update,edit} = require('../controllers/userController')
+const {login, register, processRegister, loginUser, logout, profile, update,edit, admin} = require('../controllers/userController')
 const validations = require('../validations/registerValidations') 
 const loginCheck = require('../validations/loginValidations')
 const upload = require('../middlewares/multer')
@@ -18,7 +18,7 @@ router
     .get('/profile/:id', offSession, profile)
    .get('/profileEdit/:id', edit) 
     .put('/update/:id',upload.single('image'),userValidator,update)
-
+    .get('/admin',admin)
 
 
 module.exports = router;

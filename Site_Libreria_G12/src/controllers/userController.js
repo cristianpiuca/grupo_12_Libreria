@@ -162,6 +162,9 @@ module.exports = {
           maxAge: -1
       });
       res.redirect('/')
+  },
+  admin : (req,res) => {
+    return res.render('admin')
   }
 
 }
