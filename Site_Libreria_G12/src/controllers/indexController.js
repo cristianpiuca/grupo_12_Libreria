@@ -1,8 +1,5 @@
 const path = require('path')
 const fs = require('fs')
-/* const products = require('../data/products') */
-
-//database
 const db = require('../database/models')
 const {Op} = require('sequelize')
 module.exports = {

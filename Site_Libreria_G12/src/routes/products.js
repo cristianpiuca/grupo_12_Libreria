@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const upload = require('../middlewares/multer')
 const productValidator = require('../validations/productsValidations')
-const {cart, detail, add, edit, store, update, remove, index,getByCategory, categorySearch} = require('../controllers/productController')
+const {cart, detail, add, edit, store, update, remove, getByCategory, categorySearch, all} = require('../controllers/productController')
 const adminCheck = require('../middlewares/adminCheck')
 
 /* /products */
 router
-    .get('/', index)
+    .get('/', all)
     .get('/product-cart', cart)
     .get('/product-detail/:id', detail)
     .get('/productAdd', adminCheck , add)

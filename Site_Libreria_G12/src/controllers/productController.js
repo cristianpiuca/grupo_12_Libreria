@@ -4,19 +4,20 @@ const {validationResult} = require('express-validator')
 const {Op} = require('sequelize')
 const db = require("../database/models");
 module.exports = {
-     index: (req, res) => {
-        db.Product.findAll({
-            include : ['images']
-        })
-        .then(products => {
-           /*  return res.render('products', {
-                products,
-                user : req.session.userLogin
-            }) */
-            return res.send(products)
-           
-        })
-        .catch(error => console.log(error))
+     all: (req, res) => {
+        db.Product.findAll(
+            { 
+                order : [['id','DESC']],
+                 include : ['images']
+                }
+           )
+             .then(products => {
+                 return res.render('products', {
+                    products,
+                     user: req.session.userLogin
+                 })
+             })
+             .catch(error => console.log(error)) 
     },
     detail: (req, res) => {
         db.Product.findByPk(req.params.id, {
