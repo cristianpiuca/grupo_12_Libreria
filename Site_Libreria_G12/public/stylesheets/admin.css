@@ -1,5 +1,23 @@
+.admin{
+ 
+  background: linear-gradient(to top, #7db7f2 0%, #fdb3e8 50%, #e696a6 80%, #9d74db 100%);
+ 
+}
+.admin i{
+  color:var(--colorVerdeOscuro);
+}
 
-
+.admin a{
+  text-decoration: none;
+}
+.admin main{
+  padding: 20px;
+}
+.admin .productContainer{
+  margin: 6px;
+  width: 200px;
+  margin-top: 36px;
+}
 .productDashboard {
 
   height: 320px;
@@ -22,7 +40,9 @@
   padding: 5px;
 
 }
-
+.userAdminCard .productDashboard{
+  border: none;
+}
 .productDashboard a {
   text-decoration: none
 }
@@ -33,7 +53,7 @@
 
 .productDashboard img {
   height: 200px;
-  
+  width: 100%;
   display: block;
   padding: 1;
   margin: 0 auto;
@@ -55,30 +75,110 @@
 
 .productDashboard h5 {
   position: absolute;
-  top: 204px;
+ 
   color: var(--colorVerdeOscuro);
   width: 100%;
   font-weight: bold;
   font-size: 12px;
-  padding: 1px;
+  padding: 20px;
   margin: 0 auto;
   text-align: center;
 }
-
-.productDashboard h6 {
-  width: 100%;
-  font-size: 18px;
+main h1{
   text-align: center;
-  position: absolute;
-  top: 200px;
+  font-size: var(--fs-title-super-extrabig);
+  line-height: 80px;
+  color: var(--colorCrema);
+  text-shadow: 0 13.36px 8.896px #c49dbc, 0 -2px 1px #fff;
+  letter-spacing: -4px;
+  display: block;
+}
+.admin .productDashboard .image-container{
+margin-bottom: 5px;
+  border-bottom: 3px dotted rgba(255, 255, 255, 0.774);
 }
 
-
   .projects{
+    margin: 30px 5px 0 0;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
     align-items: center;
+
   }
+ 
+  .infoAdmin{
+    display: flex;
+    width: 100%;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin:30px 5px;
+
   
+  }
+  .userAdminCard{
+    display: flex;
+    height: 400px;
+
+    width: 250px;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  
+    margin: 0 20px;
+  }
+  .commitsData{
+    margin: 15px 0;
+    height: 320px;
+    width: 350px;
+    border-radius: 20px;
+    background-image: url('../images/data.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .illustrations{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+@media(min-width:769px){
+  .infoAdmin{
+    width: 100%;
+    height: 500px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: initial;
+    justify-content: space-around;
+    align-items: initial;
+    height: 550px;
+    
+  }
+  .userAdminCard{
+  height: 400px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+width: 380px;
+  }
+.commitsData{
+  width: 50%;
+ height: 450px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+
+}
