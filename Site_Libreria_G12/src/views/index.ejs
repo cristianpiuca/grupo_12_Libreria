@@ -11,7 +11,7 @@
         </section>
 
 
-                                          <!--******CUERPO******-->
+                                        
 
      <div id="cuerpo">
          <section id="semana">
@@ -30,114 +30,71 @@
               </div>
             
          </section>
-          <!--**SECCION 1**-->
        
-         <section id="product-section1" class="product-section">
+         <!--**BANNER**-->
+         <section id="banner2" class="box-banner">
+            <img src="/images/banner2.jpg" alt="">
+         </section>
+
+
+
+         <section id="product1" class="section-p1">
             <h2>Ofertas del mes</h2>
-         <!--   <div class="product-gender">
-               <h2>Ficción</h2>
-            <a href="">ver todo</a>
-           </div> -->
-            <div class="product-box">
-                
+         
+            <div class="pro-container">
                 <% oferta.forEach(({id,title,author,price,images}) => { %>
-                    <article class="art-product">
-                    
-                    
-                        <div class="product">
-                            <img src="/images/<%= images[0].file %> " alt="">
-                            <div class="data">
-                                <a href="/products/product-detail/<%= id %> "><h4><%= title %></h4></a
-                                <h4><%= author %></h4>
-                                <h3 class="product-price">$<%= price %></h3>
-                            </div>
-                           
-                            
-                             <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
-                            
-                      
-                        
-                    </article>
-                 
-                <% }) %>
+           
+                    <div class="pro">
+                         <div class="image-container">
+                             <a href="/products/product-detail/<%= id %> "><img src="/images/<%= images[0].file %> " alt=""></a>
+                         </div>
+                         <div class="des">
+                             <span><%= author %></span>
+                             <h5><%= title %></h5>
+                             <div class="star" >
+                                 <i class="fa-solid fa-star"></i>
+                                 <i class="fa-solid fa-star"></i>
+                                 <i class="fa-solid fa-star"></i>
+                                 <i class="fa-solid fa-star"></i>
+                                 <i class="fa-solid fa-star-half"></i>
+                             </div>
+                             <h4>$<%= price %></h4>
+                         </div>
+                         <div class="cart">
+                             <a href="/products/product-detail/<%= id %>"><i class="fa-solid fa-cart-shopping"></i></a>
+         
+                         </div>
+                     </div>
+                   <% }) %>
+               
+           
 
               
             </div>
          </section>
 
                                             <!--**BANNER**-->
-         <section id="banner2" class="box-banner">
-            <img width="100%" src="/images/banner2.jpg" alt="">
-         </section>
+         
 
-                                            <!--**SECCION 2**-->
+                                     
         
      </div>
 
-                                      <!--******LATERAL******-->
-     <div id="lateral">
-         <section id="novedades" class="box-novedades">
-             <div class="novedades">
-                 <h4>Recibí las novedades</h4>
-            <input id="input-novedades" type="email" name="e-mail" placeholder="Ingresa tu e-mail">
-            <button class="btn-home">enviar</button>
-             </div>
-         </section>
-
-
-
-            <section class="publicidad">
-                <a href=""><img src="/images/publicidad2.jpg" alt=""></a>
-            </section>
-
-
-        <section id="contacto" class="box-contacto">
-            <div class="contacto">
-                <form action="/">
-                    <h3>Contáctanos</h3>
-                    <li>
-                        <input type="text" placeholder="Nombre">
-                    </li>
-                    <li>
-                        <input type="email" name="email" id="" placeholder="Email">
-                    </li>
-                   
-                    <li>
-                        <textarea name="mensaje" placeholder= "Dejanos tu mensaje" id="" cols="10" rows="8"></textarea>
-                    </li>
-                    <button class="btn-home">enviar</button>
-                </form>
-         
-            </div>
-        </section>
-
-        
-
-        <section id="lanzamiento" class="box-lanzamiento">
-            <h3>lanzamiento</h3>
-            <div class="lanzamiento-image">
-               <img width="80%" src="/images/lanzamiento.png" alt="">
-            </div>
-            <div class="lanzamiento-info">
-                <h4 class="titulo">
-                    El hechizo del agua
-                </h4>
-                <h4 class="autor">
-                    Florencia Bonelli
-                </h4>
-                <p class="descripcion">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, beatae. Tempora corporis, voluptatum facilis beatae iste eligendi. 
-                </p>
-            </div>
-        </section>
-
-    </div>
-
+                                     
     <section id="banner-bottom" class="box-banner">
         <img width="100%" src="/images/banner3.png" alt="">
     </section> 
 
-
+    <section id="novedades" class="section-p1 section-m1">
+        <div class="novedadtexto">
+            <h4>Suscribite para novedades y</h4>
+            <p>Obtené <span>cupones</span> especiales de descuento</p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Tu email">
+            <button class="normal">Enviame</button>
+        </div>
+    </section>
     </main>
 
     <%- include('./partials/footer') %>

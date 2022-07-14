@@ -4,7 +4,7 @@
  
 }
 .admin i{
-  color:var(--colorVerdeOscuro);
+  color:var(--colorRosaOscuro);
 }
 
 .admin a{
@@ -13,6 +13,48 @@
 .admin main{
   padding: 20px;
 }
+
+.admin .container{
+  margin: 15px;
+}
+.admin .row{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+
+}
+
+
+.admin .card-03{
+  display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+  background: #ffffffb1;
+  position: relative;
+  flex: 1;
+  max-width: 940px;
+  margin: 3px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  z-index: 2;
+  backdrop-filter: blur(2rem);
+}
+@media(max-width: 769px){
+ 
+  .card-03{
+    align-items: center;
+    flex: 100%;
+    width: 100%;;
+  }
+}
+
 .admin .productContainer{
   margin: 6px;
   width: 200px;
@@ -21,15 +63,14 @@
 .productDashboard {
 
   height: 320px;
-  border: solid 1px var(--colorVerdeOscuro);
-  border-radius: 10px;
+
   position: relative;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
+  box-shadow: 15px 15px 20px 30px rgba(0, 0, 0, 0.05);
 }
 
 
@@ -39,9 +80,6 @@
   justify-content: center;
   padding: 5px;
 
-}
-.userAdminCard .productDashboard{
-  border: none;
 }
 .productDashboard a {
   text-decoration: none
@@ -59,7 +97,7 @@
   margin: 0 auto;
   margin-top: 9px;
   margin-bottom: 10px;
-  border: solid 1px var(--colorRosaOscuro);
+
 }
 
 .productDashboard h4 {
@@ -84,18 +122,31 @@
   margin: 0 auto;
   text-align: center;
 }
-main h1{
+.admin main h1{
   text-align: center;
-  font-size: var(--fs-title-super-extrabig);
+  display: block;
+  margin: 11px 0 17px 0;
+  font-family: 'Lobster', cursive;
+  font-size: 75px;
   line-height: 80px;
   color: var(--colorCrema);
-  text-shadow: 0 13.36px 8.896px #c49dbc, 0 -2px 1px #fff;
+
   letter-spacing: -4px;
+}
+.admin main h2{
+  text-align: center;
   display: block;
+  margin: 11px 0 17px 0;
+  font-family: 'Lobster', cursive;
+  font-size: 75px;
+  line-height: 80px;
+  color: var(--colorCrema);
+
+    letter-spacing: -4px;
 }
 .admin .productDashboard .image-container{
 margin-bottom: 5px;
-  border-bottom: 3px dotted rgba(255, 255, 255, 0.774);
+
 }
 
   .projects{
@@ -117,18 +168,6 @@ margin-bottom: 5px;
     margin:30px 5px;
 
   
-  }
-  .userAdminCard{
-    display: flex;
-    height: 400px;
-
-    width: 250px;
-    border-radius: 20px;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-  
-    margin: 0 20px;
   }
   .commitsData{
     margin: 15px 0;
@@ -161,14 +200,7 @@ margin-bottom: 5px;
     height: 550px;
     
   }
-  .userAdminCard{
-  height: 400px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-width: 380px;
-  }
+ 
 .commitsData{
   width: 50%;
  height: 450px;

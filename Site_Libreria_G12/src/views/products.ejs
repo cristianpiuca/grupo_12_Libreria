@@ -3,31 +3,43 @@
     <%- include('./partials/head', {title : 'Catálogo | Boulevard'}) %>
 <body>
     <%- include('./partials/header', {user: user})%> 
-    <main>
-        <div class="product-box">
+    <main class="products">
+        <div  id="product1" class="section-p1">
            
                 <div class="col-12">
                     <h2>Nuestros libros en stock</h2>
                 </div>
             
-                <% products.forEach(({id,title,author,price,images}) => { %>
-                    <article class="art-product">
-                    
-                    
-                        <div class="product">
-                            <div class="image-container">
-                                <img src="/images/<%= images[0].file %> " alt="">
-                            </div>
-                            <a href="/products/product-detail/<%= id %> "><h4><%= title %></h4></a>
-                             <h4><%= author %> </h4>
-                             <h4 class="product-price">$<%= price %></h4>
-                             <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a>
-                            
-                        </div>
-                        
-                    </article>
-                 
-                <% }) %>
+                <div class="pro-container">
+                    <% products.forEach(({id,title,author,price,images}) => { %>
+               
+                        <div class="pro">
+                             <div class="image-container">
+                                 <a href="/products/product-detail/<%= id %> "><img src="/images/<%= images[0].file %> " alt=""></a>
+                             </div>
+                             <div class="des">
+                                 <span><%= author %></span>
+                                 <h5><%= title %></h5>
+                                 <div class="star" >
+                                     <i class="fa-solid fa-star"></i>
+                                     <i class="fa-solid fa-star"></i>
+                                     <i class="fa-solid fa-star"></i>
+                                     <i class="fa-solid fa-star"></i>
+                                     <i class="fa-solid fa-star-half"></i>
+                                 </div>
+                                 <h4>$<%= price %></h4>
+                             </div>
+                             <div class="cart">
+                                 <a href="/products/product-detail/<%= id %>"><i class="fa-solid fa-cart-shopping"></i></a>
+             
+                             </div>
+                         </div>
+                       <% }) %>
+                   
+               
+    
+                  
+                </div>
             
             
         </div>

@@ -9,99 +9,74 @@
     <%- include('./partials/header') %> 
    
     <main>
-     
-      <section class="infoAdmin">
+     <h1>Administra tu stock</h1>
+   <!--    <section class="infoAdmin">
 
        
 
-     <!-- user admin -->
-        <article class="userAdminCard">
-          <article class="productContainer">
-
-            <div class="dropdown">
-              <button class="btn btn-outline-none" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa-solid fa-pen-to-square"></i> Mi Perfil
-               </button>
-           
-             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <li><a href="#"><button class="dropdown-item" type="button"><i class="fa-solid fa-eyes"></i><i class="fa-solid fa-eye"></i> Ver</button></a></li>
-               <li><button class="dropdown-item" type="button"><i class="fa-regular fa-pen-to-square"></i> Editar</button></li>
-               <li>
-                 <form action="#" method="POST">
-                   <button class="dropdown-item" type="button"><i class="fa-solid fa-trash"></i> Eliminar</button>
-                 </form>
-               </li>
-             </ul>
-            </div>
-          
-              <div class="productDashboard">
-                  <div class="image-container">
-                    <a href="#">  <img src="/images/noimage.jpeg" alt=""></a>
-
-                  </div>
-                 <h3>Hola,</h3>
-
-                   
-                  
-              </div>
-              
-          </article>
-       
-        </article>
+    
         <article class="commitsData">
 
         </article>
      
-      </section>
-    <h1>Administrar productos</h1>
-          <section class="projects">
-    
-                <% products.forEach(({id,title,author,images}) => { %>
-                <div>
-                  
-                 
-                 <!-- acá va el producto -->
+      </section> -->
+  
+      <section class="container">
+       
+       
+         <article class="row">
+          <div class="card-03">
+            <% products.forEach(({id,title,author,images}) => { %>
+              <div>
+                
                
-                  <article class="productContainer">
+               <!-- acá va el producto -->
+             
+                <article class="productContainer">
 
-                    <div class="dropdown">
-                      <button class="btn btn-outline-none" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                       </button>
-                      
-                     <!-- aca va la ul con los botones -->
+                  <div class="dropdown">
+                    <button class="btn btn-outline-none" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa-solid fa-pen-to-square"></i>
+                     </button>
+                    
+                   <!-- aca va la ul con los botones -->
 
-                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                      <li><a href="/products/product-detail/<%= id %> "><button class="dropdown-item" type="button"><i class="fa-solid fa-eyes"></i><i class="fa-solid fa-eye"></i> Ver</button></a></li>
-                       <li><a href="/products/update/<%= id %>"><button class="dropdown-item" type="button"><i class="fa-regular fa-pen-to-square"></i> Editar</button></a></li>
-                       <li>
-                         <form action="/products/remove/<%= id %>?_method=DELETE" method="POST">
-                           <button class="dropdown-item" type="button"><i class="fa-solid fa-trash"></i> Eliminar</button>
-                         </form>
-                       </li>
-                     </ul>
+                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><a href="/products/product-detail/<%= id %> "><button class="dropdown-item" type="button"><i class="fa-solid fa-eyes"></i><i class="fa-solid fa-eye"></i> Ver</button></a></li>
+                     <li><a href="/products/update/<%= id %>"><button class="dropdown-item" type="button"><i class="fa-regular fa-pen-to-square"></i> Editar</button></a></li>
+                     <li>
+                       <form action="/products/remove/<%= id %>?_method=DELETE" method="POST">
+                         <button class="dropdown-item" type="button"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                       </form>
+                     </li>
+                   </ul>
+                  </div>
+                
+                    <div class="productDashboard">
+                        <div class="image-container">
+                          <a href="/products/product-detail/<%= id %> ">  <img src="/images/<%= images[0].file %> " alt=""></a>
+
+                        </div>
+                        <h4><%= title %></h4>
+                         <h4><%= author %> </h4>
+                         
+                         
+                        
                     </div>
-                  
-                      <div class="productDashboard">
-                          <div class="image-container">
-                            <a href="/products/product-detail/<%= id %> ">  <img src="/images/<%= images[0].file %> " alt=""></a>
-
-                          </div>
-                          <h4><%= title %></h4>
-                           <h4><%= author %> </h4>
-                           
-                           
-                          
-                      </div>
-                      
-                  </article>
-               
-          
-           
-                </div>
-                <% }) %>
+                    
+                </article>
+             
         
-          </section>
+         
+              </div>
+              <% }) %>
+          </div>
+        
+        </article>
+      </section>
+   
+  
+         
     
     
     

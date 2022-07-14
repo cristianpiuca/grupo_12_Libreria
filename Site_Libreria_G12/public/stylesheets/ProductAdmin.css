@@ -19,6 +19,10 @@
     padding: 10px;
 
 }
+main.products{
+    background: linear-gradient(-435deg, #d1f2fb 0%, #92b890 100%);
+    background: linear-gradient(to top, #8da6bf 0%, #e8dade 100%);
+}
 
 .productAdmin h1{
     text-transform: uppercase;
