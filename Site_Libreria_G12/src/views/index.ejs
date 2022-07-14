@@ -32,9 +32,18 @@
          </section>
        
          <!--**BANNER**-->
-         <section id="banner2" class="box-banner">
-            <img src="/images/banner2.jpg" alt="">
-         </section>
+         <div class="carousel">
+            <div class="slides">
+              <img src="../../images/hoover.jpg" alt="slide image" class="slide">
+              <img src="../../images/banner4.jpg" alt="slide image" class="slide">
+              <img src="../../images/bannerDeProducto.jpg" alt="slide image" class="slide">
+            </div>
+            <div class="controls">
+              <div class="control prev-slide">&#9668;</div>
+              <div class="control next-slide">&#9658;</div>
+            </div>
+          </div>
+       
 
 
 
@@ -80,10 +89,9 @@
         
      </div>
 
-                                     
-    <section id="banner-bottom" class="box-banner">
-        <img width="100%" src="/images/banner3.png" alt="">
-    </section> 
+ 
+   
+    
 
     <section id="novedades" class="section-p1 section-m1">
         <div class="novedadtexto">
@@ -95,10 +103,11 @@
             <button class="normal">Enviame</button>
         </div>
     </section>
+    
     </main>
 
     <%- include('./partials/footer') %>
-
+<script src="../../js/carousel.js"></script>
 
 
 </body>

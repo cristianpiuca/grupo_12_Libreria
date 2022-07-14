@@ -4,7 +4,19 @@
 <body>
     <%- include('./partials/header', {user: user})%> 
     <main class="products">
+       
         <div  id="product1" class="section-p1">
+            <div class="carousel">
+                <div class="slides">
+                  <img src="../../images/banner2.jpg" alt="slide image" class="slide">
+                  <img src="../../images/banner5.jpg" alt="slide image" class="slide">
+                  <img src="../../images/bannerDeProducto.jpg" alt="slide image" class="slide">
+                </div>
+                <div class="controls">
+                  <div class="control prev-slide">&#9668;</div>
+                  <div class="control next-slide">&#9658;</div>
+                </div>
+              </div>
            
                 <div class="col-12">
                     <h2>Nuestros libros en stock</h2>
@@ -45,5 +57,6 @@
         </div>
     </main>
     <%- include('./partials/footer') %>
+    <script src="../../js/carousel.js"></script>
 </body>
 </html>
