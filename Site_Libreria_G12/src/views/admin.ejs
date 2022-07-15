@@ -1,94 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('./partials/head', { title : 'Admin | Boulevard' }) %>
+  <body class="admin">
+    <%- include('./partials/header') %>
 
-    <%- include('./partials/head', {
-        title : 'Admin | Boulevard'
-    }) %> 
-<body class="admin">
-   
-    <%- include('./partials/header') %> 
-   
     <main>
-     <h1>Administra tu stock</h1>
-   <!--    <section class="infoAdmin">
-
-       
-
-    
+      <h1>Administra tu stock</h1>
+      <section class="infoAdmin">
         <article class="commitsData">
-
-        </article>
-     
-      </section> -->
-  
-      <section class="container">
-       
-       
-         <article class="row">
-          <div class="card-03">
-            <% products.forEach(({id,title,author,images}) => { %>
-              <div>
-                
-               
-               <!-- acá va el producto -->
-             
-                <article class="productContainer">
-
-                  <div class="dropdown">
-                    <button class="btn btn-outline-none" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-pen-to-square"></i>
-                     </button>
-                    
-                   <!-- aca va la ul con los botones -->
-
-                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li><a href="/products/product-detail/<%= id %> "><button class="dropdown-item" type="button"><i class="fa-solid fa-eyes"></i><i class="fa-solid fa-eye"></i> Ver</button></a></li>
-                     <li><a href="/products/update/<%= id %>"><button class="dropdown-item" type="button"><i class="fa-regular fa-pen-to-square"></i> Editar</button></a></li>
-                     <li>
-                       <form action="/products/remove/<%= id %>?_method=DELETE" method="POST">
-                         <button class="dropdown-item" type="button"><i class="fa-solid fa-trash"></i> Eliminar</button>
-                       </form>
-                     </li>
-                   </ul>
-                  </div>
-                
-                    <div class="productDashboard">
-                        <div class="image-container">
-                          <a href="/products/product-detail/<%= id %> ">  <img src="/images/<%= images[0].file %> " alt=""></a>
-
-                        </div>
-                        <h4><%= title %></h4>
-                         <h4><%= author %> </h4>
-                         
-                         
-                        
-                    </div>
-                    
-                </article>
-             
-        
          
+        </article>
+  
+
+      </section>
+     
+      <section class="container">
+
+        <a href="/products/productAdd">
+          <button  class="buttonAdmin">Agregar producto</button>
+        </a>
+
+        <article class="row">
+          <% product.forEach(({id,title,images}) => { %>
+          <ul class="card-03">
+            <li>
+              <div>
+                <div class="imageContainer">
+                 <img src="/images/<%= images[0].file %> " alt="">
+                </div>
+                <h4><%= title %></h4>
               </div>
-              <% }) %>
-          </div>
-        
+
+              <div class="buttons">
+                <a href="/products/product-detail/<%= id %>"><button class="buttonAdmin" type="button"><i class="fa-solid fa-eye"></i>Ver</button></a>
+               <a href="/products/productEdit/<%= id %>"><button class="buttonAdmin" type="button"><i class="fa-regular fa-pen-to-square"></i>Editar</button></a>
+               <form action="/products/remove/<%= id %>?_method=DELETE" method="POST">
+                <button class="buttonAdmin"><i class="fa-solid fa-trash"></i>Eliminar</button>
+              </form>
+              </div>
+            </li>
+          </ul>
+          <% }) %>
         </article>
       </section>
-   
-  
-         
-    
-    
-    
-    
-    
-      
-      </main>
-    
-       
+    </main>
 
-    <%- include('./partials/footer') %> 
-     
-</body>
-
+    <%- include('./partials/footer') %>
+  </body>
 </html>

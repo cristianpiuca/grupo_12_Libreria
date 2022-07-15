@@ -1,114 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head', {title : 'Home | Boulevard'}) %>
-<body>
-
-    <%- include('./partials/header', {user: user})%> 
+  <%- include('./partials/head', {title : 'Home | Boulevard'}) %>
+  <body>
+    <%- include('./partials/header', {user: user})%>
 
     <main class="home-main">
-        <section id="banner-top" class="box-banner">
-            <img width="100%" src="/images/banner1.jpg" alt="">
+      <section id="banner-top" class="box-banner">
+        <img width="100%" src="/images/banner1.jpg" alt="" />
+      </section>
+
+      <div id="cuerpo">
+        <section id="semana">
+          <h2>Destacados de la semana</h2>
+          <div class="box-semana">
+            <% destacados.forEach(({id,images}) => { %>
+            <article class="semana">
+              <div class="producto">
+                <a href="/products/product-detail/<%= id %> "
+                  ><img src="/images/<%= images[0].file %> " alt=""
+                /></a>
+              </div>
+            </article>
+            <% }) %>
+          </div>
         </section>
 
-
-                                        
-
-     <div id="cuerpo">
-         <section id="semana">
-            <h2>Destacados de la semana</h2>
-             <div class="box-semana">
-                <% destacados.forEach(({id,images}) => { %>
-                <article class="semana">
-                    <div class="producto">
-                          <a href="/products/product-detail/<%= id %> "><img src="/images/<%= images[0].file %> " alt=""></a>
-                   
-                    </div>
-                   
-               
-               </article>
-                <% }) %> 
-              </div>
-            
-         </section>
-       
-         <!--**BANNER**-->
-         <div class="carousel">
-            <div class="slides">
-              <img src="../../images/hoover.jpg" alt="slide image" class="slide">
-              <img src="../../images/banner4.jpg" alt="slide image" class="slide">
-              <img src="../../images/bannerDeProducto.jpg" alt="slide image" class="slide">
-            </div>
-            <div class="controls">
-              <div class="control prev-slide">&#9668;</div>
-              <div class="control next-slide">&#9658;</div>
-            </div>
+        <!--**BANNER**-->
+        <div class="carousel">
+          <div class="slides">
+            <img
+              src="../../images/hoover.jpg"
+              alt="slide image"
+              class="slide"
+            />
+            <img
+              src="../../images/banner4.jpg"
+              alt="slide image"
+              class="slide"
+            />
+            <img
+              src="../../images/bannerDeProducto.jpg"
+              alt="slide image"
+              class="slide"
+            />
           </div>
-       
+          <div class="controls">
+            <div class="control prev-slide">&#9668;</div>
+            <div class="control next-slide">&#9658;</div>
+          </div>
+        </div>
 
+        <section id="product1" class="section-p1">
+          <h2>Ofertas del mes</h2>
 
+          <div class="pro-container">
+            <% oferta.forEach(({id,title,author,price,images}) => { %>
 
-         <section id="product1" class="section-p1">
-            <h2>Ofertas del mes</h2>
-         
-            <div class="pro-container">
-                <% oferta.forEach(({id,title,author,price,images}) => { %>
-           
-                    <div class="pro">
-                         <div class="image-container">
-                             <a href="/products/product-detail/<%= id %> "><img src="/images/<%= images[0].file %> " alt=""></a>
-                         </div>
-                         <div class="des">
-                             <span><%= author %></span>
-                             <h5><%= title %></h5>
-                             <div class="star" >
-                                 <i class="fa-solid fa-star"></i>
-                                 <i class="fa-solid fa-star"></i>
-                                 <i class="fa-solid fa-star"></i>
-                                 <i class="fa-solid fa-star"></i>
-                                 <i class="fa-solid fa-star-half"></i>
-                             </div>
-                             <h4>$<%= price %></h4>
-                         </div>
-                         <div class="cart">
-                             <a href="/products/product-detail/<%= id %>"><i class="fa-solid fa-cart-shopping"></i></a>
-         
-                         </div>
-                     </div>
-                   <% }) %>
-               
-           
-
-              
+            <div class="pro">
+              <div class="image-container">
+                <a href="/products/product-detail/<%= id %> "
+                  ><img src="/images/<%= images[0].file %> " alt=""
+                /></a>
+              </div>
+              <div class="des">
+                <span><%= author %></span>
+                <h5><%= title %></h5>
+                <div class="star">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half"></i>
+                </div>
+                <h4>$<%= price %></h4>
+              </div>
+              <div class="cart">
+                <a href="/products/product-detail/<%= id %>"
+                  ><i class="fa-solid fa-cart-shopping"></i
+                ></a>
+              </div>
             </div>
-         </section>
+            <% }) %>
+          </div>
+        </section>
 
-                                            <!--**BANNER**-->
-         
+        <!--**BANNER**-->
+      </div>
 
-                                     
-        
-     </div>
-
- 
-   
-    
-
-    <section id="novedades" class="section-p1 section-m1">
+      <section id="novedades" class="section-p1 section-m1">
         <div class="novedadtexto">
-            <h4>Suscribite para novedades y</h4>
-            <p>Obtené <span>cupones</span> especiales de descuento</p>
+          <h4>Suscribite para novedades y</h4>
+          <p>Obtené <span>cupones</span> especiales de descuento</p>
         </div>
         <div class="form">
-            <input type="text" placeholder="Tu email">
-            <button class="normal">Enviame</button>
+          <input type="text" placeholder="Tu email" />
+          <button class="normal">Enviame</button>
         </div>
-    </section>
-    
+      </section>
     </main>
 
     <%- include('./partials/footer') %>
-<script src="../../js/carousel.js"></script>
-
-
-</body>
+    <script src="../../js/carousel.js"></script>
+  </body>
 </html>

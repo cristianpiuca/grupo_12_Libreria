@@ -170,9 +170,9 @@ module.exports = {
            include : ['images']
           }
      )
-       .then(products => {
+       .then(product => {
            return res.render('admin', {
-              products,
+              product,
                user: req.session.userLogin
            })
        })

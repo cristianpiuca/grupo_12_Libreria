@@ -6,6 +6,7 @@ const loginCheck = require('../validations/loginValidations')
 const upload = require('../middlewares/multer')
 const userValidator = require('../validations/usersValidations')
 const {inSession, offSession} = require('../middlewares/sessionCheck')
+const adminCheck = require('../middlewares/adminCheck')
 
 /* /users*/
 
@@ -19,6 +20,7 @@ router
    .get('/profileEdit/:id', edit) 
     .put('/update/:id',upload.single('image'),userValidator,update)
     .get('/admin',admin)
+    /* adminCheck */
 
 
 module.exports = router;
