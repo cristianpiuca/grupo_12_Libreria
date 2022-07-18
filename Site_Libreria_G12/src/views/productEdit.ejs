@@ -2,7 +2,7 @@
 <html lang="en">
 
     <%- include('./partials/head', {
-        title : `${product.name} | Boulevard`
+        title : `${product.title} | Boulevard`
     }) %> 
 <body class="productAdmin">
     <%- include('./partials/header', {admin: user})%> 
@@ -15,7 +15,7 @@
             <form class="formProducts2" method="POST" action="/products/update/<%= product.id %>?_method=PUT" enctype="multipart/form-data">
                 <article>
                     <div class="images-container">
-                        <img src="/images/<%= product.image %>" alt="">
+                        <img src="/images/<%= product.images[0].file %>" alt="">
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="name">Nombre del producto</label>
