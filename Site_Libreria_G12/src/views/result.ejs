@@ -5,20 +5,37 @@
     }) %> 
 <body class="result">
     <%- include('./partials/header') %>
+    <main class="products">
     <section class="result-produts">
         <% if (products.length > 0) { %>
                 <div class="box-result">
                      <% products.forEach(({id,title,author,price,images}) => { %>
                     
-                       <article class="product-result">
-                           <div class="product">
-                               <a href="/products/product-detail/<%= id %> "><img src="/images/<%=images[0].file %>" alt=""></a>
-                               <h4><%= title %> </h4>
-                                <h5><%= author %> </h5>
-                                <h3 class="product-price">$<%= price %> </h3>
-                                <a href="/products/product-cart"><button>Comprar <i class="fa fa-shopping-cart"></i></button></a> 
-                           </div>
-                       </article>
+                        <section id="product1" class="section-p1">
+                        <div class="pro">
+                            <div class="image-container">
+                              <a href="/products/product-detail/<%= id %> "
+                                ><img src="/images/<%= images[0].file %> " alt=""
+                              /></a>
+                            </div>
+                            <div class="des">
+                              <span><%= author %></span>
+                              <h5><%= title %></h5>
+                              <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half"></i>
+                              </div>
+                              <h4>$<%= price %></h4>
+                            </div>
+                            <div class="cart">
+                              <a href="/products/product-detail/<%= id %>"
+                                ><i class="fa-solid fa-eye"></i></a>
+                            </div>
+                          </div>
+                        </section>
                        <% }) %>
                 </div>
 
@@ -30,6 +47,7 @@
                <div class="landscape"></div>
            <% } %>
     </section>
+</main>
     <%- include('./partials/footer') %>
 </body>
 </html>
