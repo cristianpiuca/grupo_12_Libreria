@@ -146,9 +146,16 @@ module.exports = {
     },
 
     remove: (req, res) => {
-      
+        db.Product.destroy({
+			where : {
+				id : req.params.id
+			}
+		})
+			.then((info) => {
+				return res.redirect('/products');
+			})
+			.catch(error => console.log(error))
     },
-
     getByCategory: (req, res) => {
         const category = db.Category.findAll({
             where: {

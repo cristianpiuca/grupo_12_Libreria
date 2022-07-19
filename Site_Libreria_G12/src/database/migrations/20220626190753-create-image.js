@@ -9,16 +9,19 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       file: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(100),
+        allowNull: false
       },
       productId : {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references : {
           model : {
-            tableName : 'products'
+            tableName : 'Products'
           },
           key : 'id'
-        }
+        },
+         onDelete: 'cascade'
       },
       createdAt: {
         allowNull: false,
