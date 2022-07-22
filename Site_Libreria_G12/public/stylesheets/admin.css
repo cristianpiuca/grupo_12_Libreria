@@ -23,6 +23,8 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  margin-right: calc(-1.5 * var(--bs-gutter-x));
+  margin-left: calc(-2.89 * var(--bs-gutter-x));
 }
 
 .admin .container button{
@@ -229,8 +231,33 @@ width: 100px;
     color: var(--colorVerdeOscuro);
   
   }
+  @media(min-width:390px){
+
+  
+    .admin .card-03 div h4 {
+      margin: -70px 0 0 60px;
+    }
+  
+    .admin .card-03 .buttons {
+      right: 0px;
+      bottom: 3px;
+    }
+  
+    .admin .card-03 .buttons .buttonAdmin {
+      padding: 2px;
+    }
+  }
  
 @media(min-width:769px){
+  .admin .card-03 div h4{
+    margin: 0 4px;
+  }
+
+  .admin .card-03 .buttons {
+    right: 10px;
+    bottom: 15px;
+  }
+
  .admin .card-03{
     position: relative;
      flex: 100%;
@@ -239,7 +266,7 @@ width: 100px;
    }
   
  .admin  .card-03 h4{
-    font-size: 16px;
+    font-size: 15px;
      padding: 0 10px;
    
    }
@@ -271,10 +298,20 @@ width: 100px;
 
 }
 @media(min-width:1024px){
+  .admin .card-03 div h4{
+    margin: 0 60px;
+  }
+  .admin .card-03 .buttons {
+    right: 10px;
+    bottom: 15px;
+  }
+
  .admin .card-03{
     height: 70px;
   }
  .admin .card-03 h4{
     font-size: 18px;
   }
+  
 }
+
