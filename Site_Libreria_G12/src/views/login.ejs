@@ -17,17 +17,17 @@
             <div class="login-info-container">
 
                 <h2>Iniciar Sesión</h2>
-                <form action="" class="inputs-container" method="POST">
+                <form action="" class="inputs-container" method="POST" id="form-control">
                     <p class="p-input">Tu email</p>
-                    <input type="text" class="input" name="email" id="email-log" value="<%= locals.old && old.email ? old.email : null %>">
-                    <span><%= locals.errors && errors.email ? errors.email.msg : null %></span>
+                    <input type="text" class="input form-control" name="email" id="email" value="<%= locals.old && old.email ? old.email : null %>">
+                    <span id="errorEmail"><%= locals.errors && errors.email ? errors.email.msg : null %></span>
 
                     <p class="p-input">Tu contraseña</p>
-                    <input type="password" class="input" name="password" id="password-log" value="<%= locals.old && old.password ? old.password : null %>">
-                    <span><%= locals.errors && errors.password ? errors.password.msg : null %></span>
+                    <input type="password" class="input form-control" name="password" id="password" value="<%= locals.old && old.password ? old.password : null %>">
+                    <span id="errorPassword"><%= locals.errors && errors.password ? errors.password.msg : null %></span>
 
                     <div class="terminoss">
-                        <input type="checkbox" name="checkbox" id="terminos-log">
+                        <input type="checkbox" name="checkbox" id="terminos">
                      <label for="terminos">Mantener mi sesión abierta</label> 
                      </div>
                      <div class="buttons">
@@ -46,6 +46,7 @@
    
 
     <%- include('./partials/footer') %> 
+    <script src="../../js/login.js"></script>
   
 </body>
 

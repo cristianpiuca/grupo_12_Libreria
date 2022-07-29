@@ -16,39 +16,47 @@
             <div class="register-info-container">
 
                 <h2>Registrate</h2>
-                <form method="POST" class="inputs-container">
+                <form method="POST" class="inputs-container" id="form-register" novalidate>
                    
                         <p class="p-input">Tu nombre</p>
-                        <input type="text" class="input" name="name" id="name-reg" value="<%= locals.old && old.name ? old.name : null %>">
+                        <input type="text" class="input form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>" name="name" id="name" value="<%= locals.old && old.name ? old.name : null %>">
                         <span><%= locals.errors && errors.name ? errors.name.msg : null %></span>
+                        <small class="text-danger"  id="errorName"></small>
 
                         <p class="p-input">Tu apellido</p>
-                        <input type="text" class="input" name="lastname" id="name-reg" value="<%= locals.old && old.lastname ? old.lastname : null %>">
-                        <span><%= locals.errors && errors.lastname ? errors.lastname.msg : null %></span>
+                        <input type="text" class="input form-control <%= locals.errors && errors.lastname ? 'is-invalid' : null %>" name="lastname" id="lastname" value="<%= locals.old && old.lastname ? old.lastname : null %>">
+                        <span ><%= locals.errors && errors.lastname ? errors.lastname.msg : null %></span>
+                        <small class="text-danger"id="errorLastname"></small>
 
                         <p class="p-input">Tu email</p>
-                        <input type="text" class="input" name="email" id="email-reg" value="<%= locals.old && old.email ? old.email : null%>">
-                        <span><%= locals.errors && errors.email ? errors.email.msg : null %></span>
+                        <input type="text" class="input form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" name="email" id="email" value="<%= locals.old && old.email ? old.email : null%>">
+                        <span ><%= locals.errors && errors.email ? errors.email.msg : null %></span>
+                        <small class="text-danger " id="errorEmail"></small>
                 
                         <p class="p-input">Tu contraseña</p>
-                        <input type="password" class="input" name="password" id="password-reg" value="<%= locals.old && old.password ? old.password : null %>">
-                        <span><%= locals.errors && errors.password ? errors.password.msg : null %></span>
+                        <input type="password" class="input form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>" name="password" id="password" value="<%= locals.old && old.password ? old.password : null %>">
+                        <span ><%= locals.errors && errors.password ? errors.password.msg : null %></span>
+                        <small class="text-danger " id="errorPassword"></small>
                         <p class="p-input">Repetir contraseña</p>
-                        <input type="password" class="input" name="password2" id="password-reg" value="<%= locals.old && old.password2 ? old.password2 : null %>">
-                        <span><%= locals.errors && errors.password2 ? errors.password2.msg : null %></span>
+                        <input type="password" class="input form-control <%= locals.errors && errors.password2 ? 'is-invalid' : null %>" name="password2" id="password2" value="<%= locals.old && old.password2 ? old.password2 : null %>">
+                        <span ><%= locals.errors && errors.password2 ? errors.password2.msg : null %></span>
+                        <small class="text-danger" id="errorPassword2"></small>
                     <div class="terminoss">
-                        <input type="checkbox" name="terminos" id="terminos-reg" >
-                        <label for="terminos-reg">Acepto términos y condiciones</label>
-                        <span><%= locals.errors && errors.terminos ? errors.terminos.msg : null %></span>
+                        <input type="checkbox" name="terminos" id="terminos" >
+                        <label for="terminos">Acepto términos y condiciones</label>
+                        <span ><%= locals.errors && errors.terminos ? errors.terminos.msg : null %></span>
+                        <small class="text-danger" id="errorTerms"></small>
                     </div>
 
 
                     <div class="footer-register">
-                        <button type="submit" class="button-reg">Registrate</button>
+                        <button type="submit" id="submit" class="button-reg">Registrate</button>
                         <a href="/users/login">
                             <p>¿Ya tenés cuenta?</p>
                         </a>
+                        <p id="msgError" class="text-danger"></p>
                     </div>
+
                 </form>
             </div>
         </div>
@@ -64,6 +72,7 @@
 
 
     <%- include('./partials/footer') %>
+    <script src="../../js/register.js"></script>
 </body>
 
 </html>

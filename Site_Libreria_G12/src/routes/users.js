@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {login, register, processRegister, loginUser, logout, profile, update,edit, admin} = require('../controllers/userController')
+const {login, register, processRegister, loginUser, logout, profile, update,edit, admin, checkEmail} = require('../controllers/userController')
 const validations = require('../validations/registerValidations') 
 const loginCheck = require('../validations/loginValidations')
 const upload = require('../middlewares/multer')
@@ -21,6 +21,6 @@ router
     .put('/update/:id',upload.single('image'),userValidator,update)
     .get('/admin',admin)
     /* adminCheck */
-
+    .post('/api/check-email',checkEmail)
 
 module.exports = router;
