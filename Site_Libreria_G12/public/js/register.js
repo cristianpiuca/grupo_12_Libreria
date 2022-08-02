@@ -1,176 +1,184 @@
-console.log('register.js success');
-const $ = (element) => document.getElementById(element);
+console.log("register.js success");
+const qs = (selector) => document.querySelector(selector);
 
-const regExLetter = /^[A-Z]+$/i;
-const regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
-const regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+window.addEventListener("load", () => {
+  let regExLetter = /^[A-Z]+$/i,
+    regExEmail =
+      /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/,
+    regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/,
+    errors,
+    email = qs("#email"),
+    password = qs("#password"),
+    password2 = qs("#password2"),
+    errorEmail = qs("#errorEmail"),
+    errorPassword = qs("#errorPassword"),
+    errorPassword2 = qs("#errorPassword2"),
+    errorName = qs("#errorName"),
+    errorTerms = qs("#errorTerms"),
+    register = qs("#form-register"),
+    nombre = qs("#name"),
+    lastname = qs("#lastname"),
+    msgError = qs("#msgError"),
+    terminos = qs("#terminos")
 
-const verifyEmail = async (email) => {
-    try {
-        let response = await fetch('/users/api/check-email', {
-            method : 'POST',
-            body : JSON.stringify({
-                email : email
-            }),
-            headers : {
-                'Content-Type': 'application/json' 
-            }
-            
-        })
-        let result = await response.json();
-        return result.data;
-       
-    } catch (error) {
-        console.error
-    }
-}
-
-
-$('name').addEventListener('blur', function(){
-
+  nombre.addEventListener("blur", () => {
     switch (true) {
-        case !this.value.trim():
-            $('errorName').innerHTML = "Debes ingresar tu nombre";
-            this.classList.add('is-invalid')
-            break;
-        case !regExLetter.test(this.value.trim()):
-            $('errorName').innerHTML = "Solo letras";
-            this.classList.add('is-invalid')
-            break
-        case this.value.trim().length < 2 || this.value.trim().length > 255 :
-            $('errorName').innerHTML = "Nombre muy corto";
-            this.classList.add('is-invalid')
-            break
-        default:
-            this.classList.remove('is-invalid')
-            this.classList.add('is-valid')
-            $('errorName').innerHTML = null;
-            break;
+      case !nombre.value.trim():
+        errorName.innerHTML = "Debes ingresar tu nombre";
+        nombre.classList.add("is-invalid");
+        errors = true;
+        break;
+      case nombre.value.length < 3:
+        errorName.innerHTML = "Minimo 3 caracteres";
+        nombre.classList.add("is-invalid");
+        errors = true;
+        break;
+      default:
+        nombre.classList.remove("is-invalid");
+        nombre.classList.add("is-valid");
+        errorName.innerHTML = "";
+        errors = false;
+        break;
     }
-});
+  });
 
-
-$('lastname').addEventListener('blur', function(){
-
+  email.addEventListener("blur", () => {
     switch (true) {
-        case !this.value.trim():
-            $('errorLastname').innerHTML = "Debes ingresar apellido";
-            this.classList.add('is-invalid')
-            break;
-        case !regExLetter.test(this.value.trim()):
-            $('errorLastname').innerHTML = "Solo letras";
-            this.classList.add('is-invalid')
-            break
-        case this.value.trim().length < 2 || this.value.trim().length > 255 :
-            $('errorLastname').innerHTML = "El apellido es muy corto";
-            this.classList.add('is-invalid')
-            break
-        default:
-            this.classList.remove('is-invalid')
-            this.classList.add('is-valid')
-            $('errorLastname').innerHTML = null;
-            break;
+      case !email.value:
+        errorEmail.innerHTML = "Debes ingresar tu email";
+        email.classList.add("is-invalid");
+        errors = true;
+        break;
+      case !regExEmail.test(email.value):
+        errorEmail.innerHTML = "El email no es válido";
+        email.classList.add("is-invalid");
+        errors = true;
+        break;
+      default:
+        email.classList.remove("is-invalid");
+        email.classList.add("is-valid");
+        errorEmail.innerHTML = "";
+        errors = false;
+        break;
     }
-});
+  });
 
-
-$('email').addEventListener('blur', async function(){
-
+  password.addEventListener("blur", () => {
     switch (true) {
-        case !this.value.trim():
-            $('errorEmail').innerHTML = "Debes ingresar tu email";
-            this.classList.add('is-invalid')
-            break;
-        case !regExEmail.test(this.value.trim()):
-            $('errorEmail').innerHTML = "El email no es válido";
-            this.classList.add('is-invalid')
-            break
-        case await verifyEmail(this.value.trim()) :
-            $('errorEmail').innerHTML = "¡El email ya existe!";
-            this.classList.add('is-invalid')
-            break
-        default:
-            this.classList.remove('is-invalid')
-            this.classList.add('is-valid')
-            $('errorEmail').innerHTML = null;
-            break;
+      case !password.value:
+        errorPassword.innerHTML = "Debes ingresar una contraseña";
+        password.classList.add("is-invalid");
+        errors = true;
+        break;
+      case !regExPass.test(password.value):
+        errorPassword.innerHTML =
+          "La contraseña debe tener entre 6 y 12 caracteres e incluir una mayuscula";
+        password.classList.add("is-invalid");
+        errors = true;
+        break;
+      default:
+        password.classList.remove("is-invalid");
+        password.classList.add("is-valid");
+        errorPassword.innerHTML = "";
+        errors = false;
+        break;
     }
-});
+  });
 
-$('password').addEventListener('blur', async function(){
-
+  lastname.addEventListener("blur", () => {
     switch (true) {
-        case !this.value.trim():
-            $('errorPassword').innerHTML = "Debes ingresar una contraseña";
-            this.classList.add('is-invalid')
-            break;
-        case !regExPass.test(this.value.trim()):
-            $('errorPassword').innerHTML = "La contraseña debe tener entre 6 y 12 caracteres e incluir una mayuscula";
-            this.classList.add('is-invalid')
-            break
-        default:
-            this.classList.remove('is-invalid')
-            this.classList.add('is-valid')
-            $('errorPassword').innerHTML = null;
-            break;
+      case !lastname.value.trim():
+        errorLastname.innerHTML = "Debes ingresar apellido";
+        lastname.classList.add("is-invalid");
+        errors = true;
+        break;
+      case !regExLetter.test(lastname.value.trim()):
+        errorLastname.innerHTML = "Solo letras";
+        lastname.classList.add("is-invalid");
+        errors = true;
+        break;
+      case lastname.value.trim().length < 3 ||
+        lastname.value.trim().length > 255:
+        errorLastname.innerHTML = "Minimo 3 caracteres";
+        lastname.classList.add("is-invalid");
+        errors = true;
+        break;
+      default:
+        lastname.classList.remove("is-invalid");
+        lastname.classList.add("is-valid");
+        errorLastname.innerHTML = "";
+        errors = false;
+        break;
     }
-})
+  });
 
+ 
 
-$('password2').addEventListener('blur', async function(){
-
+  password2.addEventListener("blur", () => {
     switch (true) {
-        case !this.value.trim():
-            $('errorPassword2').innerHTML = "Debes repetir tu contraseña";
-            this.classList.add('is-invalid')
-            break;
-        case this.value.trim() !== $('password').value.trim():
-            $('errorPassword2').innerHTML = "Las contraseñas no coinciden";
-            this.classList.add('is-invalid')
-            break
-        default:
-            this.classList.remove('is-invalid')
-            this.classList.add('is-valid')
-            $('errorPassword2').innerHTML = null;
-            break;
+      case !password2.value.trim():
+        errorPassword2.innerHTML = "Debes repetir tu contraseña";
+        password2.classList.add("is-invalid");
+        break;
+      case password2.value.trim() !== password.value.trim():
+        errorPassword2.innerHTML = "Las contraseñas no coinciden";
+        password2.classList.add("is-invalid");
+        break;
+      default:
+        password2.classList.remove("is-invalid");
+        password2.classList.add("is-valid");
+        errorPassword2.innerHTML = '';
+        errors = false;
+        break;
     }
-});
-
-
-$('terminos').addEventListener('click', function() {
-    this.classList.remove('is-invalid');
-    $('errorTerms').innerHTML = null
-
-})
-
-
-
-$('form-register').addEventListener('submit',(e) =>{
-    e.preventDefault()
-    
-    let elements = e.target.elements /* accedo a los elementos del form */
-   let error = false
-   
-    for (let i = 0; i < elements.length -2; i++) {
-       if (!elements[i].value) {
-        elements[i].classList.add('is-invalid')
-        error = true
-        $('errorPassword').innerHTML = "Debe llenar todos los campos"
-       }
-        
+  });
+  password.addEventListener("change", () => {
+    /* validate when password changes */
+    switch (true) {
+      case password2.value.trim() !== password.value.trim():
+        errorPassword2.innerHTML = "Las contraseñas no coinciden";
+        password2.classList.add("is-invalid");
+        break;
+      default:
+        password2.classList.remove("is-invalid");
+        password2.classList.add("is-valid");
+        errorPassword2.innerHTML = '';
+        errors = false;
+        break;
     }
-    for (let i = 0; i < elements.length -2; i++) {
-        if (elements[i].classList.contains('is-invalid')) {
-       
-         error = true
+  });
+
+   if (!terminos.checked) {
+    errorTerms.innerHTML = "Obligatorio";
+    errors = true;
+  }
+  terminos.addEventListener("click", function () {
+    errorTerms.innerHTML = "";
+    errors = false;
+  }); 
+
+  form-register.addEventListener('submit',  (e) => {
+    let errors = true;
+    e.preventDefault();
+ 
+    let elements =  form-register.elements;
+    /* saving all elements on register form */
+    for (let i = 0; i < elements.length - 1; i++) {
+        if(elements[i].value === '' || elements[i].classList.contains('is-invalid')){
+            elements[i].classList.add('is-invalid');
+            msgError.innerHTML = "Revisa los campos";
+           errors = true
+        }else{
+            errors = false;
         }
-         
-     }
-     if(!error){
-        e.target.submit();
-    } 
-})
+    }
+if (errors == false) {
+    form-register.submit()
+}
+   
+}) 
 
+});
 
 
 
