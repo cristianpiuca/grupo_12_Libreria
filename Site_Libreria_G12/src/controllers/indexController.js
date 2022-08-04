@@ -67,6 +67,7 @@ module.exports = {
 			return res.render('result',{
 				products,
 				keyword,
+				user: req.session.userLogin
 				
 			})
 		}).catch(error => console.log(error))

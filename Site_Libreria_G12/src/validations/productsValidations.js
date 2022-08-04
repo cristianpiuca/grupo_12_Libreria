@@ -19,7 +19,7 @@ module.exports = [
         .isNumeric().withMessage('Deben ser solo numeros'),
     body('language')
         .notEmpty().withMessage('Debes completar este campo').bail()
-        .isAlpha().withMessage('Formato con caracteres no permitidos, cuidado con las ñ y los signos'),
+      ,
     body('pages')
         .notEmpty().withMessage('Debes completar este campo').bail()
         .isNumeric().withMessage('Deben ser solo numeros'),
@@ -28,10 +28,8 @@ module.exports = [
        ,
     body('editorial')
         .notEmpty().withMessage('Debes completar este campo').bail()
-        .isAlpha().withMessage('Formato con caracteres no permitidos'),
+        ,
     body('description')
         .notEmpty().withMessage('Debes completar este campo').bail()
-        .isLength({min:20}).withMessage('La descripcion debe ser más larga'),
-   
-        
+        .isLength({min:20}).withMessage('La descripcion debe ser más larga'),    
 ]

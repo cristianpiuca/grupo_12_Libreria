@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head', {
-        title : `${product.title} | Boulevard`
-    }) %> 
+    <%- include('./partials/head', { title : 'Editar Producto | Boulevard' }) %> 
 <body class="productAdmin">
     <%- include('./partials/header', {admin: user})%> 
 
     <main>
-        <h1>Estás editando: "<%= product.title %>"</h1>
+        <h1>Estás editando: "<%= product.title  %>"</h1>
         <section class="sectionEdit">
            
           
-            <form class="formProducts2" method="POST" action="/products/update/<%= product.id %>?_method=PUT" enctype="multipart/form-data">
+            <form class="formProducts2" method="POST" action="/products/update/<%= product.id %>?_method=PUT" enctype="multipart/form-data" id="form-productEdit">
                 <article>
                     <div class="images-container">
                         <img src="/images/<%= product.images[0].file %>" alt="">
@@ -21,47 +19,55 @@
                         <label for="name">Nombre del producto</label>
                         <input class="productAdmin__form-input" type="text" id="title" name="title" value=" <%= product.title %>">
                         <span><%= locals.errors && errors.title ? errors.title.msg : null %></span>
+                        <span id="errorTitle"></span>
 
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="author">Autor</label>
                         <input class="productAdmin__form-input" type="text" id="author" name="author" value=" <%= product.author %>">
                         <span><%= locals.errors && errors.author ? errors.author.msg : null %></span>
+                        <span id="errorAuthor"></span>
 
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="price">Precio</label>
                         <input class="productAdmin__form-input" type="text" id="price" name="price" value=" <%= product.price%>">
                         <span><%= locals.errors && errors.price ? errors.price.msg : null %></span>
+                        <span id="errorPrice"></span>
 
                     </div>
                     <div class="productAdmin__form-box">
                       
                         <label for="category">Categorias</label>
-                        <select class="productAdmin__form-select" name="categoryId" id="category">
+                        <select class="productAdmin__form-select" name="categoryId" id="categoryId">
+                            <option value="" hidden selected>Selecciona la categoría...</option>
                             <% categories.forEach(category => { %>
                               <option value="<%= category.id %>" <%= category.id === product.category ? 'selected' : null %>><%= category.name %></option>
                             <% }) %>
                           </select>
-                          <span><%= locals.errors && errors.category ? errors.category.msg : null %></span>
+                          <span><%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %></span>
+                          <span id="errorCategory"></span>
 
                 </div>
                     <div class="productAdmin__form-box">
                         <label for="year">Año</label>
                         <input class="productAdmin__form-input" type="text" id="year" name="year" value=" <%= product.year %>">
                         <span><%= locals.errors && errors.year ? errors.year.msg : null %></span>
+                        <span id="errorYear"></span>
 
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="idioma">Idioma</label>
                         <input class="productAdmin__form-input" type="text" id="language" name="language" value=" <%= product.language %>">
                         <span><%= locals.errors && errors.language ? errors.language.msg : null %></span>
+                        <span id="errorLanguage"></span>
 
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="pages">Paginas</label>
                         <input class="productAdmin__form-input" type="text" id="pages" name="pages" value=" <%= product.pages %>">
                         <span><%= locals.errors && errors.pages ? errors.pages.msg : null %></span>
+                        <span id="errorPages"></span>
 
                     </div>
                     <div class="productAdmin__form-box">
@@ -77,25 +83,28 @@
                             
                         </select>
                         <span><%= locals.errors && errors.format ? errors.format.msg : null %></span>
+                        <span id="errorFormat"></span>
 
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="year">Editorial</label>
                         <input class="productAdmin__form-input" type="text" id="editorial" name="editorial" value=" <%= product.editorial %>">
                         <span><%= locals.errors && errors.editorial ? errors.editorial.msg : null %></span>
+                        <span id="errorEditorial"></span>
 
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="description">Descripción del producto</label>
                         <textarea class="productAdmin__form-input" name="description" id="description"  value="<%= locals.old && old.description ? old.description : null%>"></textarea>
                         <span><%= locals.errors && errors.description ? errors.description.msg : null %></span>
+                        <span id="errorDescription"></span>
 
                     </div>
                      <div class="productAdmin__form-box">
                         <label for="image">Imagen del producto</label>
                     
                         <input class="productAdmin__form-input" style="background:white" type="file" id="img"  name="image" accept="image/*">
-                       
+                        <span id="errorImg"></span>
                     </div>
                    
          
@@ -116,5 +125,6 @@
 
 
     <%- include('./partials/footer') %> 
+    <script src="../../js/productEdit.js"></script>
 </body>
 </html>

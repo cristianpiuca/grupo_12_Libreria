@@ -1,64 +1,72 @@
-
-.productAdmin main{
+.productAdmin main {
     padding: 20px 0;
 }
-.productAdmin main h1{
+
+.productAdmin main h1 {
     font-size: 50px;
     padding: 10px 0;
     font-family: 'Bebas Neue', cursive;
     background: linear-gradient(-435deg, #e9d1fb 0%, #ffd2d2 100%);
-  background: linear-gradient(to top, #a8caed 0%, #ffc8d9 100%);
+    background: linear-gradient(to top, #a8caed 0%, #ffc8d9 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    
+
 }
-.productAdmin section{
+
+.productAdmin section {
     width: 70%;
     margin: 20px auto;
     padding: 10px;
 
 }
-main.products{
+
+main.products {
     background: linear-gradient(-435deg, #d1f2fb 0%, #92b890 100%);
     background: linear-gradient(to top, #8da6bf 0%, #e8dade 100%);
 }
 
-.productAdmin h1{
+.productAdmin h1 {
     text-transform: uppercase;
     text-align: center;
 }
 
-.productAdmin label{
+.productAdmin label {
     font-size: var(--fs-bodytext);
     font-weight: 500;
 }
-.productAdmin form{
+
+.productAdmin form {
     margin-top: 30px;
 }
-.productAdmin article{
+
+.productAdmin article {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
-.productAdmin__form-box{
+
+.productAdmin__form-box {
     text-align: center;
     margin: 15px 0;
     width: 80%;
 }
-.productAdmin__form-box span{
+
+.productAdmin__form-box span {
     color: red;
     font-size: 14px;
     text-align: center;
 }
-.productAdmin h4{
+
+.productAdmin h4 {
     margin-bottom: 10px;
 }
 
-.productAdmin__form-input,  .productAdmin__form-select{
-text-align: center;
+.productAdmin__form-input,
+.productAdmin__form-select {
+    text-align: center;
     border-radius: 15px;
     border: 2px solid var(--colorNaranja);
     height: 45px;
@@ -66,17 +74,19 @@ text-align: center;
     margin: 10px 0 0;
     padding: 5px 5px;
 }
+
 .productAdmin__form-input input:invalid {
     background-color: red;
 
 }
 
-.productAdmin .buttons{
-display: flex;
+.productAdmin .buttons {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-.productAdmin .btnAdmin{
+
+.productAdmin .btnAdmin {
     border: 1px solid var(--colorVerdeOscuro);
     padding: 10px;
     margin: 0 8px;
@@ -85,66 +95,87 @@ display: flex;
     text-align: center;
     border-radius: 10px;
 }
-.productAdmin .btnAdmin:nth-last-child(1):hover{
+
+.productAdmin .btnAdmin:nth-last-child(1):hover {
     background-color: red;
     border: none;
 }
-.productAdmin .btnAdmin:hover{
+
+.productAdmin .btnAdmin:hover {
     background-color: var(--colorVerdeOscuro);
     color: white;
- 
+
 }
-.formProducts, .formProducts2{
+
+.formProducts,
+.formProducts2 {
     padding: 15px;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
-  border-radius: 5px;
-  background-image: linear-gradient(-435deg, #d1e0fb 0%, #ffd2d2 100%);
-  background-image: linear-gradient(to top, #a8edc8 0%, #ffc8d9 100%);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  opacity: .90;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    background-image: linear-gradient(-435deg, #d1e0fb 0%, #ffd2d2 100%);
+    background-image: linear-gradient(to top, #a8edc8 0%, #ffc8d9 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: .90;
 }
-.images-container img{
+
+.images-container img {
     width: 50%;
     border: 4px dotted var(--colorRosaOscuro);
     margin: 10px 0;
-    box-shadow: 5px 3px 15px 0px rgba(0,0,0,0.31);
+    box-shadow: 5px 3px 15px 0px rgba(0, 0, 0, 0.31);
 }
-.productAdmin .sectionEdit{
+
+.productAdmin .sectionEdit {
     width: 80%;
     margin: 20px auto;
     padding: 10px;
 
 }
-@media (min-width:768px){
-    .productAdmin article{
+
+.product-valid {
+    color: #1ed12d;
+    border: 3px solid #1ed12d;;
+}
+
+
+.product-invalid  {
+    color: #bb2929;
+    border: 3px solid #bb2929;
+}
+
+@media (min-width:768px) {
+    .productAdmin article {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    .productAdmin article .register__form-box{
+
+    .productAdmin article .register__form-box {
         width: 48%;
     }
-    .productAdmin .sectionEdit{
+
+    .productAdmin .sectionEdit {
         width: 60%;
-      
-    
+
+
     }
 }
 
-@media (min-width:1024px){
-  .images-container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+@media (min-width:1024px) {
+    .images-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .productAdmin .sectionEdit{
-    width: 50%;
- }
- .productAdmin section{
-    width: 50%;
- }
+    .productAdmin .sectionEdit {
+        width: 50%;
+    }
+
+    .productAdmin section {
+        width: 50%;
+    }
 }
