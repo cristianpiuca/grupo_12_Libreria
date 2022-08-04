@@ -85,15 +85,42 @@ Instala `mysql2 sequelize` en caso de no tenerlo.
 Instala `method-override` si te lo solicita.
 ```
 
-**Echa un vistazo
-
+**Echa un vistazo**
+**Home**
 ![home1](https://user-images.githubusercontent.com/99737640/182961797-5f3350ac-a736-4b66-889f-57f01eb89e1f.png)
+
 ![home2](https://user-images.githubusercontent.com/99737640/182961806-0bb821f0-d4bc-48c4-bc8d-7cd4bfaf73e5.png)
+
 ![home3](https://user-images.githubusercontent.com/99737640/182961814-83101d22-5a57-477b-989a-8948d1cf37c7.png)
+
+**Categorias**
+
 ![categorias](https://user-images.githubusercontent.com/99737640/182961825-ce1f5039-0cf6-44d9-a039-1bc9cccf6a37.png)
+
+**Nuestro catálogo**
 ![catalogo1](https://user-images.githubusercontent.com/99737640/182961829-8dcb4307-35d1-4797-aadf-b40ac654a9d5.png)
+
 ![catalogo2](https://user-images.githubusercontent.com/99737640/182961835-b001b7e8-c881-42bf-8942-0a1a905fd678.png)
+
+
+**Usuarios**
+
 ![registro](https://user-images.githubusercontent.com/99737640/182961845-1790b084-905f-4f67-b59d-3b1756450eb0.png)
+
 ![login](https://user-images.githubusercontent.com/99737640/182961860-f10dbe9f-6ff2-4a92-b847-ad68cee5d2a2.png)
+
+**Detalle**
+
+![detalle](https://user-images.githubusercontent.com/99737640/182962294-34b6cba3-e806-4a69-8b31-9e2e5e1e9791.png)
+
+**Creación y Edición de producto**
+
+![agregar](https://user-images.githubusercontent.com/99737640/182962328-56eeeedb-5f9d-4c01-9dd8-f3a269c3cb4d.png)
+
+
+![editar1](https://user-images.githubusercontent.com/99737640/182962336-e7004084-09b8-4a0b-bd45-602de5d68fb2.png)
+
+
+![editar2](https://user-images.githubusercontent.com/99737640/182962339-46bbb852-99bf-46e3-b212-21d3092bea00.png)
 
 
