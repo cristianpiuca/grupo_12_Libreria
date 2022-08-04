@@ -61,14 +61,14 @@ Instala `mysql2 sequelize` en caso de no tenerlo.
 Instala `method-override` si te lo solicita.
 
 **Echa un vistazo**
-<img src="./public/images//readme/home1.png" width=100%>
-<img src="./public/images//readme/home2.png" width=100%>
-<img src="./public/images//readme/home3.png" width=100%>
-<img src="./public/images//readme/catalogo1.png" width=100%>
-<img src="./public/images//readme/catalogo2.png" width=100%>
-<img src="./public/images//readme/categorias.png" width=100%>
-<img src="./public/images//readme/login.png" width=100%>
-<img src="./public/images//readme/register.png" width=100%>
+<img src="./public/images/readme/home1.png" width=100%>
+<img src="./public/images/readme/home2.png" width=100%>
+<img src="./public/images/readme/home3.png" width=100%>
+<img src="./public/images/readme/catalogo1.png" width=100%>
+<img src="./public/images/readme/catalogo2.png" width=100%>
+<img src="./public/images/readme/categorias.png" width=100%>
+<img src="./public/images/readme/login.png" width=100%>
+<img src="./public/images/readme/register.png" width=100%>
 
 
 
