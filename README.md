@@ -55,7 +55,7 @@ Crear el arhivo <code>.env</code> y darle valor a las variables de entorno segú
 ```
 DB_USERNAME=
 DB_PASSWORD=
-DB_DATABASE=mercadoLiebre_db14
+DB_DATABASE=boulevard
 DB_PORT=3306
 DB_HOST=127.0.0.1
 
@@ -87,6 +87,7 @@ Instala `method-override` si te lo solicita.
 
 **Echa un vistazo**
 **Home**
+
 ![home1](https://user-images.githubusercontent.com/99737640/182961797-5f3350ac-a736-4b66-889f-57f01eb89e1f.png)
 
 ![home2](https://user-images.githubusercontent.com/99737640/182961806-0bb821f0-d4bc-48c4-bc8d-7cd4bfaf73e5.png)
