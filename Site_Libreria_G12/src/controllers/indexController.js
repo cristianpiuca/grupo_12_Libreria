@@ -71,5 +71,8 @@ module.exports = {
 				
 			})
 		}).catch(error => console.log(error))
+	},
+	about : (req,res)=>{
+		return res.render('aboutUs')
 	}
 }
