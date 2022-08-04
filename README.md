@@ -51,16 +51,41 @@ Javascript Vanilla
 Podés descargar y probar nuestro proyecto:
 
 ```
-npm i
-nodemon
+Crear el arhivo <code>.env</code> y darle valor a las variables de entorno según corresponda.
+```
+DB_USERNAME=
+DB_PASSWORD=
+DB_DATABASE=mercadoLiebre_db14
+DB_PORT=3306
+DB_HOST=127.0.0.1
+
+NODE_ENV=development
+PORT=3000
+```
+## Base de datos
+***
+### Crear la base de datos con **migraciones**
+Es necesario tener instalado [sequelize-cli](https://www.npmjs.com/package/sequelize-cli)
+```
+$ npm install --save-dev sequelize-cli
+```
+Crear la base de datos
+```
+$ sequelize db:create
+```
+Correr migraciones y seeders
+```
+$ sequelize db:migrate
+$ sequelize db:seed:all
 ```
 
 Usa `git status` para enumerar todos los archivos nuevos o modificados que aún no han sido confirmados.
 Instala `dotenv` para las variables de entorno.
 Instala `mysql2 sequelize` en caso de no tenerlo.
 Instala `method-override` si te lo solicita.
+```
+**Echa un vistazo
 
-**Echa un vistazo**
 <img src="./public/images/readme/home1.png" width=100%>
 <img src="./public/images/readme/home2.png" width=100%>
 <img src="./public/images/readme/home3.png" width=100%>
