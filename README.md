@@ -1,4 +1,4 @@
-# Esto es *Boulevard
+# Esto es Boulevard
 
 ## Estamos orientados al publico minorista con más de 12.000 libros, 2 locales, venta online y telefónica a Capital Federal y provincia de Buenos Aires 
 
@@ -85,15 +85,9 @@ Instala `mysql2 sequelize` en caso de no tenerlo.
 Instala `method-override` si te lo solicita.
 ```
 **Echa un vistazo
-
+![imagen](./public/images/readme/home1.png)
 <img src="./public/images/readme/home1.png" width=100%>
-<img src="./public/images/readme/home2.png" width=100%>
-<img src="./public/images/readme/home3.png" width=100%>
-<img src="./public/images/readme/catalogo1.png" width=100%>
-<img src="./public/images/readme/catalogo2.png" width=100%>
-<img src="./public/images/readme/categorias.png" width=100%>
-<img src="./public/images/readme/login.png" width=100%>
-<img src="./public/images/readme/register.png" width=100%>
+
 
 
 
