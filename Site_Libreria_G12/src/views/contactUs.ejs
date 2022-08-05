@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('./partials/head', { title : 'Boulevard' }) %>
+  <body class="contact">
+    <%- include('./partials/header') %>
+
+    <div class="container">  
+        <form id="contact" action="" method="post">
+          <h3>Queremos saber tu opinión</h3>
+          
+          <fieldset>
+            <input placeholder="Tu nombre" type="text" tabindex="1">
+          </fieldset>
+          <fieldset>
+            <input placeholder="Tu email" type="email" tabindex="2">
+          </fieldset>
+         
+          <fieldset>
+            <textarea placeholder="Tu mensaje" tabindex="5"></textarea>
+          </fieldset>
+          <fieldset>
+            <button name="submit" type="submit" id="contact-submit">Submit</button>
+          </fieldset>
+        
+        </form>
+      </div>
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>

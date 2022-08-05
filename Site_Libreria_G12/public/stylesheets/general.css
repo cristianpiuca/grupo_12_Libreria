@@ -6,7 +6,7 @@ li{
     list-style: none;
 }
 a{
-    text-decoration: none;
+    text-decoration: none !important;
 }
 textarea {
    height: 150px;

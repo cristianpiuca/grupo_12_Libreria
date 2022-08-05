@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <%- include('./partials/head', {
         title : 'Registrate | Boulevard'
@@ -45,7 +45,7 @@
                         <input type="checkbox" name="terminos" id="terminos" >
                         <label for="terminos">Acepto términos y condiciones</label>
                         <span ><%= locals.errors && errors.terminos ? errors.terminos.msg : null %></span>
-                        <small class="text-danger" id="errorTerms"></small>
+                        <small class="text-danger"  id="errorTerms"></small>
                     </div>
 
 
@@ -53,13 +53,14 @@
                         <button type="submit" id="submit" class="button-reg">Registrate</button>
                       
                     </div>
-                    <p id="msgError" class="text-danger"></p>
-                   <div>
+                   
+                   <div class="login">
                     <a href="/users/login">
                         <p>¿Ya tenés cuenta?</p>
                     </a>
                    
                    </div>
+                   <p id="msgError" class="text-danger"></p>
                 </form>
             </div>
         </div>

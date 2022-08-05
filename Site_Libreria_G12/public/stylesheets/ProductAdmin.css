@@ -47,7 +47,9 @@ main.products {
     align-items: center;
 
 }
-
+.productAdmin__form-box textarea{
+    height: 180px;
+}
 .productAdmin__form-box {
     text-align: center;
     margin: 15px 0;
@@ -68,7 +70,7 @@ main.products {
 .productAdmin__form-select {
     text-align: center;
     border-radius: 15px;
-    border: 2px solid var(--colorNaranja);
+    border: 3px solid var(--colorNaranja);
     height: 45px;
     width: 100%;
     margin: 10px 0 0;

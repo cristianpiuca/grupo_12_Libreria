@@ -30,9 +30,12 @@
 }
 
 .body-login .inputs-container {
+  display: flex;
   width: 80%;
   padding: 10px;
   align-self: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -71,7 +74,7 @@
   border-radius: 15px 15px;
   border: none;
   background-color: var(--colorVerde);
-  width: 50%;
+  width: 100%;
   color: white;
   margin: 20px 6px auto;
   padding: 6px;
@@ -158,24 +161,19 @@
   }
   .body-login .inputs-container .input{
       padding: 12px 0;
-      max-width: 70%;
+      max-width: 50%;
   }
   
 }
 @media (min-width: 1200px) {
 
-  .body-login {
-      width: 100%;
-      height: 100vw;
-  }
-
+ 
   .login-design {
       display: grid;
       grid-template-columns: repeat(2, 50%);
-      padding: 15px 0;
-      border-top: 2px solid var(--colorRosaBuscador);
-      border-bottom: 2px solid var(--colorRosaBuscador);
-  
+   
+    
+       height: 100%;
   }
 
   .body-login .login__container {
@@ -190,8 +188,8 @@
   }
 
   .body-login {
-      height: 80vw;
-     
+      height: 90%;
+     width: 100%;
       background-color: white;
     
   }
@@ -203,7 +201,7 @@
   }
 
   .body-login .inputs-container .p-input {
-      font-size: var(--fs-form);
+      font-size: var(--fs-bodytext);
       color: var(--colorVerdeOscuro);
       font-weight: 600;
       padding: 30px;
@@ -215,10 +213,11 @@
       align-items: center;
       display: flex;
       flex-direction: column;
-      margin-top: 100px;
+      margin-top: 15px;
   }
   .body-login .inputs-container .input{
       padding: 15px 0;
+      max-width: 65%;
   }
   .body-login .buttons button {
       border-radius: 15px 15px;

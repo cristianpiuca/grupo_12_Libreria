@@ -35,8 +35,7 @@
     color: white;
 }
 input, select{
-    width: 90%;
-  
+
     border: solid 1px transparent;
     padding: 10px 20px;
     border-radius: 10px;
