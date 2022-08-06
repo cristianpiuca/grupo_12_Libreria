@@ -348,7 +348,7 @@ window.addEventListener('load', () => {
                 break;
             default:
                 if (!errors) {
-                    productAdd.submit
+                    productAdd.submit()
                     errors = false
                 } else {
                     errors = true
