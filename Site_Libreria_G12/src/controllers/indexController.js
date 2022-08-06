@@ -14,7 +14,8 @@ module.exports = {
 		},
         include : ['images'],
 		//images has a table on database
-        order : [['id','DESC']],
+        order : [['id','ASC']],
+		limit : 7,
     }
       )
     let oferta = db.Product.findAll(
