@@ -1,4 +1,4 @@
-console.log("productEdit.js success");
+/* console.log("productEdit.js success");
 const qs = (selector) => document.querySelector(selector)
 window.addEventListener('load', () => {
     let productEdit = qs('#form-productEdit'),
@@ -356,4 +356,4 @@ window.addEventListener('load', () => {
                 break;
         }
     })
-})
+}) */

@@ -62,10 +62,11 @@
     flex-wrap: wrap;
     justify-content:center;
     width: 100%;
-    min-height: calc(100vh - 100px - 159px);
+background-color: white;
 }
 .box-result h2{
     margin: 25px 10px;
+    padding: 15px;
 }
 .product-result {
     width: 200px;

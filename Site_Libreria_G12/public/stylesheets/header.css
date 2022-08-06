@@ -19,7 +19,7 @@
 #search {
     display: none;
     position: relative;
-    width: 60%;
+    width: 85%;
 }
 .input-search {
     width: 100%;
@@ -47,17 +47,16 @@ input, select{
  input:hover{
     background-color: var(--colorRosaBuscador);
     color: white;
-border: solid 1px #806f8b;
-box-shadow: 0 0 4px #a363ac4f;
+
 }
 #search i{
-    color: var(--colorRosaOscuro);
+    color: var(--colorCrema);
     position: absolute;
     right: 10px;
     bottom: 10px;
 }
 .fa-shopping-cart{
-    color: var(--colorRosaOscuro);
+    color: var(--colorCrema);
 }
 .header-search {
     position: absolute;
@@ -72,9 +71,10 @@ box-shadow: 0 0 4px #a363ac4f;
 
 .header-logo{
     display: flex;
-    justify-content: center;
-    width: 100px;
+    justify-content: flex-end;
+    width: 80px;
     height: 60px;
+   
 }
 
 #header {
@@ -84,12 +84,13 @@ box-shadow: 0 0 4px #a363ac4f;
     top: 0;
     left: 0;
     padding: 10px 80px;
-    background: var( --colorRosaBuscador);
+    background: var( --colorRosaOscuro);
 }
 
 #header img {
-    width: 150px;
+    width: 120px;
     border-radius: 50%;
+    
 }
 .burger-menu{
     display: flex;
@@ -100,7 +101,7 @@ box-shadow: 0 0 4px #a363ac4f;
            padding: 10px;
         border-radius: 12px;
         font-size: 30px;
-        color: var(--colorRosaOscuro);
+        color: var(--colorRosaBuscador);
   
    }
 #navbar {
@@ -120,7 +121,7 @@ box-shadow: 0 0 4px #a363ac4f;
 #navbar li a {
     font-size: var(--fs-subtitle);
     font-weight: 600;
-    color:var(--colorRosaOscuro);
+    color:var(--colorCrema);
     transition: 0.3s ease-in-out;
     text-transform: uppercase;
   
@@ -160,4 +161,10 @@ box-shadow: 0 0 4px #a363ac4f;
         border: solid 1px #a98d9f;
         box-shadow: 0 0 4px #b76cc14f;
     }
+}
+@media(min-width:1200px){
+#header img{
+    width: 150px;
+   
+}
 }
