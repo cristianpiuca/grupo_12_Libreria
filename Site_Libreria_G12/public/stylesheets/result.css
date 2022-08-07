@@ -58,12 +58,13 @@
    
 }
 .box-result{
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
     width: 100%;
 background-color: white;
 }
+
 .box-result h2{
     margin: 25px 10px;
     padding: 15px;

@@ -14,9 +14,8 @@
     
        
 }
-
-#product1 {
-    width: 100%;
+ #product1 {
+ 
     display: flex;
     text-align: center;
     align-items: center;
@@ -25,6 +24,7 @@
     flex-wrap: wrap;
   
 }
+
 
 #product1 .pro-container {
     margin: 30px 0;
