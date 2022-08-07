@@ -10,7 +10,7 @@ width: 100%;
     
 }
 .footer a:hover{
-    color: var(--colorRosaOscuro);
+    color: var(--colorNaranja);
 }
 .footer .footer-div{
   color:var(--colorCrema);
@@ -43,7 +43,9 @@ width: 100%;
     font-size: var(--fs-icons);
     font-weight: 400;
 }
-
+.footer-div .rss-container-items i:hover{
+    color: var(--colorNaranja);
+}
 .footer-div .copyright {
     display: flex;
     justify-content: center;

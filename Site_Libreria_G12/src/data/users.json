@@ -10,7 +10,7 @@
       "address": "sdfsdfds",
       "state": "Ciudad Autónoma de Buenos Aires",
       "phone": "4458880000",
-      "image": "img-1654902891838.jpg"
+      "image": "noimage.jpg"
    },
    {
       "id": 3,
@@ -23,6 +23,6 @@
       "address": "Argerich 2222",
       "state": "Buenos Aires",
       "phone": "1565486321",
-      "image": "img-1654631115366.png"
+      "image": "noimage.jpg"
    }
 ]

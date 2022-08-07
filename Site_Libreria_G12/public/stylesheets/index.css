@@ -56,7 +56,7 @@
  
     position: relative;
     width: 250px;
-    padding: 10px 12px;
+   padding: 10px 0;
     margin: 10px;
     backdrop-filter: blur(5px);
     transition:all .5s ease;
@@ -70,32 +70,38 @@
 
 
 #product1 .pro .des {
+    width: 250px;
+   background: #dbdbdb5b;
     text-align: start;
-    padding: 10px 0;
-    border-top: 1px solid rgba(136, 174, 143, 0.305);
+    padding: 10px 8px;
+    margin: 2px 0;
+    border-top: 1px solid rgba(172, 215, 180, 0.305);
 }
 
 #product1 .pro .des span {
-    color: #606063;
+    color: #4a4a4a;
     font-size: 12px;
+    font-weight: 800;
 }
 
 #product1 .pro .des h5 {
+    font-weight: 600;
     padding-top: 7px;
-    color: #1a1a1a;
+    color: #c7a177;
     font-size: 14px;
 }
 
 #product1 .pro .des i {
     font-size: 12px;
-    color: rgb(220, 187, 0);
+    color: rgb(212, 184, 21);
 }
 
 #product1 .pro .des h4 {
+   
     padding-top: 7px;
     font-size: 15px;
     font-weight: 700;
-    color: #37561b;
+    color: var(--colorVerdeOscuro);
 }
 
 #product1 .pro .image-container{
@@ -113,7 +119,7 @@ width: 100%;
     border-radius: 50px;
     background-color: #d1e8f2aa;
     font-weight: 500;
-    color: #24804c;
+    color: var(--colorVerdeOscuro);
     border: 1px solid #cce7d0;
     position: absolute;
     bottom: 20px;
@@ -189,7 +195,7 @@ width: 100%;
 }
 .home-main {
  
-    background: linear-gradient(to top, #bfd5eb 0%,#bea9da 50%, #ddc3ca 100%);
+    background: linear-gradient(to top, var(--colorRosaOscuro) 0%,#bea9da 50%, #ddc3ca 100%);
 
 
 }
