@@ -219,4 +219,11 @@
 	.container-about {
 		flex-direction: row;
 	  }
+	  .legal .inner-column h5{
+		font-size: var(--fs-subtitle);
+		
+	  }
+	  .legal{
+		background: rgb(231, 229, 229);
+	  }
   }

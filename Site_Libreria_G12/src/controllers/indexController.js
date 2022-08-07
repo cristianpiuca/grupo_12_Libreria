@@ -78,5 +78,8 @@ module.exports = {
 	},
 	contact: (req,res)=>{
 		return res.render('contactUs')
+	},
+	legal: (req,res)=>{
+		return res.render('legal')
 	}
 }
