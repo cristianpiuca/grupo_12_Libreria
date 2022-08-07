@@ -14,7 +14,6 @@ module.exports = [
         .notEmpty().withMessage('Debes completar este campo').bail(),
     body('year')
         .notEmpty().withMessage('Debes completar este campo').bail(),
-     
     body('language')
         .notEmpty().withMessage('Debes completar este campo').bail(),
     body('pages')

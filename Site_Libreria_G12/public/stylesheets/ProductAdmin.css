@@ -117,10 +117,12 @@ main.products {
     background-repeat: no-repeat;
     opacity: .85;
 }
-
+.images-container{
+    display: flex;
+    justify-content: center;
+}
 .images-container img {
     width: 50%;
-    border: 4px dotted var(--colorRosaOscuro);
     margin: 10px 0;
     box-shadow: 5px 3px 15px 0px rgba(0, 0, 0, 0.31);
 
