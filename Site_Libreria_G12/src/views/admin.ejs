@@ -34,9 +34,31 @@
               <div class="buttons">
                 <a href="/products/product-detail/<%= id %>"><button class="buttonAdmin" type="button"><i class="fa-solid fa-eye"></i>Ver</button></a>
                <a href="/products/productEdit/<%= id %>"><button class="buttonAdmin" type="button"><i class="fa-regular fa-pen-to-square"></i>Editar</button></a>
-               <form action="/products/remove/<%= id %>?_method=DELETE" method="POST">
-                <button class="buttonAdmin" type="submit"><i class="fa-solid fa-trash"></i>Eliminar</button>
-              </form>
+              
+               <div class="interior">
+                <a class="btn-user" href="#open-modal">ELIMINAR</a>
+              </div>
+           
+            <div id="open-modal" class="modal-window">
+              <div>
+                <a href="#" title="Close" class="modal-close">X</a>
+                <h5>Eliminar!</h5>
+                <div>¿Seguro que queres eliminar?</div>
+                <br>
+                <div><small>Eliminar 👇</small></div>
+                <div class="delete-user">
+                  <form action="/products/remove/<%= id %>?_method=DELETE" method="POST">
+                    <button class="buttonAdmin" type="submit"><i class="fa-solid fa-trash"></i>Eliminar</button>
+                  </form>
+                </div>
+            
+               
+              </div>
+            </div>
+              
+              
+              
+              
               
               </div>
             </li>

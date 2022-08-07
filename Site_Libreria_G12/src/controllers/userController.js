@@ -142,6 +142,7 @@ module.exports = {
           }
           
         )
+        
        return res.redirect('/')
        
       }
@@ -178,6 +179,18 @@ module.exports = {
        })
        .catch(error => console.log(error)) 
    
-  }
+  },
+  remove: (req, res) => {
+    db.User.destroy({
+            where: {
+              id : req.session.userLogin.id
+            }
+        })
+        .then((info) => {
+            return res.redirect('/');
+        })
+        .catch(error => console.log(error))
+}
+
 
 }

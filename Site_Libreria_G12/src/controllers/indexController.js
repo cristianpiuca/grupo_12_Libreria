@@ -26,7 +26,7 @@ module.exports = {
 				}
 			},
          include : ['images'],
-         limit : 8,
+         limit : 10,
          order : [['id','DESC']],
      }
        )

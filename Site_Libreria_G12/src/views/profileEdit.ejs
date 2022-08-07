@@ -8,7 +8,7 @@
         <%- include('./partials/header', {user: user})%>
             <main>
                 <form method="POST" action="/users/update/<%= user.id %>?_method=PUT" class="userInfo" enctype="multipart/form-data">
-                    <h3 class="UserTitleEdit">Hola, <%= user.name %> </h3>
+                    <h1 class="UserTitleEdit">Hola, <%= user.name %> </h1>
                    
                       <div>
                         <label class="labelTags">Nombre</label>

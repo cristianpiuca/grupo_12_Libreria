@@ -14,7 +14,7 @@
 
         <div class="label">
           <a href="/users/profileEdit/<%= user.id %> "
-            ><i class="fa-solid fa-user"></i>Editar perfil</a
+            ><i class="fa-solid fa-user"></i> Editar perfil</a
           >
         </div>
         <form class="userForm">
@@ -36,7 +36,31 @@
             <h3>Celular : <%= user.phone %></h3>
           </div>
         </form>
+
+        <div class="interior">
+          <a class="btn-user" href="#open-modal">Darse de baja</a>
+        </div>
+     
+      <div id="open-modal" class="modal-window">
+        <div>
+          <a href="#" title="Close" class="modal-close">X</a>
+          <h5>Eliminar!</h5>
+          <div>¿Seguro que queres eliminar tu usuario?</div>
+          <br>
+          <div><small>Eliminar 👇</small></div>
+          <div class="delete-user">
+            <form action="/users/remove/<%= user.id %>?_method=DELETE" method="POST">
+             <button type="submit" class="btn-user"> <i class="fa-solid fa-trash-can"></i>Estoy seguro</button>
+          </form>
+          </div>
+      
+         
+        </div>
       </div>
+        
+            
+      </div>
+    
     </main>
     <%- include('./partials/footer') %>
   </body>

@@ -2,8 +2,21 @@
     max-width: 100%;
     margin: 0 auto;
     background: #f1ebe5;
+    position: relative;
 }
-
+.contenedor-products .arrow{
+    position: absolute;
+    top: 50px;
+    left: 20px;
+}
+.contenedor-products .arrow i{
+    color: var(--colorVerde);
+    font-size: var(--fs-subtitle1);
+    transition: all .3s ease;
+}
+.contenedor-products .arrow i:hover{
+    color: var(--colorVerdeOscuro);
+}
 .contenedor-principalProduct h2 {
     color:  var(--colorVerdeOscuro);
     margin: 20px 0;
