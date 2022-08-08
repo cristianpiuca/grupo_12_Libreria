@@ -17,4 +17,12 @@
   --fs-bodytext:18px;
   --fs-subtitle:14px;
   --fs-subtitle-sub: 12px; 
+  /* newsletter */
+  --font: "EB Garamond", serif;
+	--font-title: "Playfair Display", serif;
+	--font-sans-serif: "Manrope", sans-serif;
+	--black: #1f1f31;
+	--black--acc: #222;
+	--gray: #eee;
+	--gray-1: #ededed;
 }

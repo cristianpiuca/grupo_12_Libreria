@@ -7,6 +7,11 @@
   text-align: center;
   background-color: white;
 }
+.body-login main span{
+  color: red;
+  font-size: var(--fs-subtitle-sub);
+  display: block;
+}
 .body-login .terminoss{
   width: 100%;
   color: var(--color-gray);

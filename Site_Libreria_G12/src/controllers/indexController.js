@@ -74,12 +74,23 @@ module.exports = {
 		}).catch(error => console.log(error))
 	},
 	about : (req,res)=>{
-		return res.render('aboutUs')
+		return res.render('aboutUs',{
+			user: req.session.userLogin
+		})
 	},
 	contact: (req,res)=>{
-		return res.render('contactUs')
+		return res.render('contactUs',{
+			user: req.session.userLogin
+		})
 	},
 	legal: (req,res)=>{
-		return res.render('legal')
+		return res.render('legal',{
+			user: req.session.userLogin
+		})
+	},
+	newsteller : (req,res)=>{
+		return res.render('newsteller',{
+			user: req.session.userLogin
+		})
 	}
 }

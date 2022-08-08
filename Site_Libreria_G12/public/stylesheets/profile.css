@@ -38,11 +38,18 @@
 .profile :hover h1{
     color: var(--colorVerdeClaro);
 }
+.profile main span{
+    display: block;
+    color: red;
+    font-size: var(--fs-subtitle-sub);
+}
 .profile .label a{
     text-decoration: none;
     color: white;
 }
-
+.profile main small{
+    display: block;
+}
 
 .profile  .btn-user{
     border-radius: 5px;
