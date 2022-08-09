@@ -157,10 +157,10 @@ window.addEventListener("load", () => {
     errors = false;
   }); 
 
-  form-register.addEventListener('submit',  (e) => {
+  form-register.addEventListener("submit",  function(event){
+   
+    event.preventDefault();
     let errors = true;
-    e.preventDefault();
- 
     let elements =  form-register.elements;
     /* saving all elements on register form */
     for (let i = 0; i < elements.length - 1; i++) {
@@ -168,11 +168,9 @@ window.addEventListener("load", () => {
             elements[i].classList.add('is-invalid');
             msgError.innerHTML = "Revisa los campos";
            errors = true
-        }else{
-            errors = false;
         }
     }
-if (errors == false) {
+if (errors == null) {
     form-register.submit()
 }
    

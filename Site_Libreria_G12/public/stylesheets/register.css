@@ -16,15 +16,17 @@
     padding: 30px;
 }
 .body-register .terminoss {
-    display: flex;
-    justify-content: center;
+  
     padding: 10px 0;
     width: 100%;
     color: gray;
     font-size: var(--fs-subtitle-sub);
     margin: 0 10px;
 }
-
+.body-register .terminoss .errors{
+    display: flex;
+    flex-direction: column;
+}
 .body-register .terminoss input{
     margin: 0 10px;
 }
@@ -69,7 +71,7 @@
 
     text-align: center;
     margin: 15px 0;
-    width: 70%;
+    width: 60%;
     padding: 10px;
     border-radius: 15px 15px;
     border-style: none;
@@ -81,8 +83,11 @@
 
 }
 .body-register .inputs-container span{
-
+   display: block;
     color: red;
+}
+.body-register .inputs-container small{
+    display: block;
 }
 .body-register .footer-register .button-reg {
     color: white;
@@ -128,7 +133,7 @@
     .body-register .input {
         display: flex;
         margin: auto;
-        max-width: 60%;
+        max-width: 50%;
         padding: 12px 0;
         border-style: none;
         border-radius: 15px 15px;

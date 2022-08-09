@@ -30,7 +30,7 @@
     text-align: center;
     display: block;
     margin: 11px 0 17px 0;
-    font-size: var(--fs-title-extrabig);
+    font-size: var(--fs-title-big);
     line-height: 80px;
     text-shadow: 0 10.36px 8.89px #bcaf9b, 0 -2px 1px #fff;
     letter-spacing: -4px;
@@ -60,13 +60,14 @@
 }
 
 .product-descripcion {
+    padding: 20px;
     margin: 20px auto;
     width: 350px;
 }
 
 .product-titulo {
     font-size: 4rem;
-    font-weight: 700;
+  
     margin: 5px 0;
    
     line-height: 1.5;
@@ -75,6 +76,8 @@
 }
 
 .product-precio {
+    text-align: center;
+    padding: 0 15px;
     margin: 1rem 0;
     font-weight: 700;
     font-size: 1rem;
@@ -83,6 +86,7 @@
 
 .precio span {
     color: var(--colorRosaOscuro);
+    margin: 0 10px;
 }
 
 .product-detalle {
@@ -99,13 +103,15 @@
 }
 
 .product-detalle ul {
+    padding: 0;
     margin: 1rem 0;
     font-size: 14px
 }
 
 .product-detalle ul li {
-    padding: 5px 0;
-    background: #ddd;
+    text-align: center;
+    padding: 10px 5px;
+    background: rgba(221, 221, 221, 0.298);
     margin: 0;
     list-style: none;
     margin: 0.4rem 0;
@@ -118,7 +124,12 @@
 }
 
 .carrito-compra {
-    margin: 1.5rem 0;
+    display: flex;
+    padding: 10px;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .carrito-compra input {
@@ -133,33 +144,21 @@
     border: 1px solid var(--colorVerdeOscuro);
     padding: 10px;
     margin: 0 8px;
-    background-color: var(--color-verde);
     color: var(--colorVerdeOscuro);
     text-align: center;
     border-radius: 10px;
     transition: 0.3s ease-in;
 }
-
+.carrito-compra .buttonDetail i{
+    color: var(--colorVerde);
+}
 .carrito-compra .buttonDetail:hover {
     background-color: var(--colorVerdeOscuro);
+    fill-opacity: .5;
     color: white;
 }
 
-.carrito-compra .buttonDetail-delete:hover {
-    background-color: red;
-    border: 1px solid red;
-}
 
-.carrito-compra .buttonDetail-delete {
-    background-color: var(--color-verde);
-    padding: 10px;
-    margin: 0 8px;
-    text-align: center;
-    border-radius: 10px;
-    border: 1px solid var(--colorVerdeOscuro);
-    transition: 0.3s ease-in;
-
-}
 
 .carrito-compra input,
 .carrito-compra .boton,
@@ -175,6 +174,7 @@ button {
 .redes-links {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .redes-links a {
@@ -188,19 +188,21 @@ button {
     margin: 0 0.2rem;
     border-radius: 50%;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: var(--fs-bodytext);
     transition: all 0.5s ease;
 }
 
 .redes-links a:hover {
-    background: var(--colorVerdeOscuro);
+    background: var(--colorVerde);
     border: none;
     color: #fff;
 }
 
 .redes-links p {
+    font-weight: 600;
     margin-top: 14px;
     margin-bottom: 1rem;
+    color: var(--black--acc);
 }
 
 @media (min-width: 769px) {
@@ -232,12 +234,21 @@ button {
         margin: 0 auto;
         width: 100%;
     }
+    .product-precio {
+        text-align: start;
+    }
+    .carrito-compra {
+        margin: 1.5rem 0;
+        padding: 0;
+    }
 
 }
 
 @media (min-width: 1024px) {
 
-
+    .product-detalle ul li {
+        text-align: start;
+    }
     .product-descripcion {
         padding: 20px;
         width: 90%;
@@ -251,6 +262,15 @@ button {
         padding: 0;
         width: 80%;
         display: block;
+    }
+    .redes-links{
+        justify-content: flex-start;
+    }
+    .redes-links a {
+        font-size: var(--fs-icons);
+    }
+    .carrito-compra {
+       justify-content: flex-start;
     }
 
 }

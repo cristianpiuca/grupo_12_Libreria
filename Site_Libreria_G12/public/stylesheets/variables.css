@@ -22,7 +22,7 @@
 	--font-title: "Playfair Display", serif;
 	--font-sans-serif: "Manrope", sans-serif;
 	--black: #1f1f31;
-	--black--acc: #222;
-	--gray: #eee;
+	--black--acc: rgb(36, 36, 36);
+	--gray: rgb(219, 219, 219);
 	--gray-1: #ededed;
 }

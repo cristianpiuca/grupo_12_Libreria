@@ -16,7 +16,7 @@ width: 100%;
   color:var(--colorCrema);
   text-shadow: 2px 1px 1px rgb(150 150 150 0.9);
     margin: 0 auto;
-  padding: 5px 2px;
+  padding: 25px 5px;
     background-color: var(--colorVerdeOscuro);
     text-align: center;
 }
@@ -79,7 +79,7 @@ width: 100%;
         margin: 20px 0;
         display: flex;
         justify-content: center;
-        align-items: center;
+      
         flex-wrap: wrap;
     }
 
@@ -114,7 +114,7 @@ width: 100%;
     .fa-clock,
     .fa-envelope {
         color: var(--color-bg);
-        font-size: var(--fs-subtitle-sub);
+       
         margin-right: 5px;
     }
 
