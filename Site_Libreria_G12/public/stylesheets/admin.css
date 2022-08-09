@@ -1,5 +1,5 @@
 .admin{
-  background: linear-gradient(to top, #7db7f2 0%, #fdb3e8 50%, #e696a6 80%, #9d74db 100%);
+  background-image: url('/images/subtle-prism.svg');
  
 }
 .admin i{
@@ -170,11 +170,11 @@ width: 100px;
   
   }
   .commitsData{
-    margin: 15px 0;
+  
     height: 320px;
-    width: 350px;
-    border-radius: 20px;
-    background-image: url('../images/data.png');
+    width: 100%;
+  
+    background-image: url('https://img.freepik.com/vector-gratis/gente-diminuta-leyendo-escribiendo-poesia-o-poema-aislado-ilustracion-vectorial-plana-personajes-dibujos-animados-pie-o-sentados-cerca-libro-abierto-tinta-pluma-concepto-entretenimiento-literatura_74855-13258.jpg?w=740&t=st=1660078436~exp=1660079036~hmac=87a4f7ea60bc1ae664ec418eaee984ecc9a19439867dea19a7ed92a6885d44c4');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

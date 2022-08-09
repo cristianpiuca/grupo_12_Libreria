@@ -15,7 +15,7 @@
        
 }
  #product1 {
- /* background-image */
+
     display: flex;
     text-align: center;
     align-items: center;
@@ -23,6 +23,10 @@
     align-content: center;
     flex-wrap: wrap;
   
+}
+.home-main  #product1{
+    background-image: url('/images/svghome.svg');
+
 }
 
 
