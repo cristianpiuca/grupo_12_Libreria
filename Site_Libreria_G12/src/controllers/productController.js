@@ -10,7 +10,7 @@ module.exports = {
         db.Product.findAll(
             {
                 order: [['id', 'DESC']],
-                include: ['images']
+                include: ['images']   
             }
         )
             .then(products => {
@@ -220,6 +220,82 @@ module.exports = {
         return res.render('categorySearch', {
             user: req.session.userLogin
         })
+    },
+
+    categoryAdd:(req, res) => {
+        return res.render('categoryAdd', {
+            user: req.session.userLogin
+        })
+    },
+
+    createCategory:(req, res) =>{
+        let errors = validationResult(req)
+
+        if (errors.isEmpty()) {
+            
+        const { name } = req.body;
+        db.Category.create({name})
+        .then(() => res.redirect('categorySearch'))
+        .catch(error => console.log(error))
+        }else {
+            res.render('categoryAdd',{
+                user: req.session.userLogin,
+                errors: errors.mapped()
+            })
+        }
+    },
+
+    categoryEdit:(req, res) =>{
+        const id = req.params.id;
+        db.Category.findByPk(id)
+        .then(category   => {
+            res.render('categoryEdit', {
+                category,
+                user: req.session.userLogin
+            })
+        })
+    },
+
+    categoryUpdate:(req, res) =>{
+        let errors = validationResult(req)
+
+        if (errors.isEmpty()) {
+        db.Category.update({
+            name: req.body.name
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(() => res.redirect('/'))
+        .catch(error => console.log(error))
+    }else{
+        const id = req.params.id;
+            db.Category.findByPk(id)
+                .then(category => {
+                    res.render('categoryEdit', {
+                        category, 
+                        user: req.session.userLogin,
+                        errors: errors.mapped()
+                    })
+                })
+                .catch(error => console.log(error))
+    }
+    },
+
+    categoryRemove: (req, res) => {
+        db.Category.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then((info) => {
+                return res.redirect('/');
+            })
+            .catch(error => console.log(error))
     }
 
+
+
 }
+

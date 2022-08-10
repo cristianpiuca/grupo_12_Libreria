@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head', { title : 'Editar Categoria| Boulevard' }) %>
+
+    <body class="productAdmin">
+        <%- include('./partials/header', {admin: user})%>
+            <main>
+
+               <h1>Editar categoria</h1>
+                <section>
+                   
+                    <form method="POST" id="form-categoryEdit" class="formProducts2" action="/products/categoryUpdate/<%= category.id %>?_method=PUT">
+                    <article>
+                       
+                    <div class="productAdmin__form-box" id="product_categoryId" >
+                        <label for="name" class="formulario__label">Titulo de la categoría</label>
+                        <input class="productAdmin__form-input" type="text" name="name" id="name" value="<%= category.name %> ">
+                        <span><%= locals.errors && errors.name ? errors.name.msg : null %></span>
+                        <span id="errorName"></span>
+                    </div>
+                </article>
+
+                <div class="buttons">
+                    <button class="btnAdmin" type="submit">Guardar</button>
+                  
+                 <button class="btnAdmin" type="reset">Cancelar</button>
+                   </div>
+                </form>
+            </section>
+
+            </main>
+
+            <%- include('./partials/footer') %>
+            <script src="../../js/categoryAdd.js"></script>
+    </body>
+
+</html>

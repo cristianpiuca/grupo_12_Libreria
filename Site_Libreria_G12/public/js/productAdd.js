@@ -1,4 +1,4 @@
-/* console.log("productAdd.js success");
+console.log("productAdd.js success");
 const qs = (selector) => document.querySelector(selector)
 window.addEventListener('load', () => {
     let productAdd = qs('#form-productAdd'),
@@ -356,4 +356,4 @@ window.addEventListener('load', () => {
                 break;
         }
     })
-}) */
+})

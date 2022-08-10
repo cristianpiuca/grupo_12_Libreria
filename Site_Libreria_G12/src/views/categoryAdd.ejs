@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head', { title : 'Agregar Categoria| Boulevard' }) %>
+
+    <body class="productAdmin">
+        <%- include('./partials/header', {admin: user})%>
+            <main>
+
+                <h1>Agregar Categoria</h1>
+                <section>
+                <form action="" class="formProducts" method="POST"  id="form-categoryAdd" >
+                    <article>
+                    <div class="productAdmin__form-box" id="product_categoryId">
+                        <label for="name" class="formulario__label">Titulo de la categoría</label>
+                        <input class="productAdmin__form-input" type="text" id="name" name="name">
+                        <span><%= locals.errors && errors.name ? errors.name.msg : null %></span>
+                        <span id="errorName"></span>
+                    </div>
+                </article>
+                <div class="buttons">
+                    <button class="btnAdmin" type="submit">Guardar</button>
+                  
+                 <button class="btnAdmin" type="reset">Cancelar</button>
+                   </div>
+                </form>
+            </section>
+
+            </main>
+
+            <%- include('./partials/footer') %>
+            <script src="../../js/categoryAdd.js"></script>
+    </body>
+
+</html>
