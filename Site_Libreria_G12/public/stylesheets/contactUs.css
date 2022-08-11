@@ -101,14 +101,16 @@
   border-radius: 10px;
 }
 
-.contact button.btn {
+.contact .button {
   padding: 10px;
   border-radius: 10px;
   font-size: 15px;
   background: var(--colorRosaOscuro);
   color: #ffffff;
 }
-
+.contact .button:hover{
+  background: rgb(160, 96, 96);
+}
 .contact .title h3 {
   font-size: 18px;
   font-weight: 600;
