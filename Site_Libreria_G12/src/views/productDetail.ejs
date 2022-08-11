@@ -27,7 +27,11 @@
                 <b><p><%= product.description %></p></b>
 
                     <ul>
-                        <li>Categoria: <span><%= product.categoryId %> </span></li>
+                        <li>Categoria: <span>
+                            <% categories.forEach(category => { %>
+                            <%= category.id === product.categoryId ? category.name:null%> 
+                            <% }) %>
+                        </span></li>
                         <li>Año: <span><%= product.year %> </span></li>
                         <li>Idioma: <span><%= product.language %> </span></li>
                         <li>N° de paginas: <span><%= product.pages %> </span></li>
