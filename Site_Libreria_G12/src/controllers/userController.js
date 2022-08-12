@@ -178,9 +178,18 @@ module.exports = {
            })
        })
        .catch(error => console.log(error)) 
-   
-  }
+  },
 
->>>>>>> a643d1a0179ce08143783806fcbdc5c90a879b8e
+  remove: (req, res) => {
+    db.User.destroy({
+            where: {
+              id : req.session.userLogin.id
+            }
+        })
+        .then((info) => {
+            return res.redirect('/');
+        })
+        .catch(error => console.log(error))
+}
 
 }
