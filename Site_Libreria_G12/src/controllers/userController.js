@@ -178,8 +178,8 @@ module.exports = {
            })
        })
        .catch(error => console.log(error)) 
+   
   },
-
   remove: (req, res) => {
     db.User.destroy({
             where: {
@@ -191,5 +191,4 @@ module.exports = {
         })
         .catch(error => console.log(error))
 }
-
 }

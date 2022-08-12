@@ -1,52 +1,88 @@
-<!DOCTYPE html>
 <html lang="es">
   <%- include('./partials/head', { title : 'Admin | Boulevard' }) %>
   <body class="admin">
     <%- include('./partials/header') %>
 
-    <main>
-      <h1>Administra tu stock</h1>
-      <section class="infoAdmin">
-        <article class="commitsData">
-         
-        </article>
-  
+<main class="main">
+	<div class="responsive-wrapper">
+		<div class="main-header">
+			<h2>Ajustes de administrador</h2>
+			<div class="search">
+				<input type="text" placeholder="Search" />
+				<button type="submit">
+					<i class="ph-magnifying-glass-bold"></i>
+				</button>
+			</div>
+		</div>
+		<div class="horizontal-tabs">
+			<a href="#">Mi perfil</a>
+			<a href="#">Perfiles</a>
+			<a href="#">Contraseñas</a>
+			<a href="#">Team</a>
+			<a href="#">Plan</a>
+			<a href="#">Notas</a>
+			<a href="#">Registros</a>
+			<a href="#">Notificaciones</a>
+			<a href="#" class="active">Integraciones</a>
+			<a href="#">APIs</a>
+		</div>
+		<div class="content-header">
+			<div class="content-header-intro">
+				<h3>Administra los productos</h3>
+                <p>Agrega, edita y elimina productos. Administra roles de usuarios</p>
+			</div>
+			<div class="content-header-actions">
+				<a href="#" class="button">
+					<i class="ph-faders-bold"></i>
+					<span>Filters</span>
+				</a>
+				<a href="#" class="button">
+					<i class="ph-plus-bold"></i>
+					<span>Agregar producto</span>
+				</a>
+			</div>
+		</div>
+		<div class="content">
+			<div class="content-panel">
+                
+				<div class="vertical-tabs">
+					<a href="#" class="active">Ver todo</a>
+					<a href="#">Ajustes adicionales</a>
+					<a href="#">Equipo</a>
+					<a href="#">Productividad</a>
+					<a href="#">Herramientas</a>
+					<a href="#">Marketplace</a>
+				</div>
+                
+			</div>
+            
+			<div class="content-main">
+                
+				<div class="card-grid">
+				
+					<article class="card">
+						<div class="card-header">
+							<div>
+								<span><img src="https://assets.codepen.io/285131/github.svg" /></span>
+								<h3>GitHub</h3>
+							</div>
+							<label class="toggle">
+								<input type="checkbox" checked>
+								<span></span>
+							</label>
+						</div>
+						<div class="card-body">
+							<p>Link pull requests and automate workflows.</p>
+						</div>
+						
+					</article>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
 
-      </section>
-     
-      <section class="container">
-
-        <a href="/products/productAdd">
-          <button  class="buttonAdmin">Agregar producto</button>
-        </a>
-
-        <article class="row">
-          <% product.forEach(({id,title,images}) => { %>
-          <ul class="card-03">
-            <li>
-              <div>
-                <div class="imageContainer">
-                 <img src="/images/<%= images[0].file %> " alt="">
-                </div>
-                <h4><%= title %></h4>
-              </div>
-
-              <div class="buttons">
-                <a href="/products/product-detail/<%= id %>"><button class="buttonAdmin" type="button"><i class="fa-solid fa-eye"></i>Ver</button></a>
-               <a href="/products/productEdit/<%= id %>"><button class="buttonAdmin" type="button"><i class="fa-regular fa-pen-to-square"></i>Editar</button></a>
-               <form action="/products/remove/<%= id %>?_method=DELETE" method="POST">
-                <button class="buttonAdmin" type="submit"><i class="fa-solid fa-trash"></i>Eliminar</button>
-              </form>
-              
-              </div>
-            </li>
-          </ul>
-          <% }) %>
-        </article>
-      </section>
-    </main>
-
-    <%- include('./partials/footer') %>
-  </body>
+<%- include('./partials/footer') %>
+</body>
 </html>
-
