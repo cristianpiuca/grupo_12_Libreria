@@ -91,14 +91,22 @@
           <h4>Suscribite para novedades y</h4>
           <p>Obtené <span>cupones</span> especiales de descuento</p>
         </div>
-        <form class="form" method="POST">
-          <input type="email" name="email" placeholder="Tu email" />
-          <button class="normal">Enviame</button>
+        <form id="form" novalidate>
+          <input type="email" name="email" placeholder="Tu email"/>
+          <input class="normal"  id="button" value="Enviar" type="submit"></input>
         </form>
       </section>
     </main>
 
     <%- include('./partials/footer') %>
     <script src="../../js/carousel.js"></script>
+    <script src="/js/suscription.js"></script>
+    <script src="/js/contactUs.js"></script>
+  <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
+  <script type="text/javascript">
+  emailjs.init('5aS0CzmztrVM-bRRx')
+  </script>
   </body>
 </html>

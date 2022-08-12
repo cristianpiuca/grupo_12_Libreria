@@ -163,7 +163,7 @@ window.addEventListener("load", () => {
     let errors = true;
     let elements =  form-register.elements;
     /* saving all elements on register form */
-    for (let i = 0; i < elements.length - 1; i++) {
+    for (let i = 0; i < elements.length - 2; i++) {
         if(elements[i].value === '' || elements[i].classList.contains('is-invalid')){
             elements[i].classList.add('is-invalid');
             msgError.innerHTML = "Revisa los campos";
