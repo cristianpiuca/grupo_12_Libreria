@@ -10,13 +10,13 @@ width: 100%;
     
 }
 .footer a:hover{
-    color: var(--colorRosaOscuro);
+    color: var(--colorNaranja);
 }
 .footer .footer-div{
   color:var(--colorCrema);
   text-shadow: 2px 1px 1px rgb(150 150 150 0.9);
     margin: 0 auto;
-  padding: 5px 2px;
+  padding: 25px 5px;
     background-color: var(--colorVerdeOscuro);
     text-align: center;
 }
@@ -43,7 +43,9 @@ width: 100%;
     font-size: var(--fs-icons);
     font-weight: 400;
 }
-
+.footer-div .rss-container-items i:hover{
+    color: var(--colorNaranja);
+}
 .footer-div .copyright {
     display: flex;
     justify-content: center;
@@ -77,7 +79,7 @@ width: 100%;
         margin: 20px 0;
         display: flex;
         justify-content: center;
-        align-items: center;
+      
         flex-wrap: wrap;
     }
 
@@ -112,7 +114,7 @@ width: 100%;
     .fa-clock,
     .fa-envelope {
         color: var(--color-bg);
-        font-size: var(--fs-subtitle-sub);
+       
         margin-right: 5px;
     }
 

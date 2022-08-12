@@ -40,9 +40,11 @@
                       
                         <label for="category">Categorias</label>
                         <select class="productAdmin__form-select" name="categoryId" id="categoryId">
-                            <option value="" hidden selected>Selecciona la categoría...</option>
-                            <% categories.forEach(category => { %>
-                              <option value="<%= category.id %>" <%= category.id === product.category ? 'selected' : null %>><%= category.name %></option>
+                          
+                            <option hidden value="" >Categorias</option>
+                            <% categories.forEach(category=> { %>
+                                <option value=<%= category.id %> <%= product.categoryId == category.id && 'selected' %>><%= category.name %> 
+                                </option>
                             <% }) %>
                           </select>
                           <span><%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %></span>
@@ -73,7 +75,7 @@
                     <div class="productAdmin__form-box">
                         <label for="type">Formato</label>
                         <select class="productAdmin__form-select" name="format" id="format">
-                            <option value="" hidden selected>Selecciona el formato</option>
+                            <option  hidden selected>Formatos</option>
                            
                             <option value="Rustica">Rústica</option>
                             <option value="Blanda">Blanda</option>
@@ -95,7 +97,7 @@
                     </div>
                     <div class="productAdmin__form-box">
                         <label for="description">Descripción del producto</label>
-                        <textarea class="productAdmin__form-input" name="description" id="description"  value="<%= locals.old && old.description ? old.description : null%>"></textarea>
+                        <textarea class="productAdmin__form-input" name="description" id="description"  placeholder="Descripción del producto..."><%= product.description %></textarea>
                         <span><%= locals.errors && errors.description ? errors.description.msg : null %></span>
                         <span id="errorDescription"></span>
 
@@ -119,6 +121,7 @@
             
                
             </form>
+            
         </section>
 
     </main>

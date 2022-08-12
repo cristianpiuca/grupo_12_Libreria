@@ -9,6 +9,9 @@
     <main>
     <div class="contenedor-principalProduct">
         <div class="contenedor-products">
+           <div class="arrow">
+           <a href="/"><i class="fa-solid fa-arrow-left-long"></i></a>
+           </div>
             <div class="product-img">
                 <img src="/images/<%= product.images[0].file %> " alt="">
             </div>
@@ -24,7 +27,11 @@
                 <b><p><%= product.description %></p></b>
 
                     <ul>
-                        <li>Categoria: <span><%= product.categoryId %> </span></li>
+                        <li>Categoria: <span>
+                            <% categories.forEach(category => { %>
+                            <%= category.id === product.categoryId ? category.name:null%> 
+                            <% }) %>
+                        </span></li>
                         <li>Año: <span><%= product.year %> </span></li>
                         <li>Idioma: <span><%= product.language %> </span></li>
                         <li>N° de paginas: <span><%= product.pages %> </span></li>
@@ -34,12 +41,12 @@
                     </ul>
                 </div>
                 <div class="product-precio">
-                    <p class="precio">Precio:<span> $<%= product.price  %></span></p>
-                    <p class="precio">Descuento:<span><%= product.discount %> % OFF</span></p>
+                    <p class="precio">Precio:<span>$<%= product.price  %></span></p>
+                    <p class="precio">Descuento:<span><%= product.discount %>% OFF</span></p>
                     
                 </div>
                 <div class="carrito-compra">
-                    <input type="number" min="0" value="1">
+                  
                     <button type="button" class="buttonDetail">
                         Agregar al carrito <i class="fas fa-shopping-cart"></i>
                     </button>

@@ -54,7 +54,7 @@
     text-align: center;
 }
 
-.button {
+/* .button {
     position: absolute;
     bottom: 8px;
     right: 20px;
@@ -68,7 +68,7 @@
 
 .button i {
     margin-right: 5px;
-}
+} */
 
 .button-2{
     display: none;

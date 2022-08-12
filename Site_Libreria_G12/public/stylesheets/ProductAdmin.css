@@ -21,8 +21,11 @@
 }
 
 main.products {
-    background: linear-gradient(-435deg, #d1f2fb 0%, #92b890 100%);
-    background: linear-gradient(to top, #8da6bf 0%, #e8dade 100%);
+    background-image: url('https://img.freepik.com/free-vector/floral-background-leaves-with-copy-space_91128-971.jpg?t=st=1659910758~exp=1659911358~hmac=87a13fe1a14c503e7bfd02997e1be413c3a99890fdb0e389f5ba07d14e074567') ;
+ background-size: contain;
+ background-color: rgba(0,0,0,0.5);
+    /*  background: linear-gradient(-435deg, #d1f2fb 0%, #92b890 100%);
+    background: linear-gradient(to top, #8da6bf 0%, #e8dade 100%); */
 }
 
 
@@ -117,10 +120,12 @@ main.products {
     background-repeat: no-repeat;
     opacity: .85;
 }
-
+.images-container{
+    display: flex;
+    justify-content: center;
+}
 .images-container img {
     width: 50%;
-    border: 4px dotted var(--colorRosaOscuro);
     margin: 10px 0;
     box-shadow: 5px 3px 15px 0px rgba(0, 0, 0, 0.31);
 

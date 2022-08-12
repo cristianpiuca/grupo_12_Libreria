@@ -19,16 +19,6 @@
         <a href="/products/productAdd">
           <button  class="buttonAdmin">Agregar producto</button>
         </a>
-        <a href="/products/categoryAdd">
-          <button  class="buttonAdmin">Agregar categoria</button>
-        </a>
-        
-     
-          
-                          
-
-  </div>
-
 
         <article class="row">
           <% product.forEach(({id,title,images}) => { %>
@@ -44,6 +34,7 @@
               <div class="buttons">
                 <a href="/products/product-detail/<%= id %>"><button class="buttonAdmin" type="button"><i class="fa-solid fa-eye"></i>Ver</button></a>
                <a href="/products/productEdit/<%= id %>"><button class="buttonAdmin" type="button"><i class="fa-regular fa-pen-to-square"></i>Editar</button></a>
+               <form action="/products/remove/<%= id %>?_method=DELETE" method="POST">
                 <button class="buttonAdmin" type="submit"><i class="fa-solid fa-trash"></i>Eliminar</button>
               </form>
               
@@ -58,3 +49,4 @@
     <%- include('./partials/footer') %>
   </body>
 </html>
+

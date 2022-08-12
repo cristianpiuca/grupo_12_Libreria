@@ -28,7 +28,7 @@ window.addEventListener('load', () => {
         authorExp = /^[a-zA-ZÀ-ÿ\s]{4,30}$/, // Letras, acentos
         numbersExp = /^\d{4}$/, // Números
         pagesExp = /^\d{2,4}$/, // Números
-        descriptionExp = /^[a-zA-ZÀ-ÿ\s\0-9]{20,200}$/, // Letras, acentos y numeros
+        descriptionExp = /^[a-zA-ZÀ-ÿ\s\0-9]{20,500}$/, // Letras, acentos y numeros
         errors;
 
     title.addEventListener('blur', (e) => {
@@ -218,7 +218,7 @@ window.addEventListener('load', () => {
                 errors = true
                 break;
             case !descriptionExp.test(description.value.trim()):
-                errorDescription.innerHTML = 'La descripción tiene que contener 20 a 200 caracteres.'
+                errorDescription.innerHTML = 'La descripción tiene que contener 20 a 500 caracteres.'
                 description.classList.add('product-invalid')
                 errors = true
                 break;
@@ -337,7 +337,7 @@ window.addEventListener('load', () => {
                 errors = true
                 break;
             case !descriptionExp.test(description.value.trim()):
-                errorDescription.innerHTML = 'La descripción tiene que contener 20 a 200 caracteres.'
+                errorDescription.innerHTML = 'La descripción tiene que contener 20 a 500 caracteres.'
                 description.classList.add('product-invalid')
                 errors = true
                 break;

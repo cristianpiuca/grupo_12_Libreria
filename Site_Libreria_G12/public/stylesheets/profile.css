@@ -38,14 +38,32 @@
 .profile :hover h1{
     color: var(--colorVerdeClaro);
 }
+.profile main span{
+    display: block;
+    color: red;
+    font-size: var(--fs-subtitle-sub);
+}
 .profile .label a{
     text-decoration: none;
     color: white;
 }
+.profile main small{
+    display: block;
+}
+
+.profile  .btn-user{
+    border-radius: 5px;
+    color: white;
+    background: var(--colorVerdeOscuro);
+    transition: .5s ease;
+   
+}
+.profile  .btn-user:hover{
+    background: red;
+}
 .profile main  {
     text-align: center;
    
-  
 }
 
 .profile .userAvatar{
@@ -76,7 +94,7 @@
 
 .profile .userInfo {
     display: flex;
-    width: 100%;
+    width: 80%;
     background-image: linear-gradient(-55deg, #c8feff 0%, #eecfcf 100%);
     background-image: linear-gradient(to top, #a9dec1 0%, #f5f5b8 100%);
     background-attachment: fixed;
@@ -84,7 +102,7 @@
     margin: 30px auto;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 6px 5px 6px 2px grey;
+    box-shadow: 6px 5px 6px 2px rgb(186, 186, 186);
     flex-direction: column;
     
     justify-content: center;
@@ -96,19 +114,34 @@
 }
 .profile .userInfo div{
     margin: 10px 0;
+  
+}
+.profile .userInfo label{
+    display: block;
 }
 .profile .userInfo h2{
     color: var(--colorRosaOscuro);
 }
 .profile .userInfo h3{
+    font-family: 'Satisfy', cursive;
     text-align: center;
-   
     color: var(--colorRosaOscuro);
-    font-size: var(--fs-bodytext);
+ 
     text-shadow: 3px -1px 2px rgba(196,196,196,0.62);
+  
 }
 
-
+.profile .userInfo select{
+   
+    width: 200px;
+}
+.profile .userInfo .userEdit-input{
+   
+    width: 200px;
+}
+.profile form select{
+    margin: 5px 0;
+}
 .profile h4 {
     font-size: small;
 }
@@ -136,10 +169,7 @@ background: var(--colorVerdeClaro);
 .profile .btnUser:hover{
     background: var(--colorRosaOscuro);
 }
-.label input[type="file"] {
-        position: absolute;
-        top: -1000px;
-      }
+
       .label {
         background-color: var(--colorVerdeOscuro);
         cursor: pointer;
@@ -200,7 +230,78 @@ background: var(--colorVerdeClaro);
         .profile .userInfo h3{
             margin: 18px;
            color: white;
-            font-size: var(--fs-icons);
+            font-size: var(--fs-form);
         }
+        .profile .userInfo select, .userEdit-input{
+            width: 250px;
+           
+        }
+        
     }
 
+    .modal-window {
+        position: fixed;
+        background-color: rgba(255, 255, 255, 0.25);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+      }
+      .modal-window:target {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .modal-window > div {
+        width: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 2em;
+        background: white;
+      }
+      .modal-window header {
+        font-weight: bold;
+      }
+      .modal-window h1 {
+        font-size: 150%;
+        margin: 0 0 15px;
+      }
+      
+      .modal-close {
+        color: #aaa;
+        line-height: 50px;
+        font-size: 80%;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 70px;
+        text-decoration: none;
+      }
+      .modal-close:hover {
+        color: black;
+      }
+      
+.modal-window > div {
+    border-radius: 10px;
+  }
+  
+  .modal-window div:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+  .btn-user {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+  .btn-user i {
+    padding-right: 0.3em;
+  }  

@@ -23,12 +23,15 @@ module.exports = {
     },
 
     detail: (req, res) => {
-        db.Product.findByPk(req.params.id, {
+       let categories= db.Category.findAll()
+      let product=  db.Product.findByPk(req.params.id, {
             include: ['images']
         })
-            .then(product => {
+        Promise.all([product, categories])
+            .then(([product, categories]) => {
                 return res.render('productDetail', {
                     product,
+                    categories,
                     user: req.session.userLogin
                 })
             })

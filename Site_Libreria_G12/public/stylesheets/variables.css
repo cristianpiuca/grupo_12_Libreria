@@ -6,6 +6,10 @@
     --colorVerdeClaro: #d2eadd;
     --colorVerdeOscuro: #83a490;
     --colorNaranja: #ffd0b8df;
+    --black: #1f1f31;
+	--black--acc: rgb(36, 36, 36);
+	--gray: rgb(219, 219, 219);
+	--gray-1: #ededed;
      /*font sizes*/
      --fs-title-super-extrabig:85px;
   --fs-title-extrabig:60px;
@@ -17,4 +21,9 @@
   --fs-bodytext:18px;
   --fs-subtitle:14px;
   --fs-subtitle-sub: 12px; 
+  /* newsletter */
+  --font: "EB Garamond", serif;
+	--font-title: "Playfair Display", serif;
+	--font-sans-serif: "Manrope", sans-serif;
+	
 }

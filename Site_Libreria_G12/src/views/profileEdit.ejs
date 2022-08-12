@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <%- include('./partials/head', { title : 'Editar perfil | Boulevard' }) %>
 
@@ -7,33 +7,40 @@
 
         <%- include('./partials/header', {user: user})%>
             <main>
+
+                
+
                 <form method="POST" action="/users/update/<%= user.id %>?_method=PUT" class="userInfo" enctype="multipart/form-data">
-                    <h3 class="UserTitleEdit">Hola, <%= user.name %> </h3>
-                   
+                    <h1 class="UserTitleEdit">Hola, <%= user.name %> </h1>
+
                       <div>
                         <label class="labelTags">Nombre</label>
-                        <input class="userEdit-input" type="text" id="name" name="name" value="<%= locals.user && locals.user.name%>">
+                        <input class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="text" id="name" name="name" value="<%= locals.user && locals.user.name%>">
                         <span><%= locals.errors && errors.name ? errors.name.msg : null %></span>
+                        <small id="errorName" class="text-danger "></small>
                     </div>
                     <div>
                         <label class="labelTags">Apellido</label>
-                        <input class="userEdit-input" type="text" id="lastname" name="lastname" value="<%= locals.user && locals.user.lastname %>">
+                        <input class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="text" id="lastname" name="lastname" value="<%= locals.user && locals.user.lastname %>">
                         <span><%= locals.errors && errors.lastname ? errors.lastname.msg : null %></span>
+                        <small id="errorLastname" class="text-danger "></small>
                     </div>
                    
                     <div>
                         <label class="labelTags">Fecha de nacimiento</label>
-                        <input class="userEdit-input" type="date" id="birth" name="birth" value="<%= locals.user && locals.user.birth %>">
+                        <input class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="date" id="birth" name="birth" value="<%= locals.user && locals.user.birth %>">
                         <span><%= locals.errors && errors.birth ? errors.birth.msg : null %></span>
+                        <small id="errorBirth" class="text-danger "></small>
                     </div>
                     <div>
                         <label class="labelTags">Domicilio</label>
-                        <input class="userEdit-input" type="text" id="address" name="address" value="<%= locals.user && locals.user.address %>">
+                        <input class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="text" id="address" name="address" value="<%= locals.user && locals.user.address %>">
                         <span><%= locals.errors && errors.address ? errors.address.msg : null %></span>
+                        <small id="errorAddress" class="text-danger "></small>
                     </div>
                     <div>
                         <label class="labelTags">Provincia</label>
-                       <select class="userEdit-input" name="state" id="state" value="<%= locals.user && locals.user.state%>"> 
+                       <select class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" name="state" id="state" value="<%= locals.user && locals.user.state%>"> 
                         
                         
                             <option value="" hidden selected>Selecciona</option>
@@ -65,15 +72,21 @@
                             <option value="Tucumán">Tucumán</option>
                         </select>
                         <span><%= locals.errors && errors.state ? errors.state.msg : null %></span>
+                        <small id="errorState" class="text-danger "></small>
                     </div>
                     <div>
                         <label class="labelTags">Telefono</label>
                         <input class="userEdit-input" type="text" id="phone" name="phone" value="<%= locals.user && locals.user.phone %>">
                         <span><%= locals.errors && errors.phone ? errors.phone.msg : null %></span>
+                        <small id="errorPhone" class="text-danger "></small>
                     </div>
                     <div>
                         <label class="labelTags">Cambiar foto de Perfil</label>
                         <input class="userEdit-input" type="file" id="image" name="image" accept="image/*"/>
+                    </div>
+
+                    <div>
+                        <small id="errorForm" class="text-danger "></small>
                     </div>
                     <div class="buttons">
                         <button class="btnUser" type="submit">Guardar</button>
@@ -82,6 +95,7 @@
                
                   
                 </form>
+                  <script src="/js/profileEdit.js"></script>
             </main>
             <%- include('./partials/footer') %>
     </body>

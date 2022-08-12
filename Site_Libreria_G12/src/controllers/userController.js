@@ -142,6 +142,7 @@ module.exports = {
           }
           
         )
+        
        return res.redirect('/')
        
       }
@@ -164,22 +165,22 @@ module.exports = {
       res.redirect('/')
   },
   admin : (req,res) => {
-    let product = db.Product.findAll(
+    db.Product.findAll(
       { 
           order : [['id','DESC']],
            include : ['images']
           }
      )
-     let categories = db.Category.findAll()
-     Promise.all([product, categories])
-     .then(([product, categories]) => {
-         return res.render('admin', {
-             product,
-             categories,
-             user: req.session.userLogin,
-         })
-     })
-     .catch(error => console.log(error))
+       .then(product => {
+           return res.render('admin', {
+              product,
+               user: req.session.userLogin
+           })
+       })
+       .catch(error => console.log(error)) 
+   
   }
+
+>>>>>>> a643d1a0179ce08143783806fcbdc5c90a879b8e
 
 }

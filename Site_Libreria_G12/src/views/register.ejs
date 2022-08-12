@@ -44,8 +44,10 @@
                     <div class="terminoss">
                         <input type="checkbox" name="terminos" id="terminos" >
                         <label for="terminos">Acepto términos y condiciones</label>
+                       <div class="errors">
                         <span ><%= locals.errors && errors.terminos ? errors.terminos.msg : null %></span>
                         <small class="text-danger"  id="errorTerms"></small>
+                       </div>
                     </div>
 
 
@@ -54,14 +56,15 @@
                       
                     </div>
                    
-                   <div class="login">
+                  
+                   <p id="msgError" class="text-danger"></p>
+                </form>
+                <div class="login">
                     <a href="/users/login">
                         <p>¿Ya tenés cuenta?</p>
                     </a>
                    
                    </div>
-                   <p id="msgError" class="text-danger"></p>
-                </form>
             </div>
         </div>
         <div class="background">
