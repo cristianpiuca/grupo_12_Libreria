@@ -1,51 +1,51 @@
 
 
-<header>
-    <nav  id="header">
-        <!-- logo -->
-    <div class="header-logo">
-        <a href="/"><img src="/images/logo1.png" alt=""></a>
-    </div>
-    <div class="buscador-menu">
-        <form id="search-form" action="/result" method="GET">
-            <div id="search" class="d-flex">
-                <input class="input-search" name="keyword">
-                <i class="fas fa-search"></i>
+ <header class="header">
+  
+  
+    <div class="container">
+        <div class="roww align-items-center justify-content-between">
+            <div class="logo">
+                <a href="/"><img src="/images/logo1.png" alt=""></a>
             </div>
-        </form>
-    </div>
+          
+            <button type="button" class="nav-toggler">
+               <span></span>
+            </button>
 
-    <div>
-        <ul id="navbar">
-
-            <!-- if session exist and rolId is 1 = admin -->
-            <% if (locals.userLogin?.rolId === 1) { %>
+            <nav class="nav">
+                <div class="buscador-menu">
+                    <form id="search-form" action="/result" method="GET">
+                        <div id="search" class="d-flex">
+                            <input class="input-search" name="keyword">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </form>
+                </div>
+               <ul>
+                <% if (locals.userLogin?.rolId === 1) { %>
                
-                <li><a href="/users/admin">Admin</a></li>
-            <% } %>
-                <li><a href="/products">Catálogo</a></li>
-                <li><a href="/products/categorySearch">Categorias</a></li>
-               
-            <% if (!locals.userLogin) { %>
-                <li class="register"><a href="/users/register">Registrarse</a></li>
-                <li class="login"><a href="/users/login">Entrar</a></li>
-            <% }else{ %>
-                <!-- if user session exist, show profile, exit and cart -->
-
-                <li><a href="/users/profile/<%= user.id %> "><i class="fa-solid fa-user"></i></a></li>
-                <li><a href="/users/logout"><i class="fa-solid fa-door-open"></i></a></li>
-                <li><a href="/products/product-cart"><i class="fa-solid fa-shop"></i></a></li>
-             
-            <% } %>
-
-
-
-
-        </ul>
-    </div>
-
-
-    </nav>
+                    <li><a href="/users/admin">Admin</a></li>
+                <% } %>
+                    <li><a href="/products" class="active">Libros</a></li>
+                    <li><a href="/products/categorySearch">Categorias</a></li>
+                    <li><a href="/newsteller">Novedades</a></li>
+                <% if (!locals.userLogin) { %>
+                    <li class="register"><a href="/users/register">Registrarse</a></li>
+                    <li class="login"><a href="/users/login">Entrar</a></li>
+                <% }else{ %>
+                    <!-- if user session exist, show profile, exit and cart -->
     
+                    <li><a href="/users/profile/<%= user.id %> "><i class="fa-solid fa-user"></i></a></li>
+                    <li><a href="/users/logout"><i class="fa-solid fa-door-open"></i></a></li>
+                    <li><a href="/products/product-cart"><i class="fa-solid fa-shop"></i></a></li>
+                 
+                <% } %>
+                 
+               </ul>
+            </nav>
+        </div>
+    </div>
+ </header>
+ <script src="/js/header.js"></script>
 
-</header>

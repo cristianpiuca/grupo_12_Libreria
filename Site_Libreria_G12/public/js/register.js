@@ -168,9 +168,12 @@ window.addEventListener("load", () => {
             elements[i].classList.add('is-invalid');
             msgError.innerHTML = "Revisa los campos";
            errors = true
+        }else{
+          elements[i].classList.add('is-valid')
         }
     }
 if (errors == null) {
+  
     form-register.submit()
 }
    

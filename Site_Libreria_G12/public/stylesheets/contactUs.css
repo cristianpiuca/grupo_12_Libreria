@@ -12,7 +12,7 @@
 
 }
 
-.container {
+.contact .container {
   padding: 20px 0;
   line-height: 30px;
     display: flex;
@@ -24,7 +24,7 @@
   position: relative;
 }
 
- .container  h2{
+.contact .container  h2{
   color: var(--colorRosaOscuro);
 }
  .mapouter{
@@ -42,10 +42,10 @@
 }
 @media (min-width: 760px) {
    
-   .container{
+  .contact .container{
     width: 90%;
    }
-    .container #contact input{
+   .contact .container #contact input{
         height: 50px;
     }
    
@@ -59,7 +59,7 @@
     min-width:100%;
   }
 }
- .container {
+.contact .container {
   line-height: 30px;
     display: flex;
     justify-content: center;
