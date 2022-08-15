@@ -2,65 +2,96 @@
 <html lang="es">
     <%- include('./partials/head', {title : 'Carrito | Boulevard'}) %>
 
-<body class="carrito">
-
-    <%- include('./partials/header', {user: user})%> 
+    <body class="cart">
+        <%- include('./partials/header', {user: user}) %>
+        <div class="table-responsive d-flex justify-content-center">
+            <div class="cart-container card p-4 border border-white w-90">
+                <div class="cart-table">
+                  <h1>Tus productos</h1>
+                  <table class="table border border-white ">
+                    <thead>
+                      <tr>
+                        <th scope="col m-3">Nombre</th>
+                        <th scope="col m-3">Producto</th>
+                        <th scope="col m-3">Cantidad</th>
+                        <th scope="col m-3">Precio</th>
+                        <th scope="col m-3">Subtotal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="p-3">
+                        <td>Nombre</td>
+                        <td>
+                            <img src="/images/fantasmas.jpg" alt="" width="100px">
+                        </td>
+                        
+                        <td>
+                        <div class="d-flex">
+                          <button type="button" class="btn btn-xs btn-danger"><i class="fa-solid fa-minus"></i></button>
     
-   <div class="contenedor-principalCarrito">
-       <h1>Carrito</h1>
-       <div class="contenedor-cajas">
-           <div class="contenedor-ventas">
-               <div class="caja">
-                   <img src="/images/product-1.jpg" alt="">
-                   <div class="caja-contenido">
-                       <h3>Harry Potter y la piedra filosofal</h3>
-                       <h4>Precio: $500</h4>
-                       <p class="unit">Cantidad: <input type="number" min="0" value="1"></p>
-                       <p class="button">
-                           <i class="fa fa-trash"></i>
-                           <span class="button-2">Remover</span>
-                       </p>
-                   </div>
-               </div>
-               <div class="caja">
-                <img src="/images/product-2.jpg" alt="">
-                <div class="caja-contenido">
-                    <h3>Harry Potter y la piedra filosofal</h3>
-                    <h4>Precio: $500</h4>
-                    <p class="unit">Cantidad: <input type="number" min="0" value="2"></p>
-                    <p class="button">
-                        <i class="fa fa-trash"></i>
-                        <span class="button-2">Remover</span>
-                    </p>
+                          <input type="text" style="border: none; width:20px; background:none">
+                          <button type="button" class="btn btn-xs btn-success"><i class="fa-solid fa-plus"></i></button>
+                        
+                        </div>   
+                        </td>
+                        <td>$500</td>
+                        <td>$500</td>
+                      </tr>
+                      <tr  class="p-3">
+                          <td>Nombre</td>
+                        <th scope="row">
+                            <img src="/images/fantasmas.jpg" alt="" width="100px">
+                        </th>
+                        
+                        <td>
+                          <div class="d-flex">
+                            <button type="button" class="btn btn-xs btn-danger"><i class="fa-solid fa-minus"></i></button>
+      
+                            <input type="text" style="border: none; width:20px; background:none">
+                            <button type="button" class="btn btn-xs btn-success"><i class="fa-solid fa-plus"></i></button>
+                          
+                          </div>  
+                          </td>
+                        <td>$600</td>
+                        <td>$600</td>
+                      </tr>
+                      <tr class="p-3">
+                          <td>Nombre</td>
+                        <th scope="row">
+                            <img src="/images/fantasmas.jpg" alt="" width="100px">
+                        </th>
+                        
+                        <td>
+                          <div class="d-flex">
+                            <button type="button" class="btn btn-xs btn-danger"><i class="fa-solid fa-minus"></i></button>
+      
+                            <input type="text" style="border: none; width:20px; background:none">
+                            <button type="button" class="btn btn-xs btn-success"><i class="fa-solid fa-plus"></i></button>
+                          
+                          </div>  
+                          </td>
+                        <td>$700</td>
+                        <td>$700</td>
+                      
+                      </tr>
+                    
+                    </tbody>
+                   
+                  </table>
+                  <tfoot class="p-3">
+                    <span>TOTAL :</span>
+                    <span>$125.000</span>
+                  </tfoot>
+                  <div class="d-grid gap-2 d-md-flex justify-content-center p-3">
+                  <a href="#" class="btn btn-outline-success d-flex justify-content-center">Comprar</a>
+                  <a href="#" class="btn btn-danger d-flex justify-content-center">Cancelar</a>
+                 </div>
                 </div>
-            </div>
-            <div class="caja">
-                <img src="/images/product-3.jpg" alt="">
-                <div class="caja-contenido">
-                    <h3>Harry Potter y la piedra filosofal</h3>
-                    <h4>Precio: $500</h4>
-                    <p class="unit">Cantidad: <input type="number" min="0" value="1"></p>
-                    <p class="button">
-                        <i class="fa fa-trash"></i>
-                        <span class="button-2">Remover</span>
-                    </p>
-                </div>
-            </div>
-           </div>
-           <div class="right-caja">
-               <p><span>Subtotal</span> <span>$2.000</span></p>
-               <hr>
-               <p><span>Envio</span> <span>$200</span></p>
-               <hr>
-               <p><span>Total</span> <span>$2.200</span></p>
-
-               <a href="#"><i class="fa fa-shopping-cart">Comprar</i></a>
-           </div>
-       </div>
-   </div>
-
-   <%- include('./partials/footer') %>
-  
-</body>
+              </div>
+        </div>
+        
+     
+        <%- include('./partials/footer') %>
+    </body>
 
 </html>
