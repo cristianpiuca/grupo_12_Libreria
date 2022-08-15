@@ -30,7 +30,7 @@
         </div>
         <div class="content-header">
           <div class="content-header-intro">
-            <h4>Administra los productos</h4>
+            <h4>Administra los productos y usuarios de tu base</h4>
             <p>
               Agrega, edita y elimina productos. Administra roles de usuarios
             </p>
@@ -110,7 +110,7 @@
                         <div>
                           <a href="#" title="Close" class="modal-close">X</a>
                           <h5>Eliminar!</h5>
-                          <div>¿Seguro que queres eliminarel producto?</div>
+                          <div>¿Seguro que queres eliminar el producto?</div>
                           <br />
                           <div><small>Eliminar 👇</small></div>
                           <div class="delete-user">
@@ -129,6 +129,68 @@
                       <% }) %>
                     </tbody>
                   </table>
+                
+                  <div class="pro-container">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                        </tr>
+                      </thead>
+                        <tbody>
+                            <% users.forEach(({id,name,lastname, email,rolId}) => { %>
+                            <tr>
+                                <td><%= id %> </td>
+                                <td><%= name %> </td>
+                                <td><%= lastname %> </td>
+                                <td><%= email %> </td>
+                                <td><%= rolId %> </td>
+                               
+                                <td>
+                                    <div>
+                                        <form action="/users/updateUser/<%= id %>?_method=PUT" method="POST">
+                                            <button type="submit" value="<%= rolId===1 ? 2:1 %>">
+                                              <i class="fa-solid fa-eraser"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                                <td>
+                                  <button type="submit">
+                                    <a href="#open-modal-user"
+                                      ><i class="fa-solid fa-trash-can"></i
+                                    ></a>
+                                  </button>
+                                </td>
+                            </tr>
+                            <!-- modal window for user -->
+                            <div id="open-modal-user" class="modal-window">
+                              <div>
+                                <a href="#" title="Close" class="modal-close">X</a>
+                                <h5>Eliminar!</h5>
+                                <div>¿Seguro que queres eliminar el usuario?</div>
+                                <br />
+                                <div><small>Eliminar 👇</small></div>
+                                <div class="delete-user">
+                                  <form
+                                  action="/users/remove/<%= id %>?_method=DELETE" method="POST"
+                                  >
+                                    <button type="submit" class="btn btn-danger">
+                                      <i class="fa-solid fa-trash-can"></i>Si, quiero eliminar
+                                    </button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end of modal user -->
+                            <% }) %>
+                        </tbody>
+                    </table>
+                  </div>
                 </div>
               </article>
             </div>

@@ -165,20 +165,55 @@ module.exports = {
       res.redirect('/')
   },
   admin : (req,res) => {
-    db.Product.findAll(
+   let products = db.Product.findAll(
       { 
           order : [['id','DESC']],
            include : ['images']
           }
      )
-       .then(products => {
+    let users = db.User.findAll()
+  
+    Promise.all([products, users])
+    .then(([products, users]) => {
            return res.render('admin', {
               products,
+              users,
                user: req.session.userLogin
            })
        })
        .catch(error => console.log(error)) 
    
+  },
+
+  userRol:async(req,res)=>{
+    try {
+
+        let {rolId} = await db.User.findByPk(req.params.id)
+
+       if(rolId=== 1){
+        await db.User.update( {
+          rolId: 2
+        }, {
+          where :{ 
+            id:req.params.id
+          }
+        }
+        )
+
+       }else{
+        await db.User.update( {rolId: 1}, {
+          where :{ 
+            id:req.params.id
+          }
+        }
+        )
+       }
+     
+       return res.redirect('/users/admin');
+    } catch (error) {
+     
+        console.log(error);
+    }
   },
   remove: (req, res) => {
     db.User.destroy({
