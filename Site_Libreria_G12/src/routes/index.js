@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const {index, search, about, contact, legal, newsteller} = require('../controllers/indexController');
+const {index, search, about, contact, legal, newsteller, payment} = require('../controllers/indexController');
 
 /* home */
 router
@@ -10,5 +10,6 @@ router
     .get('/contact',contact)
     .get('/legal',legal)
     .get('/newsteller',newsteller)
+    .get('/payment',payment)
 module.exports = router;
 

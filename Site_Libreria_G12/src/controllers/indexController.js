@@ -92,5 +92,10 @@ module.exports = {
 		return res.render('newsteller',{
 			user: req.session.userLogin
 		})
-	}
+	},
+	payment: (req,res)=>{
+		return res.render('payment',{
+			user: req.session.userLogin
+		})
+	},
 }
