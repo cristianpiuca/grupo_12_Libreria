@@ -241,7 +241,12 @@ background: var(--colorVerdeClaro);
 
     .modal-window {
         position: fixed;
-        background-color: rgba(255, 255, 255, 0.25);
+        background: linear-gradient(
+            to right bottom,
+            rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.3)
+          );
+          backdrop-filter: blur(5px);
         top: 0;
         right: 0;
         bottom: 0;
@@ -273,9 +278,13 @@ background: var(--colorVerdeClaro);
         font-size: 150%;
         margin: 0 0 15px;
       }
-      
+      .modal-window button i{
+        margin: 0 5px;
+  
+      }
       .modal-close {
-        color: #aaa;
+        color:red;
+        background: rgba(239, 238, 238, 0.629);
         line-height: 50px;
         font-size: 80%;
         position: absolute;
@@ -284,6 +293,7 @@ background: var(--colorVerdeClaro);
         top: 0;
         width: 70px;
         text-decoration: none;
+        font-weight: 700;
       }
       .modal-close:hover {
         color: black;

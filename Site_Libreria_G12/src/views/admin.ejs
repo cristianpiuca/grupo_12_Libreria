@@ -1,88 +1,142 @@
 <html lang="es">
   <%- include('./partials/head', { title : 'Admin | Boulevard' }) %>
   <body class="admin">
-  
+    <main class="main">
+      <div class="responsive-wrapper">
+        <div class="main-header">
+          <h2>Ajustes de administrador</h2>
+          <div class="search">
+            <form id="search-form" class="search" action="/result" method="GET">
+              <div>
+                <input name="keyword" />
+                <button type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="horizontal-tabs">
+          <a href="#">Mi perfil</a>
+          <a href="#">Perfiles</a>
+          <a href="#">Contraseñas</a>
+          <a href="#">Team</a>
+          <a href="#">Plan</a>
+          <a href="#">Notas</a>
+          <a href="#">Registros</a>
+          <a href="#">Notificaciones</a>
+          <a href="#" class="active">Integraciones</a>
+          <a href="#">APIs</a>
+        </div>
+        <div class="content-header">
+          <div class="content-header-intro">
+            <h4>Administra los productos</h4>
+            <p>
+              Agrega, edita y elimina productos. Administra roles de usuarios
+            </p>
+          </div>
+          <div class="content-header-actions">
+            <a href="#" class="button">
+              <i class="ph-faders-bold"></i>
+              <span>Filters</span>
+            </a>
+            <a href="/products/productAdd" class="button">
+              <i class="ph-plus-bold"></i>
+              <span>Agregar producto</span>
+            </a>
+          </div>
+        </div>
+        <div class="content">
+          <div class="content-panel">
+            <div class="vertical-tabs">
+              <a href="#" class="active">Ver todo</a>
+              <a href="#">Ajustes adicionales</a>
+              <a href="#">Equipo</a>
+              <a href="#">Productividad</a>
+              <a href="#">Herramientas</a>
+              <a href="#">Reclamos</a>
+            </div>
+          </div>
 
-<main class="main">
-	<div class="responsive-wrapper">
-		<div class="main-header">
-			<h2>Ajustes de administrador</h2>
-			<div class="search">
-				<input type="text" placeholder="Search" />
-				<button type="submit">
-					<i class="ph-magnifying-glass-bold"></i>
-				</button>
-			</div>
-		</div>
-		<div class="horizontal-tabs">
-			<a href="#">Mi perfil</a>
-			<a href="#">Perfiles</a>
-			<a href="#">Contraseñas</a>
-			<a href="#">Team</a>
-			<a href="#">Plan</a>
-			<a href="#">Notas</a>
-			<a href="#">Registros</a>
-			<a href="#">Notificaciones</a>
-			<a href="#" class="active">Integraciones</a>
-			<a href="#">APIs</a>
-		</div>
-		<div class="content-header">
-			<div class="content-header-intro">
-				<h3>Administra los productos</h3>
-                <p>Agrega, edita y elimina productos. Administra roles de usuarios</p>
-			</div>
-			<div class="content-header-actions">
-				<a href="#" class="button">
-					<i class="ph-faders-bold"></i>
-					<span>Filters</span>
-				</a>
-				<a href="#" class="button">
-					<i class="ph-plus-bold"></i>
-					<span>Agregar producto</span>
-				</a>
-			</div>
-		</div>
-		<div class="content">
-			<div class="content-panel">
-                
-				<div class="vertical-tabs">
-					<a href="#" class="active">Ver todo</a>
-					<a href="#">Ajustes adicionales</a>
-					<a href="#">Equipo</a>
-					<a href="#">Productividad</a>
-					<a href="#">Herramientas</a>
-					<a href="#">Marketplace</a>
-				</div>
-                
-			</div>
-            
-			<div class="content-main">
-                
-				<div class="card-grid">
-				
-					<article class="card">
-						<div class="card-header">
-							<div>
-								<span><img src="https://assets.codepen.io/285131/github.svg" /></span>
-								<h3>GitHub</h3>
-							</div>
-							<label class="toggle">
-								<input type="checkbox" checked>
-								<span></span>
-							</label>
-						</div>
-						<div class="card-body">
-							<p>Link pull requests and automate workflows.</p>
-						</div>
-						
-					</article>
-				
-				</div>
-			</div>
-		</div>
-	</div>
-</main>
+          <div class="content-main">
+            <div class="card-grid">
+              <article class="card">
+                <div class="pro-container">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Eliminar</th>
+                      </tr>
+                    </thead>
 
-<%- include('./partials/footer') %>
-</body>
+                    <tbody>
+                      <% products.forEach(({id,title,author,price,images}) => {
+                      %>
+                      <tr>
+                        <th>
+                          <img
+                            src="/images/<%= images[0].file %> "
+                            alt=""
+                            class="img-fluid m-2"
+                            width="60px"
+                          />
+                        </th>
+                        <td><%= title %></td>
+                        <td><%= author %></td>
+                        <td>$<%= price %></td>
+                        <td>
+                          <button>
+                            <a href="/products/productEdit/<%= id %>"
+                              ><i class="fa-solid fa-eraser"></i
+                            ></a>
+                          </button>
+                        </td>
+
+                        <td>
+                          <button type="submit">
+                            <a href="#open-modal"
+                              ><i class="fa-solid fa-trash-can"></i
+                            ></a>
+                          </button>
+                        </td>
+                      </tr>
+					  	<!-- modal window for delete product -->
+                      <div id="open-modal" class="modal-window">
+                        <div>
+                          <a href="#" title="Close" class="modal-close">X</a>
+                          <h5>Eliminar!</h5>
+                          <div>¿Seguro que queres eliminarel producto?</div>
+                          <br />
+                          <div><small>Eliminar 👇</small></div>
+                          <div class="delete-user">
+                            <form
+                              action="/products/remove/<%= id %>?_method=DELETE"
+                              method="POST"
+                            >
+                              <button type="submit" class="btn btn-danger">
+                                <i class="fa-solid fa-trash-can"></i>Si, quiero eliminar
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+					  <!-- ends of modal window -->
+                      <% }) %>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+  </body>
 </html>
