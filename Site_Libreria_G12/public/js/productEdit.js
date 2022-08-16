@@ -231,22 +231,7 @@ window.addEventListener('load', () => {
         }
     })
 
-    img.addEventListener('blur', () => {
-        switch (true) {
-            case !img.value:
-                errorImg.innerHTML = 'Debes seleccionar una imagen'
-                img.classList.add('product-invalid')
-                errors = true
-                break;
-            default:
-                img.classList.remove('product-invalid')
-                img.classList.add('product-valid')
-                errorImg.innerHTML = ''
-                errors = false
-                break;
-        }
-    })
-
+  
 
     productEdit.addEventListener('submit', (e) => {
         e.preventDefault()
@@ -339,11 +324,6 @@ window.addEventListener('load', () => {
             case !descriptionExp.test(description.value.trim()):
                 errorDescription.innerHTML = 'La descripción tiene que contener 20 a 200 caracteres.'
                 description.classList.add('product-invalid')
-                errors = true
-                break;
-            case !img.value:
-                errorImg.innerHTML = 'Debes seleccionar una imagen'
-                img.classList.add('product-invalid')
                 errors = true
                 break;
             default:

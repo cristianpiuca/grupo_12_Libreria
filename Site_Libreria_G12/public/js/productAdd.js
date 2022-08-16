@@ -155,7 +155,7 @@ window.addEventListener('load', () => {
     pages.addEventListener('blur', (e) => {
         switch (true) {
             case !pages.value:
-                errorPages.innerHTML = 'Debes llenar el campo'
+                errorPages.innerHTML = 'Debes completar este campo'
                 pages.classList.add('product-invalid')
                 errors = true
                 break;
