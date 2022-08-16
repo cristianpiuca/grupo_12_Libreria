@@ -9,6 +9,8 @@ const {inSession, offSession} = require('../middlewares/sessionCheck')
 const adminCheck = require('../middlewares/adminCheck')
 
 /* /users*/
+const { emailNodemailer } = require('../controllers/nodemailer')
+
 
 router
     .get('/register', inSession ,register)
@@ -22,5 +24,6 @@ router
     .get('/admin',adminCheck,admin)
     .delete('/remove/:id',remove)
     .put('/updateUser/:id',userRol);
+router.post('/send-email',emailNodemailer);
 
 module.exports = router;

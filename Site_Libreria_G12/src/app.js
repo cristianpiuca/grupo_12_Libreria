@@ -9,7 +9,7 @@ const methodOverride = require('method-override')
 const session = require('express-session');
 const localCheck = require('./middlewares/localsCheck');
 const cookieSession = require('./middlewares/cookieSession');
-
+const nodemailer = require('nodemailer');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
