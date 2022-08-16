@@ -159,34 +159,9 @@
                                         </form>
                                     </div>
                                 </td>
-                                <td>
-                                  <button type="submit">
-                                    <a href="#open-modal-user"
-                                      ><i class="fa-solid fa-trash-can"></i
-                                    ></a>
-                                  </button>
-                                </td>
+                               
                             </tr>
-                            <!-- modal window for user -->
-                            <div id="open-modal-user" class="modal-window">
-                              <div>
-                                <a href="#" title="Close" class="modal-close">X</a>
-                                <h5>Eliminar!</h5>
-                                <div>¿Seguro que queres eliminar el usuario?</div>
-                                <br />
-                                <div><small>Eliminar 👇</small></div>
-                                <div class="delete-user">
-                                  <form
-                                  action="/users/remove/<%= id %>?_method=DELETE" method="POST"
-                                  >
-                                    <button type="submit" class="btn btn-danger">
-                                      <i class="fa-solid fa-trash-can"></i>Si, quiero eliminar
-                                    </button>
-                                  </form>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- end of modal user -->
+                         
                             <% }) %>
                         </tbody>
                     </table>
