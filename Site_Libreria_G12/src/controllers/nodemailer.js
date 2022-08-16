@@ -7,12 +7,12 @@ module.exports = {
     try {
     
 const transporter = nodemailer.createTransport({
-  host: 'smtp.ethereal.email',
-  port: 587,
-  secure: false, 
-  auth: {
-      user: 'obie.gorczany97@ethereal.email',
-      pass: '43nwEkEr1HfBB1HJdd'
+  host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+   auth: {
+      user: 'libreriaboulevard22@gmail.com',
+      pass: 'iixfyacsskokrnlq'
   },
  
 });
@@ -23,11 +23,18 @@ transporter.verify().then(() => {
       let { email} = req.body;
       // send mail with defined transport object
       let info = await transporter.sendMail({
-        from: '<obie.gorczany97@ethereal.email>', // sender address
+        from: '<libreriaboulevard22@gmail.com>', // sender address
         to: `${email}`, 
-        subject: "Hello ✔", // Subject line
+        subject: "Bienvenidx a Boulevard ✔", // Subject line
         text: "Este es un email de prueba", // plain text body
-        html: "<b>Hola</b>", // html body
+        
+      html: `<h1>Gracias por formar parte de Boulevard</h1>
+            
+             <p><img src = "https://i.pinimg.com/564x/b3/ca/2d/b3ca2d9cf82bb7e2a0348f496bcbcd31.jpg" width="350px"></img></p>
+             <a href="google.com" style="text-decoration:none;"><h3>Ingresa ahora</h3></a>
+             `
+        
+            
       });
     
       let response = {
@@ -53,5 +60,4 @@ transporter.verify().then(() => {
   }}
   
 
- 
  
