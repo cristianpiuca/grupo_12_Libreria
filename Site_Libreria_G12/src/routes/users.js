@@ -23,7 +23,7 @@ router
     .put('/update/:id',upload.single('image'),userValidator,update)
     .get('/admin',adminCheck,admin)
     .delete('/remove/:id',remove)
-    .put('/updateUser/:id',userRol);
-router.post('/send-email',emailNodemailer);
+    .put('/updateUser/:id',userRol)
+    .post('/send-email',emailNodemailer);
 
 module.exports = router;

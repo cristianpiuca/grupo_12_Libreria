@@ -1,7 +1,6 @@
 const nodemailer = require('nodemailer')
 const {getUrl} = require('../helpers/getUrl')
 
-
 module.exports = {
   emailNodemailer :async(req,res)=>{
     try {
@@ -32,9 +31,7 @@ transporter.verify().then(() => {
             
              <p><img src = "https://i.pinimg.com/564x/b3/ca/2d/b3ca2d9cf82bb7e2a0348f496bcbcd31.jpg" width="350px"></img></p>
              <a href="google.com" style="text-decoration:none;"><h3>Ingresa ahora</h3></a>
-             `
-        
-            
+             `           
       });
     
       let response = {
