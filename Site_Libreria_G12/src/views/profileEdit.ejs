@@ -15,32 +15,32 @@
 
                       <div>
                         <label class="labelTags">Nombre</label>
-                        <input class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="text" id="name" name="name" value="<%= locals.user && locals.user.name%>">
+                        <input class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="text" id="name" name="name" value="<%= user.name%>">
                         <span><%= locals.errors && errors.name ? errors.name.msg : null %></span>
                         <small id="errorName" class="text-danger "></small>
                     </div>
                     <div>
                         <label class="labelTags">Apellido</label>
-                        <input class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="text" id="lastname" name="lastname" value="<%= locals.user && locals.user.lastname %>">
+                        <input class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="text" id="lastname" name="lastname" value="<%= user.lastname %>">
                         <span><%= locals.errors && errors.lastname ? errors.lastname.msg : null %></span>
                         <small id="errorLastname" class="text-danger "></small>
                     </div>
                    
                     <div>
                         <label class="labelTags">Fecha de nacimiento</label>
-                        <input class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="date" id="birth" name="birth" value="<%= locals.user && locals.user.birth %>">
+                        <input class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="date" id="birth" name="birth" value="<%= user.birth %>">
                         <span><%= locals.errors && errors.birth ? errors.birth.msg : null %></span>
                         <small id="errorBirth" class="text-danger "></small>
                     </div>
                     <div>
                         <label class="labelTags">Domicilio</label>
-                        <input class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="text" id="address" name="address" value="<%= locals.user && locals.user.address %>">
+                        <input class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="text" id="address" name="address" value="<%= user.adress %>">
                         <span><%= locals.errors && errors.address ? errors.address.msg : null %></span>
                         <small id="errorAddress" class="text-danger "></small>
                     </div>
                     <div>
                         <label class="labelTags">Provincia</label>
-                       <select class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" name="state" id="state" value="<%= locals.user && locals.user.state%>"> 
+                       <select class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" name="state" id="state" value="<%= user.state%>"> 
                         
                         
                             <option value="" hidden selected>Selecciona</option>

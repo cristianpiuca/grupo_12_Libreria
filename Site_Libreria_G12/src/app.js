@@ -26,7 +26,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(cookieSession);
 app.use(express.static(path.join(__dirname, ".." ,'public')));
 
 //method override put path delete
@@ -39,6 +38,7 @@ app.use(session({
 }));
 app.use(localCheck);
 
+app.use(cookieSession);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
