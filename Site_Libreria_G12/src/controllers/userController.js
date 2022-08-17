@@ -64,12 +64,31 @@ module.exports = {
               email: req.body.email
           }
       })
-      .then((user)=> {
+      .then(async({id,name,image,rolId})=> {
+       let order = await db.Order.findOne({
+          where : {
+            userId  : id,
+            /* se llama userId enel modelo de order */
+            statusId : 1 
+            /* perteneciente al seeder de status, 1 'en proceso' */
+          },
+          include : [{
+            association : 'carts',/* order con carrito */
+            include : [
+              {
+                association : 'products',/* producto dentro del carrito */
+                include : ['images']
+              }
+            ]
+          }]
+          
+        })
           req.session.userLogin = {
-              id : +user.id,
-              name: user.name,
-              image: user.image,
-              rolId : user.rolId
+              id : +id,
+              name,
+              image,
+              rolId : +rolId,
+              order
           }
 
        

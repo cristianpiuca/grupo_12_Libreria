@@ -215,6 +215,7 @@ window.addEventListener("load", () => {
     if (error == false) {
      
       e.target.submit();
+      nodemailerEmail();
       msgError.innerHTML = null
   } else {
       msgError.innerHTML = "Todos los campos son obligatorios";
