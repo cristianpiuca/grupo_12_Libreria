@@ -19,26 +19,25 @@ window.addEventListener("load", () => {
     lastname = qs("#lastname"),
     msgError = qs("#msgError"),
     terminos = qs("#terminos")
-   
 
-
-    const nodemailerEmail = async (email) => {
+    const sendEmail = async(email)=>{
       try {
-          let response = await fetch("/users/send-email", {
-              method: "POST",
-              body: JSON.stringify({
-                  email: email,
-              }),
-              headers: {
-                  "Content-Type": "application/json",
-              },
-          });
-          let result = await response.json();
-          return result.data;
-      } catch (error) {
-          console.error;
-      }
-  };
+        let response = await fetch("/users/send-email", {
+            method: "POST",
+            body: JSON.stringify({
+                email: email,
+            }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        let result = await response.json();
+        return result.data;
+    } catch (error) {
+        console.error;
+    }
+    }
+ 
 
 
 
@@ -215,7 +214,7 @@ window.addEventListener("load", () => {
     if (error == false) {
      
       e.target.submit();
-      nodemailerEmail();
+    
       msgError.innerHTML = null
   } else {
       msgError.innerHTML = "Todos los campos son obligatorios";

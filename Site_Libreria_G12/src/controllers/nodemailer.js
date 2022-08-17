@@ -10,8 +10,8 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
    auth: {
-      user: 'libreriaboulevard22@gmail.com',
-      pass: 'iixfyacsskokrnlq'
+      user: 'libreria.boulevard.2022@gmail.com',
+      pass: 'bxgdgcayrgxjusdr'
   },
  
 });
@@ -28,7 +28,7 @@ transporter.verify().then(() => {
       let info = await transporter.sendMail({
         from: '<libreriaboulevard22@gmail.com>', // sender address
         to: `${email}`, 
-        subject: "Bienvenidx a Boulevard ✔", // Subject line
+        subject: "Bienvenidx a Boulevard", // Subject line
         text: "Este es un email de prueba", // plain text body
         
       html: `<h1>Gracias por formar parte de Boulevard</h1>
