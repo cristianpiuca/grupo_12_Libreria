@@ -19,6 +19,10 @@ const transporter = nodemailer.createTransport({
 transporter.verify().then(() => {
   console.log('ready for send emails')
 }).catch(error => console.log(error));
+
+
+
+
       let { email} = req.body;
       // send mail with defined transport object
       let info = await transporter.sendMail({
@@ -33,7 +37,7 @@ transporter.verify().then(() => {
              <a href="google.com" style="text-decoration:none;"><h3>Ingresa ahora</h3></a>
              `           
       });
-    
+      
       let response = {
         ok:true,
         meta : {
@@ -43,6 +47,7 @@ transporter.verify().then(() => {
         msg : `el mail se envio correctamente a ${email}`
       }
       return res.status(200).json(response);
+     
     } catch (error) {
       let response = {
         ok: false,

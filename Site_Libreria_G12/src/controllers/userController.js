@@ -31,6 +31,7 @@ module.exports = {
               rolId: 2, //default
           })
           .then( () => {
+            
               return res.redirect("/")})
               .catch (error => console.log(error)) 
 
@@ -222,9 +223,14 @@ module.exports = {
             }
         })
         .then((info) => {
-            return res.redirect('/');
+          req.session.destroy();
+          res.cookie('boulevardCookie', null, {
+              maxAge: -1
+          });
+          res.redirect('/')
         })
         .catch(error => console.log(error))
+       
 }
 
 }
