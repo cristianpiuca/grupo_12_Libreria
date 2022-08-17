@@ -22,13 +22,15 @@ window.addEventListener('load', () => {
         errorPages = qs('#errorPages'),
         errorFormat = qs('#errorFormat'),
         errorEditorial = qs('#errorEditorial'),
+        errorForm = qs('#errorForm')
         errorDescription = qs('#errorDescription'),
         errorImg = qs('#errorImg'),
         titleExp = /^[a-zA-ZÀ-ÿ\s\-\0-9]{3,50}$/, // Letras, guion, acentos, numeros
         authorExp = /^[a-zA-ZÀ-ÿ\s]{4,30}$/, // Letras, acentos
         numbersExp = /^\d{4}$/, // Números
         pagesExp = /^\d{2,4}$/, // Números
-        descriptionExp = /^[a-zA-ZÀ-ÿ\s\0-9]{20,500}$/, // Letras, acentos y numeros
+        descriptionExp = /^[a-zA-ZÀ-ÿ\s\0-9]{20,1000}$/, // Letras, acentos y numeros
+        imgExp = /(.jpg|.jpeg|.png|.gif)$/i;
         errors;
 
     title.addEventListener('blur', (e) => {
@@ -231,129 +233,41 @@ window.addEventListener('load', () => {
         }
     })
 
-    img.addEventListener('blur', () => {
-        switch (true) {
-            case !img.value:
-                errorImg.innerHTML = 'Debes seleccionar una imagen'
-                img.classList.add('product-invalid')
-                errors = true
-                break;
-            default:
-                img.classList.remove('product-invalid')
-                img.classList.add('product-valid')
-                errorImg.innerHTML = ''
-                errors = false
-                break;
+    img.addEventListener('change', () => {
+        if(!imgExp.exec(img.value)){
+            img.value = '';
+            img.classList.add('product-valid');
+            errorImg.innerHTML = 'Archivo no soportado';
+            errors = true
+        }else{
+            img.classList.remove('product-invalid');
+            img.classList.add('product-valid');
+            errorImg.innerHTML = '';
+            errors = false;
         }
     })
 
 
-    productAdd.addEventListener('submit', (e) => {
+    productAdd.addEventListener('submit', (e) =>{
+        let errors = true;
         e.preventDefault()
-        switch (true) {
-            case !title.value:
-                errorTitle.innerHTML = 'Debes poner un titulo'
-                title.classList.add('product-invalid')
-                errors = true
-                break;
-            case !titleExp.test(title.value.trim()):
-                errorTitle.innerHTML = 'El titulo tiene que ser de 3 a 50 caracteres'
-                title.classList.add('product-invalid')
-                errors = true
-                break;
-            case !author.value:
-                errorAuthor.innerHTML = 'Debes poner un autor'
-                author.classList.add('product-invalid')
-                errors = true
-                break;
-            case !authorExp.test(author.value.trim()):
-                errorAuthor.innerHTML = 'El autor tiene que ser de 4 a 30 caracteres, solo letras, puede contener acentos'
-                author.classList.add('product-invalid')
-                errors = true
-                break;
-            case !price.value:
-                errorPrice.innerHTML = 'Debes poner un precio'
-                price.classList.add('product-invalid')
-                errors = true
-                break;
-            case !category.value:
-                errorCategory.innerHTML = 'Debes seleccionar una categoria'
-                category.classList.add('product-invalid')
-                errors = true
-                break;
-            case !numbersExp.test(price.value.trim()):
-                errorPrice.innerHTML = 'El precio tiene que contener 4 caracteres, solo números.'
-                price.classList.add('product-invalid')
-                errors = true
-                break;
-            case !year.value:
-                errorYear.innerHTML = 'Debes poner el año'
-                year.classList.add('product-invalid')
-                errors = true
-                break;
-            case !numbersExp.test(year.value.trim()):
-                errorYear.innerHTML = 'El año tiene que contener 4 caracteres, solo números.'
-                year.classList.add('product-invalid')
-                errors = true
-                break;
-            case !language.value:
-                errorLanguage.innerHTML = 'Debes poner un idioma'
-                language.classList.add('product-invalid')
-                errors = true
-                break;
-            case !authorExp.test(language.value.trim()):
-                errorLanguage.innerHTML = 'El idioma tiene que contener solo letras'
-                language.classList.add('product-invalid')
-                errors = true
-                break;
-            case !pages.value:
-                errorPages.innerHTML = 'Debes llenar el campo'
-                pages.classList.add('product-invalid')
-                errors = true
-                break;
-            case !pagesExp.test(pages.value.trim()):
-                errorPages.innerHTML = 'El número de paginas tiene que de contener de 2 a 4 caracteres, solo números.'
-                pages.classList.add('product-invalid')
-                errors = true
-                break;
-            case !format.value:
-                errorFormat.innerHTML = 'Debes seleccionar un formato'
-                format.classList.add('product-invalid')
-                errors = true
-                break;
-            case !editorial.value:
-                errorEditorial.innerHTML = 'Debes poner una editorial'
-                editorial.classList.add('product-invalid')
-                errors = true
-                break;
-            case !authorExp.test(editorial.value.trim()):
-                errorPages.innerHTML = 'La editorial tiene que contener de 4 a 30 caracteres, solo letras.'
-                editorial.classList.add('product-invalid')
-                errors = true
-                break;
-            case !description.value:
-                errorDescription.innerHTML = 'Debes poner una descripción'
-                description.classList.add('product-invalid')
-                errors = true
-                break;
-            case !descriptionExp.test(description.value.trim()):
-                errorDescription.innerHTML = 'La descripción tiene que contener 20 a 500 caracteres.'
-                description.classList.add('product-invalid')
-                errors = true
-                break;
-            case !img.value:
-                errorImg.innerHTML = 'Debes seleccionar una imagen'
-                img.classList.add('product-invalid')
-                errors = true
-                break;
-            default:
-                if (!errors) {
-                    productAdd.submit()
-                    errors = false
-                } else {
-                    errors = true
-                }
-                break;
+        let elementosForm = productAdd.elements
+        
+        for (let i = 0; i < elementosForm.length-1; i++) {
+            if(elementosForm[i].value === "" || elementosForm[i].classList.contains('product-invalid')){
+                elementosForm[i].classList.add('product-invalid');
+                errorForm.innerHTML = "Completa los campos pendientes";
+                errors = true;
+            }else{
+                errors = false;
+            }
+        }
+        if(category.value.length === 0){
+            errors = true
+        }
+        if(errors == false){
+            errorForm.innerHTML = '';
+            productAdd.submit();
         }
     })
 })
