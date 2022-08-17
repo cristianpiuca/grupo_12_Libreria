@@ -12,8 +12,8 @@ window.addEventListener('load', function() {
         errorLastname = document.getElementById('errorLastname'),
         birth = document.getElementById('birth'),
         errorBirth = document.getElementById('errorBirth'),
-        address = document.getElementById('address'),
-        errorAddress = document.getElementById('errorAddress')
+        adress = document.getElementById('adress'),
+        errorAdress = document.getElementById('errorAdress')
         state = document.getElementById('state'),
         errorState = document.getElementById('errorState'),
         phone = document.getElementById('phone'),
@@ -117,22 +117,22 @@ window.addEventListener('load', function() {
           });
 
 
-          address.addEventListener("blur", () => {
+          adress.addEventListener("blur", () => {
             switch (true) {
-              case !address.value:
-                errorAddress.innerHTML = 'Debes ingresar una dirección';
-                address.classList.add('is-invalid');
+              case !adress.value:
+                errorAdress.innerHTML = 'Debes ingresar una dirección';
+                adress.classList.add('is-invalid');
                 errors = true;
                 break;
-              case address.value.trim().length < 5:
-                errorAddress.innerHTML = 'Debes ingresar una dirección válida';
-                address.classList.add('is-invalid');
+              case adress.value.trim().length < 5:
+                errorAdress.innerHTML = 'Debes ingresar una dirección válida';
+                adress.classList.add('is-invalid');
                 errors = true;
                 break;
               default:
-                address.classList.remove('is-invalid');
-                address.classList.add('is-valid');
-                errorAddress.innerHTML = '';
+                adress.classList.remove('is-invalid');
+                adress.classList.add('is-valid');
+                errorAdress.innerHTML = '';
                 errors = false;
                 break;
             }

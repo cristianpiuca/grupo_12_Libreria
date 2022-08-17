@@ -64,6 +64,7 @@ input:hover {
 
 
 
+
  .header .container{
   width: 100%;
   margin:auto;
@@ -237,6 +238,66 @@ input:hover {
    
    
    @media (min-width: 1000px) {
+
+    .tooltip{
+      background-color: rgba(0, 0, 0, 0.1);
+      color: white;
+      display: block;
+      border-radius: 10px;
+      font-size: 12px;
+    }
+
+    #user-icon{
+      position: relative;
+      }
+        
+      #user-tooltip{
+      position: absolute;
+      left: -12px;
+      top: 100%;
+      opacity: 0;
+      z-index: 2;
+      }
+        
+      #user-icon:hover #user-tooltip{
+      opacity: 1;
+      transition: 400ms;
+      }
+        
+      #logout-icon{
+      position: relative;
+      }
+        
+      #logout-tooltip{
+      position: absolute;
+      left: -6px;
+      top: 100%;
+      opacity: 0;
+      z-index: 2;
+      }
+        
+      #logout-icon:hover #logout-tooltip{
+      opacity: 1;
+      transition: 400ms;
+      }
+        
+      #shop-icon{
+      position: relative;
+      }
+        
+      #shop-tooltip{
+      position: absolute;
+      left: -15px;
+      top: 100%;
+      opacity: 0;
+      z-index: 2;
+            
+      }
+        
+      #shop-icon:hover #shop-tooltip{
+      opacity: 1;
+      transition: 400ms;
+      }
     
      .header .buscador-menu {
        width: 70%;

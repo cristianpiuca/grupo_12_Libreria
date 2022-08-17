@@ -36,9 +36,13 @@
                 <% }else{ %>
                     <!-- if user session exist, show profile, exit and cart -->
     
-                    <li><a href="/users/profile/<%= user.id %> "><i class="fa-solid fa-user"></i></a></li>
-                    <li><a href="/users/logout"><i class="fa-solid fa-door-open"></i></a></li>
-                    <li><a href="/products/product-cart"><i class="fa-solid fa-shop"></i></a></li>
+                    <li><a id="user-icon" href="/users/profile/<%= user.id %>"><i class="fa-solid fa-user"></i>
+                        <span class="tooltip" id="user-tooltip">Perfil</span>
+                    </a></li>
+                    <li><a id="logout-icon" href="/users/logout"><i class="fa-solid fa-door-open"></i>
+                        <span class="tooltip" id="logout-tooltip">Salir</span></a></li>
+                    <li><a id="shop-icon" href="/products/product-cart"><i class="fa-solid fa-shop"></i>
+                        <span class="tooltip" id="shop-tooltip">Carrito</span></a></li>
                  
                 <% } %>
                  

@@ -7,7 +7,7 @@ module.exports = [
         .notEmpty().withMessage('Debes poner tu apellido').bail(),
     body('birth')
         .notEmpty().withMessage('Elije una fecha').bail(),
-    body('address')
+    body('adress')
         .notEmpty().withMessage('Debes poner un domicilio').bail(),
     body('state')
         .notEmpty().withMessage('Seleccione una provincia').bail(),
