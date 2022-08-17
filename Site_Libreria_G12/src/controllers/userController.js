@@ -141,7 +141,7 @@ module.exports = {
           }
       }
      
-    let { name, lastname,birth,address,state,phone } = req.body;
+    let { name, lastname,birth,adress,state,phone } = req.body;
     db.User.findByPk(req.session.userLogin.id)
       .then((user) => {
         db.User.update(
@@ -149,10 +149,10 @@ module.exports = {
             name: name.trim(),
             lastname: lastname.trim(),
               birth,
-              address,
+              adress,
               state,
               phone,
-            image: req.file && req.file.filename || user.image,
+            image: req.file ? req.file.filename : user.image,
           },
           {
             where : {

@@ -43,7 +43,7 @@
                        <select class="input form-control userEdit-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" name="state" id="state" value="<%= user.state%>"> 
                         
                         
-                            <option value="" hidden selected>Selecciona</option>
+                            <option value="<%= user.state %>" hidden selected><%= user.state %></option>
                             
 
                             <option value="Buenos Aires">Buenos Aires</option>
