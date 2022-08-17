@@ -95,10 +95,12 @@
                     <span id="errorDescription"></span>
                 </div>
 
+                <div id="imagePreview"></div>
+
                  <div class="productAdmin__form-box">
                     <label for="image">Imagen del producto</label>
                   
-                    <input class="productAdmin__form-input" style="border:none" type="file" id="img"  name="image" accept="image/*">
+                    <input class="productAdmin__form-input" style="border:none" type="file" id="img"  name="image" accept="image/* " onchange="fileValidation()">
                     <span id="errorImg"></span>
                 </div>
     
@@ -110,17 +112,19 @@
                
             <div class="buttons">
                 <button class="btnAdmin" type="submit">Guardar</button>
-              
-             <button class="btnAdmin" type="reset">Cancelar</button>
                </div>
+               <span id="errorForm"></span>
                
             </form>
         </section>
+
 
     </main>
 
 
     <%- include('./partials/footer') %>
     <script src="../../js/productAdd.js"></script>
+    <script src="../../js/imgPreview.js"></script>
+
 </body>
 </html>
