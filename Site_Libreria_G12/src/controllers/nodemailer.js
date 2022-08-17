@@ -1,7 +1,6 @@
 const nodemailer = require('nodemailer')
 const {getUrl} = require('../helpers/getUrl')
 
-
 module.exports = {
   emailNodemailer :async(req,res)=>{
     try {
@@ -20,6 +19,10 @@ const transporter = nodemailer.createTransport({
 transporter.verify().then(() => {
   console.log('ready for send emails')
 }).catch(error => console.log(error));
+
+
+
+
       let { email} = req.body;
       // send mail with defined transport object
       let info = await transporter.sendMail({
@@ -32,11 +35,9 @@ transporter.verify().then(() => {
             
              <p><img src = "https://i.pinimg.com/564x/b3/ca/2d/b3ca2d9cf82bb7e2a0348f496bcbcd31.jpg" width="350px"></img></p>
              <a href="google.com" style="text-decoration:none;"><h3>Ingresa ahora</h3></a>
-             `
-        
-            
+             `           
       });
-    
+      
       let response = {
         ok:true,
         meta : {
@@ -46,6 +47,7 @@ transporter.verify().then(() => {
         msg : `el mail se envio correctamente a ${email}`
       }
       return res.status(200).json(response);
+     
     } catch (error) {
       let response = {
         ok: false,

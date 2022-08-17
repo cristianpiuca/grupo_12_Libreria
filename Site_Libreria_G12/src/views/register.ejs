@@ -16,7 +16,7 @@
             <div class="register-info-container">
 
                 <h2>Registrate</h2>
-                <form method="POST" class="inputs-container" id="form-register" novalidate>
+                <form method="POST" class="inputs-container" id="formRegister" novalidate>
                    
                         <p class="p-input">Tu nombre</p>
                         <input type="text" class="input form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>" name="name" id="name" value="<%= locals.old && old.name ? old.name : null %>">
@@ -52,19 +52,14 @@
 
 
                     <div class="footer-register">
-                        <button type="submit" id="submit" class="button-reg">Registrate</button>
+                        <button type="submit" id="submitBtn" class="button-reg">Registrate</button>
                       
                     </div>
                    
                   
                    <p id="msgError" class="text-danger"></p>
                 </form>
-                <div class="login">
-                    <a href="/users/login">
-                        <p>¿Ya tenés cuenta?</p>
-                    </a>
-                   
-                   </div>
+               
             </div>
         </div>
         <div class="background">

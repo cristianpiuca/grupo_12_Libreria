@@ -25,4 +25,8 @@ router
     .put('/categoryUpdate/:id',categoriesValidator, categoryUpdate)
     .delete('/categoryRemove/:id', categoryRemove)
    
+
+
+
+
 module.exports = router;    

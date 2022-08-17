@@ -9,12 +9,12 @@ const methodOverride = require('method-override')
 const session = require('express-session');
 const localCheck = require('./middlewares/localsCheck');
 const cookieSession = require('./middlewares/cookieSession');
-const nodemailer = require('nodemailer');
+
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const productsRouter = require('./routes/products')
-
+const productsRouter = require('./routes/products');
+const cartsRouter = require('./routes/carts');
 
 const app = express();
 
@@ -42,7 +42,7 @@ app.use(localCheck);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
-
+app.use('/api/carts', cartsRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

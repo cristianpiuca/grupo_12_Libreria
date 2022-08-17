@@ -6,7 +6,6 @@ window.addEventListener("load", () => {
     regExEmail =
       /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/,
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/,
-    errors,
     email = qs("#email"),
     password = qs("#password"),
     password2 = qs("#password2"),
@@ -15,11 +14,35 @@ window.addEventListener("load", () => {
     errorPassword2 = qs("#errorPassword2"),
     errorName = qs("#errorName"),
     errorTerms = qs("#errorTerms"),
-    register = qs("#form-register"),
+    register = qs("#formRegister"),
     nombre = qs("#name"),
     lastname = qs("#lastname"),
     msgError = qs("#msgError"),
     terminos = qs("#terminos")
+   
+
+
+    const nodemailerEmail = async (email) => {
+      try {
+          let response = await fetch("/users/send-email", {
+              method: "POST",
+              body: JSON.stringify({
+                  email: email,
+              }),
+              headers: {
+                  "Content-Type": "application/json",
+              },
+          });
+          let result = await response.json();
+          return result.data;
+      } catch (error) {
+          console.error;
+      }
+  };
+
+
+
+
 
   nombre.addEventListener("blur", () => {
     switch (true) {
@@ -157,27 +180,47 @@ window.addEventListener("load", () => {
     errors = false;
   }); 
 
-  form-register.addEventListener("submit",  function(event){
-   
-    event.preventDefault();
-    let errors = true;
-    let elements =  form-register.elements;
-    /* saving all elements on register form */
+  register.addEventListener('submit', function (e) {
+    e.preventDefault();
+    let error = false;
+    let elements = this.elements;
+  
+    console.log(elements);
+
     for (let i = 0; i < elements.length - 2; i++) {
-        if(elements[i].value === '' || elements[i].classList.contains('is-invalid')){
+        if (!elements[i].value) {
             elements[i].classList.add('is-invalid');
-            msgError.innerHTML = "Revisa los campos";
-           errors = true
-        }else{
-          elements[i].classList.add('is-valid')
+
+            error = true
         }
     }
-if (errors == null) {
-  
-    form-register.submit()
-}
+
+    for (let i = 0; i < elements.length - 2; i++) {
+
+        if (elements[i].classList.contains('is-invalid')) {
+            error = true
+        }
+    }
    
-}) 
+  
+
+    if (!terminos.checked) {
+        terminos.classList.add('is-invalid')
+        errorTerms.innerHTML = "Debes aceptar las bases y condiciones"
+        error = true
+    }else{
+        errorTerms.innerHTML = ""
+    }
+
+    if (error == false) {
+     
+      e.target.submit();
+      nodemailerEmail();
+      msgError.innerHTML = null
+  } else {
+      msgError.innerHTML = "Todos los campos son obligatorios";
+  }
+})
 
 });
 

@@ -18,7 +18,8 @@ module.exports = {
             tableName : 'users'
           },
           key : 'id'
-        }
+        },
+         onDelete : 'cascade'
       },
       productId: {
         type: Sequelize.INTEGER,
