@@ -87,24 +87,22 @@ window.addEventListener("load", () => {
   });
 });
 
-const btn = document.getElementById("button");
-
+const btn = document.getElementById('button');
 document.getElementById("form").addEventListener("submit", function (event) {
   event.preventDefault();
 
-  btn.value = "Enviando...";
 
-  const serviceID = "default_service";
-  const templateID = "template_vi80fgm";
+   btn.value = 'Enviando...';
 
-  emailjs.sendForm(serviceID, templateID, this).then(
-    () => {
-      btn.value = "Enviar";
-      alert("Enviado!");
-    },
-    (err) => {
-      btn.value = "Enviar";
+   const serviceID = 'default_service';
+   const templateID = 'template_fdboos9';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Enviar';
+      alert('Nos comunicaremos a la brevedad');
+    }, (err) => {
+      btn.value = 'Enviar';
       alert(JSON.stringify(err));
-    }
-  );
+    });
 });
