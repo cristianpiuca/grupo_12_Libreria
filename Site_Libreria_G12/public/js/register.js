@@ -20,23 +20,7 @@ window.addEventListener("load", () => {
     msgError = qs("#msgError"),
     terminos = qs("#terminos")
 
-    const sendEmail = async(email)=>{
-      try {
-        let response = await fetch("/users/send-email", {
-            method: "POST",
-            body: JSON.stringify({
-                email: email,
-            }),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-        let result = await response.json();
-        return result.data;
-    } catch (error) {
-        console.error;
-    }
-    }
+    
  
 
 
@@ -181,6 +165,26 @@ window.addEventListener("load", () => {
 
   register.addEventListener('submit', function (e) {
     e.preventDefault();
+    let formData = {
+      email : email.value,
+     
+    }
+    
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST','/users/send-email')
+    xhr.setRequestHeader('content-type','application/json');
+    xhr.onload = function(){
+      console.log(xhr.responseText);
+      if (responseText === 'sucess') {
+        alert('email enviado')
+       
+        email.value = '';
+      }else{
+        alert('algo salio mal')
+      }
+    }
+    xhr.send(JSON.stringify(formData))
+
     let error = false;
     let elements = this.elements;
   

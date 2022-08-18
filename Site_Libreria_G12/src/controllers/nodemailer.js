@@ -2,8 +2,8 @@ const nodemailer = require('nodemailer')
 const {getUrl} = require('../helpers/getUrl')
 
 module.exports = {
-  emailNodemailer :async(req,res)=>{
-    try {
+  emailNodemailer :(req,res)=>{
+   
     
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -15,50 +15,28 @@ const transporter = nodemailer.createTransport({
   },
  
 });
-
-transporter.verify().then(() => {
-  console.log('ready for send emails')
-}).catch(error => console.log(error));
-
-
-
-
-      let { email} = req.body;
-      // send mail with defined transport object
-      let info = await transporter.sendMail({
-        from: '<libreriaboulevard22@gmail.com>', // sender address
-        to: `${email}`, 
-        subject: "Bienvenidx a Boulevard", // Subject line
-        text: "Este es un email de prueba", // plain text body
-        
-      html: `<h1>Gracias por formar parte de Boulevard</h1>
+const mailOptions = {
+  from : req.body.email,
+  to: 'libreria.boulevard.2022@gmail.com',
+  subject : `mensaje de ${req.body.email}: ${req.body.subject}`,
+  text : `${req.body.message}`,
+  html: `<h1>Gracias por formar parte de Boulevard</h1>
             
-             <p><img src = "https://i.pinimg.com/564x/b3/ca/2d/b3ca2d9cf82bb7e2a0348f496bcbcd31.jpg" width="350px"></img></p>
-             <a href="google.com" style="text-decoration:none;"><h3>Ingresa ahora</h3></a>
-             `           
-      });
-      
-      let response = {
-        ok:true,
-        meta : {
-          status : 200,
-        },
-        url : getUrl(req),
-        msg : `el mail se envio correctamente a ${email}`
-      }
-      return res.status(200).json(response);
+  <p><img src = "https://i.pinimg.com/564x/b3/ca/2d/b3ca2d9cf82bb7e2a0348f496bcbcd31.jpg" width="350px"></img></p>
+  <a href="google.com" style="text-decoration:none;"><h3>Ingresa ahora</h3></a>
+  `   
+}
      
-    } catch (error) {
-      let response = {
-        ok: false,
-        meta: {
-            status: 500,
-        },
-        url: getUrl(req),
-        msg: error.message ? error.message : "comuniquese con el administrador"
-    }
-    return res.status(500).json(response);    
-  }
+     transporter.sendMail(mailOptions, (error, info)=>{
+      if(error){
+        console.log(error)
+      }else{
+        console.log('email enviado a' + info.response);
+      }
+     });
+      
+     
+    
   }}
   
 

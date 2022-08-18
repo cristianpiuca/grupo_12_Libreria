@@ -8,6 +8,11 @@ window.addEventListener("load", () => {
     message = qs("#message"),
     subject = qs("#subject");
 
+
+ 
+
+
+
   nameUser.addEventListener("blur", () => {
     switch (true) {
       case !nameUser.value.trim():
@@ -91,18 +96,27 @@ const btn = document.getElementById('button');
 document.getElementById("form").addEventListener("submit", function (event) {
   event.preventDefault();
 
-
-   btn.value = 'Enviando...';
-
-   const serviceID = 'default_service';
-   const templateID = 'template_fdboos9';
-
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Enviar';
-      alert('Nos comunicaremos a la brevedad');
-    }, (err) => {
-      btn.value = 'Enviar';
-      alert(JSON.stringify(err));
-    });
+  let formData = {
+    email : email.value,
+    nameUser : nameUser.value,
+    message: message.value,
+    subject : subject.value
+  }
+  
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST','/users/send-email')
+  xhr.setRequestHeader('content-type','application/json');
+  xhr.onload = function(){
+    console.log(xhr.responseText);
+    if (responseText === 'sucess') {
+      alert('email enviado')
+      nombre.value = '';
+      lastname.value = '';
+      email.value = '';
+    }else{
+      alert('algo salio mal')
+    }
+  }
+  xhr.send(JSON.stringify(formData))
+  
 });
