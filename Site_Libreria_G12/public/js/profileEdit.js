@@ -76,12 +76,7 @@ window.addEventListener('load', function() {
 
           birth.addEventListener("blur", () => {
             switch (true) {
-              case !birth.value:
-                errorBirth.innerHTML = 'Debes ingresar tu fecha de nacimiento';
-                birth.classList.add('is-invalid');
-                errors = true;
-                break;
-              default:
+              case birth.value:
                 birth.classList.remove('is-invalid');
                 birth.classList.add('is-valid');
                 errorBirth.innerHTML = '';
@@ -92,17 +87,13 @@ window.addEventListener('load', function() {
 
           phone.addEventListener("blur", () => {
             switch (true) {
-              case phone.value.trim().length >= 10 && !onlyNumbers.test(phone.value.trim()):
+              case phone.value && phone.value.trim().length >= 10 && !onlyNumbers.test(phone.value.trim()):
                 errorPhone.innerHTML = 'Solo puedes ingresar números';
                 phone.classList.add('is-invalid');
                 errors = true;
                 break;
-              case !phone.value:
-                errorPhone.innerHTML = 'Debes ingresar un número de teléfono';
-                phone.classList.add('is-invalid');
-                errors = true;
-                break;
-              case phone.value.trim().length < 10:
+              
+              case phone.value && phone.value.trim().length < 10:
                 errorPhone.innerHTML = 'Debes ingresar un número válido';
                 phone.classList.add('is-invalid');
                 errors = true;
@@ -119,12 +110,8 @@ window.addEventListener('load', function() {
 
           adress.addEventListener("blur", () => {
             switch (true) {
-              case !adress.value:
-                errorAdress.innerHTML = 'Debes ingresar una dirección';
-                adress.classList.add('is-invalid');
-                errors = true;
-                break;
-              case adress.value.trim().length < 5:
+             
+              case adress.value && adress.value.trim().length < 5:
                 errorAdress.innerHTML = 'Debes ingresar una dirección válida';
                 adress.classList.add('is-invalid');
                 errors = true;
@@ -140,12 +127,7 @@ window.addEventListener('load', function() {
 
           state.addEventListener("blur", () => {
             switch (true) {
-              case !state.value:
-                errorState.innerHTML = 'Debes seleccionar una provincia';
-                state.classList.add('is-invalid');
-                errors = true;
-                break;
-              default:
+              case state.value:
                 state.classList.remove('is-invalid');
                 state.classList.add('is-valid');
                 errorState.innerHTML = '';
