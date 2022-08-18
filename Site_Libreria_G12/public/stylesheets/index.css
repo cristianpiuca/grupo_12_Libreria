@@ -305,12 +305,12 @@
 
 /* ************************ */
 
-#semana {
+.home-main #semana {
     display: none;
     margin: 20px 0;
 }
 
-.box-semana {
+.home-main .box-semana {
     display: flex;
     margin: 20px 0;
     align-items: center;
@@ -319,12 +319,12 @@
     justify-content: center;
 }
 
-.semana {
+.home-main .semana {
     width: 14%;
     margin-bottom: 5px;
 }
 
-.semana img {
+.home-main .semana img {
     display: block;
     width: 85%;
     margin: 4px auto;
@@ -333,13 +333,13 @@
     transition: all .3s ease;
 }
 
-.semana img:hover {
+.home-main .semana img:hover {
 
     transform: scale(1.06);
 }
 
 
-.semana li {
+.home-main .semana li {
     width: 96%;
     height: 50px;
     text-align: center;
@@ -351,7 +351,7 @@
     margin-bottom: 5px;
 }
 
-#cuerpo {
+.home-main #cuerpo {
     width: 100%;
     text-align: center;
 
@@ -364,13 +364,13 @@
 
 }
 
-.box-banner {
+.home-main .box-banner {
     display: none;
     margin-bottom: 20px;
     width: 100%;
 }
 
-#novedades {
+.home-main #novedades {
     color: var(--colorCrema);
     padding: 40px 20px;
     display: flex;
@@ -382,7 +382,7 @@
     flex-wrap: wrap;
 }
 
-#novedades .novedadTexto {
+.home-main #novedades .novedadTexto {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -390,18 +390,18 @@
     align-content: center;
 }
 
-#novedades #form {
+.home-main #novedades #form {
     align-items: center;
     width: 50%;
     display: flex;
     flex-direction: column;
 }
 
-#novedades #form input {
+.home-main #novedades #form input {
     margin: 10px;
 }
 
-#novedades input:nth-child(2) {
+.home-main #novedades input:nth-child(2) {
     background-color: var(--colorCrema);
     color: var(--colorRosaOscuro);
     font-weight: 600;
@@ -411,7 +411,7 @@
     width: 100px;
 }
 
-#banner2 {
+.home-main #banner2 {
     display: none;
 }
 
@@ -424,24 +424,24 @@
 
     }
 
-    #semana {
+    .home-main #semana {
         display: block;
     }
 
-    .box-banner {
+    .home-main .box-banner {
         display: block;
     }
 
-    #banner2 {
+    .home-main #banner2 {
         display: block;
         width: 100%;
     }
 
-    #banner2 img {
+    .home-main #banner2 img {
         width: 100%;
     }
 
-    #novedades #form {
+    .home-main #novedades #form {
 
 
         flex-direction: row;
@@ -451,7 +451,7 @@
         justify-content: center;
     }
 
-    #novedades {
+    .home-main #novedades {
         justify-content: space-between;
 
     }
@@ -462,7 +462,7 @@
 
 @media (min-width:1024px) {
 
-    .carousel {
+  .carousel {
         display: block;
         width: 100%;
         height: 300px;
@@ -473,11 +473,11 @@
 
     }
 
-    .controls:hover .controls {
+     .controls:hover .controls {
         opacity: 1;
     }
 
-    .controls {
+     .controls {
         opacity: 0;
         display: flex;
         position: absolute;
@@ -489,7 +489,7 @@
         transition: all ease 0.5s;
     }
 
-    .controls .control {
+     .controls .control {
         margin: 0 5px;
         display: flex;
         align-items: center;
@@ -503,13 +503,13 @@
         cursor: pointer;
     }
 
-    .controls:hover {
+     .controls:hover {
         opacity: 1;
     }
 
 
 
-    .slides {
+     .slides {
         position: absolute;
         top: 50%;
         left: 0;
@@ -527,12 +527,12 @@
     }
 
 
-    #semana {
+    .home-main  #semana {
         display: block;
 
     }
 
-    #semana h2 {
+    .home-main #semana h2 {
         text-align: center;
         display: block;
         margin: 11px 0 17px 0;
@@ -544,7 +544,7 @@
 
     }
 
-    #novedades {
+    .home-main #novedades {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -553,23 +553,23 @@
         width: 100%;
     }
 
-    #novedades h4 {
+    .home-main  #novedades h4 {
         font-size: 22px;
         font-weight: 700;
         color: #fff;
     }
 
-    #novedades p {
+    .home-main  #novedades p {
         font-size: 14px;
         font-weight: 600;
         color: rgb(203, 203, 203);
     }
 
-    #novedades p span {
+    .home-main  #novedades p span {
         color: rgb(200, 23, 23);
     }
 
-    #novedades #form {
+    .home-main  #novedades #form {
 
         flex-wrap: nowrap;
 
@@ -609,25 +609,25 @@
         justify-content: space-between;
     }
 
-    .logo {
+    .home-main .logo {
         width: 500px;
         cursor: pointer;
     }
 
-    .navbar ul li {
+    .home-main .navbar ul li {
         list-style: none;
         display: inline-block;
         margin: 0 20px;
         position: relative;
     }
 
-    .navbar ul li a {
+    .home-main .navbar ul li a {
         text-decoration: none;
         color: #fff;
         text-transform: uppercase;
     }
 
-    .navbar ul li::after {
+    .home-main .navbar ul li::after {
         content: "";
         height: 3px;
         width: 0;
@@ -642,7 +642,7 @@
         width: 100%;
     }
 
-    .content {
+    .home-main .content {
         width: 100%;
         position: absolute;
         top: 50%;
@@ -651,18 +651,18 @@
         color: #fff;
     }
 
-    .content h1 {
+    .home-main  .content h1 {
         font-size: 70px;
         margin-top: 80px;
     }
 
-    .content p {
+    .home-main .content p {
         margin: 20px auto;
         font-weight: 100;
         line-height: 25px;
     }
 
-    .login-btn {
+    .home-main .login-btn {
         width: 200px;
         padding: 15px 0;
         text-align: center;
@@ -677,7 +677,7 @@
         overflow: hidden;
     }
 
-    .signup-btn {
+    .home-main  .signup-btn {
         width: 200px;
         padding: 15px 0;
         text-align: center;
@@ -692,7 +692,7 @@
         overflow: hidden;
     }
 
-    .cover {
+    .home-main .cover {
         background: #009688;
         height: 100%;
         width: 0%;
@@ -704,17 +704,17 @@
         transition: 0.5s;
     }
 
-    button:hover span {
+    .home-main button:hover span {
         width: 100%;
     }
 
-    button:hover {
+    .home-main button:hover {
         border: none;
     }
 
     /* PRODUCTS */
 
-    .pre-btn {
+    .home-main .pre-btn {
         left: 0;
         transform: rotate(180deg);
         display: block;
