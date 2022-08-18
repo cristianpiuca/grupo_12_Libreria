@@ -29,7 +29,7 @@ window.addEventListener('load', () => {
         authorExp = /^[a-zA-ZÀ-ÿ\s]{4,30}$/, // Letras, acentos
         numbersExp = /^\d{4}$/, // Números
         pagesExp = /^\d{2,4}$/, // Números
-        descriptionExp = /^[a-zA-ZÀ-ÿ\s\0-9]{20,1000}$/, // Letras, acentos y numeros
+        descriptionExp = /^[a-zA-ZÀ-ÿ\s\0-9]{20,800}$/, // Letras, acentos y numeros
         imgExp = /(.jpg|.jpeg|.png|.gif)$/i;
         errors;
 

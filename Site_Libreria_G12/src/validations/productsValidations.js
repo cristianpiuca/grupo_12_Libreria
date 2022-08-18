@@ -31,7 +31,7 @@ module.exports = [
         .isLength({ min: 4, max: 30 }).withMessage('La editorial tiene que contener de 4 a 30 caracteres, solo letras.'),
     body('description')
         .notEmpty().withMessage('Debes poner una descripción').bail()
-        .isLength({ min: 20, max: 1000 }).withMessage('La descripción tiene que contener 20 a 500 caracteres.'),
+        .isLength({ min: 20, max: 900 }).withMessage('La descripción tiene que contener 20 a 800 caracteres.'),
     body('image')
         .custom(( value, {req} ) => {
             let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
