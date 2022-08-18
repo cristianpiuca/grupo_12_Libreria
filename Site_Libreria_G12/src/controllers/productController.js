@@ -220,7 +220,7 @@ module.exports = {
     },
 
     categorySearch: (req, res) => {
-        return res.render('categorySearch', {
+        return res.render('categorySearch',{
             user: req.session.userLogin
         })
     },
@@ -238,7 +238,7 @@ module.exports = {
             
         const { name } = req.body;
         db.Category.create({name})
-        .then(() => res.redirect('categorySearch'))
+        .then(() => res.redirect('/users/admin'))
         .catch(error => console.log(error))
         }else {
             res.render('categoryAdd',{
@@ -270,7 +270,7 @@ module.exports = {
                 id: req.params.id
             }
         })
-        .then(() => res.redirect('/'))
+        .then(() => res.redirect('/users/admin'))
         .catch(error => console.log(error))
     }else{
         const id = req.params.id;
@@ -291,9 +291,10 @@ module.exports = {
                 where: {
                     id: req.params.id
                 }
+               
             })
             .then((info) => {
-                return res.redirect('/');
+                return res.redirect('/users/admin');
             })
             .catch(error => console.log(error))
     }

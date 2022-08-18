@@ -204,6 +204,7 @@ module.exports = {
       res.redirect('/')
   },
   admin : (req,res) => {
+
    let products = db.Product.findAll(
       { 
           order : [['id','DESC']],
@@ -211,12 +212,13 @@ module.exports = {
           }
      )
     let users = db.User.findAll()
-  
-    Promise.all([products, users])
-    .then(([products, users]) => {
+   let categories = db.Category.findAll()
+    Promise.all([products, users,categories])
+    .then(([products, users,categories]) => {
            return res.render('admin', {
               products,
               users,
+              categories,
                user: req.session.userLogin
            })
        })

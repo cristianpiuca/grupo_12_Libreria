@@ -5,7 +5,7 @@
     --colorVerde: #b3e1c1;
     --colorVerdeClaro: #d2eadd;
     --colorVerdeOscuro: #83a490;
-    --colorNaranja: #ffd0b8df;
+    --colorNaranja: #fec7a5df;
     --black: #1f1f31;
 	--black--acc: rgb(36, 36, 36);
 	--gray: rgb(219, 219, 219);
@@ -26,4 +26,12 @@
 	--font-title: "Playfair Display", serif;
 	--font-sans-serif: "Manrope", sans-serif;
 	
+  --c-text-primary: #282a32;
+  --c-text-secondary: #686b87;
+  --c-text-action: #282853;
+  --c-border-primary: #eff1f6;
+  --c-background-primary: #ffffff;
+  --c-background-secondary: #fdfcff;
+  --c-background-tertiary: #ecf3fe;
+  --c-background-quaternary: #e9ecf4;
 }

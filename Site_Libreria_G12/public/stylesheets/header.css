@@ -14,7 +14,7 @@
 #search-form {
   display: flex;
   width: 90%;
-  justify-content: center;
+
 }
 
 #search {
@@ -27,7 +27,6 @@
   height: 40px;
   border-radius: 50px;
   background-color: var(--colorRosaBuscador);
-  border: 1px dotted #a98d9f;
   padding: 18px 13px;
   color: rgb(194, 194, 194);
 }
@@ -44,10 +43,7 @@ select {
   font-size: 14pt;
   transition: background-color 0.2s, border 0.2s, box-shadow 0.2s;
 }
-input:hover {
-  background-color: var(--colorRosaBuscador);
-  color: white;
-}
+
 #search i {
   color: var(--colorCrema);
   position: absolute;

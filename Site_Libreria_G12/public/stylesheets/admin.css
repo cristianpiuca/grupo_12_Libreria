@@ -1,17 +1,5 @@
 
- @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
- :root {
-   --c-text-primary: #282a32;
-   --c-text-secondary: #686b87;
-   --c-text-action: #282853;
-   --c-accent-primary: #316f1b;
-   --c-border-primary: #eff1f6;
-   --c-background-primary: #ffffff;
-   --c-background-secondary: #fdfcff;
-   --c-background-tertiary: #ecf3fe;
-   --c-background-quaternary: #e9ecf4;
- }
- 
+
  .admin body {
    line-height: 1.5;
    min-height: 100vh;
@@ -30,11 +18,9 @@
  }
  
  .responsive-wrapper {
-   width: 90%;
-   max-width: 1280px;
-   margin-left: auto;
-   margin-right: auto;
- }
+  width: 100%;
+  padding: 10px;
+}
  
  .admin .header {
    display: flex;
@@ -68,33 +54,7 @@
    }
  }
  
- .admin .header-logo {
-   margin-right: 2.5rem;
- }
- .admin .header-logo a {
-   display: flex;
-   align-items: center;
- }
- .admin .header-logo a div {
-   flex-shrink: 0;
-   position: relative;
- }
- .admin .header-logo a div:after {
-   display: block;
-   content: "";
-   position: absolute;
-   left: 0;
-   top: auto;
-   right: 0;
-   bottom: 0;
-   overflow: hidden;
-   height: 50%;
-   border-bottom-left-radius: 8px;
-   border-bottom-right-radius: 8px;
-   background-color: rgba(255, 255, 255, 0.2);
-   -webkit-backdrop-filter: blur(4px);
-           backdrop-filter: blur(4px);
- }
+
  
  .admin .header-navigation {
    display: flex;
@@ -102,6 +62,7 @@
    align-items: center;
    justify-content: space-between;
  }
+ 
  @media (max-width: 1200px) {
    .admin .header-navigation {
      display: none;
@@ -122,7 +83,7 @@
    margin-left: 1.5rem;
  }
  .admin .header-navigation-links a:hover, .header-navigation-links a:focus {
-   color: var(--c-accent-primary);
+   color: var(--colorVerdeOscuro);
  }
  
  .admin .header-navigation-actions {
@@ -164,8 +125,8 @@
    font-weight: 500;
  }
  .admin .button:hover, .button:focus {
-   border-color: var(--c-accent-primary);
-   color: var(--c-accent-primary);
+   border-color: var(--colorVerdeOscuro);
+   color: var(--colorVerdeOscuro);
  }
  
  .admin .icon-button {
@@ -186,7 +147,7 @@
  }
  .admin .icon-button:focus, .icon-button:hover {
    background-color: var(--c-background-tertiary);
-   color: var(--c-accent-primary);
+   color: var(--colorVerdeOscuro);
  }
  
  .admin .avatar {
@@ -254,7 +215,7 @@
    color: var(--c-text-action);
  }
  .admin .search input:focus, .search input:hover {
-   border-color: var(--c-accent-primary);
+   border-color: var(--colorVerdeOscuro);
  }
  .admin .search button {
    display: inline-flex;
@@ -273,6 +234,7 @@
  }
  
  .admin .horizontal-tabs {
+  text-shadow: 0 1px 2px #cccccc, 0 -2px 1px #fff;
    margin-top: 1.5rem;
    display: flex;
    align-items: center;
@@ -288,6 +250,7 @@
    }
  }
  .admin .horizontal-tabs a {
+  
    display: inline-flex;
    flex-shrink: 0;
    align-items: center;
@@ -306,7 +269,20 @@
  .admin .horizontal-tabs a + * {
    margin-left: 1rem;
  }
- 
+ .admin .vertical-tabs .btnDeleteCategory{
+  background-color: transparent;
+  border: none;
+  color: var(--colorRosaOscuro);
+  font-weight: 600;
+  text-align: start;
+  border-radius: 5px;
+  height: 45px;
+  width: 200px;
+}
+.admin .vertical-tabs .btnDeleteCategory:hover{
+  background-color: rgba(201, 11, 11, 0.801);
+  color: white;
+}
  .admin .content-header {
    display: flex;
    flex-wrap: wrap;
@@ -316,16 +292,16 @@
    margin-top: -1px;
    border-top: 1px solid var(--c-border-primary);
  }
- 
- .admin .content-header-intro h2 {
-   font-size: 1.25rem;
+ .admin .content-header-intro{
+  text-align: center;
+ }
+ .admin .content-header-intro h4 {
+   font-size: var(--fs-icons);
    font-weight: 600;
  }
  .admin .content-header-intro p {
    color: var(--c-text-secondary);
-   margin-top: 0.25rem;
-   font-size: 0.875rem;
-   margin-bottom: 1rem;
+   font-size: var(--fs-bodytext);
  }
  
  @media (min-width: 800px) {
@@ -335,6 +311,7 @@
  }
  
  .admin .content {
+  background-image: url('https://img.freepik.com/foto-gratis/fondo-suelo-textura-madera-beige_53876-104668.jpg?w=740&t=st=1660847914~exp=1660848514~hmac=9e35e693e31b8cc82acb66c18f35387060d301553302e9c2b5d635feb048d1ac');
    border-top: 1px solid var(--c-border-primary);
    margin-top: 2rem;
    display: flex;
@@ -349,37 +326,50 @@
    margin-right: 3rem;
  }
  @media (min-width: 800px) {
-   .admin  .content-panel {
-     display: block;
-   }
+ 
+   .admin .content-panel {
+    background-color: var(--c-background-primary);
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 5%), 0 5px 15px 0 rgb(0 0 0 / 5%);
+    border-radius: 8px;
+    display: block;
+    padding: 15px 0px 0px
+px
+ 27px;
+    margin: 22px 0 0px 18px;
+}
  }
  
  .admin .vertical-tabs {
    display: flex;
    flex-direction: column;
+   margin-bottom: 20px;
+   padding: 5px 0 0 10px;
  }
  .admin .vertical-tabs a {
    display: flex;
    align-items: center;
-   padding: 0.75em 1em;
+   padding: 10px;
    background-color: transparent;
    border-radius: 8px;
    text-decoration: none;
    font-weight: 500;
-   color: var(--colorVerdeOscuro);
+   color: var(--colorRosaBuscador);
    transition: 0.15s ease;
    width: 150px;
  }
- .vertical-tabs a:hover, .vertical-tabs a:focus, .vertical-tabs a.active {
-   background-color: var(--colorVerde);
-   color: var(--colorVerdeOscuro);
+ .admin  .vertical-tabs a:hover{
+  background-color: var(--c-background-secondary);
+   color: var(--colorNaranja);
  }
  .vertical-tabs a + * {
-   margin-top: 0.25rem;
+   margin-top: 1rem;
  }
- 
+ .vertical-tabs h5{
+  color: var(--colorVerdeOscuro);
+ }
  .content-main {
-   padding: 2rem;
+  width: 100%;
+  margin: 20px;
    flex-grow: 1;
  }
  
@@ -405,13 +395,19 @@
    background-color: var(--c-background-primary);
    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.05), 0 5px 15px 0 rgba(0, 0, 0, 0.05);
    border-radius: 8px;
+   padding: 10px;
    overflow: hidden;
    display: flex;
    flex-direction: column;
    justify-content: center;
  }
+ .pro-container tbody td{
+  color: var(--colorNaranja);
+  font-weight: 700;
+  text-shadow: 0 1px 2px #cccccc, 0 -2px 1px #fff;
+ }
  .pro-container tbody td i{
-   color: var(--c-accent-primary);
+   color: var(--colorVerdeOscuro);
    padding: 6px;
    margin: 5px;
    cursor: pointer;
@@ -481,7 +477,7 @@
    width: 1px;
  }
  .toggle input:checked + span {
-   background-color: var(--c-accent-primary);
+   background-color: var(--colorVerdeOscuro);
  }
  .toggle input:checked + span:before {
    transform: translateX(calc(100% - 2px));

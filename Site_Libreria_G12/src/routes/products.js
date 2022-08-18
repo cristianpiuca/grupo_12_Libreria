@@ -15,7 +15,6 @@ router
     .post('/productAdd', upload.single('image'),productValidator,store)
     .get('/productEdit/:id', adminCheck ,edit)
     .put('/update/:id',upload.single('image'),productValidator,update)
-  
     .delete('/remove/:id', remove)
     .get('/category/:id/',getByCategory)
     .get('/categorySearch', categorySearch)
