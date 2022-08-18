@@ -101,6 +101,7 @@
                     <label for="image">Imagen del producto</label>
                   
                     <input class="productAdmin__form-input" style="border:none" type="file" id="img"  name="image" accept="image/* " onchange="fileValidation()">
+                    <span><%= locals.errors && errors.image ? errors.image.msg : null %></span>
                     <span id="errorImg"></span>
                 </div>
     

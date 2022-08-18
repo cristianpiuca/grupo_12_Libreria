@@ -12,7 +12,6 @@ window.addEventListener('load', () => {
         format = qs('#format'),
         editorial = qs('#editorial'),
         description = qs('#description'),
-        img = qs('#img'),
         errorTitle = qs('#errorTitle'),
         errorAuthor = qs('#errorAuthor'),
         errorPrice = qs('#errorPrice'),
@@ -23,12 +22,11 @@ window.addEventListener('load', () => {
         errorFormat = qs('#errorFormat'),
         errorEditorial = qs('#errorEditorial'),
         errorDescription = qs('#errorDescription'),
-        errorImg = qs('#errorImg'),
         titleExp = /^[a-zA-ZÀ-ÿ\s\-\0-9]{3,50}$/, // Letras, guion, acentos, numeros
         authorExp = /^[a-zA-ZÀ-ÿ\s]{4,30}$/, // Letras, acentos
         numbersExp = /^\d{4}$/, // Números
         pagesExp = /^\d{2,4}$/, // Números
-        descriptionExp = /^[a-zA-ZÀ-ÿ\s\0-9]{20,200}$/, // Letras, acentos y numeros
+        descriptionExp = /^[a-zA-ZÀ-ÿ\s\0-9\?\¿\;\:]{20,900}$/, // Letras, acentos y numeros
         errors;
 
     title.addEventListener('blur', (e) => {
@@ -218,7 +216,7 @@ window.addEventListener('load', () => {
                 errors = true
                 break;
             case !descriptionExp.test(description.value.trim()):
-                errorDescription.innerHTML = 'La descripción tiene que contener 20 a 200 caracteres.'
+                errorDescription.innerHTML = 'La descripción tiene que contener 20 a 900 caracteres.'
                 description.classList.add('product-invalid')
                 errors = true
                 break;
@@ -322,7 +320,7 @@ window.addEventListener('load', () => {
                 errors = true
                 break;
             case !descriptionExp.test(description.value.trim()):
-                errorDescription.innerHTML = 'La descripción tiene que contener 20 a 200 caracteres.'
+                errorDescription.innerHTML = 'La descripción tiene que contener 20 a 900 caracteres.'
                 description.classList.add('product-invalid')
                 errors = true
                 break;
