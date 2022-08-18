@@ -12,8 +12,8 @@ window.addEventListener('load', function() {
         errorLastname = document.getElementById('errorLastname'),
         birth = document.getElementById('birth'),
         errorBirth = document.getElementById('errorBirth'),
-        address = document.getElementById('address'),
-        errorAddress = document.getElementById('errorAddress')
+        adress = document.getElementById('adress'),
+        errorAdress = document.getElementById('errorAdress')
         state = document.getElementById('state'),
         errorState = document.getElementById('errorState'),
         phone = document.getElementById('phone'),
@@ -76,12 +76,7 @@ window.addEventListener('load', function() {
 
           birth.addEventListener("blur", () => {
             switch (true) {
-              case !birth.value:
-                errorBirth.innerHTML = 'Debes ingresar tu fecha de nacimiento';
-                birth.classList.add('is-invalid');
-                errors = true;
-                break;
-              default:
+              case birth.value:
                 birth.classList.remove('is-invalid');
                 birth.classList.add('is-valid');
                 errorBirth.innerHTML = '';
@@ -92,17 +87,13 @@ window.addEventListener('load', function() {
 
           phone.addEventListener("blur", () => {
             switch (true) {
-              case phone.value.trim().length >= 10 && !onlyNumbers.test(phone.value.trim()):
+              case phone.value && phone.value.trim().length >= 10 && !onlyNumbers.test(phone.value.trim()):
                 errorPhone.innerHTML = 'Solo puedes ingresar números';
                 phone.classList.add('is-invalid');
                 errors = true;
                 break;
-              case !phone.value:
-                errorPhone.innerHTML = 'Debes ingresar un número de teléfono';
-                phone.classList.add('is-invalid');
-                errors = true;
-                break;
-              case phone.value.trim().length < 10:
+              
+              case phone.value && phone.value.trim().length < 10:
                 errorPhone.innerHTML = 'Debes ingresar un número válido';
                 phone.classList.add('is-invalid');
                 errors = true;
@@ -117,22 +108,18 @@ window.addEventListener('load', function() {
           });
 
 
-          address.addEventListener("blur", () => {
+          adress.addEventListener("blur", () => {
             switch (true) {
-              case !address.value:
-                errorAddress.innerHTML = 'Debes ingresar una dirección';
-                address.classList.add('is-invalid');
-                errors = true;
-                break;
-              case address.value.trim().length < 5:
-                errorAddress.innerHTML = 'Debes ingresar una dirección válida';
-                address.classList.add('is-invalid');
+             
+              case adress.value && adress.value.trim().length < 5:
+                errorAdress.innerHTML = 'Debes ingresar una dirección válida';
+                adress.classList.add('is-invalid');
                 errors = true;
                 break;
               default:
-                address.classList.remove('is-invalid');
-                address.classList.add('is-valid');
-                errorAddress.innerHTML = '';
+                adress.classList.remove('is-invalid');
+                adress.classList.add('is-valid');
+                errorAdress.innerHTML = '';
                 errors = false;
                 break;
             }
@@ -140,12 +127,7 @@ window.addEventListener('load', function() {
 
           state.addEventListener("blur", () => {
             switch (true) {
-              case !state.value:
-                errorState.innerHTML = 'Debes seleccionar una provincia';
-                state.classList.add('is-invalid');
-                errors = true;
-                break;
-              default:
+              case state.value:
                 state.classList.remove('is-invalid');
                 state.classList.add('is-valid');
                 errorState.innerHTML = '';

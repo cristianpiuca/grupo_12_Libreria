@@ -6,6 +6,8 @@ const db = require ('../database/models');
 // for images
 const fs = require('fs')
 const path = require('path')
+const moment = require('moment')
+
 
 module.exports = {
   register: (req, res) => {
@@ -91,13 +93,15 @@ module.exports = {
               order
           }
 
-       
-         /*  if (req.body.checkbox) {
+           if (req.body.checkbox) {
               res.cookie('boulevardCookie', req.session.userLogin, {
                   maxAge: 1000 * 60 * 2
               })
-          } */
+          }
+
+
           res.redirect('/') 
+
       }).catch (error => console.log(error)) 
       } else {
           res.render('login', {
@@ -111,21 +115,34 @@ module.exports = {
   //into user data
   profile: (req, res) => {
    
+
+
+
       db.User.findByPk(req.session.userLogin.id) 
       
-      .then((user) => res.render("profile", {
-          user : user,
-        }))
+      .then((user) => {
+        user = user.dataValues
+
+        user.birth = moment(user.birth).format('DD/MM/YYYY');
+
+        res.render("profile", {user})
+      })
         .catch (error => console.log(error)) 
 
   },
   //into edit form
   edit : (req, res) => {
+
     db.User.findByPk(req.session.userLogin.id) 
       
-      .then(() => res.render("profileEdit", {
-          user :req.session.userLogin,
-        }))
+      .then((user) => {
+
+        user = user.dataValues
+
+        user.birth = moment(user.birth).format('YYYY-MM-DD');
+
+        res.render('profileEdit', {user})
+      })
         .catch (error => console.log(error)) 
 },
 
@@ -136,13 +153,14 @@ module.exports = {
 
     if (errors.isEmpty()) {
       if(req.file){
+
         if(fs.existsSync(path.join(__dirname, "../../public/images",req.session.userLogin.image)) &&
           req.session.userLogin.image !== "noimage.jpeg"){
             fs.unlinkSync(path.join(__dirname, "../../public/images",req.session.userLogin.image))
           }
       }
      
-    let { name, lastname,birth,address,state,phone } = req.body;
+    let { name, lastname,birth,adress,state,phone } = req.body;
     db.User.findByPk(req.session.userLogin.id)
       .then((user) => {
         db.User.update(
@@ -150,10 +168,10 @@ module.exports = {
             name: name.trim(),
             lastname: lastname.trim(),
               birth,
-              address,
+              adress,
               state,
               phone,
-            image: req.file && req.file.filename || user.image,
+            image: req.file ? req.file.filename : user.image,
           },
           {
             where : {
@@ -162,6 +180,7 @@ module.exports = {
           }
           
         )
+        
         
        return res.redirect('/')
        

@@ -19,11 +19,11 @@ router
     .post('/login',loginCheck, loginUser)
     .get('/logout', logout)
     .get('/profile/:id', offSession, profile)
-   .get('/profileEdit/:id', edit) 
-    .put('/update/:id',upload.single('image'),userValidator,update)
-    .get('/admin',adminCheck,admin)
-    .delete('/remove/:id',remove)
-    .put('/updateUser/:id',userRol)
-    .post('/send-email',emailNodemailer);
+    .get('/profileEdit/:id', offSession, edit) 
+     .put('/update/:id',upload.single('image'),userValidator,update)
+     .get('/admin',adminCheck, admin)
+     .delete('/remove/:id',offSession, remove)
+     .put('/updateUser/:id',offSession, userRol)
+     .post('/send-email',emailNodemailer);
 
 module.exports = router;
