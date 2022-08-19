@@ -196,7 +196,7 @@ CREATE TABLE `users` (
   `birth` datetime DEFAULT NULL,
   `adress` varchar(255) DEFAULT NULL,
   `state` varchar(255) DEFAULT NULL,
-  `phone` int DEFAULT NULL,
+  `phone` varchar(10) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime DEFAULT NULL,

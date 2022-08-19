@@ -34,7 +34,7 @@ module.exports = {
           })
           .then( () => {
             
-              return res.redirect("/")})
+              return res.redirect("/users/login")})
               .catch (error => console.log(error)) 
 
       } else {
@@ -104,7 +104,11 @@ module.exports = {
       .then((user) => {
         user = user.dataValues
 
-        user.birth = moment(user.birth).format('DD/MM/YYYY');
+        
+
+        if (user.birth != null){
+          user.birth = moment(user.birth).utc().format('DD/MM/YYYY');
+        }
 
         res.render("profile", {user})
       })
@@ -120,7 +124,7 @@ module.exports = {
 
         user = user.dataValues
 
-        user.birth = moment(user.birth).format('YYYY-MM-DD');
+        user.birth = moment(user.birth).utc().format('YYYY-MM-DD');
 
         res.render('profileEdit', {user})
       })
@@ -161,9 +165,12 @@ module.exports = {
           }
           
         )
+        .then(()=>{
+           return res.redirect('/users/profile/'+user.id)
+        })
         
         
-       return res.redirect('/')
+      
        
       }
       )

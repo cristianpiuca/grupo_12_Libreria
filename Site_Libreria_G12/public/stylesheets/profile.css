@@ -159,7 +159,6 @@
     border-radius: 5px;
     padding: 5px 15px;
     margin: 5px;
-background: var(--colorVerdeClaro);
   
     transition: 0.5s ease-in-out;
 }
@@ -201,6 +200,10 @@ background: var(--colorVerdeClaro);
         text-align: center;
         margin: 20px;
     }
+    #btn-cancel{
+      color: black;
+    }
+    
    
 @media (min-width:768px) {
     
@@ -315,3 +318,7 @@ background: var(--colorVerdeClaro);
   .btn-user i {
     padding-right: 0.3em;
   }  
+  .btn-user a{
+    text-decoration: none;
+    color: black;
+  }
