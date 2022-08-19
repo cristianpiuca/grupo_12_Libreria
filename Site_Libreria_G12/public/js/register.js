@@ -154,10 +154,7 @@ window.addEventListener("load", () => {
     }
   });
 
-   if (!terminos.checked) {
-    errorTerms.innerHTML = "Obligatorio";
-    errors = true;
-  }
+
   terminos.addEventListener("click", function () {
     errorTerms.innerHTML = "";
     errors = false;

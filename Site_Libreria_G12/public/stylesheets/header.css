@@ -54,13 +54,8 @@ select {
   color: var(--colorCrema);
 }
 .header img {
-  width: 120px;
-  border-radius: 50%;
-}
-
-
-
-
+  width: 130px;
+ }
  .header .container{
   width: 100%;
   margin:auto;

@@ -62,15 +62,18 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-   background-image: url('/images/clouds.webp');
+   background-image: url('https://img.freepik.com/vector-gratis/patron-floral-dibujado-mano-tonos-melocoton_52683-63665.jpg?w=740&t=st=1660939599~exp=1660940199~hmac=5a7bfde750466190023a61205a15ef979200e6319af200abfb7d3d00b0598df3');
    background-position: center;
    background-size: cover;
 
 }
 
 .box-result h2{
+    color: var(--colorVerdeOscuro);
+     text-shadow: 0 10px 7px #fffbf5, 0 -2px 1px rgb(158, 168, 137);
+    background: rgba(255, 255, 255, 0.638);
     margin: 25px 10px;
-    padding: 15px;
+    padding: 20px 15px;
 }
 .product-result {
     width: 200px;
