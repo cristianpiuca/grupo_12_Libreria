@@ -10,10 +10,10 @@ const getOrder = async (id) => {
       include: [
         {
           association: "carts",
-          attributes: ["id", "quantity"],
+          attributes: ["id", "quantify"],
           include: [
             {
-              association: "product",
+              association: "products",
               include: ["images"],
               attributes: ["id", "title", "price", "discount"],
             },
@@ -48,12 +48,12 @@ module.exports = {
     if (req.session.userLogin) {
       if (req.session.userLogin.order) {
         let item = req.session.userLogin.order.carts.find(
-          (cart) => cart.product.id == product.id
+          (cart) => cart.products.id == product.id
         );
         if (item) {
           await db.Cart.update(
             {
-              quantity: item.quantity + 1,
+              quantify: item.quantify + 1,
             },
             {
               where: { id: item.id },
@@ -63,7 +63,7 @@ module.exports = {
           await db.Cart.create({
             userId: req.session.userLogin.order.userId,
             productId: product.id,
-            quantity: 1,
+            quantify: 1,
             orderId: req.session.userLogin.order.id,
           });
         }
@@ -76,7 +76,7 @@ module.exports = {
         await db.Cart.create({
           userId: newOrder.userId,
           productId: product.id,
-          quantity: 1,
+          quantify: 1,
           orderId: newOrder.id,
         });
       }
@@ -92,12 +92,12 @@ module.exports = {
   removeItem: async (req, res) => {
     let product = await db.Product.findByPk(req.body.id);
     let item = req.session.userLogin.order.carts.find(
-      (cart) => cart.product.id == product.id
+      (cart) => cart.products.id == product.id
     );
-    if (item.quantity > 1) {
+    if (item.quantify > 1) {
       await db.Cart.update(
         {
-          quantity: item.quantity - 1,
+          quantify: item.quantify - 1,
         },
         {
           where: { id: item.id },

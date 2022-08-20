@@ -72,11 +72,11 @@ const showCart = (carts) => {
     $('btn-buy').hidden = false;
     $('msg-empty').hidden = true;
     $("cart-items").innerHTML = null;
-    carts.forEach(({ id:idItem, product, quantify }) => {
-      let { id, title, price, discount, images } = product;
+    carts.forEach(({ id:idItem, products, quantify }) => {
+      let { id, title, price, discount, images } = products;
       $("cart-items").innerHTML += `
           <tr>
-          <td><img style="width: 100px" src="/images/products/${
+          <td class="d-flex m-2"><img style="width: 100px" src="/images/${
             images[0].file
           }" alt=""></td>
           <td>${title}</td>

@@ -76,10 +76,12 @@ module.exports = {
           },
           include : [{
             association : 'carts',/* order con carrito */
+            attributes : ["id","quantify"],
             include : [
               {
                 association : 'products',/* producto dentro del carrito */
-                include : ['images']
+                include : ['images'],
+                attributes :['id','title','price','discount']
               }
             ]
           }]
