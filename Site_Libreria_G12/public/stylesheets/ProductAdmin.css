@@ -96,6 +96,7 @@ main.products {
     color: var(--colorVerdeOscuro);
     text-align: center;
     border-radius: 10px;
+    transition: .5s ease-in-out;
 }
 
 .productAdmin .btnAdmin:nth-last-child(1):hover {

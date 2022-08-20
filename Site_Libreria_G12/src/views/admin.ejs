@@ -3,6 +3,7 @@
   <body class="admin">
     <main class="main">
       <div class="responsive-wrapper">
+       <header class="adminHeader">
         <div class="main-header">
           <h2>Ajustes de administrador</h2>
           <div class="search">
@@ -17,19 +18,18 @@
           </div>
         </div>
         <div class="horizontal-tabs">
-          <a href="#">Mi perfil</a>
+          <a href="#" class="active">Mi perfil</a>
           <a href="#usersTable">Perfiles</a>
           <a href="">Mensajes recibidos</a>
           <a href="#">Notas</a>
-          <a href="#" class="active">Integraciones</a>
-          <a href="#">APIs</a>
+          <a href="#">Integraciones</a>
+          <a href="/products">Productos</a>
+          <a href="/products/categorySearch">Categorias</a>
         </div>
         <div class="content-header">
           <div class="content-header-intro">
             <h4>Administra los productos y usuarios de tu base</h4>
-            <span>
-              Agrega, edita y elimina productos. Administra roles de usuarios
-            </span>
+           
           </div>
           <div class="content-header-actions">
             <a href="#" class="button">
@@ -46,12 +46,13 @@
             </a>
           </div>
         </div>
+       </header>
         <div class="content">
           <div class="content-panel">
             <div class="vertical-tabs">
               <h5 class="active">Editar categorías</h5>
               <% categories.forEach(({id,name}) => { %>          
-              <a href="/products/categoryEdit/<%= id %>"><%= name %></a>        
+              <a href="/products/categoryEdit/<%= id %>"><button class="btnDeleteCategory"><%= name %></button></a>        
               <% }) %>
             </div>
             <div class="vertical-tabs">
@@ -61,7 +62,7 @@
                 action="/products/categoryRemove/<%= id %>?_method=DELETE"
                 method="POST"
               >
-                <button class="btnDeleteCategory" type="submit"><%= name %></button>
+                <button class="btnDeleteCategory btnDeleteCategoryDelete" type="submit"><%= name %></button>
               </form>
               	<!-- modal window for delete product -->
               <!--   <div id="category-modal" class="modal-window">
@@ -130,7 +131,7 @@
                         <td>
                           <button type="submit">
                             <a href="#open-modal"
-                              ><i class="fa-solid fa-trash-can"></i
+                              id="delete"><i class="fa-solid fa-trash-can"></i
                             ></a>
                           </button>
                         </td>
@@ -203,7 +204,7 @@
         </div>
       </div>
     </main>
-
+    <script src="/js/adminDeletes.js"></script>
     <%- include('./partials/footer') %>
   </body>
 </html>

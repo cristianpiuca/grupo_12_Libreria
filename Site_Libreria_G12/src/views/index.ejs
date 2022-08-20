@@ -50,8 +50,8 @@
             />
           </div>
           <div class="controls">
-            <div class="control prev-slide">&#9668;</div>
-            <div class="control next-slide">&#9658;</div>
+            <div class="control prev-slide"><</div>
+            <div class="control next-slide">></div>
           </div>
         </div>
 
@@ -111,8 +111,8 @@
           <h4>Suscribite para novedades y</h4>
           <p>Obtené <span>cupones</span> especiales de descuento</p>
         </div>
-        <form id="form" novalidate>
-          <input type="email" name="email" placeholder="Tu email"/>
+        <form method="POST" id="form" novalidate>
+          <input type="email" name="email" id="email" placeholder="Tu email"/>
           <input class="normal"  id="button" value="Enviar" type="submit"></input>
         </form>
       </section>
@@ -145,16 +145,11 @@
     
     
     <%- include('./partials/footer') %>
-    <script src="../../js/main.js"></script>
-    <script src="../../js/carousel.js"></script>
-    
+    <script src="/js/main.js"></script>
+    <script src="/js/carousel.js"></script>
+    <script src="/js/contactUs.js"></script>
     <script src="/js/suscription.js"></script>
     <script src="/js/popupOnLoad.js"></script>
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  
-  <script type="text/javascript">
-    emailjs.init('h41DzBhafwTmukOCc')
-  </script>
+   
   </body>
 </html>

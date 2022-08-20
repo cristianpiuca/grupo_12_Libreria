@@ -10,17 +10,17 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
    auth: {
-      user: 'somosboulevard2022@gmail.com',
-      pass: 'xdttnbeoqxhpsalg'
+      user: 'boulevardlibreria3@gmail.com',
+      pass: 'bvygkfpryhgdcprs'
   },
  
 });
 const mailOptions = {
-  from : 'somosboulevard2022@gmail.com',
+  from : 'boulevardlibreria3@gmail.com',
   to: req.body.email,
-  subject : `Mensaje de Boulevard`,
-  html: `<h1>Gracias por formar parte de Boulevard</h1>
-            
+  subject : `Mensaje nuevo de Boulevard`,
+  html: `<h1>Ya sos parte de Boulevard</h1>
+  <h2>Entrá y enterate de las ofertas</h2>
   <p><img src = "https://i.pinimg.com/564x/b3/ca/2d/b3ca2d9cf82bb7e2a0348f496bcbcd31.jpg" width="350px"></img></p>
   <a href="google.com" style="text-decoration:none;"><h3>Ingresa ahora</h3></a>
   `   
