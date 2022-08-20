@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Order.hasMany(models.Cart, {
         as : 'carts',
-        foreignKey : 'orderId'
+        foreignKey : 'orderId',
+        onDelete: 'cascade'
       })
       Order.belongsTo(models.User, {
         as : 'user',

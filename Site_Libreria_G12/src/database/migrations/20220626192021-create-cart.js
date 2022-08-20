@@ -18,8 +18,7 @@ module.exports = {
             tableName : 'users'
           },
           key : 'id'
-        },
-         onDelete : 'cascade'
+        }
       },
       productId: {
         type: Sequelize.INTEGER,
@@ -37,7 +36,8 @@ module.exports = {
             tableName : 'orders'
           },
           key : 'id'
-        }
+        },
+        onDelete : 'cascade'
       },
       createdAt: {
         allowNull: false,
