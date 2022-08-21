@@ -84,7 +84,7 @@ module.exports = {
                     db.Image.create(image, { validate: true })
                         .then((result) => console.log(result))
 
-                    return res.redirect('/')
+                    return res.redirect('/users/admin')
                 })
 
                 .catch(error => console.log(error))
@@ -161,7 +161,7 @@ module.exports = {
                         console.log(error);
                     }
                 }
-                return res.redirect('/');
+                return res.redirect('/users/admin');
 
             }).catch(error => console.log(error))
         } else {

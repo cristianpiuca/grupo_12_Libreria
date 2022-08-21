@@ -1,10 +1,5 @@
 
-.landscape2{
-    background: url('../images/white-background.jpg');
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;
-}
+
 .categories{
     background: url('../images/white-background.jpg');
    display: flex;
@@ -12,7 +7,9 @@
     padding: 25px 0;
 
 }
-
+.result main{
+    position: relative;
+}
 .category-item{
     width: 250px;
     height: 220px;
@@ -40,8 +37,8 @@
 }
 .landscape{
       
-    height: 650px;
-    background: url('../images/landscape.webp');
+    height: 100vh;
+    background-image: url('https://img.freepik.com/premium-vector/empty-states-illustration-concept-white-background_701961-312.jpg?w=2000');
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
@@ -62,18 +59,20 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-   background-image: url('https://img.freepik.com/vector-gratis/patron-floral-dibujado-mano-tonos-melocoton_52683-63665.jpg?w=740&t=st=1660939599~exp=1660940199~hmac=5a7bfde750466190023a61205a15ef979200e6319af200abfb7d3d00b0598df3');
-   background-position: center;
-   background-size: cover;
+   background-image: url('https://img.freepik.com/vector-gratis/bonito-estampado-floral-pintado-mano_23-2148930736.jpg?t=st=1661002773~exp=1661003373~hmac=b4f87bebde770bebadce58084adf0daa4797ed72f66fb5cfb51509f7a19e3021');
+
 
 }
 
 .box-result h2{
-    color: var(--colorVerdeOscuro);
-     text-shadow: 0 10px 7px #fffbf5, 0 -2px 1px rgb(158, 168, 137);
-    background: rgba(255, 255, 255, 0.638);
+   color: var(--colorRosaOscuro);
+    position: absolute;
+    transform: translate(20px 20px);
+    bottom: 200px;
+   
+    background: rgba(255, 255, 255, 0.59);
     margin: 25px 10px;
-    padding: 20px 15px;
+    padding: 30px 15px;
 }
 .product-result {
     width: 200px;

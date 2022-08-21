@@ -41,8 +41,8 @@
                     </a></li>
                     <li><a id="logout-icon" href="/users/logout"><i class="fa-solid fa-door-open"></i>
                         <span class="tooltip" id="logout-tooltip">Salir</span></a></li>
-                    <li><a id="shop-icon" href="/products/product-cart"><i class="fa-solid fa-shop"></i>
-                        <span class="tooltip" id="shop-tooltip">Carrito</span></a></li>
+                    <li id="btn-cart"><a id="shop-icon"><i class="fa-solid fa-shop"></i>
+                        <span class="tooltip" id="shop-tooltip"><button style="background: none;border:none; color:white" data-bs-toggle="modal" data-bs-target="#exampleModal">Compras</button></span></a></li>
                  
                 <% } %>
                  
@@ -51,5 +51,40 @@
         </div>
     </div>
  </header>
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog  modal-dialog-centered">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Mis compras</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+				<table class="table-responsive" id="cart-box">
+					<thead>
+					  <tr>
+						<th scope="col">#</th>
+						<th scope="col">Producto</th>
+						<th scope="col">Cantidad</th>
+						<th scope="col">Precio</th>
+						<th scope="col">Subtotal</th>
+					  </tr>
+					</thead>
+					<tbody id="cart-items">
+					
+					</tbody>
+				  </table>
+				<p id="msg-empty" hidden>No tenés productos agregados al carrrito</p>
+			
+		</div>
+		<div class="modal-footer">
+			<div id="btn-buy">
+				<button id="btn-cart-removeAll" type="button" class="btn btn-danger" value="<%= locals.userLogin && userLogin.order && userLogin.order.id %>">Vaciar carrito</button>
+				<a href="/payment"><button type="button" class="btn btn-primary">Finalizar compra</button> </a>
+			</div>
+		<button type="button" class="btn btn-success" data-bs-dismiss="modal">Seguir comprando</button>
+		</div>
+	  </div>
+	</div>
+  </div>
  <script src="/js/header.js"></script>
 

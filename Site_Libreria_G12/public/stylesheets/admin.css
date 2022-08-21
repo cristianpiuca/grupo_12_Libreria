@@ -2,12 +2,12 @@
 
  .admin body {
    line-height: 1.5;
-   min-height: 100vh;
    font-family: "Be Vietnam Pro", sans-serif;
-   background-color: var(--c-background-secondary);
-   color: var(--c-text-primary);
  }
- 
+ .admin .adminHeader{
+
+  padding:10px;
+ }
  .admin img {
    display: block;
    max-width: 100%;
@@ -27,7 +27,7 @@
    align-items: center;
    height: 80px;
    border-bottom: 1px solid var(--c-border-primary);
-   background-color: var(--c-background-primary);
+
  }
  
  .admin .header-content {
@@ -42,8 +42,11 @@
    flex-wrap: wrap;
    
  }
+ .content-main tbody tr{
+  transition: .3s ease-in-out;
+ }
  .content-main tbody tr:hover{
-  background-color: #ecf3fe;
+  background-color: var(--c-background-secondary);
  }
  @media (max-width: 1200px) {
    .admin .header-content {
@@ -160,9 +163,7 @@
    overflow: hidden;
  }
  
- .admin .main {
-   padding-top: 3rem;
- }
+
  
  .admin .main-header {
    display: flex;
@@ -249,8 +250,8 @@
      display: none;
    }
  }
- .admin .horizontal-tabs a {
-  
+ .admin .horizontal-tabs a, .button {
+  background: white;
    display: inline-flex;
    flex-shrink: 0;
    align-items: center;
@@ -258,10 +259,11 @@
    padding: 0 0.25rem;
    font-weight: 500;
    color: inherit;
-   border-bottom: 3px solid transparent;
+   margin-bottom: 3px;
    text-decoration: none;
    transition: 0.15s ease;
  }
+ 
  .admin .horizontal-tabs a:hover, .horizontal-tabs a:focus, .horizontal-tabs a.active {
    color: var(--colorRosaOscuro);
    border-bottom-color: var(--colorNaranja);
@@ -277,11 +279,18 @@
   text-align: start;
   border-radius: 5px;
   height: 45px;
-  width: 200px;
+  width: 150px;
+  padding: 5px;
 }
-.admin .vertical-tabs .btnDeleteCategory:hover{
+.admin .vertical-tabs .btnDeleteCategoryDelete:hover{
   background-color: rgba(201, 11, 11, 0.801);
   color: white;
+}
+
+.admin #delete i:hover{
+color: rgba(251, 5, 5, 0.846);
+
+  
 }
  .admin .content-header {
    display: flex;
@@ -298,11 +307,15 @@
  .admin .content-header-intro h4 {
    font-size: var(--fs-icons);
    font-weight: 600;
+   color: var(--colorVerdeOscuro);
  }
- .admin .content-header-intro p {
-   color: var(--c-text-secondary);
-   font-size: var(--fs-bodytext);
- }
+ .admin h2 {
+  font-size: var(--fs-subtitle1);
+  font-weight: 600;
+  color: var(--colorVerdeOscuro);
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
  
  @media (min-width: 800px) {
    .admin  .content-header-actions a:first-child {
@@ -311,7 +324,7 @@
  }
  
  .admin .content {
-  background-image: url('https://img.freepik.com/foto-gratis/fondo-suelo-textura-madera-beige_53876-104668.jpg?w=740&t=st=1660847914~exp=1660848514~hmac=9e35e693e31b8cc82acb66c18f35387060d301553302e9c2b5d635feb048d1ac');
+  background-image: url('https://img.freepik.com/vector-gratis/fondo-modelo-inconsutil-damasco-vector-clasico-lujo-antiguo-ornamento-damasco-real-victoriana-textura-transparente-papeles-pintados-textiles-envoltura-plantilla-barroca-floral-exquisita_1217-665.jpg?w=740&t=st=1661018251~exp=1661018851~hmac=da12a6493210ab005ee0a096b7c6db42e78ca6869dd6974113c997ec2c1cc780');
    border-top: 1px solid var(--c-border-primary);
    margin-top: 2rem;
    display: flex;
@@ -322,7 +335,7 @@
    display: none;
    max-width: 280px;
    width: 25%;
-   padding: 2rem 1rem 2rem 0;
+   padding: 2rem 1rem;
    margin-right: 3rem;
  }
  @media (min-width: 800px) {
@@ -348,24 +361,23 @@ px
  .admin .vertical-tabs a {
    display: flex;
    align-items: center;
-   padding: 10px;
+   padding: 5px;
    background-color: transparent;
    border-radius: 8px;
    text-decoration: none;
    font-weight: 500;
    color: var(--colorRosaBuscador);
    transition: 0.15s ease;
-   width: 150px;
+   width: 180px;
+
  }
  .admin  .vertical-tabs a:hover{
-  background-color: var(--c-background-secondary);
-   color: var(--colorNaranja);
+  background-color: var(--c-background-quaternary);
  }
- .vertical-tabs a + * {
-   margin-top: 1rem;
- }
+ 
  .vertical-tabs h5{
   color: var(--colorVerdeOscuro);
+  font-weight: 700;
  }
  .content-main {
   width: 100%;
@@ -401,11 +413,17 @@ px
    flex-direction: column;
    justify-content: center;
  }
+ .pro-container table th{
+  color: var(--colorVerdeOscuro);
+ }
  .pro-container tbody td{
+  transition: .2s ease-in-out;
   color: var(--colorNaranja);
   font-weight: 700;
-  text-shadow: 0 1px 2px #cccccc, 0 -2px 1px #fff;
+  text-shadow: 0 1px 2px #cccccc, 0 -2px1px 1px #fff;
  }
+ .pro-container tbody td:hover{
+  color: #9a649c;}
  .pro-container tbody td i{
    color: var(--colorVerdeOscuro);
    padding: 6px;

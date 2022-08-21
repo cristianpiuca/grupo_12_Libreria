@@ -13,7 +13,7 @@ const getOrder = async (id) => {
           attributes: ["id", "quantify"],
           include: [
             {
-              association: "product",
+              association: "products",
               include: ["images"],
               attributes: ["id", "title", "price", "discount"],
             },
@@ -28,15 +28,27 @@ const getOrder = async (id) => {
 };
 
 module.exports = {
-  list: (req, res) => {
-    
+  list: async (req, res) => {
+    if (req.session.userLogin && req.session.userLogin.order) {
+      return res.status(200).json({
+        ok: true,
+        order: req.session.userLogin.order.id,
+        carts: req.session.userLogin.order.carts,
+      });
+    } else {
+      return res.status(200).json({
+        ok: false,
+        order: null,
+        carts: [],
+      });
+    }
   },
   addItem: async (req, res) => {
     let product = await db.Product.findByPk(req.body.id);
     if (req.session.userLogin) {
       if (req.session.userLogin.order) {
         let item = req.session.userLogin.order.carts.find(
-          (cart) => cart.product.id == product.id
+          (cart) => cart.products.id == product.id
         );
         if (item) {
           await db.Cart.update(
@@ -77,13 +89,77 @@ module.exports = {
       });
     }
   },
-  removeItem:  (req, res) => {
-   
+  removeItem: async (req, res) => {
+    let product = await db.Product.findByPk(req.body.id);
+    let item = req.session.userLogin.order.carts.find(
+      (cart) => cart.products.id == product.id
+    );
+    if (item.quantify > 1) {
+      await db.Cart.update(
+        {
+          quantify: item.quantify - 1,
+        },
+        {
+          where: { id: item.id },
+        }
+      );
+    } else {
+      await db.Cart.destroy({
+        where: {
+          id: item.id,
+        },
+      });
+    }
+
+    let order = await getOrder(req.session.userLogin.id);
+
+    req.session.userLogin.order = order;
+    return res.status(201).json({
+      ok: true,
+      order: order.id,
+      carts: order.carts,
+    });
   },
-  removeAll:  (req, res) => {
-  
+  removeAll: async (req, res) => {
+    console.log(">>>>>>>>>>>>>", req.body.id);
+    try {
+      await db.Order.destroy({
+        where: {
+          id: req.body.id,
+        },
+      });
+      req.session.userLogin.order = null;
+
+      return res.status(200).json({
+        ok: true,
+        order: null,
+        carts: [],
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(200).json({
+        ok: false,
+        msg: error.message,
+      });
+    }
   },
-  removeItemFull:  (req, res) => {
-    
+  removeItemFull: async (req, res) => {
+    try {
+      await db.Cart.destroy({
+        where: {
+          id: req.body.id,
+        },
+      });
+      let order = await getOrder(req.session.userLogin.id);
+      req.session.userLogin.order = order;
+
+      return res.status(200).json({
+        ok: true,
+        order: order.id,
+        carts: order.carts,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   },
 };

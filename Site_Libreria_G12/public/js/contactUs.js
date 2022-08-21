@@ -97,17 +97,27 @@ document.getElementById('form')
  .addEventListener('submit', function(event) {
    event.preventDefault();
 
-   btn.value = 'Espera';
+   btn.value = 'Listo';
 
-   const serviceID = 'default_service';
-   const templateID = 'template_ixbhfpp';
+   let formData = {
+    email : email.value,
+   
+  }
+  
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST','/users/send-email')
+  xhr.setRequestHeader('content-type','application/json');
+  xhr.onload = function(){
+    console.log(xhr.responseText);
+    if (responseText === 'sucess') {
+      alert('email enviado')
+     
+      email.value = '';
 
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Enviar';
-      alert('Listo!');
-    }, (err) => {
-      btn.value = 'Enviar';
-      alert(JSON.stringify(err));
-    });
+    }else{
+      alert('algo salio mal')
+    }
+  }
+  xhr.send(JSON.stringify(formData))
+  alert('Listo, en breve vas a recibir noticias nuestras')
 });
