@@ -32,15 +32,4 @@ module.exports = [
     body('description')
         .notEmpty().withMessage('Debes poner una descripción').bail()
         .isLength({ min: 20, max: 900 }).withMessage('La descripción tiene que contener 20 a 900 caracteres.'),
-    body('image')
-        .custom(( value, {req} ) => {
-            let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
-            if(!req.file){
-                return Promise.reject('campo requerido')
-            }if(!allowedExtensions.exec(req.file.filename)){
-                return Promise.reject('Solo archivos con estas extensiones .jpeg/.jpg/.png/.gif only.')
-            }else{
-                return true
-            }
-        })
 ]

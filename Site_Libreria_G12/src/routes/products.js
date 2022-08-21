@@ -3,6 +3,7 @@ const router = express.Router();
 const upload = require('../middlewares/multer')
 const productValidator = require('../validations/productsValidations')
 const categoriesValidator = require('../validations/categoriesValidation')
+const productEditValidator = require('../validations/productEditValidations')
 const {cart, detail, add, edit, store, update, getByCategory, categorySearch, all, remove, categoryAdd, createCategory, categoryEdit, categoryUpdate, categoryRemove} = require('../controllers/productController')
 const adminCheck = require('../middlewares/adminCheck')
 
@@ -14,7 +15,7 @@ router
     .get('/productAdd', adminCheck , add)
     .post('/productAdd', upload.single('image'),productValidator,store)
     .get('/productEdit/:id', adminCheck ,edit)
-    .put('/update/:id',upload.single('image'),productValidator,update)
+    .put('/update/:id',upload.single('image'),productEditValidator,update)
     .delete('/remove/:id', remove)
     .get('/category/:id/',getByCategory)
     .get('/categorySearch', categorySearch)

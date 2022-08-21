@@ -2,7 +2,7 @@ function fileValidation(){
     let fileInput = document.getElementById('img');
     /*Validaciones de archivos*/
     let filePath = fileInput.value;
-    let allowedExtensions = /(.jpg|.jpeg|.png|)$/i;
+    let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
     if(!allowedExtensions.exec(filePath)){
         alert('Solo archivos con estas extensiones .jpeg/.jpg/.png/');
         fileInput.value = '';
