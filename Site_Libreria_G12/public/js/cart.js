@@ -83,7 +83,7 @@ const showCart = (carts) => {
           <td>
               <div class="d-flex">
                   <button class="btn btn-sm btn-danger" onclick="removeItem(${id})"><i class="fas fa-minus"></i></button>
-                  <input type="text" style="border: none; width:20px; text-align: center;" value="${quantify}">
+                  <input type="text" style="border: none; width:50px; text-align: center; color:black" value="${quantify}">
                   <button class="btn btn-sm btn-success" onclick="addItem(${id})"><i class="fas fa-plus"></i></button>
               </div>
           </td>
