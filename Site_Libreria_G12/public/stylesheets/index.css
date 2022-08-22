@@ -245,21 +245,18 @@
 
 
 #product1 .pro .cart i {
-
+cursor: pointer;
     width: 40px;
     height: 40px;
-    line-height: 40px;
-    border-radius: 50px;
-   
-    font-weight: 500;
     color: var(--colorRosaOscuro);
-  
-    position: absolute;
+      position: absolute;
     bottom: 20px;
     right: 10px;
-
+transition: .2s ease-out;
 }
-
+#product1 .pro .cart i:hover{
+    color: var(--colorVerdeOscuro);
+}
 .product {
         position: relative;
         overflow: hidden;

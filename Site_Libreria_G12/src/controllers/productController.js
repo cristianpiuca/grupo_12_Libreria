@@ -3,6 +3,7 @@ const path = require('path');
 const { validationResult, Result } = require('express-validator')
 const { Op } = require('sequelize')
 const db = require("../database/models");
+const { Sequelize } = require('sequelize')
 let promiseCategories = db.Category.findAll();
 module.exports = {
 
@@ -27,10 +28,16 @@ module.exports = {
       let product=  db.Product.findByPk(req.params.id, {
             include: ['images']
         })
-        Promise.all([product, categories])
-            .then(([product, categories]) => {
+        let productsDetail= db.Product.findAll({
+            include : ['images'],
+            limit : 4,
+            order: Sequelize.literal('rand()'),
+        })
+        Promise.all([product, categories,productsDetail])
+            .then(([product, categories,productsDetail]) => {
                 return res.render('productDetail', {
                     product,
+                    productsDetail,
                     categories,
                     user: req.session.userLogin
                 })

@@ -170,6 +170,8 @@
                             <th>Apellido</th>
                             <th>Email</th>
                             <th>Rol</th>
+                            <th></th>
+                            <th>Tipo</th>
                         </tr>
                       </thead>
                         <tbody>
@@ -182,15 +184,15 @@
                                 <td><%= rolId %> </td>
                                
                                 <td>
-                                    <div>
-                                        <form action="/users/updateUser/<%= id %>?_method=PUT" method="POST">
-                                            <button type="submit" value="<%= rolId===1 ? 2:1 %>">
-                                              <i class="fa-solid fa-eraser"></i>
-                                            </button>
-                                        </form>
-                                    </div>
-                                </td>
-                               
+                                  <div>
+                                      <form action="/users/updateUser/<%= id %>?_method=PUT" method="POST">
+                                          <button type="submit" value="<%= rolId===1 ? 2:1 %>">
+                                            <i class="fa-solid fa-eraser"></i>
+                                          </button>
+                                      </form>
+                                  </div>
+                              </td>
+                              <td><%= rolId=== 1 ? 'admin':'user' %></td>
                             </tr>
                          
                             <% }) %>

@@ -70,6 +70,43 @@
             </div>
         </div>
     </div>
+
+    <section id="product1" class="section-p1">
+        <article class="product detailProduct"> 
+            <h2>Productos relacionados</h2>
+            <div class="pro-container">
+                <% productsDetail.forEach(({id,title,author,price,images}) => { %>
+    
+                <div class="pro">
+                  
+                  <div class="image-container">
+                    <a href="/products/product-detail/<%= id %> "
+                      ><img src="/images/<%= images[0].file %> " alt=""
+                    /></a>
+                  </div>
+                  <div class="des">
+                    <span><%= author %></span>
+                    <h5><%= title %></h5>
+                    <div class="star">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star-half"></i>
+                    </div>
+                    <h4>$<%= price %></h4>
+                  </div>
+                
+                  <div class="cart">
+                    <a href="/products/product-detail/<%= id %>"
+                      ><i class="fa-solid fa-eye"></i></a>
+                  </div>
+               
+                </div>
+                <% }) %>
+              </div>
+            </article>
+            </section>
 </main>
     <%- include('./partials/footer') %>
     <script src="/js/cart.js"></script>

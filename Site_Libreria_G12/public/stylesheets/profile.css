@@ -8,7 +8,9 @@
 }
 
 .profile {
-    background-color: white;
+   background-image: url('../images/bg_profile.jpg');
+   background-size: cover;
+
   
 }
 .profile h1{
@@ -95,22 +97,24 @@
 .profile .userInfo {
     display: flex;
     width: 80%;
-    background-image: linear-gradient(-55deg, #c8feff 0%, #eecfcf 100%);
-    background-image: linear-gradient(to top, #a9dec1 0%, #f5f5b8 100%);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background: linear-gradient(to right bottom,
+            rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.3));
+
     margin: 30px auto;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 6px 5px 6px 2px rgb(186, 186, 186);
     flex-direction: column;
-    
+     backdrop-filter: blur(5px);
+    transition: all .5s ease;
     justify-content: center;
     align-items: center;
-    transition:  color 1s ease-in;
+
 }
+
 .profile .userInfo h3:hover{
-    color: #ffa97d;
+    color: var(--colorVerdeOscuro);
 }
 .profile .userInfo div{
     margin: 10px 0;
@@ -120,15 +124,12 @@
     display: block;
 }
 .profile .userInfo h2{
-    color: var(--colorRosaOscuro);
+    color: var(--colorNaranja);
 }
 .profile .userInfo h3{
-    font-family: 'Satisfy', cursive;
     text-align: center;
-    color: var(--colorRosaOscuro);
- 
-    text-shadow: 3px -1px 2px rgba(196,196,196,0.62);
-  
+
+    color: var( --colorRosaOscuro);
 }
 
 .profile .userInfo select{
@@ -232,8 +233,7 @@
         }
         .profile .userInfo h3{
             margin: 18px;
-           color: white;
-            font-size: var(--fs-form);
+            font-size: var(--fs-bodytext);
         }
         .profile .userInfo select, .userEdit-input{
             width: 250px;
@@ -249,6 +249,9 @@
             rgba(255, 255, 255, 0.7),
             rgba(255, 255, 255, 0.3)
           );
+          box-shadow: 3px 3px 5px 4px rgba(0,0,0,0.25);
+          -webkit-box-shadow: 3px 3px 5px 4px rgba(0,0,0,0.25);
+          -moz-box-shadow: 3px 3px 5px 4px rgba(0,0,0,0.25);
           backdrop-filter: blur(5px);
         top: 0;
         right: 0;
