@@ -58,33 +58,13 @@
             <div class="vertical-tabs">
               <h5 class="active">Eliminar categorías</h5>
               <% categories.forEach(({id,name}) => { %>        
-                <form
+                <form id="adminDelete"
                 action="/products/categoryRemove/<%= id %>?_method=DELETE"
                 method="POST"
               >
-                <button class="btnDeleteCategory btnDeleteCategoryDelete" type="submit"><%= name %></button>
+                <button onclick="return confirmDelete()" class="btnDeleteCategory btnDeleteCategoryDelete" type="submit"><%= name %></button>
               </form>
-              	<!-- modal window for delete product -->
-              <!--   <div id="category-modal" class="modal-window">
-                  <div>
-                    <a href="#" title="Close" class="modal-close">X</a>
-                    <h5>Eliminar!</h5>
-                    <div>¿Seguro que queres eliminar la categoría?</div>
-                    <br />
-                    <div><small>Eliminar 👇</small></div>
-                    <div class="delete-user">
-                      <form
-                        action="/products/categoryRemove/<%= id %>?_method=DELETE"
-                        method="POST"
-                      >
-                        <button type="submit" class="btn btn-danger">
-                          <i class="fa-solid fa-trash-can"></i>Si, quiero eliminarla
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                </div> -->
-      <!-- ends of modal window -->   
+         
               <% }) %>
             </div>
           </div>
@@ -129,34 +109,17 @@
                         </td>
 
                         <td>
-                          <button type="submit">
-                            <a href="#open-modal"
-                              id="delete"><i class="fa-solid fa-trash-can"></i
-                            ></a>
-                          </button>
-                        </td>
-                      </tr>
-					  	<!-- modal window for delete product -->
-                      <div id="open-modal" class="modal-window">
-                        <div>
-                          <a href="#" title="Close" class="modal-close">X</a>
-                          <h5>Eliminar!</h5>
-                          <div>¿Seguro que queres eliminar el producto?</div>
-                          <br />
-                          <div><small>Eliminar 👇</small></div>
-                          <div class="delete-user">
-                            <form
+                          <form id="adminDelete"
                               action="/products/remove/<%= id %>?_method=DELETE"
                               method="POST"
                             >
-                              <button type="submit" class="btn btn-danger">
-                                <i class="fa-solid fa-trash-can"></i>Si, quiero eliminar
+                              <button onclick="return confirmDelete()" type="submit" class="btn btn-danger">
+                                <i class="fa-solid fa-trash-can"></i>
                               </button>
                             </form>
-                          </div>
-                        </div>
-                      </div>
-					  <!-- ends of modal window -->
+                        </td>
+                      </tr>
+					  
                       <% }) %>
                     </tbody>
                   </table>
@@ -185,7 +148,7 @@
                                
                                 <td>
                                   <div>
-                                      <form action="/users/updateUser/<%= id %>?_method=PUT" method="POST">
+                                      <form id="userId" action="/users/updateUser/<%= id %>?_method=PUT" method="POST">
                                           <button type="submit" value="<%= rolId===1 ? 2:1 %>">
                                             <i class="fa-solid fa-eraser"></i>
                                           </button>

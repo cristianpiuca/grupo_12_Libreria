@@ -1,5 +1,7 @@
+console.log('profileImage sucess');
+
 function fileValidation(){
-    let fileInput = document.getElementById('img');
+    let fileInput = document.getElementById('image');
     /*Validaciones de archivos*/
     let filePath = fileInput.value;
     let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
@@ -9,6 +11,7 @@ function fileValidation(){
             title: 'Oops...',
             text: 'Solo archivos con estas extensiones .jpeg/.jpg/.png/'     
           })
+      
         fileInput.value = '';
         return false;
     }else{

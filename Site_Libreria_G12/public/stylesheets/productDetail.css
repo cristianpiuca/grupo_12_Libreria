@@ -1,5 +1,6 @@
+
 .contenedor-principalProduct, .detailProduct{
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     background: #f1ebe5;
     position: relative;
@@ -35,7 +36,7 @@
     text-shadow: 0 10.36px 8.89px #bcaf9b, 0 -2px 1px #fff;
     letter-spacing: -4px;
     margin: 5px 0;
-    font-size: 100px;
+    font-size: 75px;
 }
 
 .contenedor-products {
@@ -272,5 +273,7 @@ button {
     .carrito-compra {
        justify-content: flex-start;
     }
-
+    .contenedor-principalProduct h1{
+        font-size: 100px;
+    }
 }

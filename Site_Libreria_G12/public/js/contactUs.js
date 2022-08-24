@@ -119,5 +119,17 @@ document.getElementById('form')
     }
   }
   xhr.send(JSON.stringify(formData))
-  alert('Listo, en breve vas a recibir noticias nuestras')
+  Swal.fire({
+    title: 'Pronto recibirás noticias nuestras',
+    width: 400,
+    padding: '2em',
+    color: '#716add',
+    background: '#fff',
+    backdrop: `
+      rgba(0,0,123,0.4)
+      url("/images/nyanCatGif.gif")
+      left top
+      no-repeat
+    `
+  })
 });

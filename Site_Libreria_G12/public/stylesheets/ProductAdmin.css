@@ -1,13 +1,21 @@
+.productAdmin{
+    background-image: url('https://media.giphy.com/media/3ohryfBC9IiIgllfS8/giphy.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-clip: content-box;
+}
 .productAdmin main {
     padding: 20px 0;
+  
 }
 
 .productAdmin main h1 {
     font-size: 50px;
     padding: 10px 0;
     font-family: 'Lobster', cursive;
-    background: linear-gradient(-435deg, #e9d1fb 0%, #ffd2d2 100%);
-    background: linear-gradient(to top, #a8caed 0%, #ffc8d9 100%);
+    background: linear-gradient(-400deg, #ddafff 10%, #ffb5b5 100%);
+    background: linear-gradient(to top, #8bbae9 10%, #e397af 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

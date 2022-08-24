@@ -3,10 +3,10 @@
  <header class="header">
   
   
-    <div class="container">
+    <div class="containerHeader">
         <div class="roww align-items-center justify-content-between">
             <div class="logo">
-                <a href="/"><img src="/images/logo3.png" alt=""></a>
+                <a href="/"><img src="/images/logo1.png" alt=""></a>
             </div>
           
             <button type="button" class="nav-toggler">
@@ -55,7 +55,7 @@
 	<div class="modal-dialog  modal-dialog-centered">
 	  <div class="modal-content">
 		<div class="modal-header">
-		  <h5 class="modal-title" id="exampleModalLabel">Mis compras</h5>
+		  <h5 class="modal-title" id="exampleModalLabel">Mis favoritos</h5>
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
 		<div class="modal-body">
@@ -63,25 +63,25 @@
 					<thead>
 					  <tr>
 						<th scope="col">#</th>
-						<th scope="col">Producto</th>
+						<th class="m-2" scope="col">Producto</th>
 						<th scope="col">Cantidad</th>
-						<th scope="col">Precio</th>
-						<th scope="col">Subtotal</th>
+						<th scope="col">$</th>
+						<th scope="col">Total</th>
 					  </tr>
 					</thead>
 					<tbody id="cart-items">
 					
 					</tbody>
 				  </table>
-				<p id="msg-empty" hidden>No tenés productos agregados al carrrito</p>
+				<p id="msg-empty" hidden>No tenés productos agregados a favoritos</p>
 			
 		</div>
 		<div class="modal-footer">
 			<div id="btn-buy">
-				<button id="btn-cart-removeAll" type="button" class="btn btn-danger" value="<%= locals.userLogin && userLogin.order && userLogin.order.id %>">Vaciar carrito</button>
-				<a href="/payment"><button type="button" class="btn btn-primary">Finalizar compra</button> </a>
+				<button id="btn-cart-removeAll" type="button" class="btn btn-danger" value="<%= locals.userLogin && userLogin.order && userLogin.order.id %>">Vaciar todo</button>
+				<a href="/payment"><button type="button" class="btn btn-warning">Comprar</button> </a>
 			</div>
-		<button type="button" class="btn btn-success" data-bs-dismiss="modal">Seguir comprando</button>
+		<button type="button" class="btn btn-info" data-bs-dismiss="modal">Salir</button>
 		</div>
 	  </div>
 	</div>

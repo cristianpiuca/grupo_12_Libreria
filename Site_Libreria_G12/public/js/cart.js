@@ -79,7 +79,7 @@ const showCart = (carts) => {
           <td class="d-flex m-2"><img style="width: 100px" src="/images/${
             images[0].file
           }" alt=""></td>
-          <td>${title}</td>
+          <td class="p-2">${title}</td>
           <td>
               <div class="d-flex">
                   <button class="btn btn-sm btn-danger" onclick="removeItem(${id})"><i class="fas fa-minus"></i></button>
@@ -87,8 +87,8 @@ const showCart = (carts) => {
                   <button class="btn btn-sm btn-success" onclick="addItem(${id})"><i class="fas fa-plus"></i></button>
               </div>
           </td>
-          <td>${price - (price * discount) / 100}</td>
-          <td>${(price - (price * discount) / 100) * quantify}</td>
+          <td class="p-2">${price - (price * discount) / 100}</td>
+          <td class="p-2">${(price - (price * discount) / 100) * quantify}</td>
           <td>
           <button class="btn btn-sm btn-danger" onclick="removeItemFull(${idItem})"><i class="fas fa-trash"></i></button>
           </td>

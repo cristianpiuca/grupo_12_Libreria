@@ -54,9 +54,9 @@ select {
   color: var(--colorCrema);
 }
 .header img {
-  width: 130px;
+  width: 100px;
  }
- .header .container{
+ .header .containerHeader{
   width: 100%;
   margin:auto;
   }
@@ -80,14 +80,17 @@ select {
   
   .header .logo,
   .header .nav{
+  
   padding:0 15px;
   }
+  .header .nav{
+    margin: 0 auto;
+  }
   .header .logo a{
-  font-size: 30px;
-  color: #ffffff;
-  text-transform: capitalize;
+    margin: 0 20px;
   }
   .header .nav ul li{
+    
   display: inline-block;
   margin-left: 40px;
   }
@@ -217,7 +220,7 @@ select {
     }
     .header .nav ul{
       padding:12px 15px 0;
-      margin-top: 12px;
+      margin: 12px;
       border-top:1px solid rgba(255,255,255,0.2);
     }
     .header .nav ul li{
@@ -228,7 +231,7 @@ select {
    
    
    
-   @media (min-width: 1000px) {
+   @media (min-width: 960px) {
 
     .tooltip{
       background-color: rgba(0, 0, 0, 0.1);

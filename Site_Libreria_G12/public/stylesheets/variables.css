@@ -1,5 +1,5 @@
 :root {
-    --colorRosaOscuro: #e88478e1;
+    --colorRosaOscuro: #EA9288;
     --colorCrema: #fef1e0;
     --colorRosaBuscador: #F5B7B1 ;
     --colorVerde: #95d1a7;
@@ -9,7 +9,7 @@
     --black: #1f1f31;
 	--black--acc: rgb(36, 36, 36);
 	--gray: rgb(219, 219, 219);
-	--gray-1: #ededed;
+	--gray-1: #efefef;
      /*font sizes*/
      --fs-title-super-extrabig:85px;
   --fs-title-extrabig:60px;

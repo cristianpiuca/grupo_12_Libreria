@@ -81,9 +81,10 @@
                         <span><%= locals.errors && errors.phone ? errors.phone.msg : null %></span>
                         <small id="errorPhone" class="text-danger "></small>
                     </div>
+                    <div id="imagePreview"></div>
                     <div>
                         <label class="labelTags">Cambiar foto de Perfil</label>
-                        <input class="userEdit-input" type="file" id="image" name="image" accept="image/*"/>
+                        <input class="userEdit-input" onchange="fileValidation()" type="file" id="image" name="image" accept="image/*"/>
                     </div>
 
                     <div>
@@ -98,6 +99,8 @@
                   
                 </form>
                   <script src="/js/profileEdit.js"></script>
+                  <script src="/js/profileImage.js"></script>
+                  
             </main>
             <%- include('./partials/footer') %>
     </body>
